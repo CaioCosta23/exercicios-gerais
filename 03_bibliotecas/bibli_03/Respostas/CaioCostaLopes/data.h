@@ -2,7 +2,7 @@
 #define _data
 
 /**
- * @brief Verifica se uuma data e valida;
+ * @brief Verifica se uma data e valida;
  * 
  * @param dia Dia da data;
  * @param mes Mes da data;
@@ -79,3 +79,5 @@ int calulaDiasAteMes (int mes, int ano);
  * @return int Retorna o numero de dias de diferenca entre as datas;
  */
 int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2);
+
+#endif
