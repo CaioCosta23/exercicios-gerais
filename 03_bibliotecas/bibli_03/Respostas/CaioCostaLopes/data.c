@@ -81,7 +81,7 @@ void imprimeDataExtenso(int dia, int mes, int ano) {
     if (verificaDataValida(dia, mes, ano)) {
         printf("%02d de ", dia);
         imprimeMesextenso(mes);
-        printf(" de %d", ano);
+        printf(" de %04d", ano);
     }else {
         printf("primeira e/ou segunda data(s) invalida(s)");
         exit(1);
@@ -121,7 +121,7 @@ int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2) {
 }
 
 int calculaDiasAteMes(int mes, int ano) {
-    
+
     return numeroDiasMes(mes, ano);
 }
 
