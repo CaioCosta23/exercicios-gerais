@@ -129,7 +129,7 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
     int diferenca = 0;
     int a, m;
 
-    if (comaparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 0) {
+    if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 0) {
         return 0;
     }else {
         if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 1) {
