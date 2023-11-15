@@ -1,7 +1,9 @@
 #include "data.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int verificaBissexto(int ano) {
-    if ((ano % 400 == 0) && (ano % 100 != 0) && (ano % 4 == 0)) {
+    if (((ano % 4 == 0) && (ano % 100 != 0)) || ((ano % 100 == 0) && (ano % 400 == 0))) {
         return 1;
     }
     return 0;
@@ -12,7 +14,7 @@ int numeroDiasMes(int mes, int ano) {
         || (mes == 10) || (mes == 12)) {
             return 31;
     }else {
-        if ((mes == 4) || (mes == 6) || (mes == 9) || (mes == 11) || (mes == 8)) {
+        if ((mes == 4) || (mes == 6) || (mes == 9) || (mes == 11)) {
             return 30;
         }else {
             if (verificaBissexto(ano)) {
@@ -26,9 +28,9 @@ int numeroDiasMes(int mes, int ano) {
 
 int verificaDataValida(int dia, int mes, int ano) {
     if (ano >= 0) {
-        if ((mes >=1) && (mes <= 12)) {
+        if ((mes >= 1) && (mes <= 12)) {
             // A funcao "numeroDiasMes()" coletara o mes e verificara quantos dias o referido mes tem; 
-            if ((dia >= 1) && (numeroDiasMes(mes, ano) <= dia)) {
+            if ((dia >= 1) && (dia <= numeroDiasMes(mes, ano))) {
                 return 1;
             }
         }
@@ -78,14 +80,9 @@ void imprimeMesExtenso(int mes) {
 }
 
 void imprimeDataExtenso(int dia, int mes, int ano) {
-    if (verificaDataValida(dia, mes, ano)) {
-        printf("%02d de ", dia);
-        imprimeMesextenso(mes);
-        printf(" de %04d", ano);
-    }else {
-        printf("primeira e/ou segunda data(s) invalida(s)");
-        exit(1);
-    }
+    printf("%02d de ", dia);
+    imprimeMesExtenso(mes);
+    printf(" de %04d", ano);
 }
 
 int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2) {
@@ -132,22 +129,9 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
     if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 0) {
         return 0;
     }else {
-        if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 1) {
-            m = mes1;
-            for (a = ano1; a <= ano2; a++) {
-                while(1) {
-                    diferenca += calculaDiasAteMes(m, a);
-
-                    m++;
-
-                    if ((m == 13) || ((ano1 == ano2) && (m == mes2))) {
-                        break;
-                    }
-                }
-                m = 0;
-            }
-            if (dia1 > dia2) {
-                diferenca += (dia1 - dia2);
+        if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == - 1) {
+            if (dia1 < dia2) {
+                diferenca += (dia2 - dia1);
             }else {
                 /**
                  * @brief Calcula a diferenca de dias caso o dia da data que esta mais a frente seja menor que o dia da data que esta mais no atras;
@@ -156,22 +140,23 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
                  */
                 diferenca += ((calculaDiasAteMes(mes1, ano1) - dia1) + dia2);
             }
-        }else {
-            m = mes2;
-            for (a = ano2; a <= ano1; a++) {
+
+            m = mes1;
+            for (a = ano1; a <= ano2; a++) {
                 while(1) {
-                    diferenca += calculaDiasAteMes(m, a);
-
                     m++;
-
-                    if ((m == 13) || ((ano1 == ano2) && (m == mes1))) {
+                    
+                    if ((m > 12) || ((ano1 == ano2) && (m >= mes2))) {
                         break;
                     }
+
+                    diferenca += calculaDiasAteMes(m, a);
                 }
                 m = 0;
             }
-            if (dia2 > dia1) {
-                diferenca += (dia2 - dia1);
+        }else {
+            if (dia2 < dia1) {
+                diferenca += (dia1 - dia2);
             }else {
                 /**
                  * @brief Calcula a diferenca de dias caso o dia da data que esta mais a frente seja menor que o dia da data que esta mais no atras;
@@ -180,6 +165,21 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
                  */
                 diferenca += ((calculaDiasAteMes(mes2, ano2) - dia2) + dia1);
             }
+
+            m = mes2;
+            for (a = ano2; a <= ano1; a++) {
+                while(1) {
+                    m++;
+                    
+                    if ((m > 12) || ((ano1 == ano2) && (m >= mes1))) {
+                        break;
+                    }
+
+                    diferenca += calculaDiasAteMes(m, a);
+                }
+                m = 0;
+            }
         }
     }
+    return diferenca;
 }
