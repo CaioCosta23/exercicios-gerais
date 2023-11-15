@@ -25,7 +25,7 @@ void ImprimeData(int dia, int mes, int ano);
  * 
  * @param mes Mês da data;
  */
-void imprimeMesextenso(int mes);
+void imprimeMesExtenso(int mes);
 
 /**
  * @brief Imprime uma data por extenso no  formato "DD de NOME_DO_MES AAAA"
@@ -34,7 +34,7 @@ void imprimeMesextenso(int mes);
  * @param mes Mês da data;
  * @param ano Ano da data;
  */
-void imprimeExetenso(int dia, int mes, int ano);
+void imprimeExtenso(int dia, int mes, int ano);
 
 /**
  * @brief Verifica se um ano é bissexto;
