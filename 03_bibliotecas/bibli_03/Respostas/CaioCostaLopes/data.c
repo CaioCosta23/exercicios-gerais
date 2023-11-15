@@ -44,7 +44,7 @@ void imprimeMesExtenso(int mes) {
             printf("Janeiro");
             break;
         case 2:
-            printf("Fevereiro:");
+            printf("Fevereiro");
             break;
         case 3:
             printf("Marco");
@@ -82,7 +82,7 @@ void imprimeMesExtenso(int mes) {
 void imprimeDataExtenso(int dia, int mes, int ano) {
     printf("%02d de ", dia);
     imprimeMesExtenso(mes);
-    printf(" de %04d", ano);
+    printf(" de %04d\n", ano);
 }
 
 int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2) {

@@ -11,7 +11,7 @@ int main () {
     if (verificaDataValida(dia1, mes1, ano1) && verificaDataValida(dia2, mes2, ano2)) {
         printf("Primeira data: ");
         imprimeDataExtenso(dia1, mes1, ano1);
-        printf("\nSegunda data: ");
+        printf("Segunda data: ");
         imprimeDataExtenso(dia2, mes2, ano2);
     }else {
         printf("A primeira e/ou segunda data(s) invalida(s)");
@@ -19,12 +19,12 @@ int main () {
     }
 
     if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == - 1) {
-        printf("\nA primeira data eh mais antiga\n");
+        printf("A primeira data eh mais antiga\n");
     }else{
         if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 1) {
-            printf("\nA segunda data eh mais antiga\n");
+            printf("A segunda data eh mais antiga\n");
         }else{
-            printf("\nAs datas sao iguais\n");
+            printf("As datas sao iguais\n");
         }
     }
 
