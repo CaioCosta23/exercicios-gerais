@@ -182,5 +182,6 @@ void imprimeProximData(int dia, int mes, int ano) {
             ano += 1;
         }
     }
+    printf("A data seguinte eh: ");
     imprimeData(dia, mes, ano);
 }
