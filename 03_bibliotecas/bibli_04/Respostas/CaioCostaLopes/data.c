@@ -83,7 +83,7 @@ void imprimeMesExtenso(int mes) {
     }
 }
 
-void imprimeDataExtenso(int dia, int mes, int ano) {
+void imprimeExtenso(int dia, int mes, int ano) {
     printf("%02d de ", dia);
     imprimeMesExtenso(mes);
     printf(" de %04d\n", ano);
