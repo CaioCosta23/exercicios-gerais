@@ -10,9 +10,12 @@ int main () {
     // scanf("%d/%d/%d", &dia2, &mes2, &ano2);
 
     if(verificaDataValida(dia1, mes1, ano1)) {
-        printf("Data informada: ", dia1, mes1, ano1);
+        printf("Data informada: ");
+        ImprimeDataExtenso(dia1, mes1, ano1);
         //printf("Primeira data: ", dia1, mes1, ano1);
     }else {
+        printf("A data informada eh invalida");
+        // printf("A primeira e/ou segunda data(s) invalida(s)");
         exit (1);
     }
 
