@@ -142,7 +142,7 @@ int caculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int an
                     if ((m > QTD_MESES) || ((ano1 == ano2) && (m >= mes2))) {
                         break;
                     }
-                    diferenca += calcualDiasAteMes(m, a);
+                    diferenca += calculaDiasAteMes(m, a);
                 }
                 m = 0;
             }
@@ -150,7 +150,7 @@ int caculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int an
             if (dia2 < dia1) {
                 diferenca += (dia1 - dia2);
             }else {
-                diferenca += (caculaDiasAteMes(mes2, ano2) - dia2) + dia1;
+                diferenca += (calculaDiasAteMes(mes2, ano2) - dia2) + dia1;
             }
 
             m = 0;
