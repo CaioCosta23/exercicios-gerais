@@ -11,7 +11,7 @@ int main () {
 
     if(verificaDataValida(dia1, mes1, ano1)) {
         printf("Data informada: ");
-        ImprimeDataExtenso(dia1, mes1, ano1);
+        imprimeExtenso(dia1, mes1, ano1);
         //printf("Primeira data: ", dia1, mes1, ano1);
     }else {
         printf("A data informada eh invalida");
