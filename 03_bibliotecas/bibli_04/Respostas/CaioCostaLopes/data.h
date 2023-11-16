@@ -67,11 +67,11 @@ int numeroDiasMes(int mes, int ano);
 int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2);
 
 /**
- * @brief Calcula o numero de dias ate o inicio de um determinado mês;
+ * @brief Calcula o número de dias até o inicio de um determinado mês;
  * 
  * @param mes Mês da data;
  * @param ano Ano da data;
- * @return int Numero de dias ate o inicio do mês;
+ * @return int Número de dias ate o início do mês;
  */
 int calculaDiasAteMes(int mes, int ano);
 
