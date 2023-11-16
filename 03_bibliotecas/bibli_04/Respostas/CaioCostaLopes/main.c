@@ -11,7 +11,7 @@ int main () {
 
     if(verificaDataValida(dia1, mes1, ano1)) {
         printf("Data informada: ");
-        imprimeExtenso(dia1, mes1, ano1);
+        imprimeDataExtenso(dia1, mes1, ano1);
         //printf("Primeira data: ", dia1, mes1, ano1);
     }else {
         printf("A data informada eh invalida");
@@ -25,8 +25,9 @@ int main () {
         printf("O ano informado nao eh bissexto\n");
     }
 
-    printf("O mes informado possui %d", numeroDiasMes(mes1, ano1));
-
+    printf("O mes informado possui %d dias\n", numeroDiasMes(mes1, ano1));
+    
+    printf("A data seguinte eh: ");
     imprimeProximaData(dia1, mes1, ano1);
 
     /**

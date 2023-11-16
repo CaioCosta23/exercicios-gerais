@@ -83,7 +83,7 @@ void imprimeMesExtenso(int mes) {
     }
 }
 
-void imprimeExtenso(int dia, int mes, int ano) {
+void imprimeDataExtenso(int dia, int mes, int ano) {
     printf("%02d de ", dia);
     imprimeMesExtenso(mes);
     printf(" de %04d\n", ano);
@@ -117,7 +117,7 @@ int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2) {
     }
 }
 
-int calculaDiaAteMes(int mes, int ano) {
+int calculaDiasAteMes(int mes, int ano) {
     return numeroDiasMes(mes, ano);
 }
 
@@ -170,7 +170,7 @@ int caculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int an
     return diferenca;
 }
 
-void imprimeProximData(int dia, int mes, int ano) {
+void imprimeProximaData(int dia, int mes, int ano) {
     if ((calculaDiasAteMes(mes, ano) - dia) > 0) {
         dia += 1;
     }else {
@@ -182,6 +182,5 @@ void imprimeProximData(int dia, int mes, int ano) {
             ano += 1;
         }
     }
-    printf("A data seguinte eh: ");
     imprimeData(dia, mes, ano);
 }
