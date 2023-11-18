@@ -62,3 +62,14 @@ void string_reverse(char str[]) {
         r--;
     }
 }
+/*
+void string_reverse(char *str) {
+    int size = string_length(str) - 2;
+    
+    for (int i = 0; i < size/2; i++) {
+        char aux = str[i];
+        str[i] = str[size - 1 - i];
+        str[size - 1 - i] = aux;
+    }
+}
+*/
