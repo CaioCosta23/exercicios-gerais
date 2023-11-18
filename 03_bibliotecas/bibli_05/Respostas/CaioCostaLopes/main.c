@@ -2,16 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAMANHO_MAXIMO 100
+#define TAMANHO_MAXIMO 1000
 
 int main () {
     char str[TAMANHO_MAXIMO];
     int option;
     int finish = 0;
 
-    scanf("%99[^\n]\n", str);
-
-    char dest[string_length(str) + 1];
+    scanf("%999[^\n]\n", str);
 
     do {
 
@@ -30,6 +28,7 @@ int main () {
                 printf("\nTamanho da string: %d\n\n", string_length(str));
                 break;
             case 2:
+                char dest[TAMANHO_MAXIMO];
                 string_copy(str, dest);
                 printf("\nString copiada: %s\n\n", dest);
                 break;

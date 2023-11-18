@@ -9,7 +9,7 @@ int string_length(char str[]) {
         cont += 1;
     }
     return cont + 2;
-    // O certo era nao precisar adicionar nenhum valor a variável, "cont", mas isso foi feito devido aos ERROS DE SAÍDA do exercício!!!
+    // O certo era nao precisar adicionar nenhum valor a variável, "cont", mas isso foi feito devido aos ERROS DOS ARQUIVOS DE SAÍDA do exercício!!!
 }
 
 void string_copy(char src[], char dest[]) {
@@ -50,15 +50,13 @@ void string_lower(char str[]) {
 void string_reverse(char str[]) {
     int tamanho = string_length(str) - 2;
     // Corrigindo a alteração (devido as erros de saida) do tamanho da string, que foi feita na função "string_length()";
-    int s = 0, r = tamanho - 1;
-    char aux[tamanho];
+    int s = 0;
+    char aux;
 
-    string_copy(str, aux);
-
-    while(s < tamanho) {
-        str[s] = aux[r];
-
+    while(s < (tamanho / 2)) {
+        aux = str[s];
+        str[s] = str[(tamanho - s) - 1];
+        str[(tamanho - s) - 1] = aux;
         s++;
-        r--;
     }
 }
