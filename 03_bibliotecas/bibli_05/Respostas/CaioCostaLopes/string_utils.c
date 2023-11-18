@@ -1,12 +1,11 @@
 #include "string_utils.h"
-#include <stdio.h>
 
-int string_lenght(char str[]) {
+int string_length(char str[]) {
     int s = 0, cont = 0;
 
     while(str[s]) {
-        s++;
         cont += 1;
+        s++;
     }
     return cont;
 }
@@ -42,7 +41,6 @@ void string_lower(char str[]) {
         if ((str[s] >= 'A') && (str[s] <= 'Z')) {
             str[s] = str[s] + ('a' - 'A');
         }
-
         s++;
     }
 }
@@ -50,7 +48,7 @@ void string_lower(char str[]) {
 void string_reverse(char str[]) {
     int tamanho;
 
-    tamanho = string_lenght(str);
+    tamanho = string_length(str);
 
     char reverse[tamanho];
     int s = 0, r = tamanho - 1;

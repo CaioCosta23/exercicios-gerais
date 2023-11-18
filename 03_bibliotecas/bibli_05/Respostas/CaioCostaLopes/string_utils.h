@@ -7,7 +7,7 @@
  * @param str String para se obter o tamanho;
  * @return int Tamanho da string;
  */
-int string_lenght(char str[]);
+int string_length(char str[]);
 
 /**
  * @brief Copia uma string de origem para o destino;

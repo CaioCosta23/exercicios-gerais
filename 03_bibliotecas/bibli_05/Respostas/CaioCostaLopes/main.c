@@ -10,9 +10,9 @@ int main () {
     int option;
     int finish = 0;
 
-    scanf("%29s", str);
+    scanf("%[^\n]", str);
 
-    while(1) {
+    do {
         printf("1 - Tamanho string\n");
         printf("2 - Copiar string\n");
         printf("3 - Converter string para letras maiusculas\n");
@@ -23,27 +23,25 @@ int main () {
 
         scanf("%d", &option);
 
-        printf("\n");
-
         switch(option) {
             case 1:
-                printf("Tamanho da string: %d\n\n", string_lenght(str));
+                printf("\nTamanho da string: %d\n\n", string_length(str));
                 break;
             case 2:
                 string_copy(str, dest);
-                printf("String copiada: %s", dest);
+                printf("\nString copiada: %s\n", dest);
                 break;
             case 3:
                 string_upper(str);
-                printf("String convertida em maiusculas: %s", str);
+                printf("\nString convertida em maiusculas: %s\n", str);
                 break;
             case 4:
                 string_lower(str);
-                printf("String convertida para minusculo: %s", str);
+                printf("\nString convertida para minusculo: %s\n", str);
                 break;
             case 5:
                 string_reverse(str);
-                printf("String invertida: %s", str);
+                printf("\nString invertida: %s\n", str);
                 break;
             case 6:
                 finish = 1;
@@ -53,7 +51,7 @@ int main () {
         if (finish) {
             break;
         }
-    }
+    }while(1);
 
     return 0;
 }
