@@ -13,6 +13,7 @@ int main () {
     scanf("%[^\n]", str);
 
     do {
+
         printf("1 - Tamanho string\n");
         printf("2 - Copiar string\n");
         printf("3 - Converter string para letras maiusculas\n");
