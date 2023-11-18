@@ -1,6 +1,5 @@
 #include "string_utils.h"
 #include <stdio.h>
-#include <string.h>
 
 int string_lenght(char str[]) {
     int s = 0, cont = 0;
