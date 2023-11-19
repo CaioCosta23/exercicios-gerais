@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 float convert_celsius_to_kelvin(float temperature) {
+
     return temperature + 273.15;
 }
 
