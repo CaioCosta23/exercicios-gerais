@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogo.h"
-#include "jogada.h"
 
 
 tJogo CriaJogo() {
@@ -23,21 +22,15 @@ int AcabouJogo(tJogo jogo) {
 
 void ComecaJogo(tJogo jogo) {
     tJogo jogo;
-    tJogada jogada;
     int j = 0;
 
     jogo = CriaJogo();
 
     do {
-
-        jogada = LeJogada();
-
-        if (EhPosicaoValidaTabuleiro(jogada.x, jogada.y)) {
-            if (j % 2 == 0) {
-                jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);    
-            }else {
-                jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
-            }
+        if (j % 2 == 0) {
+            jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);    
+        }else {
+            jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
         }
 
         j++;
