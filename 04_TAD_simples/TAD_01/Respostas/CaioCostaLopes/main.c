@@ -5,7 +5,9 @@
 int main() {
     tJogo jogo;
 
-    ComecaJogo(jogo);
+    do {
+        ComecaJogo(jogo);
+    }while (ContinuaJogo());
 
     return 0;
 }
