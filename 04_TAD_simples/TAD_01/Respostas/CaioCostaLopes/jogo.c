@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogo.h"
-#include "tabuleiro.h"
-#include "jogador.h"
 #include "jogada.h"
 
 
@@ -14,41 +12,51 @@ tJogo CriaJogo() {
     jogo.jogador2 = CriaJogador(JOGADOR_2);
 
     return jogo;
+}
 
+int AcabouJogo(tJogo jogo) {
+    if(TemPosicaiLivreTabuleiro(jogo.tabuleiro)) {
+        return 1;
+    }
+    return 0;
 }
 
 void ComecaJogo(tJogo jogo) {
     tJogo jogo;
     tJogada jogada;
     int j = 0;
-    char peca;
 
     jogo = CriaJogo();
 
     do {
-        if (j % 2 == 0) {
-            peca = PECA_1;
-        }else {
-            peca = PECA_2;
-        }
 
         jogada = LeJogada();
 
         if (EhPosicaoValidaTabuleiro(jogada.x, jogada.y)) {
-            if (!(EstaMarcadaPosicaoPecaTabuleiro(jogo.tabuleiro, jogada.x, jogada.y, peca))) {
-                if (EstaLivrePosicaoTabuleiro(jogo.tabuleiro, jogada.x, jogada.y)) {
-                    jogo.tabuleiro = MarcaPosicaoTabuleiro(jogo.tabuleiro, peca, jogada.x, jogada.y);
-                }else {
-                    printf("Posicao invalida (OCUPADA - [%d, %d]!)", jogada.x, jogada.y);
-                }
+            if (j % 2 == 0) {
+                jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);    
             }else {
-                printf("Posicao invalida (OCUPADA - [%d, %d]!)", jogada.x, jogada.y);
+                jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
             }
-        }else {
-            printf("Posicao invalida (FORA DO TABULEIRO - [%d, %d]!)", jogada.x, jogada.y);
         }
 
         j++;
 
-    }while(AcabouJogo(jogo));
+    }while(!(AcabouJogo(jogo)));
+}
+
+int ContinuaJogo() {
+    char opcao;
+
+    do{
+        scanf("%*[^%c]%c", &opcao);
+
+        if (opcao == 's') {
+            return 1;
+        }else {
+            if (opcao == 'n') {
+                return 0;
+            }
+        }
+    }while((opcao != 's') && (opcao != 'n'));
 }
