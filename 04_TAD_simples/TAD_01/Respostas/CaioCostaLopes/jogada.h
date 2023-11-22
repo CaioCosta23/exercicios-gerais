@@ -37,6 +37,6 @@ int ObtemJogadaY(tJogada jogada);
  * @param jogada Jogada Realizada;
  * @return int 1 se a jogada foi bem sucedida e 0, caso contrário;
  */
-int FoiJogadaBemSucessedida(tJogada, jogada);
+int FoiJogadaBemSucessedida(tJogada jogada);
 
 #endif
