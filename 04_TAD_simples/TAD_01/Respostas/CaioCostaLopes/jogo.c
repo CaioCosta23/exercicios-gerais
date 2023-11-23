@@ -21,7 +21,6 @@ int AcabouJogo(tJogo jogo) {
 }
 
 void ComecaJogo(tJogo jogo) {
-    tJogo jogo;
     int j = 0;
 
     jogo = CriaJogo();
