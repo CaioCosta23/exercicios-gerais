@@ -7,6 +7,8 @@ tJogada LeJogada() {
 
     scanf("%d %d", &jogada.x, &jogada.y);
 
+    jogada.sucesso = 0;
+
     return jogada;
 }
 
@@ -19,5 +21,7 @@ int ObtemJogadaY(tJogada jogada) {
 }
 
 int FoiJogadaBemSucedida (tJogada jogada) {
+    jogada.sucesso = 1;
+
     return jogada.sucesso;
 }
