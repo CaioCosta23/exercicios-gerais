@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogada.h"
+#include "tabuleiro.h"
 
 tJogada LeJogada() {
     tJogada jogada;
@@ -21,5 +22,5 @@ int ObtemJogadaY(tJogada jogada) {
 }
 
 int FoiJogadaBemSucedida (tJogada jogada) {
-    return (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)));
+    return EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada));
 }
