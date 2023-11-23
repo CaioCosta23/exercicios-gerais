@@ -42,7 +42,7 @@ int ContinuaJogo() {
     char opcao;
 
     do{
-        scanf("%*[^%c]%c", &opcao);
+        scanf("%*[^\n]\n%c", &opcao);
 
         if (opcao == 's') {
             return 1;
