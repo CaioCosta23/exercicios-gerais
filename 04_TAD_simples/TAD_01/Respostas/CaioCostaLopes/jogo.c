@@ -14,7 +14,7 @@ tJogo CriaJogo() {
 }
 
 int AcabouJogo(tJogo jogo) {
-    if(TemPosicaiLivreTabuleiro(jogo.tabuleiro)) {
+    if(TemPosicaoLivreTabuleiro(jogo.tabuleiro)) {
         return 1;
     }
     return 0;
