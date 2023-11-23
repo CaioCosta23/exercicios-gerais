@@ -16,6 +16,9 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
     int x, y;
 
     while (1) {
+        printf("Jogador %d\n", jogador.id);
+        printf("Digite uma posicao (x e y):\n");
+
         jogada = LeJogada();
 
         x = ObtemJogadaX(jogada);
@@ -24,6 +27,7 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
         if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, x, y, jogador.id))) {
             if (EstaLivrePosicaoTabuleiro(tabuleiro, x, y)) {
                 if (FoiJogadaBemSucedida(jogada)) {
+                    jogada.sucesso = 1;
                     tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, x, y);
                     ImprimeTabuleiro(tabuleiro);
                     break;
@@ -37,4 +41,5 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
             printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", jogada.x, jogada.y);
         }
     }
+    return tabuleiro;
 }
