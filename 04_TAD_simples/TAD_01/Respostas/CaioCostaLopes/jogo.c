@@ -27,10 +27,8 @@ void ComecaJogo(tJogo jogo) {
 
     do {
         if (j % 2 == 0) {
-            printf("Jogador %d\n", JOGADOR_1);
             jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);    
         }else {
-            printf("Jogador %d\n", JOGADOR_2);
             jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
         }
 
