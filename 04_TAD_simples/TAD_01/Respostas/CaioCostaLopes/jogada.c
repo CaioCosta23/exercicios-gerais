@@ -21,7 +21,5 @@ int ObtemJogadaY(tJogada jogada) {
 }
 
 int FoiJogadaBemSucedida (tJogada jogada) {
-    jogada.sucesso = 1;
-
-    return jogada.sucesso;
+    return (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)));
 }

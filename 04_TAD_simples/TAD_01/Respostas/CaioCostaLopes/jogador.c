@@ -15,23 +15,26 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
     tJogada jogada;
     int x, y;
 
-    do {
+    while (1) {
         jogada = LeJogada();
 
         x = ObtemJogadaX(jogada);
         y = ObtemJogadaY(jogada);
         
-        if (EhPosicaoValidaTabuleiro(x, y)) {
-            if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, x, y, jogador.id))) {
-                if (EstaLivrePosicaoTabuleiro(tabuleiro, x, y)) {
+        if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, x, y, jogador.id))) {
+            if (EstaLivrePosicaoTabuleiro(tabuleiro, x, y)) {
+                if (FoiJogadaBemSucedida(jogada)) {
                     tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, x, y);
                     ImprimeTabuleiro(tabuleiro);
+                    break;
                 }else {
-                    printf("Posicao invalida (OCUPADA - [%d, %d]!)", jogada.x, jogada.y);
+                    printf("Posicao invalida (FORA DO TABULEIRO - [%d, %d]!)\n", jogada.x, jogada.y);
                 }
             }else {
-                printf("Posicao invalida (OCUPADA - [%d, %d]!)", jogada.x, jogada.y);
+                printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", jogada.x, jogada.y);
             }
+        }else {
+            printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", jogada.x, jogada.y);
         }
-    }while(!(FoiJogadaBemSucedida(jogada)));
+    }
 }
