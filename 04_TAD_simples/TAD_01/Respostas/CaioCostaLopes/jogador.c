@@ -25,6 +25,7 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
             if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, x, y, jogador.id))) {
                 if (EstaLivrePosicaoTabuleiro(tabuleiro, x, y)) {
                     tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, x, y);
+                    ImprimeTabuleiro(tabuleiro);
                 }else {
                     printf("Posicao invalida (OCUPADA - [%d, %d]!)", jogada.x, jogada.y);
                 }
