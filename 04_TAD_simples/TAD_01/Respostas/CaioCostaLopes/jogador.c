@@ -32,5 +32,5 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
                 printf("Posicao invalida (OCUPADA - [%d, %d]!)", jogada.x, jogada.y);
             }
         }
-    }while(!(FoiJogadaBemSucesdida(jogada)));
+    }while(!(FoiJogadaBemSucedida(jogada)));
 }
