@@ -60,7 +60,7 @@ void ImprimeTabuleiro(tTabuleiro tabuleiro) {
             if (tabuleiro.posicoes[l][c] == tabuleiro.peca1) {
                 printf("X");
             }else {
-                if (tabuleiro.posicoes[l][c] == tabuleiro.peca1) {
+                if (tabuleiro.posicoes[l][c] == tabuleiro.peca2) {
                     printf("0");
                 }else {
                     printf("-");
