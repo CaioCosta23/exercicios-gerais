@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "jogo.h"
-#include "jogada.h"
+#include <stdlib.h>
+#include "tabuleiro.h"
 
 #define VAZIO -1
 
