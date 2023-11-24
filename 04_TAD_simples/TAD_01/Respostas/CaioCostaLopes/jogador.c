@@ -43,3 +43,31 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
     }
     return tabuleiro;
 }
+
+int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro) {
+    int l, c, d;
+    int horizontal, vertical, diagonal;
+
+    for (l = 0; l < TAM_TABULEIRO; l++) {
+        horizontal = 0;
+        vertical = 0;
+        for (c = 0; c < TAM_TABULEIRO; c++) {
+            if (tabuleiro.posicoes[l][c] == jogador.id) {
+                horizontal += 1;
+            }
+            if (tabuleiro.posicoes[c][l] == jogador.id) {
+                vertical += 1;
+            }
+        }
+        if ((horizontal == 3) || (vertical == 3)) {
+            return 1;
+        }
+    }
+
+    for (d = 0; d < TAM_TABULEIRO; d++) {
+        if (tabuleiro.posicoes[d][d] == jogador.id) {
+            return 1;
+        }
+    }
+    return 0;
+}
