@@ -29,24 +29,26 @@ void ComecaJogo(tJogo jogo) {
         if ((j % 2) != 0) {
             jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador1, jogo.tabuleiro)) {
-                printf("Jogador %d venceu!", JOGADOR_1);
+                printf("Jogador %d venceu!\n", JOGADOR_1);
                 break;
             }
         }else {
             jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
-            if (VenceuJogador(jogo.jogador1, jogo.tabuleiro)) {
-                printf("Jogador %d venceu!", JOGADOR_1);
+            if (VenceuJogador(jogo.jogador2, jogo.tabuleiro)) {
+                printf("Jogador %d venceu!\n", JOGADOR_2);
                 break;
             }
         }
         j++;
 
     }while(!(AcabouJogo(jogo)));
+    printf("\n\nSAIU!!!\n\n");
 }
 
 int ContinuaJogo() {
     char opcao;
 
+    printf("Jogar novamente? (s,n) ");
     scanf("%*[^\n]\n%c", &opcao);
 
     if (opcao == 's') {
