@@ -51,16 +51,24 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro) {
 
     for (l = 0; l < TAM_TABULEIRO; l++) {
         horizontal = 0;
-        vertical = 0;
         for (c = 0; c < TAM_TABULEIRO; c++) {
             if (tabuleiro.posicoes[l][c] == jogador.id) {
                 horizontal += 1;
             }
-            if (tabuleiro.posicoes[c][l] == jogador.id) {
+        }
+        if (horizontal == 3) {
+            return 1;
+        }
+    }
+
+    for (c = 0; c < TAM_TABULEIRO; c++) {
+        vertical = 0;
+        for (l = 0; l < TAM_TABULEIRO; l++) {
+            if (tabuleiro.posicoes[l][c] == jogador.id) {
                 vertical += 1;
             }
         }
-        if ((horizontal == 3) || (vertical == 3)) {
+        if (vertical == 3) {
             return 1;
         }
     }
@@ -68,7 +76,9 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro) {
     diagonal = 0;
 
     for (d = 0; d < TAM_TABULEIRO; d++) {
-        if (tabuleiro.posicoes[d][d] == jogador.id) {
+        if ((tabuleiro.posicoes[d][d] == jogador.id) || (tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == jogador.id)
+         || (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == jogador.id)) {
+            // Verifica as extremidades diagonais do jogo, para ver se o jogador formou uma sequencia em uma das diagonais;
             diagonal += 1;
         }
     }
