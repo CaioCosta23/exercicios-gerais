@@ -50,15 +50,13 @@ void ComecaJogo(tJogo jogo) {
 int ContinuaJogo() {
     char opcao;
 
-    do{
-        scanf("%*[^\n]\n%c", &opcao);
+    scanf("%*[^\n]\n%c", &opcao);
 
-        if (opcao == 's') {
-            return 1;
-        }else {
-            if (opcao == 'n') {
-                return 0;
-            }
+    if (opcao == 's') {
+        return 1;
+    }else {
+        if (opcao == 'n') {
+            return 0;
         }
-    }while((opcao != 's') && (opcao != 'n'));
+    }
 }
