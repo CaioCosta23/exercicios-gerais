@@ -42,14 +42,15 @@ void ComecaJogo(tJogo jogo) {
         j++;
 
     }while(!(AcabouJogo(jogo)));
-    printf("\n\nSAIU!!!\n\n");
 }
 
 int ContinuaJogo() {
     char opcao;
 
     printf("Jogar novamente? (s,n) ");
-    scanf("%*[^\n]\n%c", &opcao);
+    scanf("%*[^\n]");
+    scanf("%*c");
+    scanf("%c", &opcao);
 
     if (opcao == 's') {
         return 1;
