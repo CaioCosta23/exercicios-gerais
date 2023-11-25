@@ -7,7 +7,7 @@ int main() {
 
     do {
         ComecaJogo(jogo);
-    }while (ContinuaJogo());
+    }while (ContinuaJogo() == 1);
 
     return 0;
 }
