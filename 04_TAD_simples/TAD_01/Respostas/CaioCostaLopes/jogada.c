@@ -8,7 +8,7 @@
 tJogada LeJogada() {
     tJogada jogada;
 
-    scanf("%d %d", &jogada.x, &jogada.y);
+    scanf("%d %d", &jogada.y, &jogada.x);
 
     jogada.sucesso = 0;
 
