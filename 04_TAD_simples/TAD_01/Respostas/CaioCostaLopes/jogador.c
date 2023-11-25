@@ -46,44 +46,44 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
 }
 
 int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro) {
-    int l, c, d;
-    int horizontal, vertical, diagonal;
+    int l, lin, c, col, d;
+    int horizontal, vertical, primeDiagonal;
 
-    for (l = 0; l < TAM_TABULEIRO; l++) {
+    for (l = 0, col = 0; l < TAM_TABULEIRO, col < TAM_TABULEIRO; l++, col++) {
         horizontal = 0;
-        for (c = 0; c < TAM_TABULEIRO; c++) {
+        vertical = 0;
+        for (c = 0, lin = 0; c < TAM_TABULEIRO, lin < TAM_TABULEIRO; c++, lin++) {
             if (tabuleiro.posicoes[l][c] == jogador.id) {
                 horizontal += 1;
             }
-        }
-        if (horizontal == 3) {
-            return 1;
-        }
-    }
-
-    for (c = 0; c < TAM_TABULEIRO; c++) {
-        vertical = 0;
-        for (l = 0; l < TAM_TABULEIRO; l++) {
-            if (tabuleiro.posicoes[l][c] == jogador.id) {
+            if (tabuleiro.posicoes[lin][col] == jogador.id) {
                 vertical += 1;
             }
         }
-        if (vertical == 3) {
+        if ((horizontal == 3) || (vertical == 3)) {
             return 1;
         }
     }
 
-    diagonal = 0;
+    primeDiagonal = 0;
 
     for (d = 0; d < TAM_TABULEIRO; d++) {
-        if ((tabuleiro.posicoes[d][d] == jogador.id) || (tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == jogador.id)
-         || (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == jogador.id)) {
-            // Verifica as extremidades diagonais do jogo, para ver se o jogador formou uma sequencia em uma das diagonais;
-            diagonal += 1;
+        //Diagonal onde os elementos que formam a diagonal tem tanto o índice da linha quanto da coluna tendo o mesmo valor;
+        if ((tabuleiro.posicoes[d][d] == jogador.id)) {
+            primeDiagonal += 1;
         }
     }
-    if (diagonal == 3) {
+    // Verifica se o jogador venceu na diagonal "secundária" (diagonal onde os indíces da linha e da coluna não tem o mesmo valor);
+    if ((tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO / 2][TAM_TABULEIRO / 2] == jogador.id)
+        && (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == jogador.id)) {
         return 1;
+    }
+
+    if (primeDiagonal == 3) {
+        return 1;
+        /* Verifica as extremidades diagonais do jogo, para ver se o jogador formou uma sequencia na dioganal primária
+         *(onde os índices de linha e coluna são os mesmos - "primeDiagonal");
+        */
     }
     return 0;
 }
