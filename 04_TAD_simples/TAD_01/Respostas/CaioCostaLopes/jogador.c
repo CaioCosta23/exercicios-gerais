@@ -29,6 +29,7 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
             if (EstaLivrePosicaoTabuleiro(tabuleiro, x, y)) {
                 if (FoiJogadaBemSucedida(jogada)) {
                     jogada.sucesso = 1;
+                    printf("Jogada [%d,%d]!"), x, y;
                     tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, x, y);
                     ImprimeTabuleiro(tabuleiro);
                     break;
