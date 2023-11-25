@@ -50,9 +50,12 @@ int ContinuaJogo() {
     char opcao;
 
     printf("Jogar novamente? (s,n) ");
+
     scanf("%*[^\n]");
     scanf("%*c");
     scanf("%c", &opcao);
+
+    printf("\n");
 
     if (opcao == 's') {
         return 1;
