@@ -3,6 +3,7 @@
 #include "jogador.h"
 #include "jogada.h"
 #include "tabuleiro.h"
+#include "jogo.h"
 
 tJogador CriaJogador(int id_Jogador) {
     tJogador jogador;

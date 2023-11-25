@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "jogador.h"
+#include "jogada.h"
+#include "tabuleiro.h"
 #include "jogo.h"
-
 
 tJogo CriaJogo() {
     tJogo jogo;
 
     jogo.tabuleiro = CriaTabuleiro();
-    jogo.jogador1 = CriaJogador(JOGADOR_1);
-    jogo.jogador2 = CriaJogador(JOGADOR_2);
+    jogo.jogador1 = CriaJogador(PECA_1);
+    jogo.jogador2 = CriaJogador(PECA_2);
 
     return jogo;
 }
@@ -29,13 +31,13 @@ void ComecaJogo(tJogo jogo) {
         if ((j % 2) != 0) {
             jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador1, jogo.tabuleiro)) {
-                printf("Jogador %d venceu!\n", JOGADOR_1);
+                printf("Jogador %d venceu!\n", PECA_1);
                 break;
             }
         }else {
             jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador2, jogo.tabuleiro)) {
-                printf("Jogador %d venceu!\n", JOGADOR_2);
+                printf("Jogador %d venceu!\n", PECA_2);
                 break;
             }
         }
