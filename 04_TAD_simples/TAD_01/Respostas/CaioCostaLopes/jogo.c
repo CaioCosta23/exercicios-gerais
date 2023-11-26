@@ -37,7 +37,7 @@ void ComecaJogo(tJogo jogo)
             ImprimeTabuleiro(jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador1, jogo.tabuleiro))
             {
-                printf("Jogador %d venceu!\n", PECA_1);
+                printf("JOGADOR %d Venceu!\n", PECA_1);
                 break;
             }
         }
@@ -47,7 +47,7 @@ void ComecaJogo(tJogo jogo)
             ImprimeTabuleiro(jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador2, jogo.tabuleiro))
             {
-                printf("Jogador %d venceu!\n", PECA_2);
+                printf("JOGADOR %d Venceu!\n", PECA_2);
                 break;
             }
         }
