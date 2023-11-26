@@ -21,26 +21,39 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro)
     while (1)
     {
         printf("Jogador %d\n", jogador.id);
-        printf("Digite uma posicao (x e y):\n");
 
         jogada = LeJogada();
 
-        if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), jogador.id)))
+        if (!(FoiJogadaBemSucedida(jogada)))
         {
-            if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
-            {
-                printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-                tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-                break;
-            }
-            else
-            {
-                printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-            }
+            scanf("%*[^\n]\n");
         }
         else
         {
-            printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+            if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
+            {
+                if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), jogador.id)))
+                {
+                    if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
+                    {
+                        printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                        tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                        break;
+                    }
+                    else
+                    {
+                        printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                    }
+                }
+                else
+                {
+                    printf("Posicao invalida (OCUPADA - [%d, %d]!)\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                }
+            }
+            else
+            {
+                printf("Posicao invalida (FORA DO TABULEIRO - [%d, %d]!)\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+            }
         }
     }
     return tabuleiro;
