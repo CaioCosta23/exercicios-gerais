@@ -5,12 +5,16 @@
 #include "tabuleiro.h"
 #include "jogo.h"
 
-int main() {
+int main()
+{
     tJogo jogo;
 
-    do {
+    do
+    {
+        jogo = CriaJogo();
         ComecaJogo(jogo);
-    }while (ContinuaJogo() == 1);
+
+    } while (ContinuaJogo() == 1);
 
     return 0;
 }

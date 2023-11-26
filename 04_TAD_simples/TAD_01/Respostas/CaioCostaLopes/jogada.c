@@ -1,28 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "jogador.h"
 #include "jogada.h"
 #include "tabuleiro.h"
-#include "jogo.h"
 
-tJogada LeJogada() {
+tJogada LeJogada()
+{
     tJogada jogada;
 
-    scanf("%d %d", &jogada.y, &jogada.x);
+    scanf("%d %d", &jogada.x, &jogada.y);
 
     jogada.sucesso = 0;
 
     return jogada;
 }
 
-int ObtemJogadaX(tJogada jogada) {
+int ObtemJogadaX(tJogada jogada)
+{
     return jogada.x;
 }
 
-int ObtemJogadaY(tJogada jogada) {
+int ObtemJogadaY(tJogada jogada)
+{
     return jogada.y;
 }
 
-int FoiJogadaBemSucedida (tJogada jogada) {
+int FoiJogadaBemSucedida(tJogada jogada)
+{
     return EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada));
 }
