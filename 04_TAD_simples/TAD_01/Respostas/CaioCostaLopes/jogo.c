@@ -34,6 +34,7 @@ void ComecaJogo(tJogo jogo)
         if ((j % 2) != 0)
         {
             jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
+            ImprimeTabuleiro(jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador1, jogo.tabuleiro))
             {
                 printf("Jogador %d venceu!\n", PECA_1);
@@ -43,6 +44,7 @@ void ComecaJogo(tJogo jogo)
         else
         {
             jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
+            ImprimeTabuleiro(jogo.tabuleiro);
             if (VenceuJogador(jogo.jogador2, jogo.tabuleiro))
             {
                 printf("Jogador %d venceu!\n", PECA_2);

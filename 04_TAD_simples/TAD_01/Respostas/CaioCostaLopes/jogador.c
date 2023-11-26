@@ -29,18 +29,9 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro)
         {
             if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
             {
-                if (FoiJogadaBemSucedida(jogada))
-                {
-                    jogada.sucesso = 1;
-                    printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-                    tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-                    ImprimeTabuleiro(tabuleiro);
-                    break;
-                }
-                else
-                {
-                    printf("Posicao invalida (FORA DO TABULEIRO - [%d, %d]!)\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-                }
+                printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                break;
             }
             else
             {

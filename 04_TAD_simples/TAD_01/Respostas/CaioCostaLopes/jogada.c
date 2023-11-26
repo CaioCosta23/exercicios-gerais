@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogada.h"
+#include "jogador.h"
 #include "tabuleiro.h"
 
 tJogada LeJogada()
@@ -9,7 +10,14 @@ tJogada LeJogada()
 
     scanf("%d %d", &jogada.x, &jogada.y);
 
-    jogada.sucesso = 0;
+    if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
+    {
+        jogada.sucesso = 1;
+    }
+    else
+    {
+        jogada.sucesso = 0;
+    }
 
     return jogada;
 }
@@ -26,5 +34,5 @@ int ObtemJogadaY(tJogada jogada)
 
 int FoiJogadaBemSucedida(tJogada jogada)
 {
-    return EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+    return jogada.sucesso;
 }

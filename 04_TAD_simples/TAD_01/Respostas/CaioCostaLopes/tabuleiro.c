@@ -46,7 +46,7 @@ int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro)
 
 int EhPosicaoValidaTabuleiro(int x, int y)
 {
-    return (((x >= 0) && (x <= 2)) && ((y >= 0) && (y <= 2)));
+    return (((x >= 0) && (x < TAM_TABULEIRO)) && ((y >= 0) && (y < TAM_TABULEIRO)));
 }
 
 int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca)
