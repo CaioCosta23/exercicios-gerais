@@ -68,7 +68,6 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
     {
         horizontal = 0;
         vertical = 0;
-        primeDiagonal = 0;
         for (c = 0; c < TAM_TABULEIRO; c++)
         {
             if (tabuleiro.posicoes[l][c] == jogador.id)
@@ -79,11 +78,6 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
             {
                 vertical += 1;
             }
-            // Diagonal onde os elementos que formam a diagonal tem tanto o índice da linha quanto da coluna tendo o mesmo valor;
-            if ((tabuleiro.posicoes[c][c] == jogador.id))
-            {
-                primeDiagonal += 1;
-            }
         }
         if ((horizontal == 3) || (vertical) == 3)
         {
@@ -91,10 +85,14 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
         }
     }
 
-    // Verifica se o jogador venceu na diagonal "secundária" (diagonal onde os indíces da linha e da coluna não tem o mesmo valor);
-    if ((tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO / 2][TAM_TABULEIRO / 2] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == jogador.id))
-    {
-        return 1;
+    primeDiagonal = 0;
+    
+    for (d = 0; d < TAM_TABULEIRO; d++) {
+        // Diagonal onde os elementos que formam a diagonal tem tanto o índice da linha quanto da coluna tendo o mesmo valor;
+        if ((tabuleiro.posicoes[c][c] == jogador.id))
+        {
+            primeDiagonal += 1;
+        }
     }
 
     if (primeDiagonal == 3)
@@ -104,5 +102,12 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
          *(onde os índices de linha e coluna são os mesmos - "primeDiagonal");
          */
     }
+
+    // Verifica se o jogador venceu na diagonal "secundária" (diagonal onde os indíces da linha e da coluna não tem o mesmo valor);
+    if ((tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO / 2][TAM_TABULEIRO / 2] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == jogador.id))
+    {
+        return 1;
+    }
+
     return 0;
 }
