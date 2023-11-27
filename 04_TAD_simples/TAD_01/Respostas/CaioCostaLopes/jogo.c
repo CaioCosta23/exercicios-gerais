@@ -28,20 +28,19 @@ int AcabouJogo(tJogo jogo)
 
 void ComecaJogo(tJogo jogo)
 {
-
     while (1)
     {
         jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
         ImprimeTabuleiro(jogo.tabuleiro);
         if (VenceuJogador(jogo.jogador1, jogo.tabuleiro))
         {
-            printf("JOGADOR %d Venceu!", PECA_1);
+            printf("JOGADOR %d Venceu!\n", PECA_1);
             break;
         }
 
         if (AcabouJogo(jogo))
         {
-            printf("Sem vencedor!");
+            printf("Sem vencedor!\n");
             break;
         }
 
@@ -49,16 +48,15 @@ void ComecaJogo(tJogo jogo)
         ImprimeTabuleiro(jogo.tabuleiro);
         if (VenceuJogador(jogo.jogador2, jogo.tabuleiro))
         {
-            printf("JOGADOR %d Venceu!", PECA_2);
+            printf("JOGADOR %d Venceu!\n", PECA_2);
             break;
         }
 
         if (AcabouJogo(jogo))
         {
-            printf("Sem vencedor!");
+            printf("Sem vencedor!\n");
             break;
         }
-
     }
 }
 
@@ -82,5 +80,5 @@ int ContinuaJogo()
     {
         return 0;
     }
-    return -1;
+
 }
