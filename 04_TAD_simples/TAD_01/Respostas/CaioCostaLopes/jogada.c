@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogada.h"
-#include "jogador.h"
-#include "tabuleiro.h"
+
 
 tJogada LeJogada()
 {
     tJogada jogada;
+
     printf("Digite uma posicao (x e y):\n");
+    
     if (scanf("%d %d", &jogada.x, &jogada.y) == 2)
     {
         jogada.sucesso = 1;
