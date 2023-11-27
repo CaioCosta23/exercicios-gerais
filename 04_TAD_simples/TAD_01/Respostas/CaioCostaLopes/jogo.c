@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "tabuleiro.h"
 #include "jogo.h"
+#include "jogada.h"
+#include "jogador.h"
+#include "tabuleiro.h"
 
 tJogo CriaJogo()
 {
@@ -25,38 +28,37 @@ int AcabouJogo(tJogo jogo)
 
 void ComecaJogo(tJogo jogo)
 {
-    int j = 1;
 
     while (1)
     {
-        if ((j % 2) != 0)
+        jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
+        ImprimeTabuleiro(jogo.tabuleiro);
+        if (VenceuJogador(jogo.jogador1, jogo.tabuleiro))
         {
-            jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
-            ImprimeTabuleiro(jogo.tabuleiro);
-            if (VenceuJogador(jogo.jogador1, jogo.tabuleiro))
-            {
-                printf("JOGADOR %d Venceu!\n", PECA_1);
-                break;
-            }
-        }
-        else
-        {
-            jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
-            ImprimeTabuleiro(jogo.tabuleiro);
-            if (VenceuJogador(jogo.jogador2, jogo.tabuleiro))
-            {
-                printf("JOGADOR %d Venceu!\n", PECA_2);
-                break;
-            }
+            printf("JOGADOR %d Venceu!", PECA_1);
+            break;
         }
 
         if (AcabouJogo(jogo))
         {
-            printf("Sem vencedor!\n");
+            printf("Sem vencedor!");
             break;
         }
 
-        j++;
+        jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
+        ImprimeTabuleiro(jogo.tabuleiro);
+        if (VenceuJogador(jogo.jogador2, jogo.tabuleiro))
+        {
+            printf("JOGADOR %d Venceu!", PECA_2);
+            break;
+        }
+
+        if (AcabouJogo(jogo))
+        {
+            printf("Sem vencedor!");
+            break;
+        }
+
     }
 }
 
