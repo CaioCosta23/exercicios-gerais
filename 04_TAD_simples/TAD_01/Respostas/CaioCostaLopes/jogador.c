@@ -20,16 +20,15 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro)
     while (1)
     {
         printf("Jogador %d\n", jogador.id);
-
-        do {
-            jogada = LeJogada();
-        }while (!(FoiJogadaBemSucedida(jogada)));
-        //if (!(FoiJogadaBemSucedida(jogada)))
-        //{
-            //scanf("%*[^\n]\n");
-        //}
-        //else
-        //{
+            
+        jogada = LeJogada();
+        
+        if (!(FoiJogadaBemSucedida(jogada)))
+        {
+            scanf("%*[^\n]\n");
+        }
+        else
+        {
             if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
             {
                 if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), jogador.id)))
@@ -54,7 +53,7 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro)
             {
                 printf("Posicao invalida (FORA DO TABULEIRO - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
             }
-        //}
+        }
     }
     return tabuleiro;
 }

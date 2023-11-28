@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogo.h"
+#include "jogador.h"
+#include "tabuleiro.h"
 
 tJogo CriaJogo()
 {
