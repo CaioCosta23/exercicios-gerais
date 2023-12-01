@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogo.h"
+#include "tabuleiro.h"
+#include "jogador.h"
+#include "jogada.h"
 
 int main()
 {

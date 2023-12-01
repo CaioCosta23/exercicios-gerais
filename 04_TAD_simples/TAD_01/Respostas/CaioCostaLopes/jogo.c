@@ -78,5 +78,4 @@ int ContinuaJogo()
     {
         return 0;
     }
-
 }

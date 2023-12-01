@@ -20,9 +20,9 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro)
     while (1)
     {
         printf("Jogador %d\n", jogador.id);
-            
+
         jogada = LeJogada();
-        
+
         if (!(FoiJogadaBemSucedida(jogada)))
         {
             scanf("%*[^\n]\n");
@@ -62,6 +62,19 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
 {
     int l, c, d;
     int horizontal, vertical, primeDiagonal;
+    char marcacao;
+
+    for (l = 0; l < TAM_TABULEIRO; l++)
+    {
+
+        for (c = 0; c < TAM_TABULEIRO; c++)
+        {
+            printf("%c", tabuleiro.posicoes[l][c]);
+        }
+        printf("\n");
+    }
+
+    marcacao = (char)(jogador.id + '0');
 
     for (l = 0; l < TAM_TABULEIRO; l++)
     {
@@ -69,11 +82,11 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
         vertical = 0;
         for (c = 0; c < TAM_TABULEIRO; c++)
         {
-            if (tabuleiro.posicoes[l][c] == jogador.id)
+            if (tabuleiro.posicoes[l][c] == marcacao)
             {
                 horizontal += 1;
             }
-            if (tabuleiro.posicoes[c][l] == jogador.id)
+            if (tabuleiro.posicoes[c][l] == marcacao)
             {
                 vertical += 1;
             }
@@ -85,10 +98,11 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
     }
 
     primeDiagonal = 0;
-    
-    for (d = 0; d < TAM_TABULEIRO; d++) {
+
+    for (d = 0; d < TAM_TABULEIRO; d++)
+    {
         // Diagonal onde os elementos que formam a diagonal tem tanto o índice da linha quanto da coluna tendo o mesmo valor;
-        if ((tabuleiro.posicoes[c][c] == jogador.id))
+        if ((tabuleiro.posicoes[d][d] == marcacao))
         {
             primeDiagonal += 1;
         }
@@ -103,7 +117,8 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
     }
 
     // Verifica se o jogador venceu na diagonal "secundária" (diagonal onde os indíces da linha e da coluna não tem o mesmo valor);
-    if ((tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO / 2][TAM_TABULEIRO / 2] == jogador.id) && (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == jogador.id))
+    if ((tabuleiro.posicoes[0][TAM_TABULEIRO - 1] == marcacao) && (tabuleiro.posicoes[TAM_TABULEIRO / 2][TAM_TABULEIRO / 2] == marcacao) &&
+        (tabuleiro.posicoes[TAM_TABULEIRO - 1][0] == marcacao))
     {
         return 1;
     }

@@ -3,9 +3,8 @@
 #include "jogador.h"
 #include "jogada.h"
 #include "tabuleiro.h"
-#include "jogo.h"
 
-#define VAZIO -1
+#define VAZIO '-'
 
 tTabuleiro CriaTabuleiro()
 {
@@ -21,8 +20,8 @@ tTabuleiro CriaTabuleiro()
             tabuleiro.posicoes[l][c] = tabuleiro.pecaVazio;
         }
     }
-    tabuleiro.peca1 = PECA_1;
-    tabuleiro.peca2 = PECA_2;
+    tabuleiro.peca1 = (char)(PECA_1 + (int)'0');
+    tabuleiro.peca2 = (char)(PECA_2 + (int)'0');
 
     return tabuleiro;
 }
@@ -51,7 +50,10 @@ int EhPosicaoValidaTabuleiro(int x, int y)
 
 int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca)
 {
-    return (tabuleiro.posicoes[y][x] == peca);
+    char marcacao;
+
+    marcacao = (char)(peca + '0');
+    return (tabuleiro.posicoes[y][x] == marcacao);
 }
 
 int EstaLivrePosicaoTabuleiro(tTabuleiro tabuleiro, int x, int y)
@@ -61,7 +63,11 @@ int EstaLivrePosicaoTabuleiro(tTabuleiro tabuleiro, int x, int y)
 
 tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y)
 {
-    tabuleiro.posicoes[y][x] = peca;
+    char marcacao;
+
+    marcacao = (char)(peca + (int)'0');
+    tabuleiro.posicoes[y][x] = marcacao;
+
     return tabuleiro;
 }
 
@@ -85,7 +91,7 @@ void ImprimeTabuleiro(tTabuleiro tabuleiro)
                 }
                 else
                 {
-                    printf("-");
+                    printf("%c", tabuleiro.pecaVazio);
                 }
             }
         }
