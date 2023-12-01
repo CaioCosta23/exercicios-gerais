@@ -13,10 +13,8 @@ tTabuleiro CriaTabuleiro()
 
     tabuleiro.pecaVazio = VAZIO;
 
-    for (l = 0; l < TAM_TABULEIRO; l++)
-    {
-        for (c = 0; c < TAM_TABULEIRO; c++)
-        {
+    for (l = 0; l < TAM_TABULEIRO; l++){
+        for (c = 0; c < TAM_TABULEIRO; c++){
             tabuleiro.posicoes[l][c] = tabuleiro.pecaVazio;
         }
     }
@@ -26,16 +24,12 @@ tTabuleiro CriaTabuleiro()
     return tabuleiro;
 }
 
-int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro)
-{
+int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro) {
     int l, c;
 
-    for (l = 0; l < TAM_TABULEIRO; l++)
-    {
-        for (c = 0; c < TAM_TABULEIRO; c++)
-        {
-            if (tabuleiro.posicoes[l][c] == tabuleiro.pecaVazio)
-            {
+    for (l = 0; l < TAM_TABULEIRO; l++){
+        for (c = 0; c < TAM_TABULEIRO; c++){
+            if (tabuleiro.posicoes[l][c] == tabuleiro.pecaVazio){
                 return 1;
             }
         }
@@ -48,36 +42,27 @@ int EhPosicaoValidaTabuleiro(int x, int y)
     return (((x >= 0) && (x < TAM_TABULEIRO)) && ((y >= 0) && (y < TAM_TABULEIRO)));
 }
 
-int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca)
-{
+int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca) {
     char marcacao;
 
-    if (peca == PECA_1)
-    {
+    if (peca == PECA_1) {
         marcacao = tabuleiro.peca1;
-    }
-    else
-    {
+    }else {
         marcacao = tabuleiro.peca2;
     }
     return (tabuleiro.posicoes[y][x] == marcacao);
 }
 
-int EstaLivrePosicaoTabuleiro(tTabuleiro tabuleiro, int x, int y)
-{
+int EstaLivrePosicaoTabuleiro(tTabuleiro tabuleiro, int x, int y) {
     return (tabuleiro.posicoes[y][x] == tabuleiro.pecaVazio);
 }
 
-tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y)
-{
+tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y) {
     char marcacao;
 
-    if (peca == PECA_1)
-    {
+    if (peca == PECA_1) {
         marcacao = tabuleiro.peca1;
-    }
-    else
-    {
+    }else {
         marcacao = tabuleiro.peca2;
     }
     tabuleiro.posicoes[y][x] = marcacao;
@@ -85,14 +70,11 @@ tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y)
     return tabuleiro;
 }
 
-void ImprimeTabuleiro(tTabuleiro tabuleiro)
-{
+void ImprimeTabuleiro(tTabuleiro tabuleiro) {
     int l, c;
 
-    for (l = 0; l < TAM_TABULEIRO; l++)
-    {
-        for (c = 0; c < TAM_TABULEIRO; c++)
-        {
+    for (l = 0; l < TAM_TABULEIRO; l++) {
+        for (c = 0; c < TAM_TABULEIRO; c++) {
             printf("%c", tabuleiro.posicoes[l][c]);
         }
         printf("\n");

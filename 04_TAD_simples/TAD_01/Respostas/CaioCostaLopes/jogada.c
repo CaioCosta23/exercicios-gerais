@@ -3,35 +3,27 @@
 #include "jogada.h"
 
 
-tJogada LeJogada()
-{
+tJogada LeJogada() {
     tJogada jogada;
 
     printf("Digite uma posicao (x e y):\n");
     
-    if (scanf("%d %d", &jogada.x, &jogada.y) == 2)
-    {
+    if (scanf("%d %d", &jogada.x, &jogada.y) == 2) {
         jogada.sucesso = 1;
-    }
-    else
-    {
+    }else {
         jogada.sucesso = 0;
     }
-
     return jogada;
 }
 
-int ObtemJogadaX(tJogada jogada)
-{
+int ObtemJogadaX(tJogada jogada) {
     return jogada.x;
 }
 
-int ObtemJogadaY(tJogada jogada)
-{
+int ObtemJogadaY(tJogada jogada) {
     return jogada.y;
 }
 
-int FoiJogadaBemSucedida(tJogada jogada)
-{
+int FoiJogadaBemSucedida(tJogada jogada) {
     return jogada.sucesso;
 }

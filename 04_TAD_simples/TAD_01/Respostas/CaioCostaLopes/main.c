@@ -5,12 +5,10 @@
 #include "jogador.h"
 #include "jogada.h"
 
-int main()
-{
+int main() {
     tJogo jogo;
 
-    do
-    {
+    do {
         jogo = CriaJogo();
         ComecaJogo(jogo);
 

@@ -4,8 +4,7 @@
 #include "jogador.h"
 #include "tabuleiro.h"
 
-tJogo CriaJogo()
-{
+tJogo CriaJogo() {
     tJogo jogo;
 
     jogo.tabuleiro = CriaTabuleiro();
@@ -15,51 +14,42 @@ tJogo CriaJogo()
     return jogo;
 }
 
-int AcabouJogo(tJogo jogo)
-{
-    if (!(TemPosicaoLivreTabuleiro(jogo.tabuleiro)))
-    {
+int AcabouJogo(tJogo jogo) {
+    if (!(TemPosicaoLivreTabuleiro(jogo.tabuleiro))) {
         return 1;
     }
     return 0;
 }
 
-void ComecaJogo(tJogo jogo)
-{
-    while (1)
-    {
+void ComecaJogo(tJogo jogo) {
+    while (1) {
         jogo.tabuleiro = JogaJogador(jogo.jogador1, jogo.tabuleiro);
         ImprimeTabuleiro(jogo.tabuleiro);
-        if (VenceuJogador(jogo.jogador1, jogo.tabuleiro))
-        {
+        if (VenceuJogador(jogo.jogador1, jogo.tabuleiro)) {
             printf("JOGADOR %d Venceu!\n", PECA_1);
             break;
         }
 
-        if (AcabouJogo(jogo))
-        {
+        if (AcabouJogo(jogo)) {
             printf("Sem vencedor!\n");
             break;
         }
 
         jogo.tabuleiro = JogaJogador(jogo.jogador2, jogo.tabuleiro);
         ImprimeTabuleiro(jogo.tabuleiro);
-        if (VenceuJogador(jogo.jogador2, jogo.tabuleiro))
-        {
+        if (VenceuJogador(jogo.jogador2, jogo.tabuleiro)) {
             printf("JOGADOR %d Venceu!\n", PECA_2);
             break;
         }
 
-        if (AcabouJogo(jogo))
-        {
+        if (AcabouJogo(jogo)) {
             printf("Sem vencedor!\n");
             break;
         }
     }
 }
 
-int ContinuaJogo()
-{
+int ContinuaJogo() {
     char opcao;
 
     printf("Jogar novamente? (s,n) ");
@@ -70,12 +60,10 @@ int ContinuaJogo()
 
     printf("\n");
 
-    if (opcao == 's')
-    {
+    if (opcao == 's') {
         return 1;
     }
-    if (opcao == 'n')
-    {
+    if (opcao == 'n') {
         return 0;
     }
 }
