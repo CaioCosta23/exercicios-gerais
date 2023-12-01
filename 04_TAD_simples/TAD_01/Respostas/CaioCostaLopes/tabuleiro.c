@@ -20,8 +20,8 @@ tTabuleiro CriaTabuleiro()
             tabuleiro.posicoes[l][c] = tabuleiro.pecaVazio;
         }
     }
-    tabuleiro.peca1 = (char)(PECA_1 + (int)'0');
-    tabuleiro.peca2 = (char)(PECA_2 + (int)'0');
+    tabuleiro.peca1 = 'X';
+    tabuleiro.peca2 = '0';
 
     return tabuleiro;
 }
@@ -52,7 +52,14 @@ int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca
 {
     char marcacao;
 
-    marcacao = (char)(peca + '0');
+    if (peca == PECA_1)
+    {
+        marcacao = tabuleiro.peca1;
+    }
+    else
+    {
+        marcacao = tabuleiro.peca2;
+    }
     return (tabuleiro.posicoes[y][x] == marcacao);
 }
 
@@ -65,7 +72,14 @@ tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y)
 {
     char marcacao;
 
-    marcacao = (char)(peca + (int)'0');
+    if (peca == PECA_1)
+    {
+        marcacao = tabuleiro.peca1;
+    }
+    else
+    {
+        marcacao = tabuleiro.peca2;
+    }
     tabuleiro.posicoes[y][x] = marcacao;
 
     return tabuleiro;
@@ -79,21 +93,7 @@ void ImprimeTabuleiro(tTabuleiro tabuleiro)
     {
         for (c = 0; c < TAM_TABULEIRO; c++)
         {
-            if (tabuleiro.posicoes[l][c] == tabuleiro.peca1)
-            {
-                printf("X");
-            }
-            else
-            {
-                if (tabuleiro.posicoes[l][c] == tabuleiro.peca2)
-                {
-                    printf("0");
-                }
-                else
-                {
-                    printf("%c", tabuleiro.pecaVazio);
-                }
-            }
+            printf("%c", tabuleiro.posicoes[l][c]);
         }
         printf("\n");
     }

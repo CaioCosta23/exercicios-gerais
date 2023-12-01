@@ -64,17 +64,14 @@ int VenceuJogador(tJogador jogador, tTabuleiro tabuleiro)
     int horizontal, vertical, primeDiagonal;
     char marcacao;
 
-    for (l = 0; l < TAM_TABULEIRO; l++)
+    if (jogador.id == PECA_1)
     {
-
-        for (c = 0; c < TAM_TABULEIRO; c++)
-        {
-            printf("%c", tabuleiro.posicoes[l][c]);
-        }
-        printf("\n");
+        marcacao = tabuleiro.peca1;
     }
-
-    marcacao = (char)(jogador.id + '0');
+    else
+    {
+        marcacao = tabuleiro.peca2;
+    }
 
     for (l = 0; l < TAM_TABULEIRO; l++)
     {
