@@ -77,7 +77,7 @@ int ObtemVotos(tCandidato candidato);
  * @param totalVotos Total de votos (unitários) que o candidato obteve;
  * @return int Quantidade percentual (porcentagem) do total de votos que o candidato obteve;
  */
-int CalculaPercentualVotos(tCandidato candidatos, int totalVotos);
+float CalculaPercentualVotos(tCandidato candidatos, int totalVotos);
 
 /**
  * @brief Imprime os dados do candidato na tela;
