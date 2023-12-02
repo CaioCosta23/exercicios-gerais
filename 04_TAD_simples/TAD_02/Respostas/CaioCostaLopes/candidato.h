@@ -85,6 +85,6 @@ float CalculaPercentualVotos(tCandidato candidatos, int totalVotos);
  * @param candidato Candidato que terá seus dados impressos;
  * @param percentualVotos Percentual (porcentagem) do total de votos que o candidato obteve na eleição;
  */
-void ImprimeCandidato(tCandidato candidato, int percentualVotos);
+void ImprimeCandidato(tCandidato candidato, float percentualVotos);
 
 #endif
