@@ -29,7 +29,7 @@ int main() {
 
     for (a = 0; a < qtdAlunos; a++) {
         alunos[a] = LeAluno();
-        if (VerificaAprovacaoAluno(alunos[a])) {
+        if (VerificaAprovacao(alunos[a])) {
             aprovados[p] = alunos[a];
         }
     }
