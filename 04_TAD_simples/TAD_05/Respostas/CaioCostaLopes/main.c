@@ -23,24 +23,28 @@ int main () {
         valor = 0.00;
 
         switch (op) {
-            case 0:
-                exit(1);
             case 1:
                 scanf("%f\n", &valor);
                 conta[c] = SaqueConta(conta[c], valor);
+                break;
             case 2:
                 scanf("%f\n", &valor);
                 conta[c] = SaqueConta(conta[c], valor);
+                break;
             case 3:
-                scanf("%s %s %d", nome, cpf, numero);
+                scanf("%s %s %d", nome, cpf, &numero);
                 usuario = CriaUsuario(nome, cpf);
                 conta[c] = CriaConta(numero, usuario);
                 c++;
+                break;
             case 4:
-                for (r = 0; r < c; r++) {
-                    ImprimeConta(conta[c]);
+                for (r = 0; r < qtdContas; r++) {
+                    ImprimeConta(conta[r]);
                     printf("\n");
                 }
+                break;
+            default:
+                exit(1);
         }
     }
 
