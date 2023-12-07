@@ -22,14 +22,13 @@ tAluno LeAluno() {
     int matricula, n1, n2, n3;
     tAluno aluno;
 
-    scanf("%49[^\n]\n", nome);
-    scanf("%d\n", &matricula);
-    scanf("%d %d %d\n", &n1, &n2, &n3);
+    scanf("%49s", nome);
+    scanf("%03d", &matricula);
+    scanf("%d %d %d", &n1, &n2, &n3);
 
     aluno = CriaAluno(nome, matricula, n1, n2, n3);
 
     return aluno;
-
 }
 
 int ComparaMatricula(tAluno aluno1, tAluno aluno2) {

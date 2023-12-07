@@ -6,9 +6,9 @@ void OrdenaAprovados(tAluno aprovados[], int p) {
     int x, y;
     tAluno aux;
 
-    for(x = 0; x < p; x++) {
-        for (y = x + 1; y <= p; y++) {
-            if (ComparaMatricula(aprovados[x], aprovados[y])) {
+    for(x = 0; x < (p - 1); x++) {
+        for (y = x + 1; y < p; y++) {
+            if (ComparaMatricula(aprovados[x], aprovados[y]) == 1) {
                 aux = aprovados[y];
                 aprovados[y] = aprovados[x];
                 aprovados[x] = aux;
@@ -31,14 +31,16 @@ int main() {
         alunos[a] = LeAluno();
         if (VerificaAprovacao(alunos[a])) {
             aprovados[p] = alunos[a];
+            p++;
         }
     }
 
     OrdenaAprovados(aprovados, p);
 
-    for (i = 0; i <= p; i++) {
+    for (i = 0; i < p; i++) {
         ImprimeAluno(aprovados[i]);
     }
+    printf("\n");
 
     return 0;
 }

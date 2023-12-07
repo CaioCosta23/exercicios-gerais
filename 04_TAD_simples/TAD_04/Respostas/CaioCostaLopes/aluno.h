@@ -31,7 +31,7 @@ tAluno LeAluno();
  * 
  * @param aluno1 Primeiro aluno a ser comparado;
  * @param aluno2 Segundo aluno a ser comparado;
- * @return int 1 sse a matrícula do aluno 1 é maior que a do aluno 2, -1 se a matrícula do aluno 2
+ * @return int 1 se a matrícula do aluno 1 é maior que a do aluno 2, -1 se a matrícula do aluno 2
  * for maior que a do aluno 1, e 0 se as matrículas forem iguais;
  */
 int ComparaMatricula(tAluno aluno1, tAluno aluno2);
