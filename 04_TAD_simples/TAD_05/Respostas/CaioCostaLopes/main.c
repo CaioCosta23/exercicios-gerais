@@ -17,10 +17,10 @@ int main () {
 
     tConta conta[qtdContas];
 
-    scanf("%d\n", &op);
-
     while(1) {
         valor = 0.00;
+
+        scanf("%d\n", &op);
 
         switch (op) {
             case 1:
@@ -38,9 +38,11 @@ int main () {
                 c++;
                 break;
             case 4:
-                for (r = 0; r < qtdContas; r++) {
-                    ImprimeConta(conta[r]);
-                    printf("\n");
+                if (c < 5) {
+                    for (r = 0; r < qtdContas; r++) {
+                        ImprimeConta(conta[r]);
+                        printf("\n");
+                    }
                 }
                 break;
             default:
