@@ -50,6 +50,6 @@ tConta SaqueConta (tConta conta, float valor);
  * @param valor Valor a ser depositado;
  * @return tConta Conta com o novo saldo após o depósito;
  */
-tConta DepositaConta(tConta conta, float valor);
+tConta DepositoConta(tConta conta, float valor);
 
 #endif
