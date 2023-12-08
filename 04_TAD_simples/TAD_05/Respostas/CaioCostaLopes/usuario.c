@@ -13,6 +13,6 @@ tUsuario CriaUsuario(char nome[20], char cpf[15]) {
 }
 
 void ImprimeUsuario(tUsuario user) {
-    printf("%s\n", user.nome);
-    printf("%s\n", user.cpf);
+    printf("Nome: %s\n", user.nome);
+    printf("CPF: %s\n", user.cpf);
 }
