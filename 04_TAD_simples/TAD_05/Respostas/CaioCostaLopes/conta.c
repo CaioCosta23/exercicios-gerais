@@ -14,7 +14,7 @@ tConta CriaConta(int numero, tUsuario user) {
 
 void ImprimeConta(tConta conta) {
     printf("Conta: %d\n", conta.numero);
-    printf("Saldo: R$ %.2f", conta.saldo);
+    printf("Saldo: R$ %.2f\n", conta.saldo);
     ImprimeUsuario(conta.user);
 }
 
@@ -28,7 +28,7 @@ tConta SaqueConta(tConta conta, float valor) {
     return conta;
 }
 
-tConta DepositaConta(tConta conta, float valor) {
+tConta DepositoConta(tConta conta, float valor) {
     conta.saldo += valor;
 
     return conta;
