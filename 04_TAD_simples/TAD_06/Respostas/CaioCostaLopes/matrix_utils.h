@@ -93,7 +93,7 @@ tMatrix MatrixMultiply(tMatrix matrix1, tMatrix matrix2);
  * @param matrix Matriz a ser transposta;
  * @return tMatrix Matriz transposta;
  */
-tMatrix TransposteMatrix(tMatrix matrix);
+tMatrix TransposeMatrix(tMatrix matrix);
 
 /**
  * @brief Multiplica uma matriz por um escalar (número);

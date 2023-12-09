@@ -38,11 +38,12 @@ void MatrixPrint(tMatrix matrix) {
             }
             // Imprime cada barra que tem na borda da matriz (depoiss do último elemento de cada linha);
             if (c == (matrix.cols - 1)) {
-                printf("|\n");
+                printf("|");
             }
         }
         printf("\n");
     }
+    printf("\n");
 }
 
 int PossibleMatrixSum(tMatrix matrix1, tMatrix matrix2) {
@@ -61,6 +62,9 @@ tMatrix MatrixAdd(tMatrix matrix1, tMatrix matrix2) {
     int r, c;
     tMatrix result;
 
+    result.rows = matrix1.rows;
+    result.cols = matrix1.cols;
+
     for (r = 0; r < matrix2.rows; r++) {
         for (c = 0; c < matrix2.cols; c++) {
             result.data[r][c] = matrix1.data[r][c] + matrix2.data[r][c];            
@@ -73,6 +77,9 @@ tMatrix MatrixSub(tMatrix matrix1, tMatrix matrix2) {
     int r, c;
     tMatrix result;
 
+    result.rows = matrix2.rows;
+    result.cols = matrix2.cols;
+
     for (r = 0; r < matrix1.rows; r++) {
         for (c = 0; c < matrix1.cols; c++) {
             result.data[r][c] = matrix1.data[r][c] - matrix2.data[r][c];            
@@ -82,9 +89,11 @@ tMatrix MatrixSub(tMatrix matrix1, tMatrix matrix2) {
 }
 
 tMatrix MatrixMultiply(tMatrix matrix1, tMatrix matrix2) {
-    tMatrix result;
-    
     int r1, c1, c2, mult;
+    tMatrix result;
+
+    result.rows = matrix1.rows;
+    result.cols = matrix2.cols;
 
     r1 = 0;
 
@@ -123,29 +132,32 @@ tMatrix MatrixMultiply(tMatrix matrix1, tMatrix matrix2) {
     return result;
 }
 
-tMatrix TransposteMatrix(tMatrix matrix) {
-    tMatrix resultado;
+tMatrix TransposeMatrix(tMatrix matrix) {
+    tMatrix result;
     int r, c;
 
-    resultado.rows = matrix.cols;
-    resultado.cols = matrix.rows;
+    result.rows = matrix.cols;
+    result.cols = matrix.rows;
 
     for (r = 0; r < matrix.rows; r++) {
         for (c = 0; c < matrix.cols; c++) {
-            resultado.data[r][c] = matrix.data[c][r];
+            result.data[c][r] = matrix.data[r][c];
         }
     }
-    return resultado;
+    return result;
 }
 
 tMatrix MatrixMultiplyByScalar(tMatrix matrix, int scalar) {
-    tMatrix resultado;
+    tMatrix result;
     int r, c;
+
+    result.cols = matrix.cols;
+    result.rows = matrix.rows;    
 
     for (r = 0; r < matrix.rows; r++) {
         for (c = 0; c < matrix.cols; c++) {
-            resultado.data[r][c] = matrix.data[r][c] * scalar;
+            result.data[r][c] = matrix.data[r][c] * scalar;
         }
     }
-    return resultado;    
+    return result;    
 }

@@ -4,7 +4,7 @@
 
 int main () {
     int rows, cols, op, scalar, opMatrix;
-    tMatrix matrix1, matrix2;
+    tMatrix matrix1, matrix2, sumMatrix, subMatrix, multMatrix, newMatrix1, newMatrix2;
     int encerrar = 0;
 
     scanf("%d %d", &rows, &cols);
@@ -28,24 +28,24 @@ int main () {
         switch (op) {
             case 1:
                 if (PossibleMatrixSum(matrix1, matrix2)) {
-                    matrix1 = MatrixAdd(matrix1, matrix2);
-                    MatrixPrint(matrix1);
+                    sumMatrix = MatrixAdd(matrix1, matrix2);
+                    MatrixPrint(sumMatrix);
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
                 break;
             case 2:
                 if (PossibleMatrixSub(matrix1, matrix2)) {
-                    matrix1 = MatrixSub(matrix1, matrix2);
-                    MatrixPrint(matrix1);
+                    subMatrix = MatrixSub(matrix1, matrix2);
+                    MatrixPrint(subMatrix);
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
                 break;
             case 3:
                 if (PossibleMatrixMultiply(matrix1, matrix2)) {
-                    matrix1 = MatrixMultiply(matrix1, matrix2);
-                    MatrixPrint(matrix1);
+                    multMatrix = MatrixMultiply(matrix1, matrix2);
+                    MatrixPrint(multMatrix);
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
@@ -63,10 +63,10 @@ int main () {
                 }
                 break;
             case 5:
-                matrix1 = TransposteMatrix(matrix1);
-                MatrixPrint(matrix1);
-                matrix2 = TransposteMatrix(matrix2);
-                MatrixPrint(matrix2);
+                newMatrix1 = TransposeMatrix(matrix1);
+                MatrixPrint(newMatrix1);
+                newMatrix2 = TransposeMatrix(matrix2);
+                MatrixPrint(newMatrix2);
                 break;
             case 6:
                 encerrar = 1;
