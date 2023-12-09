@@ -53,21 +53,19 @@ int main () {
                 scanf("%d %d", &scalar, &opMatrix);
                 if (opMatrix == 1) {
                     MatrixMultiplyByScalar(matrix1, scalar);
+                    MatrixPrint(matrix1);
                 }else {
                     if (opMatrix == 2) {
                         MatrixMultiplyByScalar(matrix2, scalar);
+                        MatrixPrint(matrix2);
                     }
                 }
                 break;
             case 5:
-                scanf("%d", &opMatrix);
-                if (opMatrix == 1) {
-                    TransposteMatrix(matrix1);
-                }else {
-                    if (opMatrix == 2) {
-                        TransposteMatrix(matrix2);
-                    }
-                }
+                TransposteMatrix(matrix1);
+                MatrixPrint(matrix1);
+                TransposteMatrix(matrix2);
+                MatrixPrint(matrix2);
                 break;
             case 6:
                 encerrar = 1;
