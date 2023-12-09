@@ -7,7 +7,6 @@ tMatrix MatrixCreate(int rows, int cols) {
     
     matrix.rows = rows;
     matrix.cols = cols;
-    matrix = MatrixRead(matrix);
 
     return matrix;
 }
@@ -62,8 +61,7 @@ tMatrix MatrixAdd(tMatrix matrix1, tMatrix matrix2) {
     int r, c;
     tMatrix result;
 
-    result.rows = matrix1.rows;
-    result.cols = matrix1.cols;
+    result = matrix1;
 
     for (r = 0; r < matrix2.rows; r++) {
         for (c = 0; c < matrix2.cols; c++) {
@@ -77,9 +75,8 @@ tMatrix MatrixSub(tMatrix matrix1, tMatrix matrix2) {
     int r, c;
     tMatrix result;
 
-    result.rows = matrix2.rows;
-    result.cols = matrix2.cols;
-
+    result = matrix2;
+    
     for (r = 0; r < matrix1.rows; r++) {
         for (c = 0; c < matrix1.cols; c++) {
             result.data[r][c] = matrix1.data[r][c] - matrix2.data[r][c];            

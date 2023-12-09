@@ -9,9 +9,11 @@ int main () {
 
     scanf("%d %d", &rows, &cols);
     matrix1 = MatrixCreate(rows, cols);
+    matrix1 = MatrixRead(matrix1);
 
     scanf("%d %d", &rows, &cols);
     matrix2 = MatrixCreate(rows, cols);
+    matrix2 = MatrixRead(matrix2);
 
     while(1) {
         printf("1 - Somar matrizes\n");
@@ -19,7 +21,7 @@ int main () {
         printf("3 - Multiplicar matrizes\n");
         printf("4 - Multiplicacao de uma matriz por escalar\n");
         printf("5 - Transposta de uma matriz\n");
-        printf("6 - Encerrar programa\n");
+        printf("6 - Encerrar o programa\n");
 
         printf("Opcao escolhida: ");
         scanf("%d", &op);
@@ -47,7 +49,7 @@ int main () {
                     multMatrix = MatrixMultiply(matrix1, matrix2);
                     MatrixPrint(multMatrix);
                 }else {
-                    printf("Erro: as dimensoes da matriz nao correspondem\n");
+                    printf("Erro: o numero de colunas da primeira matriz eh diferente do numero de linhas da segunda matriz\n");
                 }
                 break;
             case 4:
