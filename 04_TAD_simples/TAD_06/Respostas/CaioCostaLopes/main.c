@@ -23,10 +23,11 @@ int main () {
 
         printf("Opcao escolhida: ");
         scanf("%d", &op);
+        printf("\n");
 
         switch (op) {
             case 1:
-                if (PossibleMatrixSum) {
+                if (PossibleMatrixSum(matrix1, matrix2)) {
                     matrix1 = MatrixAdd(matrix1, matrix2);
                     MatrixPrint(matrix1);
                 }else {
@@ -34,7 +35,7 @@ int main () {
                 }
                 break;
             case 2:
-                if (PossibleMatrixSub) {
+                if (PossibleMatrixSub(matrix1, matrix2)) {
                     matrix1 = MatrixSub(matrix1, matrix2);
                     MatrixPrint(matrix1);
                 }else {
@@ -52,19 +53,19 @@ int main () {
             case 4:
                 scanf("%d %d", &scalar, &opMatrix);
                 if (opMatrix == 1) {
-                    MatrixMultiplyByScalar(matrix1, scalar);
+                    matrix1 = MatrixMultiplyByScalar(matrix1, scalar);
                     MatrixPrint(matrix1);
                 }else {
                     if (opMatrix == 2) {
-                        MatrixMultiplyByScalar(matrix2, scalar);
+                        matrix2 = MatrixMultiplyByScalar(matrix2, scalar);
                         MatrixPrint(matrix2);
                     }
                 }
                 break;
             case 5:
-                TransposteMatrix(matrix1);
+                matrix1 = TransposteMatrix(matrix1);
                 MatrixPrint(matrix1);
-                TransposteMatrix(matrix2);
+                matrix2 = TransposteMatrix(matrix2);
                 MatrixPrint(matrix2);
                 break;
             case 6:
