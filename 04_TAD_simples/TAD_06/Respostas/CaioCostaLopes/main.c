@@ -3,8 +3,9 @@
 #include "matrix_utils.h"
 
 int main () {
-    int rows, cols, op;
+    int rows, cols, op, scalar, opMatrix;
     tMatrix matrix1, matrix2;
+    int encerrar = 0;
 
     scanf("%d %d", &rows, &cols);
     matrix1 = MatrixCreate(rows, cols);
@@ -31,6 +32,7 @@ int main () {
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
+                break;
             case 2:
                 if (PossibleMatrixSub) {
                     matrix1 = MatrixSub(matrix1, matrix2);
@@ -38,6 +40,41 @@ int main () {
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
+                break;
+            case 3:
+                if (PossibleMatrixMultiply(matrix1, matrix2)) {
+                    matrix1 = MatrixMultiply(matrix1, matrix2);
+                    MatrixPrint(matrix1);
+                }else {
+                    printf("Erro: as dimensoes da matriz nao correspondem\n");
+                }
+                break;
+            case 4:
+                scanf("%d %d", &scalar, &opMatrix);
+                if (opMatrix == 1) {
+                    MatrixMultiplyByScalar(matrix1, scalar);
+                }else {
+                    if (opMatrix == 2) {
+                        MatrixMultiplyByScalar(matrix2, scalar);
+                    }
+                }
+                break;
+            case 5:
+                scanf("%d", &opMatrix);
+                if (opMatrix == 1) {
+                    TransposteMatrix(matrix1);
+                }else {
+                    if (opMatrix == 2) {
+                        TransposteMatrix(matrix2);
+                    }
+                }
+                break;
+            case 6:
+                encerrar = 1;
+                break;
+        }
+        if (encerrar) {
+            break;
         }
     }
 
