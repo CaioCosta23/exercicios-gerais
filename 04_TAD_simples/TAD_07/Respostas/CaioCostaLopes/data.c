@@ -27,28 +27,40 @@ void ImprimeMesExtenso(tData data) {
     switch(data.mes) {
         case 1:
             printf("Janeiro");
+            break;
         case 2:
             printf("Fevereiro");
+            break;
         case 3:
             printf("Marco");
+            break;
         case 4:
             printf("Abril");
+            break;
         case 5:
             printf("Maio");
+            break;
         case 6:
             printf("Junho");
+            break;
         case 7:
             printf("Julho");
+            break;
         case 8:
             printf("Agosto");
+            break;
         case 9:
             printf("Setembro");
+            break;
         case 10:
             printf("Outubro");
+            break;
         case 11:
             printf("Novembro");
+            break;
         case 12:
             printf("Dezembro");
+            break;
     }
 }
 
@@ -63,7 +75,7 @@ int VerificaBissexto(tData data) {
 }
 
 int NumeroDiasMes(tData data) {
-    if ((data.mes == 1) || (data.mes == 3) || (data.mes == 5) || (data.mes == 8) || (data.mes == 8) ||
+    if ((data.mes == 1) || (data.mes == 3) || (data.mes == 5) || (data.mes == 7) || (data.mes == 8) || (data.mes == 8) ||
     (data.mes == 10) || (data.mes == 12)) {
         return 31;
     }else {
@@ -109,7 +121,6 @@ int ComparaData(tData data1, tData data2) {
             }
         }
     }
-    return 0;
 }
 
 int CalculaDiasAteMes(tData data) {
@@ -149,7 +160,7 @@ int CalculaDiferencaDias(tData data1, tData data2) {
                 aux.mes = 0;
             }
         }else {
-            if (data1.dia < data2.dia) {
+            if (data2.dia < data1.dia) {
                 diferenca += (data1.dia - data2.dia);
             }else {
                 /**

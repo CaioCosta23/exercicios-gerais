@@ -14,10 +14,10 @@ int main() {
     if ((VerificaDataValida(data1)) && (VerificaDataValida(data2))) {
         printf("Primeira data: ");
         ImprimeDataExtenso(data1);
-        printf("Segunda Data: ");
+        printf("Segunda data: ");
         ImprimeDataExtenso(data2);
     }else {
-        printf("A primeira data e/ou segunda data(s) invalida(s)");
+        printf("A primeira e/ou segunda data(s) invalida(s)\n");
         exit(1);
     }
 
@@ -33,7 +33,7 @@ int main() {
 
     diferencaDias = CalculaDiferencaDias(data1, data2);
 
-    printf("A diferenca em dias entre as datas eh: %02d dias", diferencaDias);
+    printf("A diferenca em dias entre as datas eh: %02d dias\n", diferencaDias);
 
     return 0;
 }
