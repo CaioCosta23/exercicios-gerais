@@ -15,7 +15,7 @@ typedef struct Data {
  * @param ano Ano da data a ser criada;
  * @return tData Data a ser criada a partir dos valores, dia, mês ano;
  */
-tData Criadata(int dia, int mes, int ano);
+tData CriaData(int dia, int mes, int ano);
 
 /**
  * @brief Verifica se uma data é válida;
