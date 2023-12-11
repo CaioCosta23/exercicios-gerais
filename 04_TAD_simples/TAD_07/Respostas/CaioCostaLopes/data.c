@@ -109,15 +109,15 @@ int ComparaData(tData data1, tData data2) {
             }
         }
     }
+    return 0;
 }
 
 int CalculaDiasAteMes(tData data) {
     return NumeroDiasMes(data);
 }
 
-int CalculaDiferencaDuas(tData data1, tData data2) {
+int CalculaDiferencaDias(tData data1, tData data2) {
     int diferenca = 0;
-    int a, m;
     tData aux;
 
     aux.dia = 0;
