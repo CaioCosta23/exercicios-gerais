@@ -141,7 +141,7 @@ int CalculaDiferencaDuas(tData data1, tData data2) {
                 while (1) {
                     aux.mes++;
 
-                    if ((aux.mes > 12) || ((data1.ano == data2.ano)) && (aux.mes >= data2.mes)) {
+                    if ((aux.mes > 12) || ((data1.ano == data2.ano) && (aux.mes >= data2.mes))) {
                         break;
                     }
                     diferenca += CalculaDiasAteMes(aux);
@@ -157,14 +157,14 @@ int CalculaDiferencaDuas(tData data1, tData data2) {
                  * Um exemplo - 25/10/2023 a 23/11/2023. Sabendo que Outubro tem 31 dias (calculado na funcao "calculaDiasAteMes()"), temos entao:
                  * diferenca = diferenca + (31 - 25) + 23);
                  */
-                diferenca += ((CalculaDiasateMes(data2) - data2.dia) + data1.dia);
+                diferenca += ((CalculaDiasAteMes(data2) - data2.dia) + data1.dia);
             }
             aux.mes = data2.mes;
             for (aux.ano = data2.ano; aux.ano <= data1.ano; aux.ano++) {
                 while (1) {
                     aux.mes++;
 
-                    if ((m > 12) || ((data1.ano == data2.ano) && (aux.mes >= data1.mes))) {
+                    if ((aux.mes > 12) || ((data1.ano == data2.ano) && (aux.mes >= data1.mes))) {
                         break;
                     }
                     diferenca += CalculaDiasAteMes(aux);
