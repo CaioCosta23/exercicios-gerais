@@ -5,29 +5,37 @@
 
 int main() {
     tBiblioteca biblioteca;
-    int opcao;
+    int qtdOperacoes, opcao;
     char titulo[50];
     
     biblioteca = inicializarBiblioteca();
-    
+
+    scanf("%d", &qtdOperacoes);
+
     printf("Lista de operacoes:\n");
     printf("1 - Cadastrar livros.\n");
     printf("2 - Remover livros.\n");
-    printf("3 - Listar todos os livros cadastrados.\n");
-    
-    scanf("%d", &opcao);
+    printf("3 - Listar todos os livros cadastrados.\n\n");
 
-    switch (opcao) {
-        case 1:
+    for (int r = 0; r < qtdOperacoes; r++) {
+        
+        scanf("%d", &opcao);
+
+        if (opcao == 1) {
             biblioteca = adicionarLivroNaBiblioteca(biblioteca, lerLivro());
-            break;
-        case 2:
-            scanf("%s", titulo);
-            biblioteca = removerLivroDaBiblioteca(biblioteca, titulo);
-            break;
-        case 3:
-            imprimeBibioteca(biblioteca);
-            break;
+        }else {
+            if (opcao == 2) {
+                scanf("%s", titulo);
+                biblioteca = removerLivroDaBiblioteca(biblioteca, titulo);
+            }else {
+                if (opcao == 3) {
+                    listarLivrosDaBiblioteca(biblioteca);
+                }else {
+                    printf("Operacao invalida!\n");
+                    exit(1);
+                }
+            }
+        }
     }
 
     return 0;
