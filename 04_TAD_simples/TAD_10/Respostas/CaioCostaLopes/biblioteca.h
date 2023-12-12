@@ -44,7 +44,7 @@ tBiblioteca removerLivroDaBiblioteca(tBiblioteca biblioteca, char titulo[]);
  * @param titulo Título digitado pelo usuário;
  * @return int 0 se o título for igual;
  */
-int verificaTituloDoLiivroNaBiblioteca(tLivros livro, char titulo[]);
+int verificaTituloDoLivroNaBiblioteca(tLivros livro, char titulo[]);
 
 /**
  * @brief Lista todos os livros presentes na biblioteca;
