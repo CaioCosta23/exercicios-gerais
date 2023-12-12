@@ -13,7 +13,7 @@ int main() {
         empresas[e] = leEmpresa();
     }
     for(e = 0; e < qtdEmpresas; e++) {
-        imprimeEmpresas(empresas[e]);
+        imprimeEmpresa(empresas[e]);
     }
 
     return 0;
