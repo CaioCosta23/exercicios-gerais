@@ -5,7 +5,7 @@
 tLivros lerLivro() {
     tLivros livro;
 
-    scanf("%s %s %d", livro.titulo, livro.autor, livro.anoPublicacao);
+    scanf("%s %s %d", livro.titulo, livro.autor, &livro.anoPublicacao);
 
     return livro;
 }
