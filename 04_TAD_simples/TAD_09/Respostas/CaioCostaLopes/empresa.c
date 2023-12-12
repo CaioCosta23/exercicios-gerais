@@ -42,13 +42,14 @@ tEmpresa contrataFuncionarioEmpresa(tEmpresa empresa, tFuncionario funcionario) 
         }
     }else {
         empresa.funcionarios[0] = funcionario;
+        empresa.qtdFuncionarios += 1;
         return empresa;
     }
 
     if (contratado) {
         printf("A empresa %d ja possui um funcionario com o id %d\n", empresa.id, funcionario.id);
     }else {
-        empresa.funcionarios[empresa.qtdFuncionarios + 1] = funcionario;
+        empresa.funcionarios[empresa.qtdFuncionarios] = funcionario;
         empresa.qtdFuncionarios += 1;
     }
     return empresa;
@@ -60,7 +61,7 @@ void imprimeEmpresa(tEmpresa empresa) {
     printf("Empresa %d:\n", empresa.id);
 
     for (f = 0; f < empresa.qtdFuncionarios; f++) {
-        imprimeFuncioanrio(empresa.funcionarios[f]);
+        imprimeFuncionario(empresa.funcionarios[f]);
     }
 }
 
