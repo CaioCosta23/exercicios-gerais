@@ -15,31 +15,35 @@ tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int
     departamento.m2 = m2;
     departamento.m3 = m3;
     strcpy(departamento.diretor, diretor);
+    departamento.media_geral = (float)calculaMediaGeralDepartamento(departamento);
 
     return departamento;
 }
 
 void imprimeAtributosDepartamento(tDepartamento departamento) {
+    printf("ATRIBUTOS:\n");
     printf("departamento => %s\n", departamento.nome);
     printf("diretor => %s\n", departamento.diretor);
-    printf("curso1 => %s\n", departamento.c1);
-    printf("curso2 => %s\n", departamento.c2);
-    printf("curso3 => %s\n", departamento.c3);
+    printf("curso1 => %s, media1 => %d\n", departamento.c1, departamento.m1);
+    printf("curso2 => %s, media2 => %d\n", departamento.c2, departamento.m2);
+    printf("curso3 => %s, media3 => %d\n", departamento.c3, departamento.m3);
     printf("media geral => %.2f\n", departamento.media_geral);
-    printf("desvio pardao => %.2f\n", calculaDesvioPadraoDepartamento(departamento));
+    printf("desvio padrao => %.2f\n", (float)calculaDesvioPadraoDepartamento(departamento));
+    printf("\n");
 }
 
 int validaMediaDepartamento(int media) {
     return ((media >= 0) && (media <= 10));
 }
 
-double caluculaDesvioPadraoDepartamento(tDepartamento depto) {
+double calculaDesvioPadraoDepartamento(tDepartamento depto) {
     double dp;
-    int m, xi, n;
-    int n = 3, soma = 0;
-    double x;
+    int m;
+    int n = 3;
+    double x, xi;
+    double soma = 0.00;
 
-    x = calculaMediaGeralDepartamento(depto);
+    x = depto.media_geral;
 
     for (m = 0; m < n; m++) {
         switch(m) {
@@ -49,7 +53,7 @@ double caluculaDesvioPadraoDepartamento(tDepartamento depto) {
             case 1:
                 xi = depto.m2;
                 break;
-            case 3:
+            case 2:
                 xi = depto.m3;
                 break;
         }
@@ -57,7 +61,7 @@ double caluculaDesvioPadraoDepartamento(tDepartamento depto) {
         soma += pow((xi - x), 2);
 
     }
-    dp = sqrt(soma / n);
+    dp = sqrt(soma / (double)n);
 
     return dp;
 }
@@ -66,7 +70,7 @@ double calculaMediaGeralDepartamento(tDepartamento depto) {
     return ((depto.m1 + depto.m2 + depto.m3) / 3.00);
 }
 
-void ordenaPorMediaDepartamento(tDepartamento d[], int tamanho) {
+void ordenaPorMediaDepartamentos(tDepartamento d[], int tamanho) {
     int x, y;
     tDepartamento aux;
 

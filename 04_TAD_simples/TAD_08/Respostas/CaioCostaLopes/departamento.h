@@ -25,7 +25,7 @@ typedef struct Departamento {
  * @param diretor Nome do diretor do deparatanmento;
  * @return tDepartamento Departamento criado à partir dos valores (nomes dos cursos, nome do departamento, média por curso e nome do diretor);
  */
-tDepartamento criaDepartamaneto(char c1 [], char c2[], char c3[], char nome[],
+tDepartamento criaDepartamento(char c1 [], char c2[], char c3[], char nome[],
 int m1, int m2, int m3, char diretor[]);
 
 /**
