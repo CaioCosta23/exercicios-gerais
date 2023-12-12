@@ -3,7 +3,7 @@
 
 #include "vendedor.h"
 
-#define MAX_VENDEDORES 10;
+#define MAX_VENDEDORES 10
 
 typedef struct loja {
     int id; // ID (identificador) da loja;
