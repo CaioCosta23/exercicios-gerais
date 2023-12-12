@@ -63,6 +63,6 @@ tLoja CalculaLucro(tLoja loja);
  * 
  * @param loja Loja e seus dados;
  */
-void imprimeRelatorioLoja(tLoja loja);
+void ImprimeRelatorioLoja(tLoja loja);
 
 #endif
