@@ -12,7 +12,7 @@ typedef struct {
  * 
  * @return tLivros Livro com os seus respectivos atributos lidos;
  */
-tLivros lerLivros();
+tLivros lerLivro();
 
 /**
  * @brief Imprime os atributos de um livro;
