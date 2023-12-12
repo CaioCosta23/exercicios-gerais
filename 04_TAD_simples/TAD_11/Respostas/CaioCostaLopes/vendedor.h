@@ -73,6 +73,6 @@ float GetTotalRecebido(tVendedor vendedor);
  * 
  * @param vendedor Vendedor e seus dados;
  */
-void imprimeRelatorioVendedor(tVendedor vendedor);
+void ImprimeRelatorioVendedor(tVendedor vendedor);
 
 #endif
