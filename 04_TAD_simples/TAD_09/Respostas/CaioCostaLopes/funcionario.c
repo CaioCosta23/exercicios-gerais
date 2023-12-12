@@ -28,5 +28,5 @@ int getIdFuncionario(tFuncionario funcionario) {
 }
 
 void imprimeFuncionario(tFuncionario funcionario) {
-    printf("Funcionario %d: RS %.2f\n", funcionario.id, funcionario.salario);
+    printf("- Funcionario %d: RS %.2f\n", funcionario.id, funcionario.salario);
 }
