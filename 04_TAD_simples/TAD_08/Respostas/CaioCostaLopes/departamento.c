@@ -4,7 +4,7 @@
 #include <math.h>
 #include "departamento.h"
 
-tDepartamento criaDepartamento(char c1[], char c2, char c3[], char nome, int m1, int m2, int m3, char diretor[]) {
+tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int m1, int m2, int m3, char diretor[]) {
     tDepartamento departamento;
 
     strcpy(departamento.c1, c1);
