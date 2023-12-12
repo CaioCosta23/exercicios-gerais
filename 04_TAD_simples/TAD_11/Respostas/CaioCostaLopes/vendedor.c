@@ -9,6 +9,7 @@ tVendedor RegistraVendedor(char nome[50], float salario, float prct_comissao) {
     strcpy(vendedor.nome, nome);
     vendedor.salario = salario;
     vendedor.prct_comissao = prct_comissao;
+    vendedor.valor_vendido = 0;
 
     return vendedor;
 }
@@ -30,7 +31,7 @@ float GetSalario(tVendedor vendedor) {
 }
 
 float GetComissao(tVendedor vendedor) {
-    return vendedor.salario * vendedor.prct_comissao;
+    return vendedor.valor_vendido * vendedor.prct_comissao;
 }
 
 float GetTotalVendido(tVendedor vendedor) {
@@ -38,10 +39,10 @@ float GetTotalVendido(tVendedor vendedor) {
 }
 
 float GetTotalRecebido(tVendedor vendedor) {
-    return (vendedor.salario + vendedor.prct_comissao);
+    return (vendedor.salario + GetComissao(vendedor));
 }
 
-void Imprimevendedor(tVendedor vendedor) {
+void ImprimeRelatorioVendedor(tVendedor vendedor) {
     printf("\t%s > Total vendido: R$%.2f\n", vendedor.nome, vendedor.valor_vendido);
-    printf("\t\tTotal recebido: %.2f\n", GetTotalRecebido(vendedor));
+    printf("\t\tTotal recebido: R$%.2f\n", GetTotalRecebido(vendedor));
 }

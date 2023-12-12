@@ -22,7 +22,7 @@ int main() {
                 encerrar = 1;
                 break;;
             case 1:
-                scanf("%d", &idLoja, &aluguel);
+                scanf("%d %f", &idLoja, &aluguel);
                 lojas[l] = AbreLoja(idLoja, aluguel);
                 l++;
                 break;
@@ -44,9 +44,11 @@ int main() {
                 }
                 break;
             case 4:
-                for (q = 0; q < qtdLojas; q++) {
+                for (q = 0; q < l; q++) {
+                    lojas[q] = CalculaLucro(lojas[q]);
                     ImprimeRelatorioLoja(lojas[q]);
                 }
+                break;
         }
         if (encerrar) {
             break;

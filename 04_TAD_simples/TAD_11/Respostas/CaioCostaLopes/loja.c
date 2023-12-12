@@ -7,8 +7,9 @@ tLoja AbreLoja(int id, float aluguel) {
     tLoja loja;
 
     loja.id = id;
-    loja.lucro = 0;
+    loja.lucro = 0.00;
     loja.totalVendedores = 0;
+    loja.aluguel = aluguel;
 
     return loja;
 }
@@ -44,15 +45,17 @@ tLoja CalculaLucro(tLoja loja) {
     int v;
 
     for (v = 0; v < loja.totalVendedores; v++) {
-        loja.lucro = loja.lucro + GetTotalvendido(loja.vendedores[v]) - GetTotalRecebido(loja.vendedores[v]) - loja.aluguel;
+        loja.lucro += (GetTotalVendido(loja.vendedores[v]) - GetTotalRecebido(loja.vendedores[v]));
     }
+    loja.lucro -= loja.aluguel;
+
     return loja;
 }
 
-ImpirmeRelatorioLoja(tLoja loja) {
+void ImprimeRelatorioLoja(tLoja loja) {
     int v;
 
-    printf("Lucro total: R$ %.2f\n", loja.lucro);
+    printf("Loja %d: Lucro total: R$ %.2f\n", loja.id, loja.lucro);
     
     for (v = 0;  v < loja.totalVendedores; v++) {
         ImprimeRelatorioVendedor(loja.vendedores[v]);
