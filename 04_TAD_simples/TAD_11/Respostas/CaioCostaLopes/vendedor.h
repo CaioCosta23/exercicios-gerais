@@ -34,7 +34,7 @@ int VerificaNomeVendedor(tVendedor vendedor, char nome[50]);
  * @param valor Valor da venda a ser contabilizda;
  * @return tVendedor Vendedor com os dados atualizados (em com a venda contabilizada);
  */
-tVendedor ContabilizaVeda(tVendedor vendedor, float valor);
+tVendedor ContabilizaVenda(tVendedor vendedor, float valor);
 
 /**
  * @brief Obtém o valor do salário de um vendedor;
