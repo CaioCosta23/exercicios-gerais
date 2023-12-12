@@ -4,7 +4,7 @@
 #include "biblioteca.h"
 #include "livro.h"
 
-tBiblioteca inicializaBiblioteca() {
+tBiblioteca inicializarBiblioteca() {
     tBiblioteca biblioteca;
 
     biblioteca.tamanho = 0;
@@ -13,7 +13,6 @@ tBiblioteca inicializaBiblioteca() {
 }
 
 tBiblioteca adicionarLivroNaBiblioteca(tBiblioteca biblioteca, tLivros livro) {
-    tBiblioteca biblioteca;
     
     if (biblioteca.tamanho < MAX_LIVROS) {
         biblioteca.livros[biblioteca.tamanho] = livro;
@@ -26,7 +25,7 @@ tBiblioteca adicionarLivroNaBiblioteca(tBiblioteca biblioteca, tLivros livro) {
 }
 
 tBiblioteca removerLivroDaBiblioteca(tBiblioteca biblioteca, char titulo[]) {
-    int l, o, posicao, a;
+    int l, o, posicao;
     int achado = 0;
     tLivros aux; 
     tLivros livroVazio = {"\0", "\0", 0};;
@@ -52,6 +51,8 @@ tBiblioteca removerLivroDaBiblioteca(tBiblioteca biblioteca, char titulo[]) {
         }else {
             printf("Livro nao encontrado na biblioteca!\n");
         }
+    }else {
+        printf("A biblioteca esta vazia!\n");
     }
     return biblioteca;
 }
