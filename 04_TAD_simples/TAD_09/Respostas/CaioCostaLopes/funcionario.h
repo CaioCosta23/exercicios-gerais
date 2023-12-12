@@ -35,4 +35,6 @@ int getIdFuncionario(tFuncionario funcionario);
  * 
  * @param funcionario Funcionário que terá seus dados impressos;
  */
-void imprimeFuncionario(tFincionario funcionario);
+void imprimeFuncionario(tFuncionario funcionario);
+
+#endif
