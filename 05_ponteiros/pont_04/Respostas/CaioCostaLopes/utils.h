@@ -18,6 +18,6 @@ void LeNumeros(int *array, int tamanho);
  * @param menor Ponteiro para uma variável que armazenará o menor valor;
  * @param media Ponteiro para uma variável que armazenará a média dos valores;
  */
-void EncontraMaiorMedia(int *array, int tamanho, int *maior, int *menor, int *media);
+void EncontraMaiorMedia(int *array, int tamanho, int *maior, int *menor, float *media);
 
 #endif
