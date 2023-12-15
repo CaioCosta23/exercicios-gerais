@@ -2,18 +2,13 @@
 #include <stdlib.h>
 #include "utils.h"
 
-int main()
-{
+int main() {
     int n1, n2;
 
-    while (scanf("%d %d", &n1, &n2) == 2)
-    {
-        if (TrocaInterios(&n1, &n2))
-        {
+    while(scanf("%d %d", &n1, &n2) == 2) {
+        if (TrocaInterios(&n1, &n2)) {
             printf("TROCADO: %d %d\n", n1, n2);
-        }
-        else
-        {
+        }else {
             printf("ORIGINAL: %d %d\n", n1, n2);
         }
     }
