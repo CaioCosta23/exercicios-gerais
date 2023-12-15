@@ -22,7 +22,7 @@ void ImprimeDadosVetor(int *n, int tam);
  * 
  * @param vet Ponteiro para o vetor a ser percorrido;
  * @param tam Tamanho do vetor;
- * @param paraTrocar Ponteiro para a variável que armazenará o índice do menor valor encontrado;
+ * @param paraTrocar Ponteiro para a variável que armazenará do menor valor encontrado;
  * OBS: Essa função tem o comportamento de encontrar o menor valor do vetor de tamanho "tam". Se esse valor for menor que o valor apontado por "paraTrocar",
  * é realizada a troca de posição. Ao final da execução, a variável apontada por "paraTrocar" terá o menor valor encontrado;
  */
