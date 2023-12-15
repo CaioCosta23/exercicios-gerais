@@ -4,12 +4,10 @@
 
 void LeDadosParaVetor(int *vet, int tam) {
     int i;
-    int lista[tam];
 
     for (i = 0; i < tam; i++) {
-        scanf("%d", &lista[i]);
+        scanf("%d", vet + i);
     }
-    vet = lista;
 }
 
 void ImprimeDadosDoVetor(int *n, int tam) {
@@ -25,10 +23,10 @@ void TrocaSeAchaMenor(int *vet, int tam, int *paraTrocar) {
     int *x;
     int aux;
 
-    for (*x = paraTrocar + 1; x < vet + tam; x++) {
+    for (x = paraTrocar + 1; x < vet + tam; x++) {
         if (*x < *paraTrocar) {
             aux = *x;
-            *x = paraTrocar;
+            *x = *paraTrocar;
             *paraTrocar = aux;
         }
     }
