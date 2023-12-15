@@ -3,11 +3,24 @@
 #include "utils.h"
 
 void LeIntervalo(int *m, int *n) {
-    scanf("%d %d", *m, *n);
+
+    scanf("%d %d", m, n);
 }
 
 int EhPrimo(int n) {
-    return (n % 2 == 0);
+    int p;
+    int contDiv = 0;
+
+    for (p = 1; p <= n; p++) {
+        if (n % p == 0) {
+            contDiv++;
+        }
+    }
+
+    if (contDiv == 2) {
+        return 1;
+    }
+    return 0;
 }
 
 void ObtemMaiorEMenorPrimo(int m, int n, int *menor, int *maior) {
@@ -23,10 +36,11 @@ void ObtemMaiorEMenorPrimo(int m, int n, int *menor, int *maior) {
                 if ((*maior) < i) {
                     *maior = i;
                 }
-                if ((*menor) < i) {
+                if ((*menor) > i) {
                     *menor = i;
                 }
             }
+            contPrimos++;
         }
     }
 }
