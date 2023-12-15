@@ -7,7 +7,7 @@
  * @param m Ponteiro para a variável que receberá o valor do início do intrvalo;
  * @param n Ponteiro para a variável que receberá o valor do fim do intervalo;
  */
-void LeIntevalo(int *m, int *n);
+void LeIntervalo(int *m, int *n);
 
 /**
  * @brief Verifica se um número é primo;
