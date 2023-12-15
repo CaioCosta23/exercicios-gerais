@@ -13,7 +13,7 @@ int main() {
     LeNumeros(numeros, tamanho);
     EncontraMaiorMenorMedia(numeros, tamanho, &maior, &menor, &media);
 
-    printf("Maior elemento:%d\n", maior);
+    printf("Maior elemento: %d\n", maior);
     printf("Menor elemento: %d\n", menor);
     printf("Media dos elementos: %.2f\n", media);
 
