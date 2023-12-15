@@ -10,7 +10,7 @@ void LeNumeros(int *array, int tamanho) {
     }
 }
 
-void EncontraMaiorMedia(int *array, int tamanho, int *maior, int *menor, float *media) {
+void EncontraMaiorMenorMedia(int *array, int tamanho, int *maior, int *menor, float *media) {
     int i;
     int soma = 0;
     
