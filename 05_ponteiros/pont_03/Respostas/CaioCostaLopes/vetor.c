@@ -34,7 +34,7 @@ void TrocaSeAchaMenor(int *vet, int tam, int *paraTrocar) {
     }
 }
 
-void OrdeneCresecnte(int *vet, int tam) {
+void OrdeneCrescente(int *vet, int tam) {
     int i;
 
     for (i = 0; i < tam; i++) {
