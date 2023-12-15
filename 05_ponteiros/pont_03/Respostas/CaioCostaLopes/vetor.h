@@ -15,7 +15,7 @@ void LeDadosParaVetor(int *vet, int tam);
  * @param n Ponteiro para o vetor a ser impresso;
  * @param tam Tamanho do vetor;
  */
-void ImprimeDadosVetor(int *n, int tam);
+void ImprimeDadosDoVetor(int *n, int tam);
 
 /**
  * @brief Troca o valor de duas variáveis se o segundo for menor que o primeiro;
@@ -34,6 +34,6 @@ void TrocaSeAchaMenor(int *vet, int tam, int *paraTrocar);
  * @param vet Ponteiro para o vetor a ser ordenado;
  * @param tam Tamanho do vetor;
  */
-void OrdenaCrescente(int *vet, int tam);
+void OrdeneCrescente(int *vet, int tam);
 
 #endif

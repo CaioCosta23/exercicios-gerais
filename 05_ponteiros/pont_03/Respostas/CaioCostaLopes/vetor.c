@@ -12,7 +12,7 @@ void LeDadosParaVetor(int *vet, int tam) {
     vet = lista;
 }
 
-void ImprimeDadosVetor(int *n, int tam) {
+void ImprimeDadosDoVetor(int *n, int tam) {
     int i;
     
     for (i = 0; i < tam; i++) {
@@ -34,7 +34,7 @@ void TrocaSeAchaMenor(int *vet, int tam, int *paraTrocar) {
     }
 }
 
-void OrdenaCresecnte(int *vet, int tam) {
+void OrdeneCresecnte(int *vet, int tam) {
     int i;
 
     for (i = 0; i < tam; i++) {
