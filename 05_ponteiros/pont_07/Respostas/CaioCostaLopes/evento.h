@@ -1,7 +1,7 @@
 #ifndef EVENTOS_H
 #define EVENTOS_H
 
-#define MAX_EVENTOS 10;
+#define MAX_EVENTOS 10
 
 typedef struct {
     char nome [50]; // Nome do evento;
