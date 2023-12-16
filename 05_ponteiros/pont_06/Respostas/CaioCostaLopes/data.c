@@ -6,17 +6,35 @@ void InicializaDataParam(int dia, int mes, int ano, tData *data) {
     data->dia = dia;
     data->mes = mes;
     data->ano = ano;
+
+    if (ano < 1) {
+        data->ano = 1;
+    }
+    if (mes > 12) {
+        data->mes = 12;
+    }else {
+        if (mes < 1) {
+            data->mes = 1;
+        }
+    }
+    if (dia > InformaQtdDiasNoMes(data)) {
+        data->dia = InformaQtdDiasNoMes(data);
+    }else {
+        if (dia < 1) {
+            data->dia = 1;
+        }
+    }
 }
 
 void LeData(tData *data) {
     int dia, mes, ano;
     
-    scanf("%d/%d/%d", &dia, &mes, &ano);
-    InicailizaDataParam(dia, mes, ano, data);
+    scanf("%d %d %d", &dia, &mes, &ano);
+    InicializaDataParam(dia, mes, ano, data);
 }
 
 void ImprimeData(tData *data) {
-    printf("%02d/%02d/%04d\n", (*data).dia, (*data).mes, (*data).ano);
+    printf("'%02d/%02d/%04d'", (*data).dia, (*data).mes, (*data).ano);
 }
 
 int EhBissexto(tData *data) {
@@ -58,12 +76,9 @@ void AvancaParaDiaSeguinte(tData *data) {
 }
 
 int EhIgual(tData *data1, tData *data2) {
-    if ((*data1).dia == (*data2).dia) {
-        if ((*data1).mes == (*data2).mes) {
-            if ((*data1).ano == (*data2).ano) {
-                return 1;
-            }
-        }
+    if (((*data1).dia == (*data2).dia) && ((*data1).mes == (*data2).mes) && ((*data1).ano == (*data2).ano)) {
+        return 1;
+        printf("\n\n SAIU\n\n");
     }
     return 0;
 }
