@@ -36,14 +36,14 @@ void trocarDataEvento(Evento eventos[], int *numEventos) {
 }
 
 void trocarIndicesEventos(Evento eventos[], int *indiceA, int *indiceB, int *numEventos) {
-    int *x;
-    int aux;
+    int x;
+    Evento aux;
 
-    for (x = eventos; x < eventos + *numEventos; x++) {
-        if (*x == *indiceA) {
-            aux = *indiceA;
-            *indiceA = *indiceB;
-            *indiceB = aux;
+    for (x = 0; x < *numEventos; x++) {
+        if (x == *indiceA) {
+            aux = eventos[*indiceA];
+            eventos[*indiceA] = eventos[*indiceB];
+            eventos[*indiceB] = aux;
             break;
         }
     }
