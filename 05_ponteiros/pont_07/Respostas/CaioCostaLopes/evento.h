@@ -42,6 +42,6 @@ void trocarDataEvento(Evento eventos[], int *numEventos);
  * @param indiceB Ponteiro para o segundo índice;
  * @param numEventos Ponteiro para o número total de eventos cadastrados;
  */
-void trocarIndiceseventos(Evento eventos[], int *indiceA, int *indiceB, int *numEventos);
+void trocarIndicesEventos(Evento eventos[], int *indiceA, int *indiceB, int *numEventos);
 
 #endif
