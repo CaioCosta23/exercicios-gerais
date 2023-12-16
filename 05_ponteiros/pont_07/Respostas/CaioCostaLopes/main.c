@@ -14,7 +14,7 @@ void imprimeMenu() {
 int main() {
     Evento eventos[MAX_EVENTOS];
     int numEventos = 0;
-    int opcao;
+    int opcao, indiceA, indiceB;;
 
     imprimeMenu();
 
@@ -32,8 +32,6 @@ int main() {
                 trocarDataEvento(eventos, &numEventos);
                 break;
             case 4:
-                int indiceA, indiceB;
-
                 scanf("%d %d", &indiceA, &indiceB);
 
                 trocarIndicesEventos(eventos, &indiceA, &indiceB, &numEventos);
@@ -41,7 +39,7 @@ int main() {
             case 5:
                 printf("Saindo...\n");
                 break;
-            defaut:
+            default:
                 printf("Opcao invalida!\n");
         }
     }
