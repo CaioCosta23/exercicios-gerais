@@ -44,6 +44,6 @@ void ImprimePessoa(tPessoa *pessoa);
  * 
  * @param pessoa Vetor (lista/array) de pesoas a serem associadas;
  */
-void AssociaFamiliasGruposPessoas(tPessoa pessoa[]);
+void AssociaFamiliasGruposPessoas(tPessoa pessoas[]);
 
 #endif
