@@ -19,7 +19,6 @@ float Divisao(float num1, float num2) {
 }
 
 int main() {
-    CalculatoraCallback calculadora;
     char acao;
     float num1 = 0, num2 = 0;
 
@@ -28,20 +27,16 @@ int main() {
         scanf("%f %f", &num1, &num2);
 
         if (acao == 'a'){
-            calculadora = Soma;
-            printf("%.2f + %.2f = %.2f", num1, num2, Calcular(num1, num2, calculadora));
+            printf("%.2f + %.2f = %.2f\n", num1, num2, Calcular(num1, num2, Soma));
         }
         if (acao == 's'){
-            calculadora = Subtracao;
-            printf("%.2f - %.2f = %.2f", num1, num2, Calcular(num1, num2, calculadora));
+            printf("%.2f - %.2f = %.2f\n", num1, num2, Calcular(num1, num2, Subtracao));
         }
         if (acao == 'm'){
-            calculadora = Multiplicacao;
-            printf("%.2f + %.2f = %.2f", num1, num2, Calcular(num1, num2, calculadora));
+            printf("%.2f x %.2f = %.2f\n", num1, num2, Calcular(num1, num2, Multiplicacao));
         }
         if (acao == 'd'){
-            calculadora = Divisao;
-            printf("%.2f + %.2f = %.2f", num1, num2, Calcular(num1, num2, calculadora));
+            printf("%.2f / %.2f = %.2f\n", num1, num2, Calcular(num1, num2, Divisao));
         }
     } while(acao != 'f');
 
