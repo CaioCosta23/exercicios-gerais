@@ -14,9 +14,7 @@ tPessoa CriaPessoa() {
 }
 
 void LePessoa(tPessoa *pessoa) {
-    scanf("%*[^\n]");
-    scanf("%*c");
-    scanf("%[^\n]\n", (*pessoa).nome);
+    scanf("\n%[^\n]\n", (*pessoa).nome);
     //De onde está surgindo o primeiro '\n' lido? (Verificar casos de teste de entrada); 
 }
 
@@ -57,6 +55,7 @@ void ImprimePessoa(tPessoa *pessoa) {
         }else {
             printf("NAO INFORMADO\n");
         }
+        printf("\n");
     }
 }
 
