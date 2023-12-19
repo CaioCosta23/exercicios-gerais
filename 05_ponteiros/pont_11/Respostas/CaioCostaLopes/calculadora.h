@@ -5,7 +5,7 @@
  * @brief Ponteiro para função que recebe dois números de ponto flutuante (deciamais - 'float') e realiza uma operação matemática;
  * 
  */
-typedef float(*CalculadoraCallback)(float, float);
+typedef float(*CalculatoraCallback)(float, float);
 
 /**
  * @brief Função que realiza uma operação matemática entre dois números;
@@ -15,6 +15,6 @@ typedef float(*CalculadoraCallback)(float, float);
  * @param operacao Ponteiro para a função que realiza a operação matemática;
  * @return float Resultado da operação matemática;
  */
-float Calcular(float num1, float num2, CalculadoraCallback operacao);
+float Calcular(float num1, float num2, CalculatoraCallback operacao);
 
 #endif
