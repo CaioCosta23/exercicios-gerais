@@ -5,13 +5,13 @@
 int main() {
     int qtdPessoas, p;
 
-    scanf("%d", &qtdPessoas);
+    scanf("%d\n", &qtdPessoas);
 
     tPessoa pessoas [qtdPessoas];
 
     for (p = 0; p < qtdPessoas; p++) {
         pessoas[p] = CriaPessoa();
-        LePessoas(&pessoas[p]);
+        LePessoa(&pessoas[p]);
     }
 
     AssociaFamiliasGruposPessoas(pessoas, qtdPessoas);
