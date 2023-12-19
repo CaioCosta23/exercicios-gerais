@@ -37,6 +37,10 @@ void AssociaFamiliasGruposPessoas(tPessoa pessoa[]) {
     
     scanf("mae: %d, pai: %d, filho: %d\n", &indiceMae, &indicePai, &indiceFilho);
 
-    pessoa[indiceFilho].mae = &pessoa[indiceMae];
-    pessoa[indiceFilho].pai = &pessoa[indicePai];
+    if (indiceMae != -1) {
+        pessoa[indiceFilho].mae = &pessoa[indiceMae];
+    }
+    if (indicePai != -1) {
+        pessoa[indiceFilho].pai = &pessoa[indicePai];
+    }
 }
