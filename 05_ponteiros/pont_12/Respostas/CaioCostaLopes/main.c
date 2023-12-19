@@ -15,8 +15,8 @@ int main() {
 
     LeVetor(&vetor);
     
-    printf("Soma: %d", AplicarOperacaoVetor(&vetor, Soma));
-    printf("Produto: %d", AplicarOperacaoVetor(&vetor, Multiplicacao));
+    printf("Soma: %d\n", AplicarOperacaoVetor(&vetor, Soma));
+    printf("Produto: %d\n", AplicarOperacaoVetor(&vetor, Multiplicacao));
 
     return 0;
 }
