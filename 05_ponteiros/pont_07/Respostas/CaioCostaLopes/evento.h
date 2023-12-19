@@ -16,7 +16,7 @@ typedef struct {
  * @param eventos Array (lista) de eventos onde o novo evento será cadastrado;
  * @param numEventos Ponteiro para o numero atual de eventos cadastrados;
  */
-void cadastraEvento(Evento eventos[], int *numEventos);
+void cadastrarEvento(Evento eventos[], int *numEventos);
 
 /**
  * @brief Exibe todos os eventos cadastrados no calendário;
