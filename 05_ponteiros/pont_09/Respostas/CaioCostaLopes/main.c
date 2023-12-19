@@ -3,7 +3,7 @@
 #include "pessoa.h"
 
 int main() {
-    int qtdPessoas, qtdAssociacoes, p, a;
+    int qtdPessoas, p;
 
     scanf("%d\n", &qtdPessoas);
 
@@ -14,11 +14,11 @@ int main() {
         LePessoa(&pessoas[p]);
     }
     
-    scanf("%d", &qtdAssociacoes);
+    AssociaFamiliasGruposPessoas(pessoas);
 
-    for (a = 0; a < qtdAssociacoes; a++) {
-        AssociacoesFamiliasGruposPessoas(pessoas);
+    for (p = 0; p < qtdPessoas; p++) {
         ImprimePessoa(&pessoas[p]);
     }
+
     return 0;
 }
