@@ -2,7 +2,7 @@
 #define _UTILS_H_
 
 /**
- * @brief Cria um vetor de inteiros com o tamanho especificado (alocado dinan=micamente);
+ * @brief Cria um vetor de inteiros com o tamanho especificado (alocado dinanamicamente);
  * 
  * @param tamanho Tamanho do vetor a ser criado;
  * @return int Ponteiro para o vetor criado;
