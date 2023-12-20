@@ -3,7 +3,7 @@
 #include "utils_char.h"
 
 char *CriaVetor(int tamanho) {
-    char *vetor = malloc(tamanho * sizeof(char));
+    char *vetor =  malloc(tamanho * sizeof(char));
     int v;
 
     if (vetor == NULL) {
@@ -14,32 +14,33 @@ char *CriaVetor(int tamanho) {
     for (v = 0; v < tamanho; v++) {
         vetor[v] = '_';
     }
+    return vetor;
 }
 
-void LeVetor(char vetor[], int tamanho) {
+void LeVetor(char *vetor, int tamanho) {
     int c = 0;
-    char letra;
+    char letra = '\0';
 
-    while ((c <tamanho) && (letra != '\n')) {
-        scnaf("%c", &letra);
+    while (c < tamanho) {
+        scanf("%c", &letra);
+
+        if (letra == '\n') {
+            break;
+        }
+
         vetor[c] = letra;
 
         c++;
     } 
 }
 
-void ImprimeString(char vetor[], int tamanho) {
+void ImprimeString(char *vetor, int tamanho) {
     int v;
-
-    for (v = 0; v < tamanho; v++) {
-        printf("_");
-    }
-
-    printf("\n");
 
     for (v = 0; v < tamanho; v++) {
         printf("%c", vetor[v]);
     }
+    printf("\n");
 }
 
 void LiberaVetor(char *vetor) {
