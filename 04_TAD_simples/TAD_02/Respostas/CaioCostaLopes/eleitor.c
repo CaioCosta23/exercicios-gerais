@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "eleitor.h"
 
 #define MAX_ELEITORES 10
@@ -19,7 +18,7 @@ tEleitor LeEleitor() {
     int id, votoP, votoG;
     tEleitor eleitor;
 
-    scanf("%d %d %d\n", &id, &votoG, &votoP);
+    scanf("%d %d %d", &id, &votoP, &votoG);
 
     eleitor = CriaEleitor(id, votoP, votoG);
 
