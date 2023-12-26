@@ -3,6 +3,8 @@
 #include <string.h>
 #include "eleitor.h"
 
+#define MAX_ELEITORES 10
+
 tEleitor CriaEleitor(int id, int votoP, int votoG) {
     tEleitor eleitor;
 
@@ -24,11 +26,11 @@ tEleitor LeEleitor() {
     return eleitor;
 }
 
-int ObtemVotosPresidente(tEleitor eleitor) {
+int ObtemVotoPresidente(tEleitor eleitor) {
     return eleitor.votoP;
 }
 
-int ObtemVotosGovernador(tEleitor eleitor) {
+int ObtemVotoGovernador(tEleitor eleitor) {
     return eleitor.votoG;
 }
 

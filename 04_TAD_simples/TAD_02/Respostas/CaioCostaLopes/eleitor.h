@@ -30,7 +30,7 @@ tEleitor LeEleitor();
  * @param eleitor Eleitor a ter seu voto (para presidente) verificado;
  * @return int Voto do eleitor (para presidente);
  */
-int ObtemVotosPresidente(tEleitor eleitor);
+int ObtemVotoPresidente(tEleitor eleitor);
 
 /**
  * @brief Obtém o voto para governador do eleitor;
