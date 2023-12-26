@@ -16,6 +16,7 @@ typedef struct {
     int votosBrancosGovernador;
     int votosNulosPresidente;
     int votosNulosGovernador;
+    tEleitor eleitores[MAX_ELEITORES];
 }tEleicao;
 
 /**
