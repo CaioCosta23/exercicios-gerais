@@ -138,7 +138,7 @@ void ImprimeResultadosEleicao(tEleicao eleicao) {
         if (empatePresitentes) {
             printf("EMPATE. SERA NECESSARIO UMA NOVA VOTACAO");
         }else {
-            printf("%s (%s), %d voto(s), %.2f%%", liderPresidente.nome, liderPresidente.partido, liderPresidente.votos, CalculaPercentualVotos(liderPresidente, totalVotosPres));
+            ImprimeCandidato(liderPresidente, CalculaPercentualVotos(liderPresidente, totalVotosPres));
         }
     }
     printf("\n");
@@ -168,7 +168,7 @@ void ImprimeResultadosEleicao(tEleicao eleicao) {
         if (empateGovernadores) {
             printf("EMPATE. SERA NECESSARIO UMA NOVA VOTACAO");
         }else {
-            printf("%s (%s), %d voto(s), %.2f%%", liderGovernador.nome, liderGovernador.partido, liderGovernador.votos, CalculaPercentualVotos(liderGovernador, totalVotosGov));
+            ImprimeCandidato(liderGovernador, CalculaPercentualVotos(liderGovernador, totalVotosGov));
         }
     }
     printf("\n");
