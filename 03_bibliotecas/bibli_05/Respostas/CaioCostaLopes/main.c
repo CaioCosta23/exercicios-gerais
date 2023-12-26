@@ -5,7 +5,7 @@
 #define TAMANHO_MAXIMO 1000
 
 int main () {
-    char str[TAMANHO_MAXIMO];
+    char str[TAMANHO_MAXIMO], dest[TAMANHO_MAXIMO];;
     int option;
     int finish = 0;
 
@@ -23,26 +23,27 @@ int main () {
 
         scanf("%d", &option);
 
+        printf("\n");
+
         switch(option) {
             case 1:
-                printf("\nTamanho da string: %d\n\n", string_length(str));
+                printf("Tamanho da string: %d\n\n", string_length(str));
                 break;
             case 2:
-                char dest[TAMANHO_MAXIMO];
                 string_copy(str, dest);
-                printf("\nString copiada: %s\n\n", dest);
+                printf("String copiada: %s\n\n", dest);
                 break;
             case 3:
                 string_upper(str);
-                printf("\nString convertida para maiusculas: %s\n\n", str);
+                printf("String convertida para maiusculas: %s\n\n", str);
                 break;
             case 4:
                 string_lower(str);
-                printf("\nString convertida para minusculas: %s\n\n", str);
+                printf("String convertida para minusculas: %s\n\n", str);
                 break;
             case 5:
                 string_reverse(str);
-                printf("\nString invertida: %s\n\n", str);
+                printf("String invertida: %s\n\n", str);
                 break;
             case 6:
                 finish = 1;
