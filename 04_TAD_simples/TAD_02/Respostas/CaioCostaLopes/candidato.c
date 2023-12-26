@@ -23,7 +23,7 @@ tCandidato LeCandidato() {
     int id;
     tCandidato candidato;
 
-    scanf("%[^,], %[^,], %c, %d\n", nome, partido, &cargo, &id);
+    scanf("\n%[^,], %[^,], %c, %d\n", nome, partido, &cargo, &id);
     
     candidato = CriarCandidato(nome, partido, cargo, id);
 
@@ -58,11 +58,11 @@ int ObtemVotos(tCandidato candidato) {
 float CalculaPercentualVotos(tCandidato candidato, int totalVotos) {
     float percentual = 0.00;
 
-    percentual = (candidato.votos * 100) / totalVotos;
+    percentual = (float)(candidato.votos * 100) / (float)totalVotos;
 
     return percentual;
 }
 
 void ImprimeCandidato(tCandidato candidato, float percentualVotos) {
-    printf("%s (%s), %d voto(s), %.2f%%", candidato.nome, candidato.partido, candidato.votos, percentualVotos);
+    printf("%s (%s), %d voto(s), %.2f%%\n", candidato.nome, candidato.partido, candidato.votos, percentualVotos);
 }
