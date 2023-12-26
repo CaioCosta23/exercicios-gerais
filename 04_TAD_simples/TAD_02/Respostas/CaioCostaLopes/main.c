@@ -7,5 +7,5 @@ int main() {
 
     eleicao = InicializaEleicao();
     eleicao = RealizaEleicao(eleicao);
-    ImprimeResultadosEleicao(eleicao);
+    ImprimeResultadoEleicao(eleicao);
 }
