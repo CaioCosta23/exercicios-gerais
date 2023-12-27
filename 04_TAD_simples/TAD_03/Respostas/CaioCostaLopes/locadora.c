@@ -38,7 +38,6 @@ tLocadora cadastrarFilmeLocadora(tLocadora locadora, tFilme filme) {
 tLocadora lerCadastroLocadora(tLocadora locadora) {
     char codigo;
     tFilme filme;
-    tLocadora locadora;
 
     scanf("%c", &codigo);
 
@@ -66,7 +65,7 @@ tLocadora alugarFilmesLocadora(tLocadora locadora, int codigos[], int quantidade
                 break;
             }
             if (existeFilme) {
-                if (obterQtdEstoque(locadora.filme[f]) > 0) {
+                if (obterQtdEstoqueFilme(locadora.filme[f]) > 0) {
                     locadora.filme[f] = alugarFilme(locadora.filme[f]);
                     printf("Total de filmes alugados: 1 com custo de R$%d\n", obterValorFilme(locadora.filme[f]));
                 }else {
@@ -117,7 +116,7 @@ tLocadora devolverFilmesLocadora(tLocadora locadora, int codigos[], int quantida
             }
             if (existeFilme) {
                 if (obterQuantidadeAlugada(locadora.filme[f]) > 0) {
-                    locadora.filme[f] = alugarFilme(locadora.filme[f]);
+                    locadora.filme[f] = devolveFilme(locadora.filme[f]);
                     locadora.lucro += obterValorFilme(locadora.filme[f]);
                     printf("Filme %d - ");
                     imprimeNomeFilme(locadora.filme[f]);
