@@ -40,5 +40,5 @@ tEleicao RealizaEleicao(tEleicao eleicao);
  * 
  * @param eleicao Eleicao (dados, informações e resultados) à ser impressa;
  */
-void ImprimeResultadosEleicao(tEleicao eleicao);
+void ImprimeResultadoEleicao(tEleicao eleicao);
 #endif
