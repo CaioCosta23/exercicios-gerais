@@ -23,7 +23,7 @@ tLocadora criaLocadora();
  * 
  * @param locadora Locadora a ser consultada;
  * @param codigo Código do filme a ser verificado;
- * @return int 1 se o filme verificado stá cadastrado e 0. caso contrário;
+ * @return int 1 se o filme verificado está cadastrado e 0. caso contrário;
  */
 int verificaFilmeCadastrado(tLocadora locadora, int codigo);
 
