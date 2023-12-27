@@ -44,7 +44,7 @@ int obterCodigoFilme(tFilme filme);
  * 
  * @param filme Filme a ser impresso;
  */
-void imprimeNomeFilme(tFilme filme);
+void imprimirNomeFilme(tFilme filme);
 
 /**
  * @brief Obtém o valor de um filme;

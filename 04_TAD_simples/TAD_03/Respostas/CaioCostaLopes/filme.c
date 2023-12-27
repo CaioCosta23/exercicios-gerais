@@ -10,7 +10,7 @@ tFilme criaFilme(char nome[], int codigo, int valor, int quantidade) {
     filme.codigo = codigo;
     filme.valor = valor;
     filme.qtdEstoque = quantidade;
-    filme.qtdAluga = 0;
+    filme.qtdAlugada = 0;
 
     return filme;
 }
@@ -29,7 +29,7 @@ int obterCodigoFilme(tFilme filme) {
     return filme.codigo;
 }
 
-void imprimeNomeFilme(tFilme filme) {
+void imprimirNomeFilme(tFilme filme) {
     printf("%s", filme.nome);
 }
 
@@ -42,7 +42,7 @@ int obterQtdEstoque(tFilme filme) {
 }
 
 int obterQuantidadeAlugadaFilme(tFilme filme) {
-    return filme.qtdAluga;
+    return filme.qtdAlugada;
 }
 
 int ehMesmoCodigoFilme(tFilme filme, int codigo) {
@@ -50,14 +50,14 @@ int ehMesmoCodigoFilme(tFilme filme, int codigo) {
 }
 
 tFilme alugarFilme(tFilme filme) {
-    filme.qtdAluga += 1;
+    filme.qtdAlugada += 1;
     filme.qtdEstoque -= 1;
 
     return filme;
 }
 
-tFilme devolverFilme(tFilme filme) {
-    filme.qtdAluga -=1;
+tFilme devolveFilme(tFilme filme) {
+    filme.qtdAlugada -=1;
     filme.qtdEstoque += 1;
 
     return filme;
