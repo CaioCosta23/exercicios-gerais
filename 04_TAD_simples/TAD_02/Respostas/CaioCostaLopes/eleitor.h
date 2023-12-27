@@ -38,7 +38,7 @@ int ObtemVotoPresidente(tEleitor eleitor);
  * @param eleitor Eleitor a ter seu voto (para governador) verificado;
  * @return int Voto do eleitor (para governador);
  */
-int ObtemVotoGoverador(tEleitor eleitor);
+int ObtemVotoGovernador(tEleitor eleitor);
 
 /**
  * @brief Verifica se os dois eleitores são "iguais" (ou seja se o eleitor, na verdade é o mesmo);
