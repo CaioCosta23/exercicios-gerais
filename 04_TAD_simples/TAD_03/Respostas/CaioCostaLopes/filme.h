@@ -58,7 +58,7 @@ int obterValorFilme(tFilme filme);
  * @brief Obtém a quantidade em estoque de um filme;
  * 
  * @param filme Filme a ser consultado;
- * @return int 
+ * @return int Qauntidade de fitas do filme em estoque na locadora;
  */
 int obterQtdEstoqueFilme(tFilme filme);
 

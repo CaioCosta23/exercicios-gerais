@@ -48,7 +48,7 @@ tLocadora lerCadastroLocadora (tLocadora locadora);
  * @brief Aluga um conjunto de filmes da locadora;
  * 
  * @param locadora Locadora a ser atualizada;
- * @param codigos Lista (array) com os cpdigos dos filmes a serem alugados;
+ * @param codigos Lista (array) com os códigos dos filmes a serem alugados;
  * @param quantidadeCodigos Quantidade de códigos na lista (array);
  * @return tLocadora Locadora atualizada;
  */
@@ -81,7 +81,7 @@ tLocadora devolverFilmesLocadora(tLocadora locadora, int codigos[], int quantida
 tLocadora lerDevolucaoLocadora(tLocadora locadora);
 
 /**
- * @brief Ordena os filmes d locadora por nome;
+ * @brief Ordena os filmes da locadora por nome;
  * 
  * @param locadora Locadora a ser ordenada;
  * @return tLocadora Locadora ordenada;
