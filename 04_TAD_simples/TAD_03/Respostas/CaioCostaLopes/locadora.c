@@ -70,7 +70,7 @@ tLocadora alugarFilmesLocadora(tLocadora locadora, int codigos[], int quantidade
                     printf("Total de filmes alugados: 1 com custo de R$%d\n", obterValorFilme(locadora.filme[f]));
                 }else {
                     printf("Filme %d - ", obterCodigoFilme(locadora.filme[f]));
-                    imprimeNomeFilme(locadora.filme[f]);
+                    imprimirNomeFilme(locadora.filme[f]);
                     printf(" nao disponivel no estoque. Volte mais tarde.\n");
                 }
             }else {
@@ -119,11 +119,11 @@ tLocadora devolverFilmesLocadora(tLocadora locadora, int codigos[], int quantida
                     locadora.filme[f] = devolveFilme(locadora.filme[f]);
                     locadora.lucro += obterValorFilme(locadora.filme[f]);
                     printf("Filme %d - ");
-                    imprimeNomeFilme(locadora.filme[f]);
+                    imprimirNomeFilme(locadora.filme[f]);
                     printf(" Devolvido!\n");
                 }else {
                     printf("Nao eh possivel devolver o filme %d - ", obterCodigoFilme(locadora.filme[f]));
-                    imprimeNomeFilme(locadora.filme[f]);
+                    imprimirNomeFilme(locadora.filme[f]);
                     printf("\n");
                 }
             }else {
@@ -179,7 +179,7 @@ void consultarEstoqueLocadora(tLocadora locadora) {
 
     for (f = 0; f < locadora.numFilmes; f++) {
         printf("%d - ");
-        imprimeNomeFilme(locadora.filme[f]);
+        imprimirNomeFilme(locadora.filme[f]);
         printf(" Fitas em estoque: %d\n", obterQtdEstoqueFilme(locadora.filme[f]));
 
         cont++;
