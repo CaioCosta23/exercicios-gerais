@@ -34,7 +34,7 @@ int verificaFilmeCadastrado(tLocadora locadora, int codigo);
  * @param filme Filme a ser cadastrado;
  * @return tLocadora Locadora atualizada;
  */
-tLocadora cadastrarFilmeLocadora (tLocadora locadora, tFilme filme);
+tLocadora cadastrarFilmeLocadora(tLocadora locadora, tFilme filme);
 
 /**
  * @brief Lê o cadastro de um ou mais filmes a partir da entrada padrão;
@@ -42,7 +42,7 @@ tLocadora cadastrarFilmeLocadora (tLocadora locadora, tFilme filme);
  * @param locadora Locadora a ser atualizada;
  * @return tLocadora Locadora atualizada;
  */
-tLocadora lerCadastroLocadora (tLocadora locadora);
+tLocadora lerCadastroLocadora(tLocadora locadora);
 
 /**
  * @brief Aluga um conjunto de filmes da locadora;
@@ -52,7 +52,7 @@ tLocadora lerCadastroLocadora (tLocadora locadora);
  * @param quantidadeCodigos Quantidade de códigos na lista (array);
  * @return tLocadora Locadora atualizada;
  */
-tLocadora alugarFilmesLocadora (tLocadora locadora, int codigos[], int quantidadeCodigos);
+tLocadora alugarFilmesLocadora(tLocadora locadora, int codigos[], int quantidadeCodigos);
 
 /**
  * @brief Lẽ o aluguel de um conjunto de filmes a partir da entrada padrão;
@@ -60,7 +60,7 @@ tLocadora alugarFilmesLocadora (tLocadora locadora, int codigos[], int quantidad
  * @param locadora Locadora a ser atualizada;
  * @return tLocadora Locadora atualizada;
  */
-tLocadora lerLocadoraAluguelLocadora (tLocadora locadora);
+tLocadora lerAluguelLocadora(tLocadora locadora);
 
 /**
  * @brief Devolve um conjunto de filmes a serem alugados;
@@ -100,6 +100,6 @@ void consultarEstoqueLocadora(tLocadora locadora);
  * 
  * @param locadora Locadora a ser consultada;
  */
-void consultarLucroLocadora (tLocadora locadora);
+void consultarLucroLocadora(tLocadora locadora);
 
 #endif
