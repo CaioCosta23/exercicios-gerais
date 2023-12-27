@@ -9,7 +9,7 @@ typedef struct Filme {
     char nome [MAX_CARACTERES];
     int valor;
     int qtdEstoque;
-    int qtdAluga;
+    int qtdAlugada;
 }tFilme;
 
 /**
