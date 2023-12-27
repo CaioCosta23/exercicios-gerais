@@ -3,7 +3,7 @@
 #include <string.h>
 #include "filme.h"
 
-tFilme criaFilme(char nome[], int codigo, int valor, int quantidade) {
+tFilme criarFilme(char nome[], int codigo, int valor, int quantidade) {
     tFilme filme;
 
     strcpy(filme.nome, nome);
@@ -22,7 +22,9 @@ tFilme leFilme(int codigo) {
 
     scanf(",%19[^,],%d,%d\n", nome, &valor, &quantidade);
 
-    filme = criaFilme(nome, codigo, valor, quantidade);
+    filme = criarFilme(nome, codigo, valor, quantidade);
+
+    return filme;
 }
 
 int obterCodigoFilme(tFilme filme) {
@@ -56,13 +58,13 @@ tFilme alugarFilme(tFilme filme) {
     return filme;
 }
 
-tFilme devolveFilme(tFilme filme) {
+tFilme devolverFilme(tFilme filme) {
     filme.qtdAlugada -=1;
     filme.qtdEstoque += 1;
 
     return filme;
 }
 
-int comparaNomesFilme (tFilme filme1, tFilme filme2) {
+int comparaNomesFilmes(tFilme filme1, tFilme filme2) {
     return (strcmp(filme1.nome, filme2.nome));
 }

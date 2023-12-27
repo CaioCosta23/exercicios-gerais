@@ -115,10 +115,10 @@ tLocadora devolverFilmesLocadora(tLocadora locadora, int codigos[], int quantida
                 break;
             }
             if (existeFilme) {
-                if (obterQuantidadeAlugada(locadora.filme[f]) > 0) {
-                    locadora.filme[f] = devolveFilme(locadora.filme[f]);
+                if (obterQuantidadeAlugadaFilme(locadora.filme[f]) > 0) {
+                    locadora.filme[f] = devolverFilme(locadora.filme[f]);
                     locadora.lucro += obterValorFilme(locadora.filme[f]);
-                    printf("Filme %d - ");
+                    printf("Filme %d - ", codigos[c]);
                     imprimirNomeFilme(locadora.filme[f]);
                     printf(" Devolvido!\n");
                 }else {
@@ -162,7 +162,7 @@ tLocadora ordenaFilmesLocadora(tLocadora locadora) {
 
     for (f = 0; f < (locadora.numFilmes - 1); f++) {
         for(o = f + 1; o < locadora.numFilmes; o++) {
-            if (comparaNomesFilme(locadora.filme[f], locadora.filme[o]) > 0) {
+            if (compararNomesFilme(locadora.filme[f], locadora.filme[o]) > 0) {
                 aux = locadora.filme[f];
                 locadora.filme[f] = locadora.filme[o];
                 locadora.filme[o] = aux;

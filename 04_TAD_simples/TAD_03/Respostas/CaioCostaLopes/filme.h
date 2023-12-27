@@ -21,7 +21,7 @@ typedef struct Filme {
  * @param quantidade Quantidade em estoque;
  * @return tFilme Filme criado;
  */
-tFilme criaFilme(char nome[], int codigo, int valor, int quantidade);
+tFilme criarFilme(char nome[], int codigo, int valor, int quantidade);
 
 /**
  * @brief Lê um filme;
@@ -93,7 +93,7 @@ tFilme alugarFilme(tFilme filme);
  * @param filme Filme a ser devolvido;
  * @return tFilme Filme com a quantidade alugada atualizada;
  */
-tFilme devolveFilme(tFilme filme);
+tFilme devolverFilme(tFilme filme);
 
 /**
  * @brief Compara os nomes de dois filmes;
@@ -103,6 +103,6 @@ tFilme devolveFilme(tFilme filme);
  * @return int 0 se s nomes sao iguais, um valor negativo se o nome do primeiro filme for menor que o segundo
  * um valor positivo se o nome do segundo filme for maior que o primeiro;
  */
-int compararNomesFilme (tFilme filme1, tFilme filme2);
+int compararNomesFilmes(tFilme filme1, tFilme filme2);
 
 #endif

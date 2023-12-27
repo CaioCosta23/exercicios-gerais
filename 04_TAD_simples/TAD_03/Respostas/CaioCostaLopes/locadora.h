@@ -81,7 +81,7 @@ tLocadora devolverFilmesLocadora(tLocadora locadora, int codigos[], int quantida
 tLocadora lerDevolucaoLocadora(tLocadora locadora);
 
 /**
- * @brief Ordena os filmes da locadora por nome;
+ * @brief Ordena os filmes davoid locadora por nome;
  * 
  * @param locadora Locadora a ser ordenada;
  * @return tLocadora Locadora ordenada;
