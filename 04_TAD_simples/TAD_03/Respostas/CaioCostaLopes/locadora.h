@@ -16,7 +16,7 @@ typedef struct Locadora {
  * 
  * @return tLocadora Locadora criada;
  */
-tLocadora criaLocadora();
+tLocadora criarLocadora();
 
 /**
  * @brief Verifica se um filme está cadastrado na locadora;

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "locadora.h"
 
-tLocadora criaLocadora() {
+tLocadora criarLocadora() {
     tLocadora locadora;
 
     locadora.numFilmes = 0;
