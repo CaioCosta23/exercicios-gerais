@@ -68,7 +68,7 @@ int obterQtdEstoqueFilme(tFilme filme);
  * @param filme Filme a ser consultado;
  * @return int Quantidade alugada de um filme;
  */
-int obterQuantidadeAlugadaFilme(tFilme filme);
+int obterQtdAlugadaFilme(tFilme filme);
 
 /**
  * @brief Verifica se um filme possui um determinado código;

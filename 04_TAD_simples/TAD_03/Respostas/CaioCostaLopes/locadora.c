@@ -115,7 +115,7 @@ tLocadora devolverFilmesLocadora(tLocadora locadora, int codigos[], int quantida
                 break;
             }
             if (existeFilme) {
-                if (obterQuantidadeAlugadaFilme(locadora.filme[f]) > 0) {
+                if (obterQtdAlugadaFilme(locadora.filme[f]) > 0) {
                     locadora.filme[f] = devolverFilme(locadora.filme[f]);
                     locadora.lucro += obterValorFilme(locadora.filme[f]);
                     printf("Filme %d - ", codigos[c]);
@@ -162,7 +162,7 @@ tLocadora ordenaFilmesLocadora(tLocadora locadora) {
 
     for (f = 0; f < (locadora.numFilmes - 1); f++) {
         for(o = f + 1; o < locadora.numFilmes; o++) {
-            if (compararNomesFilme(locadora.filme[f], locadora.filme[o]) > 0) {
+            if (compararNomesFilmes(locadora.filme[f], locadora.filme[o]) > 0) {
                 aux = locadora.filme[f];
                 locadora.filme[f] = locadora.filme[o];
                 locadora.filme[o] = aux;
@@ -178,7 +178,7 @@ void consultarEstoqueLocadora(tLocadora locadora) {
     printf("~ESTOQUE~\n");
 
     for (f = 0; f < locadora.numFilmes; f++) {
-        printf("%d - ");
+        printf("%d - ", cont);
         imprimirNomeFilme(locadora.filme[f]);
         printf(" Fitas em estoque: %d\n", obterQtdEstoqueFilme(locadora.filme[f]));
 

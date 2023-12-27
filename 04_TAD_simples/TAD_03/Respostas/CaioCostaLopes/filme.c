@@ -43,7 +43,7 @@ int obterQtdEstoque(tFilme filme) {
     return filme.qtdEstoque;
 }
 
-int obterQuantidadeAlugadaFilme(tFilme filme) {
+int obterQtdAlugadaFilme(tFilme filme) {
     return filme.qtdAlugada;
 }
 

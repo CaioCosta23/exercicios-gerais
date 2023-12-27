@@ -10,7 +10,7 @@ int main() {
     int op;
     int sair = 0;
 
-    locadora = criaLocadora();
+    locadora = criarLocadora();
 
     while(scanf("%s\n", operacao) == 1) {
         for (op = 0; op < 4; op++) {
@@ -33,7 +33,7 @@ int main() {
                     locadora = lerDevolucaoLocadora(locadora);
                 }else {
                     if ((strcmp(operacao, opcoes[3]) == 0)) {
-                        consultaEstoqueLocadora(locadora);
+                        consultarEstoqueLocadora(locadora);
                     }
                 }
             }
