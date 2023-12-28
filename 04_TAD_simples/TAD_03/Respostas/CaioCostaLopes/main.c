@@ -5,41 +5,46 @@
 
 int main() {
     tLocadora locadora;
+    char parada = '\0';
     char operacao[10];
     char opcoes[4][10] = {"Cadastrar", "Alugar", "Devolver", "Estoque"};
-    int op;
-    int sair = 0;
+    int acao = 0;
 
     locadora = criarLocadora();
 
-    while(scanf("%s\n", operacao) == 1) {
-        for (op = 0; op < 4; op++) {
-            if (!(strcmp(operacao, opcoes[op]) == 0)) {
-                sair = 1;
-                break;
-            }
-        }
-        if (sair) {
-            break;
-        }
+    while(scanf("%s", operacao) == 1) {
         
         if ((strcmp(operacao, opcoes[0]) == 0)) {
             locadora = lerCadastroLocadora(locadora);
-        }else {
-            if ((strcmp(operacao, opcoes[1]) == 0)) {
-                locadora = lerLocadoraAluguelLocadora(locadora);
-            }else {
-                if ((strcmp(operacao, opcoes[2]) == 0)) {
-                    locadora = lerDevolucaoLocadora(locadora);
-                }else {
-                    if ((strcmp(operacao, opcoes[3]) == 0)) {
-                        consultarEstoqueLocadora(locadora);
-                    }
-                }
+            printf("\n");
+            if ((scanf("%c", &parada) == 1) && (parada == '#')) {
+                continue;
+            }
+        }
+        if ((strcmp(operacao, opcoes[1]) == 0)) {
+            locadora = lerAluguelLocadora(locadora);
+            printf("\n");
+            if ((scanf("%c", &parada) == 1) && (parada == '#')) {
+                continue;
+            }
+        }
+        if ((strcmp(operacao, opcoes[2]) == 0)) {
+            locadora = lerDevolucaoLocadora(locadora);
+            printf("\n");
+            if ((scanf("%c", &parada) == 1) && (parada == '#')) {
+                continue;
+            }
+        }
+        if ((strcmp(operacao, opcoes[3]) == 0)) {
+            locadora = ordenarFilmesLocadora(locadora);
+            consultarEstoqueLocadora(locadora);
+
+            if ((scanf("%c", &parada) == 1) && (parada == '#')) {
+                continue;
             }
         }
     }
-    consultaLucroLocadora(locadora);
+    consultarLucroLocadora(locadora);
 
     return 0;
 }
