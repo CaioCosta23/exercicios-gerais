@@ -20,7 +20,7 @@ tFilme leFilme(int codigo) {
     int valor, quantidade;
     tFilme filme;
 
-    scanf(",%19[^,],%d,%d\n", nome, &valor, &quantidade);
+    scanf("%[^,],%d,%d\n", nome, &valor, &quantidade);
 
     filme = criarFilme(nome, codigo, valor, quantidade);
 
@@ -39,7 +39,7 @@ int obterValorFilme(tFilme filme) {
     return filme.valor;
 }
 
-int obterQtdEstoque(tFilme filme) {
+int obterQtdEstoqueFilme(tFilme filme) {
     return filme.qtdEstoque;
 }
 
@@ -65,6 +65,6 @@ tFilme devolverFilme(tFilme filme) {
     return filme;
 }
 
-int comparaNomesFilmes(tFilme filme1, tFilme filme2) {
+int compararNomesFilmes(tFilme filme1, tFilme filme2) {
     return (strcmp(filme1.nome, filme2.nome));
 }
