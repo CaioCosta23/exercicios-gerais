@@ -5,9 +5,9 @@
 
 /**
  * @brief Cria um vetor de caracteres que consegue armazenar uma string igual a "TAM_PADRAO", alocado dinamicamente.
- * Neste caso, a strig deve ser inicializada com todas as suas posições com o caractere "_" e a última posição deve conter o caractere '\0';
+ * Neste caso, a string deve ser inicializada com todas as suas posições com o caractere "_" e a última posição deve conter o caractere '\0';
  * 
- * @return char* Ponteiro para o vtor criado;
+ * @return char* Ponteiro para o vetor criado;
  * 
  * OBS: Se houver erro de alocação, imprimir uma mesagem de erro e encerrar o programa;
  */
