@@ -5,7 +5,7 @@
 #define VAZIO '_'
 
 char *CriaVetorTamPadrao() {
-    char *vetor = malloc(TAM_PADRAO + 1 * sizeof(char));
+    char *vetor = malloc(TAM_PADRAO * sizeof(char));
     int v;
 
     if (vetor == NULL) {
@@ -19,7 +19,6 @@ char *CriaVetorTamPadrao() {
     vetor[TAM_PADRAO - 1] = '\0';
 
     return vetor;
-
 }
 
 char *AumentaTamanhoVetor(char *vetor, int tamanhoantigo) {
