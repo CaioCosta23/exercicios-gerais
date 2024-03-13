@@ -30,7 +30,7 @@ char *AumentaTamanhoVetor(char *vetor, int tamanhoantigo);
  * Caso seja necessário alterar o tamanho do vetor, o tamanho deve ser atualizado para que o programa saiba o novo tamanho do vetor;
  * 
  * @param vetor Ponteiro para o vetor a ser lido;
- * @param tamanho Ponteiro para uma variável do tipointeiro que armazena o tamanho atual do vetor;
+ * @param tamanho Ponteiro para uma variável do tipo inteiro que armazena o tamanho atual do vetor;
  * @return char* Ponteiro para o vetor lido;
  */
 char *LeVetor(char *vetor, int *tamanho);
