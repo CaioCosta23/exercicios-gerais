@@ -13,10 +13,11 @@ char *CriaVetorTamPadrao() {
         exit(1);
     }
 
-    for (v = 0; v < TAM_PADRAO - 1; v++) {
+    for (v = 0; v < TAM_PADRAO; v++) {
         vetor[v] = '_';
     }
-    vetor[TAM_PADRAO - 1] = '\0';
+    vetor = realloc(vetor, TAM_PADRAO + 1);
+    vetor[TAM_PADRAO] = '\0';
 
     return vetor;
 }
@@ -31,10 +32,11 @@ char *AumentaTamanhoVetor(char *vetor, int tamanhoantigo) {
         exit(1);
     }
 
-    for (v = tamanhoantigo; v < novoTamanho - 1; v++) {
+    for (v = tamanhoantigo; v < novoTamanho; v++) {
         vetor[v] = '_';
     }
-    vetor[novoTamanho - 1] = '\0';
+    vetor = realloc(vetor, novoTamanho + 1);
+    vetor[novoTamanho] = '\0';
 
     return vetor;
 }
