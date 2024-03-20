@@ -6,7 +6,7 @@
 
 typedef struct {
     tTabuleiro *tabuleiro;
-    tJogador *joagdor1;
+    tJogador *jogador1;
     tJogador *jogador2;
 
 }tJogo;
