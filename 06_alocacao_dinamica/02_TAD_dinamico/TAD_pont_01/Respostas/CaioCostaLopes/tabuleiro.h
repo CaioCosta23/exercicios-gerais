@@ -2,7 +2,7 @@
 #define _TABULEIRO_H
 
 #define TAM_TABULEIRO 3
-#define PECA1 1
+#define PECA_1 1
 #define PECA_2 2
 
 typedef struct{
