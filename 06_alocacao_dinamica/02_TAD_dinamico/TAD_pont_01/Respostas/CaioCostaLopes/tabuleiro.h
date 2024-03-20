@@ -36,5 +36,48 @@ void DestroiTabuleiro(tTabuleiro *tabuleiro);
  */
 void MarcaPosicaoTabuleiro (tTabuleiro *tabuleiro, int peca, int x, int y);
 
+/**
+ * @brief Verifica se a posição do tabuleiro está marcada com uma peça de algum jogador;
+ * 
+ * @param tabuleiro Tabuleiro atual;
+ * @return int 1 se a posição está marcada, 0 caso contrário;
+ */
+int TemPosicaoLivreTabueiro(tTabuleiro *tabuleiro);
+
+/**
+ * @brief Verifica se a posição do tabuleiro está marcada com a peça o jogador;
+ * 
+ * @param tabuleiro Tabuleiro atual;
+ * @param x Coordenada X da posição;
+ * @param y Coordenada Y da posição;
+ * @return int 1 se a posição está marcada com a peça do jogador , 0 caso contrário;
+ */
+int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y);
+
+/**
+ * @brief Verifica se a posição do tabuleiro está livre;
+ * 
+ * @param tabuleiro Tabuleiro atual;
+ * @param x Coordenada X da posição;
+ * @param y Coordenada Y do jogo;
+ * @return int 1 se a posição está livre, 0 caso contrário;
+ */
+int EstaLivrePosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y);
+
+/**
+ * @brief Verifica se a posição do tabuleiro é válida;
+ * 
+ * @param x Coordenada X da posição;
+ * @param y Coordenada Y da posição;
+ * @return int 1 se  a posição é válida, 0 caso contrário;
+ */
+int EhPosicaoValida(int x, int y);
+
+/**
+ * @brief Imprime o tabuleiro;
+ * 
+ * @param tabuleiro Tabuleiro atual;
+ */
+void ImprimeTabuleiro(tTabuleiro *tabuleiro);
 
 #endif
