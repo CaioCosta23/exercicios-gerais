@@ -12,7 +12,7 @@ typedef struct {
 }tJogo;
 
 /**
- * @brief Aloca e retona uma estrua do tipo "tJogo";
+ * @brief Aloca e retona uma estrura do tipo "tJogo";
  *  Se a aocação falhar, o porama é encerrao;
  * 
  * @return tJogo* a esuura do tipo "tJogo" alocada;
