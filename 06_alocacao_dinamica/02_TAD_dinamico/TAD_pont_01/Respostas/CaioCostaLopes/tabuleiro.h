@@ -52,7 +52,7 @@ int TemPosicaoLivreTabueiro(tTabuleiro *tabuleiro);
  * @param y Coordenada Y da posição;
  * @return int 1 se a posição está marcada com a peça do jogador , 0 caso contrário;
  */
-int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y);
+int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y, int peca);
 
 /**
  * @brief Verifica se a posição do tabuleiro está livre;
