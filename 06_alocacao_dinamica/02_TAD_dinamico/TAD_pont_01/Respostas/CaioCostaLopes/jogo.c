@@ -10,9 +10,10 @@ tJogo *CriaJogo() {
 
     // Se a alocação falhar (ou seja, o ponteiro apontar para uma área nula, então hove erro na alocação e o programa é encerrado imediatamente);
     if (jogo == NULL) {
-        printf("Erro na alocacao!");
+        printf("Erro na alocacao do jogo!");
         exit(1);
     }
+
     // Cria e atribui o tabuleiro e os jogadores a cada dado da estrutura do jogo;
     jogo->tabuleiro = CriaTabuleiro();
     jogo->jogador1 = CriaJogador(PECA_1);
