@@ -7,14 +7,16 @@
 
 int main() {
     tJogo *jogo;
-    //tJogo *jogo = (tJogo *) malloc(sizeof(tJogo));
 
     do {
+        // Cria todo o ambiente necessário para a realização do jogo;
         jogo = CriaJogo();
         ComecaJogo(jogo);
 
+    // Enquanto o jojo continuar, o o programa continuará rodando;
     }while (ContinuaJogo() == 1);
     
+    // Destroi/desaloca o jogo;
     DestroiJogo(jogo);
     
     return 0;
