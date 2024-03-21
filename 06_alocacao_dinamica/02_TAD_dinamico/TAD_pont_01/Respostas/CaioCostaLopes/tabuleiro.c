@@ -13,7 +13,7 @@ tTabuleiro *CriaTabuleiro() {
 
     // Se a alocação falhar (ou seja, o ponteiro apontar para uma área nula, então hove erro na alocação e o programa é encerrado imediatamente);
     if (tabuleiro == NULL) {
-        printf("Erro na alocacao!");
+        printf("Erro na alocacao da estrutura do tabuleiro!");
         exit(1);
     }
 
@@ -55,7 +55,7 @@ int EhPosicaoValidaTabuleiro(int x, int y) {
    return (((x >= 0) && (x < TAM_TABULEIRO)) && ((y >= 0) && (y < TAM_TABULEIRO)));
 }
 
-int EstaMarcadaPosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y, int peca) {
+int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y, int peca) {
     char marcacao;
 
     // Verifica se a peça recebida é igual a peça do jogador 1 (peça 1) ou do jogador 2 (peça 2)
@@ -66,7 +66,7 @@ int EstaMarcadaPosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y, int peca) {
     }
     
     // Verifica se a posição na qual se deseja marcar está vazia, ou se ela já está marcada (com alguma peça);
-    return ((*tabuleiro).posicoes[y][x] == (*tabuleiro).pecaVazio);
+    return ((*tabuleiro).posicoes[y][x] == marcacao);
 
 }
 
@@ -81,7 +81,7 @@ void MarcaPosicaoTabuleiro (tTabuleiro *tabuleiro, int peca, int x, int y) {
      * (posição (y,x) - Valores estão invertidos devido a configuração do exercício) com peça do jogador 1, 
      * caso contrário, o mesmo processo será feito com o jogador 2;
     */
-    if (peca == (*tabuleiro).peca1) {
+    if (peca == PECA_1) {
         marcacao = (*tabuleiro).peca1;
     }else {
         marcacao = (*tabuleiro).peca2;
