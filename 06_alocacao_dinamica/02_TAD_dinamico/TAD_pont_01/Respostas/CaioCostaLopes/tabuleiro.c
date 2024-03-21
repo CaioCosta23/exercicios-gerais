@@ -100,3 +100,7 @@ void ImprimeTabuleiro(tTabuleiro *tabuleiro) {
         printf("\n");
     }
 }
+
+void DestroiTabuleiro(tTabuleiro *tabuleiro) {
+    free(tabuleiro);
+}
