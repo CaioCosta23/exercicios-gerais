@@ -5,8 +5,10 @@
 #include "tabuleiro.h"
 
 tJogo *CriaJogo() {
+    // Aloca dinmicamente uma estrutura do tipo "tJogo";
     tJogo *jogo = (tJogo *) malloc(sizeof(tJogo));
 
+    // Se a alocação falhar (ou seja, o ponteiro apontar para uma área nula, então hove erro na alocação e o programa é encerrado imediatamente);
     if (jogo == NULL) {
         printf("Erro na alocacao!");
         exit(1);
