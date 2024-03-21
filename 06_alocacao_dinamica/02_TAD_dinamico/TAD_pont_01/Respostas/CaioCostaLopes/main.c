@@ -13,10 +13,10 @@ int main() {
         jogo = CriaJogo();
         ComecaJogo(jogo);
 
-    // Enquanto o jojo continuar, o o programa continuará rodando;
+    // Enquanto o jojo continuar, o programa continuará rodando;
     // Destroi/desaloca o jogo;
     DestroiJogo(jogo);
-    
+
     }while (ContinuaJogo() == 1);
     
     return 0;
