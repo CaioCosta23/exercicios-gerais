@@ -39,7 +39,7 @@ int AcabouJogo (tJogo *jogo);
  * 
  * @return int 1 se  o usuário deseja jogar novamene, 0 caso contrário;
  */
-int ConinuaJogo();
+int ContinuaJogo();
 
 /**
  * @brief Libera a memória de uma estrutura do tipo "tJogo";
