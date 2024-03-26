@@ -71,7 +71,7 @@ int EstaLivrePosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y);
  * @param y Coordenada Y da posição;
  * @return int 1 se  a posição é válida, 0 caso contrário;
  */
-int EhPosicaoValida(int x, int y);
+int EhPosicaoValidaTabuleiro(int x, int y);
 
 /**
  * @brief Imprime o tabuleiro;
