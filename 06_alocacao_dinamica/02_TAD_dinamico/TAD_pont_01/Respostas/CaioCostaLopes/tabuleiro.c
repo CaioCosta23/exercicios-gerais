@@ -7,7 +7,7 @@
 #define VAZIO '-'
 
 tTabuleiro *CriaTabuleiro() {
-    int l, c;
+    int m, l, c;
     // Aloca a estrutura do tabuleiro;
     tTabuleiro *tabuleiro = (tTabuleiro *) malloc(sizeof(tTabuleiro));
 
@@ -15,6 +15,13 @@ tTabuleiro *CriaTabuleiro() {
     if (tabuleiro == NULL) {
         printf("Erro na alocacao da estrutura do tabuleiro!");
         exit(1);
+    }
+    // Aloca as linhas da matriz que formará o tabuleiro;
+    tabuleiro->posicoes = (char **)malloc(TAM_TABULEIRO * sizeof(char*));
+
+    // Aloca cada coluna da matriz que formará o tabuleiro;
+    for (m = 0; m < TAM_TABULEIRO; m++) {
+        tabuleiro->posicoes[m] = (char*)malloc(TAM_TABULEIRO * sizeof(char));
     }
 
     // A informação referente a uma peça vazia (na estrutura) recebe seu respectivo caracter de representação (no tabuleiro);
@@ -102,5 +109,10 @@ void ImprimeTabuleiro(tTabuleiro *tabuleiro) {
 }
 
 void DestroiTabuleiro(tTabuleiro *tabuleiro) {
+    int m;
+
+    for (m = 0; m < TAM_TABULEIRO; m++) {
+        free((*tabuleiro).posicoes[m]);
+    }
     free(tabuleiro);
 }
