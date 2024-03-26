@@ -114,5 +114,6 @@ void DestroiTabuleiro(tTabuleiro *tabuleiro) {
     for (m = 0; m < TAM_TABULEIRO; m++) {
         free((*tabuleiro).posicoes[m]);
     }
+    free((*tabuleiro).posicoes);
     free(tabuleiro);
 }
