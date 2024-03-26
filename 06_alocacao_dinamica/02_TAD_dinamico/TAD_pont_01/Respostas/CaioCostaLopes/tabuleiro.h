@@ -42,7 +42,7 @@ void MarcaPosicaoTabuleiro (tTabuleiro *tabuleiro, int peca, int x, int y);
  * @param tabuleiro Tabuleiro atual;
  * @return int 1 se a posição está marcada, 0 caso contrário;
  */
-int TemPosicaoLivreTabueiro(tTabuleiro *tabuleiro);
+int TemPosicaoLivreTabuleiro(tTabuleiro *tabuleiro);
 
 /**
  * @brief Verifica se a posição do tabuleiro está marcada com a peça o jogador;
