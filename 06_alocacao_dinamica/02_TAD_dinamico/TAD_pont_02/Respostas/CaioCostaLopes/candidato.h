@@ -91,6 +91,6 @@ float CalculaPercentualVotos(tCandidato *candidato, int totalVotos);
  * @param candidato Ponteiro para o candidato a ser impresso;
  * @param percentualVotos percentual de votos do candidato;
  */
-void ImprimeCandidat(tCandidato *candidato, float percentualVotos);
+void ImprimeCandidato(tCandidato *candidato, float percentualVotos);
 
 #endif
