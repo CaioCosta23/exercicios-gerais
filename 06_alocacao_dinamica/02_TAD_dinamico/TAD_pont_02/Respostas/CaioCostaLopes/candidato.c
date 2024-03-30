@@ -17,7 +17,7 @@ tCandidato *CriaCandidato() {
     candidato->partido = (char *)malloc(TAM_MAX * sizeof(char));
     candidato->cargo = '\0';
     candidato->id = -1;
-    candidato-> votos = -1;
+    candidato-> votos = 0;
 
     return candidato;
 }
@@ -31,5 +31,38 @@ int VerificaIdCandidato(tCandidato *candidato, int id) {
 }
 
 int EhMesmoCandidato(tCandidato *candidato1, tCandidato *candidato2) {
-    
+    if(((*candidato1).id == (*candidato2).id) && (strcmp((*candidato1).partido, (*candidato2).partido) == 0)) {
+        return 1;
+    }
+    return 0;
+}
+
+char ObtemCargo(tCandidato *candidato) {
+    return (*candidato).cargo;
+}
+
+void IncrementaVotoCandidato(tCandidato *candidato) {
+    candidato->votos += 1;
+}
+
+int ObtemVotos(tCandidato *candidato) {
+    return (*candidato).votos;
+}
+
+float CalculaPercentualVotos(tCandidato *candidato, int totalVotos) {
+    float percentual = 0.00;
+
+    percentual = (float)((*candidato).votos * 100.00) / (float)totalVotos;
+
+    return percentual;
+}
+
+void ImprimeCandidato(tCandidato *candidato, float percentualVotos) {
+    printf("%s (%s), %d voto(s), %.2f%%\n", (*candidato).nome, (*candidato).partido, (*candidato).votos, percentualVotos);
+}
+
+void ApagaCandidato(tCandidato *candidato) {
+    free(candidato->nome);
+    free(candidato->partido);
+    free(candidato);
 }
