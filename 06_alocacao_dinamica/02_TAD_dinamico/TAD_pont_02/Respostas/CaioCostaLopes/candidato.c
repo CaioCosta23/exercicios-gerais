@@ -12,9 +12,20 @@ tCandidato *CriaCandidato() {
         printf("Erro na alocacao do candidato!\n");
         exit(1);
     }
-
+    
     candidato->nome = (char *)malloc(TAM_MAX * sizeof(char));
+    if ((*candidato).nome == NULL) {
+        printf("Erro na alocacao do nome do candidato!\n");
+        exit(1);
+    }
+
     candidato->partido = (char *)malloc(TAM_MAX * sizeof(char));
+    if((*candidato).partido == NULL) {
+        printf("Erro na alocacao do nome do partido do candidato!\n") {
+            exit(1);
+        }
+    }
+    
     candidato->cargo = '\0';
     candidato->id = -1;
     candidato-> votos = 0;
