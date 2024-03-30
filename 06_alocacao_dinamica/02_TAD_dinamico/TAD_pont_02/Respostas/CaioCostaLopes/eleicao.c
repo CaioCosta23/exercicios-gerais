@@ -92,7 +92,35 @@ void RealizaEleicao(tEleicao *eleicao) {
     eleicao->eleitores = realloc((*eleicao).eleitores, qtdEleitores);
 
     for (v = 0; v < qtdEleitores; v++) {
-        eleitor = Criaeleitor();
+        eleicao->eleitores[v] = Criaeleitor();
+        LeEleitor((*eleicao).eleitores[v]);
+    }
+
+    for (e1 = 0; e1 < (qtdEleitores - 1); e1++) {
+        for(e2 = e1 + 1; e2 < qtdEleitores; e2++) {
+            if (EhMesmoeleitor((*eleicao).eleitores[e1], (*eleicao).eleitores[e2])) {
+                ApagaEleicao(eleicao);
+                printf("ELEICAO ANULADA\n");
+                exit(1);
+            }
+        }
+    }
+
+    for (v = 0; v < qtdEleitores; v++) {
+        if (ObtemVotoGovernador((*eleicao).eleitores[v] == 0)) {
+            eleicao->votosBrancosGovernador += 1;
+        }else {
+            governadorValido = 0;
+            for (g = 0; g < (*eleicao).totalGovernadores; g++) {
+                if (VerificandoIdCandidato((*eleicao).governadores[g], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
+                    governadorValido = 1;
+                    break;
+                }
+            }
+            if (!(governadorValido)) {
+                eleicao->votosNulosGovernador += 1;
+            }
+        }
     }
 }
 
