@@ -43,14 +43,15 @@ tEleicao *InicializaEleicao() {
 
     for (c = 0; c < qtdCandidatos; c++) {
         candidato = CriaCandidato();
+        LeCandidato(candidato);
 
         if (ObtemCargo(candidato) == 'G') {
-            eleicao->totalGovernadores += 1;
             eleicao->governadores[(*eleicao).totalGovernadores] = candidato;
+            eleicao->totalGovernadores += 1;
         }else {
             if (ObtemCargo(candidato) == 'P') {
+                eleicao->presidentes[(*eleicao).totalPresidentes] = candidato;
                 eleicao->totalPresidentes += 1;
-                eleicao->presidentes[(*eleicao).totalPresidentes] = candidato;    
             }
         }
 
