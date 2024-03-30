@@ -12,7 +12,7 @@ typedef struct {
  * 
  * @return tEleitor* Ponteiro para o eleitor criado (com os dados vazios);
  * 
- * OBS: O ponteiros devem ser inicializados com NULL e os campos numéricos com o valor -1;
+ * OBS: Os ponteiros devem ser inicializados com NULL e os campos numéricos com o valor -1;
  */
 tEleitor *CriaEleitor();
 
