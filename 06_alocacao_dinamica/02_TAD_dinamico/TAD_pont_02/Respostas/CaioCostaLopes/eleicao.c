@@ -63,5 +63,7 @@ tEleicao *InicializaEleicao() {
             exit(1);
         }
     }
+
+    return eleicao;
 }
 
