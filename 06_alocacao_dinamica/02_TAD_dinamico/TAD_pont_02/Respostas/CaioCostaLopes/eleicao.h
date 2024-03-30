@@ -4,7 +4,7 @@
 #include "candidato.h"
 #include "eleitor.h"
 
-// #define MAX_CANDIDATOS_PORCARGO 3
+// #define MAX_CANDIDATOS_POR_CARGO 3
 // #define MAX_ELEITORES 10
 
 
@@ -15,17 +15,17 @@ typedef struct {
     int totalGovernadores;
     int votosBrancosPresidente;
     int votosNulosPresidente;
-    int VotosBrancosGovernador;
-    int vootosNulosGovernador;
+    int votosBrancosGovernador;
+    int votosNulosGovernador;
     tEleitor **eleitores;
     int totaleleitores;
 }tEleicao;
 
 /**
  * @brief Inicializa uma eleição com valores padrão (zerando as variáveis que armazenam votos).
- * Ainda Nessa função, é lido a quantidade de candidats e os cadidatos são lidos e armazenados.
+ * Ainda Nessa função, é lido a quantidade de candidatos, os cadidatos são lidos e armazenados.
  * A memória necessária para os vetores dos "presidentes" e dos "governadores" deve ser alocada nesta função.
- * Pr fim, os demais ponteiros devem ser inicializados com NULL;
+ * Por fim, os demais ponteiros devem ser inicializados com NULL;
  * 
  * @return tEleicao* Eleicao inicializada;
  */
