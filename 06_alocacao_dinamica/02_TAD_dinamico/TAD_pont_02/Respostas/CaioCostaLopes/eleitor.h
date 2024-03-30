@@ -17,7 +17,7 @@ typedef struct {
 tEleitor *CriaEleitor();
 
 /**
- * @brief Lê um eleitor do teclado;
+ * @brief Apaga os dados de um eleitor da memória;
  * 
  * @param eleitor Ponteiro para o eleitor terá seus dados apagados;
  */
