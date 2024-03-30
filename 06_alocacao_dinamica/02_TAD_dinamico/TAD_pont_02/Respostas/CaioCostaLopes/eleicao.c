@@ -121,6 +121,20 @@ void RealizaEleicao(tEleicao *eleicao) {
                 eleicao->votosNulosGovernador += 1;
             }
         }
+        if (ObtemVotoPresidente((*eleicao).eleitores[v] == 0)) {
+            eleicao->votosBrancosPresidente += 1;
+        }else {
+            presidenteValido = 0;
+            for (p = 0; p < (*eleicao).totalPresidentes; p++) {
+                if (VerificandoIdCandidato((*eleicao).presidentes[p], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
+                    presidenteValido = 1;
+                    break;
+                }
+            }
+            if (!(presidenteValido)) {
+                eleicao->votosNulosPresidente += 1;
+            }
+        }
     }
 }
 
