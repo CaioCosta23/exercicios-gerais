@@ -20,7 +20,7 @@ tEleitor *CriaEleitor() {
 
 void LeEleitor(tEleitor *eleitor) {
 
-    scanf("%d %d %d", &(*eleitor).id, &(*eleitor).votoG, &(*eleitor).votoP);
+    scanf("%d %d %d", &(*eleitor).id, &(*eleitor).votoP, &(*eleitor).votoG);
 }
 
 int ObtemVotoPresidente(tEleitor *eleitor) {
