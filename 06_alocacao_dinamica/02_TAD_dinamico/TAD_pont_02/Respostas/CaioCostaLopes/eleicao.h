@@ -18,7 +18,7 @@ typedef struct {
     int votosBrancosGovernador;
     int votosNulosGovernador;
     tEleitor **eleitores;
-    int totaleleitores;
+    int totalEleitores;
 }tEleicao;
 
 /**
