@@ -16,13 +16,13 @@ tEleicao *InicializaEleicao() {
     }
 
     eleicao->eleitores = (tEleitor **)malloc(MAX_ELEITORES * sizeof(tEleitor));
-    for (e = 0; e < MAX_ELEITORES; e++) {
-        eleicao->eleitores[e] = (tEleitor *)malloc(sizeof(tEleitor));
-    }
-    
     if ((*eleicao).eleitores == NULL) {
         printf("Erro na alocacao do vetor de eleitores!\n");
         exit(1);
+    }
+    
+    for (e = 0; e < MAX_ELEITORES; e++) {
+        eleicao->eleitores[e] = (tEleitor *)malloc(sizeof(tEleitor));
     }
 
     int qtdCandidatos, c;
@@ -35,20 +35,21 @@ tEleicao *InicializaEleicao() {
     scanf("%d", &qtdCandidatos);
 
     eleicao->presidentes = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
-     for (p = 0; p < MAX_CANDIDATOS_POR_CARGO; p++) {
-        eleicao->presidentes[p] = (tCandidato *)malloc(sizeof(tCandidato));
-    }
     if ((*eleicao).presidentes == NULL) {
         printf("Erro de alocacao no vetor dos presidentes!\n");
         exit(1);
     }
-    eleicao->governadores = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
-     for (g = 0; g < MAX_CANDIDATOS_POR_CARGO; g++) {
-        eleicao->governadores[g] = (tCandidato *)malloc(sizeof(tCandidato));
+     for (p = 0; p < MAX_CANDIDATOS_POR_CARGO; p++) {
+        eleicao->presidentes[p] = (tCandidato *)malloc(sizeof(tCandidato));
     }
+
+    eleicao->governadores = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
     if ((*eleicao).governadores == NULL) {
         printf("Erro de alocacao no vetor dos governadores!\n");
         exit(1);
+    }
+     for (g = 0; g < MAX_CANDIDATOS_POR_CARGO; g++) {
+        eleicao->governadores[g] = (tCandidato *)malloc(sizeof(tCandidato));
     }
 
     for (c = 0; c < qtdCandidatos; c++) {
@@ -134,7 +135,7 @@ void RealizaEleicao(tEleicao *eleicao) {
         }else {
             presidenteValido = 0;
             for (p = 0; p < (*eleicao).totalPresidentes; p++) {
-                if (VerificandoIdCandidato((*eleicao).presidentes[p], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
+                if (VerificaIdCandidato((*eleicao).presidentes[p], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
                     presidenteValido = 1;
                     break;
                 }
