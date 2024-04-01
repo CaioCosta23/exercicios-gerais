@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
 #include "eleicao.h"
 
 #define MAX_CANDIDATOS_POR_CARGO 3
 #define MAX_ELEITORES 10
 
 tEleicao *InicializaEleicao() {
+    int e, c;
     tEleicao *eleicao = (tEleicao *)malloc(sizeof(tEleicao));
     tCandidato *candidato = NULL;
 
@@ -14,7 +15,10 @@ tEleicao *InicializaEleicao() {
         exit(1);
     }
 
-    eleicao->eleitores = (tEleitor *)malloc(MAX_ELEITORES * sizeof(tEleitor));
+    eleicao->eleitores = (tEleitor **)malloc(MAX_ELEITORES * sizeof(tEleitor));
+    for (e = 0; e < MAX_ELEITORES; e++) {
+        eleicao->eleitores[e] = (tEleitor *)malloc(sizeof(tEleitor));
+    }
     
     if ((*eleicao).eleitores == NULL) {
         printf("Erro na alocacao do vetor de eleitores!\n");
@@ -30,12 +34,18 @@ tEleicao *InicializaEleicao() {
 
     scanf("%d", &qtdCandidatos);
 
-    eleicao->presidentes = (tCandidato *)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
+    eleicao->presidentes = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
+     for (c = 0; c < MAX_CANDIDATOS_POR_CARGO; c++) {
+        eleicao->presidentes[c] = (tCandidato *)malloc(sizeof(tCandidato));
+    }
     if ((*eleicao).presidentes == NULL) {
         printf("Erro de alocacao no vetor dos presidentes!\n");
         exit(1);
     }
-    eleicao->governadores = (tCandidato *)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
+    eleicao->governadores = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
+     for (c = 0; c < MAX_CANDIDATOS_POR_CARGO; c++) {
+        eleicao->governadores[c] = (tCandidato *)malloc(sizeof(tCandidato));
+    }
     if ((*eleicao).governadores == NULL) {
         printf("Erro de alocacao no vetor dos governadores!\n");
         exit(1);
@@ -107,7 +117,7 @@ void RealizaEleicao(tEleicao *eleicao) {
     }
 
     for (v = 0; v < qtdEleitores; v++) {
-        if (ObtemVotoGovernador((*eleicao).eleitores[v] == 0)) {
+        if (ObtemVotoGovernador((*eleicao).eleitores[v]) == 0) {
             eleicao->votosBrancosGovernador += 1;
         }else {
             governadorValido = 0;
@@ -121,7 +131,7 @@ void RealizaEleicao(tEleicao *eleicao) {
                 eleicao->votosNulosGovernador += 1;
             }
         }
-        if (ObtemVotoPresidente((*eleicao).eleitores[v] == 0)) {
+        if (ObtemVotoPresidente((*eleicao).eleitores[v]) == 0) {
             eleicao->votosBrancosPresidente += 1;
         }else {
             presidenteValido = 0;
@@ -172,6 +182,37 @@ void ImprimeResultadoEleicao(tEleicao *eleicao) {
             ImprimeCandidato(liderPresidente, CalculaPercentualVotos(liderPresidente, totalVotosPres));
         }
     }
+
+
+    for (v = 0; v < (*eleicao).totalGovernadores; v++) {
+        votosValidosGov += ObtemVotos((*eleicao).governadores[v]);
+    }
+    totalVotosGov = (*eleicao).votosBrancosGovernador + (*eleicao).votosNulosGovernador + votosValidosGov;
+    for (v = 0; v < (*eleicao).totalGovernadores; v++) {
+        if (v == 0) {
+            liderPresidente = (*eleicao).presidentes[v];
+        }else {
+            if ((ObtemVotos((*eleicao).governadores[v]) > (*liderGovernador).votos)) {
+                liderGovernador = (*eleicao).governadores[v];
+                empateGovernadores = 0;
+            }else {
+                if (ObtemVotos((*eleicao).governadores[v]) == (*liderGovernador).votos) {
+                    empateGovernadores = 1;
+                }
+            }
+        }
+    }
+    printf("- GOVERNADOR ELEITO: ");
+    if(ObtemVotos(liderGovernador) < ((*eleicao).votosBrancosGovernador + (*eleicao).votosNulosGovernador)) {
+        printf("SEM DECISAO\n");
+    }else {
+        if (empateGovernadores) {
+            printf("EMPATE. SERA NECESSARIO UMA NOVA VOTACAO\n");
+        }else {
+            ImprimeCandidato(liderGovernador, CalculaPercentualVotos(liderGovernador, totalVotosGov));
+        }
+    }
+    printf("- NULOS E BRANCOS: %d, %d", ((*eleicao).votosNulosGovernador + (*eleicao).votosNulosPresidente), ((*eleicao).votosBrancosGovernador + (*eleicao).votosBrancosPresidente));
 }
 
 void ApagaEleicao(tEleicao *eleicao) {
