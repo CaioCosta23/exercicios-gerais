@@ -138,6 +138,42 @@ void RealizaEleicao(tEleicao *eleicao) {
     }
 }
 
+void ImprimeResultadoEleicao(tEleicao *eleicao) {
+    int v, totalVotosGov, totalVotosPres;
+    int votosValidosGov = 0, votosValidosPres = 0;
+    int empateGovernadores = 0, empatePresidentes = 0;
+    tCandidato *liderPresidente, *liderGovernador;
+    
+    for (v = 0; v < (*eleicao).totalPresidentes; v++) {
+        votosValidosPres += ObtemVotos((*eleicao).presidentes[v]);
+    }
+    totalVotosPres = (*eleicao).votosBrancosPresidente + (*eleicao).votosNulosPresidente + votosValidosPres;
+    for (v = 0; v < (*eleicao).totalPresidentes; v++) {
+        if (v == 0) {
+            liderPresidente = (*eleicao).presidentes[v];
+        }else {
+            if ((ObtemVotos((*eleicao).presidentes[v]) > (*liderPresidente).votos)) {
+                liderPresidente = (*eleicao).presidentes[v];
+                empatePresidentes = 0;
+            }else {
+                if (ObtemVotos((*eleicao).presidentes[v]) == (*liderPresidente).votos) {
+                    empatePresidentes = 1;
+                }
+            }
+        }
+    }
+    printf("- PRESIDENTE ELEITO: ");
+    if(ObtemVotos(liderPresidente) < ((*eleicao).votosBrancosPresidente + (*eleicao).votosNulosPresidente)) {
+        printf("SEM DECISAO\n");
+    }else {
+        if (empatePresidentes) {
+            printf("EMPATE. SERA NECESSARIO UMA NOVA VOTACAO\n");
+        }else {
+            ImprimeCandidato(liderPresidente, CalculaPercentualVotos(liderPresidente, totalVotosPres));
+        }
+    }
+}
+
 void ApagaEleicao(tEleicao *eleicao) {
     int g, p, e;
     
