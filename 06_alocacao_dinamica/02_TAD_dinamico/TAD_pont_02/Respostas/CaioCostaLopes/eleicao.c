@@ -6,7 +6,7 @@
 #define MAX_ELEITORES 10
 
 tEleicao *InicializaEleicao() {
-    int e, c;
+    int e, p, g;
     tEleicao *eleicao = (tEleicao *)malloc(sizeof(tEleicao));
     tCandidato *candidato = NULL;
 
@@ -35,16 +35,16 @@ tEleicao *InicializaEleicao() {
     scanf("%d", &qtdCandidatos);
 
     eleicao->presidentes = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
-     for (c = 0; c < MAX_CANDIDATOS_POR_CARGO; c++) {
-        eleicao->presidentes[c] = (tCandidato *)malloc(sizeof(tCandidato));
+     for (p = 0; p < MAX_CANDIDATOS_POR_CARGO; p++) {
+        eleicao->presidentes[p] = (tCandidato *)malloc(sizeof(tCandidato));
     }
     if ((*eleicao).presidentes == NULL) {
         printf("Erro de alocacao no vetor dos presidentes!\n");
         exit(1);
     }
     eleicao->governadores = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato));
-     for (c = 0; c < MAX_CANDIDATOS_POR_CARGO; c++) {
-        eleicao->governadores[c] = (tCandidato *)malloc(sizeof(tCandidato));
+     for (g = 0; g < MAX_CANDIDATOS_POR_CARGO; g++) {
+        eleicao->governadores[g] = (tCandidato *)malloc(sizeof(tCandidato));
     }
     if ((*eleicao).governadores == NULL) {
         printf("Erro de alocacao no vetor dos governadores!\n");
@@ -82,14 +82,12 @@ tEleicao *InicializaEleicao() {
             exit(1);
         }
     }
-
     return eleicao;
 }
 
 void RealizaEleicao(tEleicao *eleicao) {
     int governadorValido = 0, presidenteValido = 0;
     int e1, e2, g, p, qtdEleitores, v;
-    tEleitor *eleitor = NULL;
 
     scanf("%d", &qtdEleitores);
 
@@ -102,13 +100,13 @@ void RealizaEleicao(tEleicao *eleicao) {
     eleicao->eleitores = realloc((*eleicao).eleitores, qtdEleitores);
 
     for (v = 0; v < qtdEleitores; v++) {
-        eleicao->eleitores[v] = Criaeleitor();
+        eleicao->eleitores[v] = CriaEleitor();
         LeEleitor((*eleicao).eleitores[v]);
     }
 
     for (e1 = 0; e1 < (qtdEleitores - 1); e1++) {
         for(e2 = e1 + 1; e2 < qtdEleitores; e2++) {
-            if (EhMesmoeleitor((*eleicao).eleitores[e1], (*eleicao).eleitores[e2])) {
+            if (EhMesmoEleitor((*eleicao).eleitores[e1], (*eleicao).eleitores[e2])) {
                 ApagaEleicao(eleicao);
                 printf("ELEICAO ANULADA\n");
                 exit(1);
@@ -122,7 +120,7 @@ void RealizaEleicao(tEleicao *eleicao) {
         }else {
             governadorValido = 0;
             for (g = 0; g < (*eleicao).totalGovernadores; g++) {
-                if (VerificandoIdCandidato((*eleicao).governadores[g], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
+                if (VerificaIdCandidato((*eleicao).governadores[g], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
                     governadorValido = 1;
                     break;
                 }
