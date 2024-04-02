@@ -58,12 +58,12 @@ tEleicao *InicializaEleicao() {
             }
         }
 
-        eleicao->presidentes = realloc((*eleicao).presidentes, (*eleicao).totalPresidentes);
+        eleicao->presidentes = realloc((*eleicao).presidentes, (*eleicao).totalPresidentes * sizeof(tCandidato*));
         if ((*eleicao).presidentes == NULL) {
             printf("Erro na realocacao do vetor dos candidatos a presidente!\n");
             exit(1);
         }
-        eleicao->governadores = realloc((*eleicao).governadores, (*eleicao).totalGovernadores);
+        eleicao->governadores = realloc((*eleicao).governadores, (*eleicao).totalGovernadores * sizeof(tCandidato*));
         if ((*eleicao).governadores == NULL) {
             printf("Erro na realocacao do vetor dos candidatos a governador!\n");
             exit(1);
@@ -135,7 +135,7 @@ void RealizaEleicao(tEleicao *eleicao) {
         }else {
             presidenteValido = 0;
             for (p = 0; p < (*eleicao).totalPresidentes; p++) {
-                if (VerificaIdCandidato((*eleicao).presidentes[p], ObtemVotoGovernador((*eleicao).eleitores[v]))) {
+                if (VerificaIdCandidato((*eleicao).presidentes[p], ObtemVotoPresidente((*eleicao).eleitores[v]))) {
                     presidenteValido = 1;
                     break;
                 }
@@ -189,7 +189,7 @@ void ImprimeResultadoEleicao(tEleicao *eleicao) {
     totalVotosGov = (*eleicao).votosBrancosGovernador + (*eleicao).votosNulosGovernador + votosValidosGov;
     for (v = 0; v < (*eleicao).totalGovernadores; v++) {
         if (v == 0) {
-            liderPresidente = (*eleicao).presidentes[v];
+            liderGovernador = (*eleicao).governadores[v];
         }else {
             if ((ObtemVotos((*eleicao).governadores[v]) > (*liderGovernador).votos)) {
                 liderGovernador = (*eleicao).governadores[v];
