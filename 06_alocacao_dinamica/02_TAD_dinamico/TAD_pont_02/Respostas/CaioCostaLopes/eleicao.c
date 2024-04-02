@@ -15,16 +15,6 @@ tEleicao *InicializaEleicao() {
         exit(1);
     }
 
-    eleicao->eleitores = (tEleitor **)malloc(MAX_ELEITORES * sizeof(tEleitor*));
-    if ((*eleicao).eleitores == NULL) {
-        printf("Erro na alocacao do vetor de eleitores!\n");
-        exit(1);
-    }
-    
-    for (e = 0; e < MAX_ELEITORES; e++) {
-        eleicao->eleitores[e] = CriaEleitor();
-    }
-
     int qtdCandidatos, c;
 
     eleicao->votosBrancosGovernador = 0;
@@ -55,8 +45,9 @@ tEleicao *InicializaEleicao() {
     }
 
     for (c = 0; c < qtdCandidatos; c++) {
+        candidato = CriaCandidato();
         LeCandidato(candidato);
-
+        
         if (ObtemCargo(candidato) == 'G') {
             eleicao->governadores[(*eleicao).totalGovernadores] = candidato;
             eleicao->totalGovernadores += 1;
@@ -83,13 +74,14 @@ tEleicao *InicializaEleicao() {
             printf("ELEICAO ANULADA\n");
             exit(1);
         }
+        ApagaCandidato(candidato);
     }
     return eleicao;
 }
 
 void RealizaEleicao(tEleicao *eleicao) {
     int governadorValido = 0, presidenteValido = 0;
-    int e1, e2, g, p, qtdEleitores, v;
+    int e, e1, e2, g, p, qtdEleitores, v;
 
     scanf("%d", &qtdEleitores);
 
@@ -99,10 +91,14 @@ void RealizaEleicao(tEleicao *eleicao) {
         exit(1);
     }
 
-    eleicao->eleitores = realloc((*eleicao).eleitores, qtdEleitores);
+    eleicao->eleitores = (tEleitor **)malloc(qtdEleitores * sizeof(tEleitor*));
     if ((*eleicao).eleitores == NULL) {
-        printf("Erro na realocacao dos eleitores!");
+        printf("Erro na alocacao do vetor de eleitores!\n");
         exit(1);
+    }
+    
+    for (e = 0; e < MAX_ELEITORES; e++) {
+        eleicao->eleitores[e] = CriaEleitor();
     }
 
     for (v = 0; v < qtdEleitores; v++) {
