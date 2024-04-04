@@ -115,9 +115,8 @@ void RealizaEleicao(tEleicao *eleicao) {
         exit(1);
     }
 
-    // Cria os eleitores (aloca) e lê os dados de cada um;
+    // Lê os dados de cada eleitor;
     for (e = 0; e < (*eleicao).totalEleitores; e++) {
-        eleicao->eleitores[e] = CriaEleitor();
         LeEleitor((*eleicao).eleitores[e]);
     }
 
