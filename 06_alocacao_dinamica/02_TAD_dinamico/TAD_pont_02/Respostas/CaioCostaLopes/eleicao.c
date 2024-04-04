@@ -16,7 +16,7 @@ tEleicao *InicializaEleicao() {
     }
 
     int qtdCandidatos, c;
-
+    
     eleicao->votosBrancosGovernador = 0;
     eleicao->votosBrancosPresidente = 0;
     eleicao->votosNulosGovernador = 0;
@@ -24,6 +24,11 @@ tEleicao *InicializaEleicao() {
     eleicao->totalPresidentes = 0;
     eleicao->totalGovernadores = 0;
     eleicao->totalEleitores = 0;
+
+    eleicao->eleitores = (tEleitor**)malloc(MAX_ELEITORES * sizeof(tEleitor*));
+    for (e = 0; e < MAX_ELEITORES; e++) {
+        eleicao->eleitores[e] = CriaEleitor();
+    }
 
     scanf("%d", &qtdCandidatos);
 
@@ -58,26 +63,26 @@ tEleicao *InicializaEleicao() {
                 eleicao->totalPresidentes += 1;
             }
         }
-
-        if (((*eleicao).totalGovernadores > MAX_CANDIDATOS_POR_CARGO) || ((*eleicao).totalPresidentes) > MAX_CANDIDATOS_POR_CARGO) {
-            ApagaEleicao(eleicao);
-            printf("ELEICAO ANULADA\n");
-            exit(1);
-        }
-/*        
-        eleicao->presidentes = realloc((*eleicao).presidentes, (*eleicao).totalPresidentes * sizeof(tCandidato*));
-        if ((*eleicao).presidentes == NULL) {
-            printf("Erro na realocacao do vetor dos candidatos a presidente!\n");
-            exit(1);
-        }
-        eleicao->governadores = realloc((*eleicao).governadores, (*eleicao).totalGovernadores * sizeof(tCandidato*));
-        if ((*eleicao).governadores == NULL) {
-            printf("Erro na realocacao do vetor dos candidatos a governador!\n");
-            exit(1);
-        }
-*/
         ApagaCandidato(candidato);
+        //candidato = NULL;
     }
+    eleicao->presidentes = (tCandidato**)realloc((*eleicao).presidentes, (*eleicao).totalPresidentes * sizeof(tCandidato*));
+    if ((*eleicao).presidentes == NULL) {
+        printf("Erro na realocacao do vetor dos candidatos a presidente!\n");
+        exit(1);
+    }
+    eleicao->governadores = (tCandidato**)realloc((*eleicao).governadores, (*eleicao).totalGovernadores * sizeof(tCandidato*));
+    if ((*eleicao).governadores == NULL) {
+        printf("Erro na realocacao do vetor dos candidatos a governador!\n");
+        exit(1);
+    }
+
+    if (((*eleicao).totalGovernadores > MAX_CANDIDATOS_POR_CARGO) || ((*eleicao).totalPresidentes) > MAX_CANDIDATOS_POR_CARGO) {
+        //ApagaEleicao(eleicao);
+        printf("ELEICAO ANULADA\n");
+        exit(1);
+    }
+
     return eleicao;
 }
 
@@ -93,7 +98,7 @@ void RealizaEleicao(tEleicao *eleicao) {
         exit(1);
     }
 
-    eleicao->eleitores = (tEleitor **)malloc((*eleicao).totalEleitores * sizeof(tEleitor*));
+    eleicao->eleitores = (tEleitor**)realloc((*eleicao).eleitores, (*eleicao).totalEleitores * sizeof(tEleitor*));
     if ((*eleicao).eleitores == NULL) {
         printf("Erro na alocacao do vetor de eleitores!\n");
         exit(1);
