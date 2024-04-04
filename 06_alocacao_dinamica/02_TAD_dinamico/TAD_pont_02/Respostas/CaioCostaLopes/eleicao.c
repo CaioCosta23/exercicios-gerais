@@ -2,11 +2,8 @@
 #include <stdlib.h>
 #include "eleicao.h"
 
-#define MAX_CANDIDATOS_POR_CARGO 3
-#define MAX_ELEITORES 10
-
 tEleicao *InicializaEleicao() {
-    int e, p, g;
+    int p, g;
     tEleicao *eleicao = (tEleicao *)malloc(sizeof(tEleicao));
     tCandidato *candidato = NULL;
 
@@ -26,31 +23,25 @@ tEleicao *InicializaEleicao() {
     eleicao->totalGovernadores = 0;
     eleicao->totalEleitores = 0;
 
-    // Alocando vetor de eleitores e criando (alocando) cada eleitor;
-    eleicao->eleitores = (tEleitor**)malloc(MAX_ELEITORES * sizeof(tEleitor*));
-    for (e = 0; e < MAX_ELEITORES; e++) {
-        eleicao->eleitores[e] = CriaEleitor();
-    }
-
     scanf("%d", &qtdCandidatos);
 
     // Alocando vetor de candidatos(à presidência) e criando (alocando) cada candidato - levando em conta a possibilidade máxima de preidentes;
-    eleicao->presidentes = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato*));
+    eleicao->presidentes = (tCandidato **)malloc(qtdCandidatos * sizeof(tCandidato*));
     if ((*eleicao).presidentes == NULL) {
         printf("Erro de alocacao no vetor dos presidentes!\n");
         exit(1);
     }
-     for (p = 0; p < MAX_CANDIDATOS_POR_CARGO; p++) {
+     for (p = 0; p < qtdCandidatos; p++) {
         eleicao->presidentes[p] = CriaCandidato();
     }
 
     // Alocando vetor de candidatos(à governador) e criando (alocando) cada candidato - levando em conta a possibilidade máxima de governadores;
-    eleicao->governadores = (tCandidato **)malloc(MAX_CANDIDATOS_POR_CARGO * sizeof(tCandidato*));
+    eleicao->governadores = (tCandidato **)malloc(qtdCandidatos * sizeof(tCandidato*));
     if ((*eleicao).governadores == NULL) {
         printf("Erro de alocacao no vetor dos governadores!\n");
         exit(1);
     }
-     for (g = 0; g < MAX_CANDIDATOS_POR_CARGO; g++) {
+     for (g = 0; g < qtdCandidatos; g++) {
         eleicao->governadores[g] = CriaCandidato();
     }
     
@@ -84,14 +75,6 @@ tEleicao *InicializaEleicao() {
         printf("Erro na realocacao do vetor dos candidatos a governador!\n");
         exit(1);
     }
-
-    // Se a quantidade de candidatos a uma vaga for excedida, aeleição é anulada (o programa se encerra imediatamente);
-    if (((*eleicao).totalGovernadores > MAX_CANDIDATOS_POR_CARGO) || ((*eleicao).totalPresidentes) > MAX_CANDIDATOS_POR_CARGO) {
-        //ApagaEleicao(eleicao);
-        printf("ELEICAO ANULADA\n");
-        exit(1);
-    }
-
     return eleicao;
 }
 
@@ -101,22 +84,15 @@ void RealizaEleicao(tEleicao *eleicao) {
 
     scanf("%d", &(*eleicao).totalEleitores);
 
-    // Verifica se a quantidade de eleitore é menor ou igual a máxima permitida, se não a eleição é anulada (programa se encerra);
-    if ((*eleicao).totalEleitores > MAX_ELEITORES) {
-        ApagaEleicao(eleicao);
-        printf("ELEICAO ANULADA\n");
-        exit(1);
-    }
-
-    // Realoca o vetor de eleitores para o tamanho da quantidade lida que irá votar;
-    eleicao->eleitores = (tEleitor**)realloc((*eleicao).eleitores, (*eleicao).totalEleitores * sizeof(tEleitor*));
+    // Alocando vetor de eleitores e criando (alocando) cada eleitor;
+    eleicao->eleitores = (tEleitor**)malloc((*eleicao).totalEleitores * sizeof(tEleitor*));
     if ((*eleicao).eleitores == NULL) {
         printf("Erro na alocacao do vetor de eleitores!\n");
         exit(1);
     }
-
     // Lê os dados de cada eleitor;
     for (e = 0; e < (*eleicao).totalEleitores; e++) {
+        eleicao->eleitores[e] = CriaEleitor();
         LeEleitor((*eleicao).eleitores[e]);
     }
 
@@ -249,7 +225,6 @@ void ImprimeResultadoEleicao(tEleicao *eleicao) {
 
 void ApagaEleicao(tEleicao *eleicao) {
     int g, p, e;
-    
     // Apaga (desaloca a memória) de cada candidato a governador;
     for (g = 0; g < (*eleicao).totalGovernadores; g++) {
         ApagaCandidato((*eleicao).governadores[g]);
@@ -262,12 +237,12 @@ void ApagaEleicao(tEleicao *eleicao) {
     for (e = 0; e < (*eleicao).totalEleitores; e++) {
         ApagaEleitor((*eleicao).eleitores[e]);
     }
-    //desaloca o veror de governadores;
+    // Desaloca o veror de governadores;
     free((*eleicao).governadores);
-    //desaloca o veror de presidentes;
+    // Desaloca o veror de presidentes;
     free((*eleicao).presidentes);
-    //desaloca o veror de eleitores;
+    // Desaloca o veror de eleitores;
     free((*eleicao).eleitores);
-    //desaloca a eleição;
+    // Desaloca a eleição;
     free(eleicao);
 }
