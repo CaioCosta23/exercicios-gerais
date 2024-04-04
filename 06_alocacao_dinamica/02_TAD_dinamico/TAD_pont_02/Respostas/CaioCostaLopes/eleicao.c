@@ -141,6 +141,7 @@ void RealizaEleicao(tEleicao *eleicao) {
             for (g = 0; g < (*eleicao).totalGovernadores; g++) {
                 // Se o id do candidato votado não existir, o candidato é anulado;
                 if (VerificaIdCandidato((*eleicao).governadores[g], ObtemVotoGovernador((*eleicao).eleitores[e]))) {
+                    IncrementaVotoCandidato((*eleicao).governadores[g]);
                     governadorValido = 1;
                     break;
                 }
@@ -156,6 +157,7 @@ void RealizaEleicao(tEleicao *eleicao) {
             presidenteValido = 0;
             for (p = 0; p < (*eleicao).totalPresidentes; p++) {
                 if (VerificaIdCandidato((*eleicao).presidentes[p], ObtemVotoPresidente((*eleicao).eleitores[e]))) {
+                    IncrementaVotoCandidato((*eleicao).presidentes[p]);
                     presidenteValido = 1;
                     break;
                 }
