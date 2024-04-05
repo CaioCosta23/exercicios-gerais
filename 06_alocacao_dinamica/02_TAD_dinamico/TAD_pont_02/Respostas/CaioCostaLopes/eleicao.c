@@ -5,7 +5,6 @@
 tEleicao *InicializaEleicao() {
     int p, g;
     tEleicao *eleicao = (tEleicao *)malloc(sizeof(tEleicao));
-    tCandidato *candidato = NULL;
 
     if (eleicao == NULL) {
         printf("Erro na alocacao da eleicao!\n");
@@ -31,9 +30,6 @@ tEleicao *InicializaEleicao() {
         printf("Erro de alocacao no vetor dos presidentes!\n");
         exit(1);
     }
-     for (p = 0; p < qtdCandidatos; p++) {
-        eleicao->presidentes[p] = CriaCandidato();
-    }
 
     // Alocando vetor de candidatos(à governador) e criando (alocando) cada candidato - levando em conta a possibilidade máxima de governadores;
     eleicao->governadores = (tCandidato **)malloc(qtdCandidatos * sizeof(tCandidato*));
@@ -41,27 +37,27 @@ tEleicao *InicializaEleicao() {
         printf("Erro de alocacao no vetor dos governadores!\n");
         exit(1);
     }
-     for (g = 0; g < qtdCandidatos; g++) {
-        eleicao->governadores[g] = CriaCandidato();
+
+    tCandidato **candidatoAuxiliar = (tCandidato **)malloc(qtdCandidatos * sizeof(tCandidato*));
+    for (c = 0; c < qtdCandidatos; c++) {
+        candidatoAuxiliar[c] = CriaCandidato();
     }
     
     for (c = 0; c < qtdCandidatos; c++) {
-        candidato = CriaCandidato();
-        LeCandidato(candidato);
+        LeCandidato(candidatoAuxiliar[c]);
 
         // Verificando para qual cargo cada candidato irá concorrer;    
-        if (ObtemCargo(candidato) == 'G') {
-            eleicao->governadores[(*eleicao).totalGovernadores] = candidato;
+        if (ObtemCargo(candidatoAuxiliar[c]) == 'G') {
+            eleicao->governadores[(*eleicao).totalGovernadores] = CriaCandidato();
+            eleicao->governadores[(*eleicao).totalGovernadores] = candidatoAuxiliar[c];
             eleicao->totalGovernadores += 1;
         }else {
-            if (ObtemCargo(candidato) == 'P') {
-                eleicao->presidentes[(*eleicao).totalPresidentes] = candidato;
+            if (ObtemCargo(candidatoAuxiliar[c]) == 'P') {
+                eleicao->presidentes[(*eleicao).totalPresidentes] = CriaCandidato();
+                eleicao->presidentes[(*eleicao).totalPresidentes] = candidatoAuxiliar[c];
                 eleicao->totalPresidentes += 1;
             }
         }
-        // Desalocando a estrutura auxiliar de candidato;
-        ApagaCandidato(candidato);
-        //candidato = NULL;
     }
     // Realocando o vetor de candidatos a preidência de acordo com a quantidade lida que concorreram a este cargo;
     eleicao->presidentes = (tCandidato**)realloc((*eleicao).presidentes, (*eleicao).totalPresidentes * sizeof(tCandidato*));
@@ -75,6 +71,13 @@ tEleicao *InicializaEleicao() {
         printf("Erro na realocacao do vetor dos candidatos a governador!\n");
         exit(1);
     }
+
+    // Desalocando a estrutura auxiliar de candidato;
+    for (c = 0; c < qtdCandidatos; c++) {
+        ApagaCandidato(candidatoAuxiliar[c]);
+    }
+    free(candidatoAuxiliar);
+
     return eleicao;
 }
 
@@ -237,11 +240,11 @@ void ApagaEleicao(tEleicao *eleicao) {
     for (e = 0; e < (*eleicao).totalEleitores; e++) {
         ApagaEleitor((*eleicao).eleitores[e]);
     }
-    // Desaloca o veror de governadores;
+    // Desaloca o vetor de governadores;
     free((*eleicao).governadores);
-    // Desaloca o veror de presidentes;
+    // Desaloca o vetor de presidentes;
     free((*eleicao).presidentes);
-    // Desaloca o veror de eleitores;
+    // Desaloca o vetor de eleitores;
     free((*eleicao).eleitores);
     // Desaloca a eleição;
     free(eleicao);
