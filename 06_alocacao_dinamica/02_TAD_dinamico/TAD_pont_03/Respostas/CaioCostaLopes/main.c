@@ -14,9 +14,9 @@ int main() {
     char opcoes[NUM_OPCOES][TAM_STRING_OPERACAO] = {"Cadastrar", "Alugar", "Devolver", "Estoque"};
     int acao = 0;
 
-    locadora = CriaLocadora();
+    locadora = CriarLocadora();
 
-    while(scanf("%s", &operacao) == 1) {
+    while(scanf("%s", operacao) == 1) {
         if (strcmp(operacao, opcoes[0]) == 0) {
             LerCadastroLocadora(locadora);
             printf("\n");
@@ -25,11 +25,11 @@ int main() {
                 continue;
             }
         }
-        if (operacao, opcoes[1] == 0) {
+        if (strcmp(operacao, opcoes[1]) == 0) {
             LerAluguelLocadora(locadora);
             printf("\n");
             
-            if ((scanf("%c", &parada) == 1) && (parada == "#")) {
+            if ((scanf("%c", &parada) == 1) && (parada == '#')) {
                 continue;
             }
         }
@@ -37,7 +37,7 @@ int main() {
             LerDevolucaoLocadora(locadora);
             printf("\n");
 
-            if((scanf("%c", &parada) == 1) && (parada == "#")) {
+            if((scanf("%c", &parada) == 1) && (parada == '#')) {
                 continue;
             }
         }
@@ -45,7 +45,7 @@ int main() {
             OrdenarFilmesLocadora(locadora);
             ConsultarEstoqueLocadora(locadora);
 
-            if ((scanf("%c", &parada) == 1) && (parada == "#")) {
+            if ((scanf("%c", &parada) == 1) && (parada == '#')) {
                 continue;
             }
         }
