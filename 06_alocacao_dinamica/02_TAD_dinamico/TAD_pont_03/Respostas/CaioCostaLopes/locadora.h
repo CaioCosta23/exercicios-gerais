@@ -14,7 +14,7 @@ typedef struct Locadora {
  * 
  * @return tLocadora* Ponteiro para a nova instância de tLocadora criada ou encerra o programa caso não haja memória suficiente;
  */
-tLocadora *CriaLocadora();
+tLocadora *CriarLocadora();
 
 /**
  * @brief Verifica se um filme está cadastrado na locadora;
