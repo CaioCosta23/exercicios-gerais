@@ -12,7 +12,6 @@ int main() {
     char parada = '\0';
     char operacao[TAM_STRING_OPERACAO];
     char opcoes[NUM_OPCOES][TAM_STRING_OPERACAO] = {"Cadastrar", "Alugar", "Devolver", "Estoque"};
-    int acao = 0;
 
     locadora = CriarLocadora();
 
