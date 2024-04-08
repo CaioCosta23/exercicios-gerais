@@ -31,7 +31,7 @@ int VerificaFilmeCadastrado(tLocadora *locadora, int codigo);
  * @param locadora Ponteiro para a instância de tLocadora a ser atualizada;
  * @param filme Ponteiro para o filme a ser cadastrado;
  */
-void CadastrarFilmeLocadora(tLocadora *locadora, tFilme filme);
+void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme);
 
 /**
  * @brief Lê os dados de cadastro de um filme e o cadastra na locadora;
