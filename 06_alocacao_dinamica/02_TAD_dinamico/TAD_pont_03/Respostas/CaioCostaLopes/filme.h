@@ -97,4 +97,11 @@ void DevolverFilme (tFilme *filme);
  */
 int CompararFilmes(tFilme *filme1, tFilme *filme2);
 
+/**
+ * @brief Libera a memória alocada para o filme;
+ * 
+ * @param filme Ponteiro para o filme a ser destruido;
+ */
+void DestruiFilme(tFilme *filme);
+
 #endif
