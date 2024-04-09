@@ -102,6 +102,6 @@ int CompararFilmes(tFilme *filme1, tFilme *filme2);
  * 
  * @param filme Ponteiro para o filme a ser destruido;
  */
-void DestruiFilme(tFilme *filme);
+void DestruirFilme(tFilme *filme);
 
 #endif
