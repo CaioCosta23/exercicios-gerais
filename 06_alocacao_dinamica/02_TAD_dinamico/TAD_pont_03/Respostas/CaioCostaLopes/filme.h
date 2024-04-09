@@ -95,7 +95,7 @@ void DevolverFilme (tFilme *filme);
  * @param filme2 Ponteiro para o segundo filme;
  * @return int 1 se o nome do primeiro filme for maior que o nome do segundo filme, -1 se o nome do primeiro filme for menor que o segundo filme, 0 se os nomes forem iguais;
  */
-int CompararFilmes(tFilme *filme1, tFilme *filme2);
+int CompararNomesFilmes(tFilme *filme1, tFilme *filme2);
 
 /**
  * @brief Libera a memória alocada para o filme;
