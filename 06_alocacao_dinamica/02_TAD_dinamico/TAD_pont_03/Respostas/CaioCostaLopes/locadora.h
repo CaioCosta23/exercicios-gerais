@@ -23,7 +23,7 @@ tLocadora *CriarLocadora();
  * @param codigo Código do filme a ser verificado;
  * @return int 1 se o filme está cadastrado, 0 caso contrário;
  */
-int VerificaFilmeCadastrado(tLocadora *locadora, int codigo);
+int VerificarFilmeCadastrado (tLocadora *locadora, int codigo);
 
 /**
  * @brief Cadastra um novo filme na locadora caso ele não esteja cadastrado;
