@@ -14,6 +14,10 @@ tLocadora *CriarLocadora() {
     }
 
     locadora->filme = (tFilme **)malloc(MAX_FILMES * sizeof(tFilme*));
+    if ((*locadora).filme == NULL) {
+        printf("Erro na alocacao do vetor de fimes!");
+    }
+    
     locadora->numFilmes = 0;
     locadora->lucro = 0;
 
@@ -47,10 +51,12 @@ void LerCadastroLocadora(tLocadora *locadora) {
     tFilme *filme;
 
     while (scanf("%d,", &codigo) == 1) {
+        filme = CriaFilme();
         LeFilme(filme, codigo);
 
         CadastrarFilmeLocadora(locadora, filme);
     }
+    locadora->filme = (tFilme **)realloc((*locadora).filme, (*locadora).numFilmes * sizeof(tFilme*));
 }
 
 void AlugarFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCodigos) {
@@ -97,15 +103,59 @@ void LerAluguelLocadora(tLocadora *locadora) {
     AlugarFilmesLocadora(locadora, codigosFilmes, qtdCodigos);
 }
 
-void DevolverFilmesLocadora(tLocadora *locadora, int codigos) {
+void DevolverFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCodigos) {
+    int c, f;
+    int existeFilme;
 
+    for (c = 0; c < quantidadeCodigos; c++) {
+        for (f = 0; f < (*locadora).numFilmes; f++) {
+            if (EhMesmoCodigoFilme((*locadora).filme[f], codigos[c])) {
+                existeFilme = 1;
+
+                if (ObterQtdAlugadaFilme((*locadora).filme[f]) > 0) {
+                    DevolverFilme((*locadora).filme[f]);
+                    locadora->lucro += ObterValorFilme((*locadora).filme[f]);
+
+                    printf("Filme %d - ", codigos[c]);
+
+                    ImprimirNomeFilme((*locadora).filme[f]);
+                    printf("Devolvido\n");
+                }else {
+                    printf("Nao e possivel devolver o filme %d - ", ObterCodigoFilme((*locadora).filme[f]));
+                    ImprimirNomeFilme((*locadora).filme[f]);
+                    printf("\n");
+                }
+                break;
+            }
+        }
+    }
 }
 
 void LerDevolucaoLocadora(tLocadora *locadora) {
+    int codigo;
+    int qtdCodigos = 0;
+    int codigosFilmes[MAX_FILMES];
 
+    while(scanf("%d\n", &codigo) == 1) {
+        codigosFilmes[qtdCodigos] = codigo;
+        qtdCodigos++;
+    }
+    DevolverFilmesLocadora(locadora, codigosFilmes, qtdCodigos);
 }
 
 void OrdenarFilmesLocadora(tLocadora *locadora) {
+    int f, o;
+    tFilme *filmeAuxiliar;
+
+    for (f = 0; f < ((*locadora).numFilmes - 1); f++) {
+        for (o = f + 1; f < (*locadora).numFilmes; o++) {
+            if (CompararNomesFilmes((*locadora).filme[f], (*locadora).filme[o]) > 0) {
+                filmeAuxiliar = (*locadora).filme[f];
+                locadora->filme[f] = (*locadora).filme[o];
+                locadora->filme[o] = filmeAuxiliar;
+            }
+        }
+    }
 }
 
 void ConsultarEstoqueLocadora(tLocadora *locadora) {
