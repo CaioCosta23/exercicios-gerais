@@ -84,7 +84,7 @@ void OrdenarFilmesLocadora(tLocadora *locadora);
  * 
  * @param locadora Ponteiro pata a instância de tLocadora a ser consultada;
  */
-void ConsultarestoqueLocadora(tLocadora *locadora);
+void ConsultarEstoqueLocadora(tLocadora *locadora);
 
 /**
  * @brief Consulta o lucro da locadora;
