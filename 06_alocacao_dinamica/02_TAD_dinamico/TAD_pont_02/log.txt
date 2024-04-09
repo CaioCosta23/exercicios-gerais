@@ -1,0 +1,349 @@
+Rodando o script do Aluno - Arquivos header necessários do professor existem na pasta Includes
+ - Arquivos objetos necessários do professor existem na pasta Gabarito-obj.
+#######################################
+ALUNO: CaioCostaLopes
+#######################################
+CRIANDO O DIRETÓRIO DE RESULTADO PARA CaioCostaLopes:
+ - Diretório Resultados/CaioCostaLopes criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/candidato criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/eleicao criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/eleitor criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/main criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/completo criado com sucesso!
+ - Arquivos criados: ok!
+
+CHECKANDO OS ARQUIVOS DO ALUNO:
+ - Arquivo esperado 'Respostas/CaioCostaLopes/candidato.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/candidato.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/eleicao.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/eleicao.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/eleitor.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/eleitor.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/main.c' encontrado!
+ - Arquivos esperados enviados: Ok!
+
+COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
+ - Pasta candidato:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/candidato
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/candidato
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/candidato
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/candidato
+ - Pasta eleicao:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/eleicao
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/eleicao
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/eleicao
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/eleicao
+ - Pasta eleitor:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/eleitor
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/eleitor
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/eleitor
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/eleitor
+ - Pasta main:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/main
+ - Pasta completo:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/completo
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/completo
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/completo
+ - Arquivos copiados: ok!
+
+COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:
+ - Pasta candidato:
+ - Compilando o arquivo candidato.c do aluno, gerando o candidato.o
+ - Compilando o arquivo eleicao.c do aluno, gerando o eleicao.o
+ - Compilando o arquivo eleitor.c do aluno, gerando o eleitor.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/result_compilation.txt.
+ - Pasta eleicao:
+ - Compilando o arquivo candidato.c do aluno, gerando o candidato.o
+ - Compilando o arquivo eleicao.c do aluno, gerando o eleicao.o
+ - Compilando o arquivo eleitor.c do aluno, gerando o eleitor.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/result_compilation.txt.
+ - Pasta eleitor:
+ - Compilando o arquivo candidato.c do aluno, gerando o candidato.o
+ - Compilando o arquivo eleicao.c do aluno, gerando o eleicao.o
+ - Compilando o arquivo eleitor.c do aluno, gerando o eleitor.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/result_compilation.txt.
+ - Pasta main:
+ - Compilando o arquivo candidato.c do aluno, gerando o candidato.o
+ - Compilando o arquivo eleicao.c do aluno, gerando o eleicao.o
+ - Compilando o arquivo eleitor.c do aluno, gerando o eleitor.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/result_compilation.txt.
+ - Pasta completo:
+ - Compilando o arquivo candidato.c do aluno, gerando o candidato.o
+ - Compilando o arquivo eleicao.c do aluno, gerando o eleicao.o
+ - Compilando o arquivo eleitor.c do aluno, gerando o eleitor.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/result_compilation.txt.
+ - Copiando os arquivos objetos do professor para cada subpasta do Resultado do CaioCostaLopes:
+ - Copiando o Gabarito-obj/candidato.o para a pasta Resultados/CaioCostaLopes/eleicao
+ - Copiando o Gabarito-obj/candidato.o para a pasta Resultados/CaioCostaLopes/eleitor
+ - Copiando o Gabarito-obj/candidato.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/eleicao.o para a pasta Resultados/CaioCostaLopes/candidato
+ - Copiando o Gabarito-obj/eleicao.o para a pasta Resultados/CaioCostaLopes/eleitor
+ - Copiando o Gabarito-obj/eleicao.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/eleitor.o para a pasta Resultados/CaioCostaLopes/candidato
+ - Copiando o Gabarito-obj/eleitor.o para a pasta Resultados/CaioCostaLopes/eleicao
+ - Copiando o Gabarito-obj/eleitor.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/candidato
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/eleicao
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/eleitor
+ - Arquivos Compilados: ok!
+
+LINKANDO OS ARQUIVOS COMPILADOS:
+ - Pasta candidato:
+ - Gerando o binário prog linkando com o(s) arquivo(s) candidato/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/result_linking.txt
+ - Pasta eleicao:
+ - Gerando o binário prog linkando com o(s) arquivo(s) eleicao/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/result_linking.txt
+ - Pasta eleitor:
+ - Gerando o binário prog linkando com o(s) arquivo(s) eleitor/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/result_linking.txt
+ - Pasta main:
+ - Gerando o binário prog linkando com o(s) arquivo(s) main/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/result_linking.txt
+ - Pasta completo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) completo/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/result_linking.txt
+
+EXECUTANDO O VALGRIND EM CADA CASO:
+ - Pasta candidato / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 27, frees: 27, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 10:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 27, frees: 27, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 28, frees: 28, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 7:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 34, frees: 34, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 8:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 22, frees: 22, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta candidato / Caso 9:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/candidato/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 34, frees: 34, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 10:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 32, frees: 32, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 31, frees: 31, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 37, frees: 37, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 32, frees: 32, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 7:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Incorreto!
+ - Pasta eleicao / Caso 8:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 24, frees: 24, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleicao / Caso 9:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleicao/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 27, frees: 27, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 10:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 27, frees: 27, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 28, frees: 28, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 7:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 34, frees: 34, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 8:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 22, frees: 22, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta eleitor / Caso 9:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/eleitor/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 34, frees: 34, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 27, frees: 27, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 10:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 27, frees: 27, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 28, frees: 28, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 7:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 34, frees: 34, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 8:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 22, frees: 22, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 9:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 34, frees: 34, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 10:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/10/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 32, frees: 32, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 29, frees: 29, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 30, frees: 30, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 31, frees: 31, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 37, frees: 37, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 32, frees: 32, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 7:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/7/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Incorreto!
+ - Pasta completo / Caso 8:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/8/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 24, frees: 24, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 9:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/9/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+
+#######################################
+RESULTADOS FINAIS
+#######################################
+
+----------------------------------------------------------------------------
+Nome 0: CaioCostaLopes
+ - Arquivos Corretos: 7 de 7 / Nota 10.00
+ - Compilações Corretas: 20 de 20 / Nota 10.00
+ - Linkagens Corretas: 5 de 5 / Nota 10.00
+ - Resultados Corretos candidato: 10 de 10 / Nota 10.00
+ - Valgrinds Corretos candidato: 10 de 10 / Nota 10.00
+ - Resultados Corretos eleicao: 9 de 10 / Nota 9.00
+ - Valgrinds Corretos eleicao: 10 de 10 / Nota 10.00
+ - Resultados Corretos eleitor: 10 de 10 / Nota 10.00
+ - Valgrinds Corretos eleitor: 10 de 10 / Nota 10.00
+ - Resultados Corretos main: 10 de 10 / Nota 10.00
+ - Valgrinds Corretos main: 10 de 10 / Nota 10.00
+ - Resultados Corretos completo: 9 de 10 / Nota 9.00
+ - Valgrinds Corretos completo: 10 de 10 / Nota 10.00
+ - Soma das notas do CaioCostaLopes: 128.000
+ - Campos Considerados: 13
+ - Média do CaioCostaLopes: 9.84
+
+----------------------------------------------------------------------------
+
+Arquivo CSV Resultado.csv com os resultados finais foi gerado na pasta raíz!
+
+
