@@ -24,7 +24,7 @@ tLocadora *CriarLocadora() {
     return locadora;
 }
 
-int VerificaFilmeCadastrado(tLocadora *locadora, int codigo) {
+int VerificarFilmeCadastrado(tLocadora *locadora, int codigo) {
     int f;
 
     for (f = 0; f < (*locadora).numFilmes; f++) {
@@ -36,7 +36,7 @@ int VerificaFilmeCadastrado(tLocadora *locadora, int codigo) {
 }
 
 void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme) {
-    if (VerificaFilmeCadastrado(locadora, (*filme).codigo)) {
+    if (VerificarFilmeCadastrado(locadora, (*filme).codigo)) {
         printf("Filme ja cadastrado no estoque\n");
     }else {
         (*locadora).filme[(*locadora).numFilmes] = filme;
@@ -129,6 +129,9 @@ void DevolverFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCo
                 break;
             }
         }
+        if ((!(existeFilme))) {
+            printf("Filme %d nao cadastrado.\n", codigos[c]);
+        }
     }
 }
 
@@ -149,7 +152,7 @@ void OrdenarFilmesLocadora(tLocadora *locadora) {
     tFilme *filmeAuxiliar;
 
     for (f = 0; f < ((*locadora).numFilmes - 1); f++) {
-        for (o = f + 1; f < (*locadora).numFilmes; o++) {
+        for (o = f + 1; o < (*locadora).numFilmes; o++) {
             if (CompararNomesFilmes((*locadora).filme[f], (*locadora).filme[o]) > 0) {
                 filmeAuxiliar = (*locadora).filme[f];
                 locadora->filme[f] = (*locadora).filme[o];
