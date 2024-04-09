@@ -63,7 +63,7 @@ void LerAluguelLocadora(tLocadora *locadora);
  * @param codigos Vetor contendo os códigos dos filmes a serem devolvidos;
  * @param quantidadeCodigos Número de códigos de filmes a serem devolvidos;
  */
-void DevolverFilmesLocadora(tLocadora *locadora, int codigos, int quantidadeCodigos);
+void DevolverFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCodigos);
 
 /**
  * @brief Lê os dados de devolução de um  ou mais filmes e os devolve na locadora;
