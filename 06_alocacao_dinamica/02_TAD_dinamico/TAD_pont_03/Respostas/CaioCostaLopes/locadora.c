@@ -68,10 +68,10 @@ void AlugarFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCodi
         existeFilme = 0;
         for (f = 0; f < (*locadora).numFilmes; f++) {
             if (EhMesmoCodigoFilme((*locadora).filme[f], codigos[c])) {
-                existeFilme;
+                existeFilme = 1;
 
                 if (ObterQtdEstoqueFilme((*locadora).filme[f]) > 0) {
-                    AlugarFilme((*locadora).filme[c]);
+                    AlugarFilme((*locadora).filme[f]);
                     custo += ObterValorFilme((*locadora).filme[f]);
                     contAlugados++;
                 }else {
@@ -108,6 +108,7 @@ void DevolverFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCo
     int existeFilme;
 
     for (c = 0; c < quantidadeCodigos; c++) {
+        existeFilme = 0;
         for (f = 0; f < (*locadora).numFilmes; f++) {
             if (EhMesmoCodigoFilme((*locadora).filme[f], codigos[c])) {
                 existeFilme = 1;
