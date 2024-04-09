@@ -39,8 +39,8 @@ void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme) {
     if (VerificarFilmeCadastrado(locadora, (*filme).codigo)) {
         printf("Filme ja cadastrado no estoque\n");
     }else {
-        (*locadora).filme[(*locadora).numFilmes] = filme;
-        (*locadora).numFilmes += 1;
+        locadora->filme[(*locadora).numFilmes] = filme;
+        locadora->numFilmes += 1;
 
         printf("Filme cadastrado %d - %s\n", (*filme).codigo, (*filme).nome);
     }
