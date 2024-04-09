@@ -40,17 +40,16 @@ tEleicao *InicializaEleicao() {
     }
     
     for (c = 0; c < qtdCandidatos; c++) {
+        // Candidato auxiliar armazena os dados de um candidato;
         candidatoAuxiliar = CriaCandidato();
         LeCandidato(candidatoAuxiliar);
 
         // Verificando para qual cargo cada candidato irá concorrer;    
         if (ObtemCargo(candidatoAuxiliar) == 'G') {
-            eleicao->governadores[(*eleicao).totalGovernadores] = CriaCandidato();
             eleicao->governadores[(*eleicao).totalGovernadores] = candidatoAuxiliar;
             eleicao->totalGovernadores += 1;
         }else {
             if (ObtemCargo(candidatoAuxiliar) == 'P') {
-                eleicao->presidentes[(*eleicao).totalPresidentes] = CriaCandidato();
                 eleicao->presidentes[(*eleicao).totalPresidentes] = candidatoAuxiliar;
                 eleicao->totalPresidentes += 1;
             }
