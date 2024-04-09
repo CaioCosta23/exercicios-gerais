@@ -16,7 +16,7 @@ typedef struct Filme {
  * 
  * @return tFilme* Ponteiro para o filme criado ou encerra caso não seja possível alocar a memória;
  */
-tFilme *CriaFilme();
+tFilme *CriarFilme();
 
 /**
  * @brief Lê um filme do arquivo de entrada e define o código do filme;
