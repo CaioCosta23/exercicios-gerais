@@ -15,7 +15,7 @@ tLocadora *CriarLocadora() {
 
     locadora->filme = (tFilme **)malloc(MAX_FILMES * sizeof(tFilme*));
     if ((*locadora).filme == NULL) {
-        printf("Erro na alocacao do vetor de fimes!");
+        printf("Erro na alocacao do vetor de filmes!");
     }
     
     locadora->numFilmes = 0;
@@ -39,6 +39,12 @@ void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme) {
     if (VerificarFilmeCadastrado(locadora, (*filme).codigo)) {
         printf("Filme ja cadastrado no estoque\n");
     }else {
+        locadora->filme = (tFilme **)realloc((*locadora).filme, ((*locadora).numFilmes + 1) * sizeof(tFilme*));
+        if ((*locadora).filme == NULL) {
+            printf("Erro na realocacao do vetor de filmes!\n");
+            DestruirLocadora(locadora);
+            exit(1);
+        }
         locadora->filme[(*locadora).numFilmes] = filme;
         locadora->numFilmes += 1;
 
@@ -49,14 +55,16 @@ void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme) {
 void LerCadastroLocadora(tLocadora *locadora) {
     int codigo;
     tFilme *filme;
-
+    
     while (scanf("%d,", &codigo) == 1) {
         filme = CriarFilme();
         LeFilme(filme, codigo);
 
         CadastrarFilmeLocadora(locadora, filme);
     }
-    locadora->filme = (tFilme **)realloc((*locadora).filme, (*locadora).numFilmes * sizeof(tFilme*));
+    /*
+    
+    */
 }
 
 void AlugarFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCodigos) {
@@ -120,11 +128,11 @@ void DevolverFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCo
                     printf("Filme %d - ", codigos[c]);
 
                     ImprimirNomeFilme((*locadora).filme[f]);
-                    printf("Devolvido\n");
+                    printf(" Devolvido!\n");
                 }else {
                     printf("Nao e possivel devolver o filme %d - ", ObterCodigoFilme((*locadora).filme[f]));
                     ImprimirNomeFilme((*locadora).filme[f]);
-                    printf("\n");
+                    printf(".\n");
                 }
                 break;
             }
