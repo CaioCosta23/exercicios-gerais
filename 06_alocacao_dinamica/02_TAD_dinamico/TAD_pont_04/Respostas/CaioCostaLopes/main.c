@@ -17,6 +17,14 @@ void OrdenaAprovados(tAluno *aprovados[], int p) {
     }
 }
 
+void VerificaAluno(tAluno *aluno, tAluno **listaAlunos, tAluno **listaAprovados) {
+    if (aluno == NULL) {
+            free(listaAlunos);
+            free(listaAprovados);
+            exit(1);
+        }
+}
+
 
 int main() {
     int qtdAlunos;
@@ -38,13 +46,12 @@ int main() {
 
     for (a = 0; a < qtdAlunos; a++) {
         alunos[a] = CriaAluno();
-        if (alunos[a] == NULL) {
-            free(alunos);
-            free(aprovados);
-            exit(1);
-        }
+        
+        VerificaAluno(alunos[a], alunos, aprovados);
 
         LeAluno(alunos[a]);
+
+        VerificaAluno(alunos[a], alunos, aprovados);
 
         if (VerificaAprovacao(alunos[a])) {
             aprovados[p] = alunos[a];
