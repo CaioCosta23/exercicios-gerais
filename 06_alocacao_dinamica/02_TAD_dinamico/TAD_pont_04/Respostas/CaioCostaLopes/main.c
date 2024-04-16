@@ -4,7 +4,7 @@
 
 void OrdenaAprovados(tAluno *aprovados[], int p) {
     int x, y;
-    int *aux;
+    tAluno *aux;
 
     for (x = 0; x < (p - 1); x++) {
         for (y = x + 1; y < p; y++) {
