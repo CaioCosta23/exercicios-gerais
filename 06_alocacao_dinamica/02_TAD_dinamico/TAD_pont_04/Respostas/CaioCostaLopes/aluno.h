@@ -14,7 +14,7 @@ typedef struct Aluno {
  * 
  * @return tAluno* Estrutura do tipo "tAluno" com os dados criados;
  */
-tAluno * CriaAluno();
+tAluno *CriaAluno();
 
 /**
  * @brief Lê os dados de uma aluno;
