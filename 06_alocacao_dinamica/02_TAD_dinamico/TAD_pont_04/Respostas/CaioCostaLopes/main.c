@@ -41,7 +41,7 @@ int main() {
         LeAluno(alunos[a]);
 
         if (VerificaAprovacao(alunos[a])) {
-            aprovados = alunos[a];
+            aprovados[p] = alunos[a];
             p++;
         }
     }
