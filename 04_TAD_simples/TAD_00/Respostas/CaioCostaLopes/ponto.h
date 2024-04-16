@@ -46,7 +46,7 @@ Ponto pto_atribui_x (Ponto p, float x);
  * 
  * @param p Estrutura do tipo Ponto;
  * @param y Coordenada Y;
- * @return Ponto Ponto Estrutura do tipo ponto com o valor da coordenada y atribuida; 
+ * @return Ponto Estrutura do tipo ponto com o valor da coordenada y atribuida; 
  */
 Ponto pto_atribui_y (Ponto p, float y);
 
