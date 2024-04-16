@@ -38,6 +38,12 @@ int main() {
 
     for (a = 0; a < qtdAlunos; a++) {
         alunos[a] = CriaAluno();
+        if (alunos[a] == NULL) {
+            free(alunos);
+            free(aprovados);
+            exit(1);
+        }
+
         LeAluno(alunos[a]);
 
         if (VerificaAprovacao(alunos[a])) {
