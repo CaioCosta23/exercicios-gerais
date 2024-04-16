@@ -30,7 +30,7 @@ void LeAluno(tAluno *aluno);
  * @param aluno2 Ponteiro para o segunda aluno a ser comparado;
  * @return int 1 se a matrícula do "aluno1" q for maior que a do "aluno2", -1 se a matrícula do "aluno1" for menor que a do "aluno2" e 0 caso as matrículas sejam iguais;
  */
-int ComparaMatricula(tAluno *aluno1, tAluno aluno2);
+int ComparaMatricula(tAluno *aluno1, tAluno *aluno2);
 
 /**
  * @brief Calcula a média das notas de um aluno;
