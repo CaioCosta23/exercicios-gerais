@@ -34,6 +34,7 @@ int main() {
                 if (PossibleMatrixSum(matrix1, matrix2)) {
                     sumMatrix = MatrixAdd(matrix1, matrix2);
                     MatrixPrint(sumMatrix);
+                    MatrixFree(sumMatrix);
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
@@ -42,6 +43,7 @@ int main() {
                 if (PossibleMatrixSub(matrix1, matrix2)) {
                     subMatrix = MatrixSub(matrix1, matrix2);
                     MatrixPrint(subMatrix);
+                    MatrixFree(subMatrix);
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
@@ -50,6 +52,7 @@ int main() {
                 if (PossibleMatrixMultiply(matrix1, matrix2)) {
                     multMatrix = MatrixMultiply(matrix1, matrix2);
                     MatrixPrint(multMatrix);
+                    MatrixFree(multMatrix);
                 }else {
                     printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
@@ -70,8 +73,10 @@ int main() {
             case 5:
                 newMatrix1 = TransposeMatrix(matrix1);
                 MatrixPrint(newMatrix1);
+                MatrixFree(newMatrix1);
                 newMatrix2 = TransposeMatrix(matrix2);
                 MatrixPrint(newMatrix2);
+                MatrixFree(newMatrix2);
                 break;
             case 6:
                 encerrar = 1;
@@ -83,11 +88,6 @@ int main() {
     }
     MatrixFree(matrix1);
     MatrixFree(matrix2);
-    MatrixFree(sumMatrix);
-    MatrixFree(subMatrix);
-    MatrixFree(multMatrix);
-    MatrixFree(newMatrix1);
-    MatrixFree(newMatrix2);
 
     return 0;
 }
