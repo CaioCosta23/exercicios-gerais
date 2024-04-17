@@ -74,7 +74,7 @@ int main() {
                     MatrixFree(multMatrix);
                 }else {
                     // Caso não seja possível multiplicar as matrizes, imprime uma mensagem de erro;
-                    printf("Erro: as dimensoes da matriz nao correspondem\n");
+                    printf("Erro: o numero de colunas da primeira matriz eh diferente do numero de linhas da segunda matriz\n");
                 }
                 break;
             case 4:
