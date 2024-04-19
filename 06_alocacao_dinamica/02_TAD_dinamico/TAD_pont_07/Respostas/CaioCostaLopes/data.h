@@ -76,7 +76,7 @@ int CalculaDiferencaDias(tData *data1, tData *data2);
  * 
  * @param data Ponteiro para a estutura do tipo "tData" que será impresso;
  */
-void ImprimeDataextenso(tData *data);
+void ImprimeDataExtenso(tData *data);
 
 /**
  * @brief Imprime o mês de uma data por extenso;
