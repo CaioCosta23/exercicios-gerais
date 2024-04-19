@@ -26,5 +26,8 @@ int main() {
 
     printf("A diferenca em dias entre as datas eh: %d dias\n", CalculaDiferencaDias(data1, data2));
 
+    LiberaData(data1);
+    LiberaData(data2);
+
     return 0;
 }
