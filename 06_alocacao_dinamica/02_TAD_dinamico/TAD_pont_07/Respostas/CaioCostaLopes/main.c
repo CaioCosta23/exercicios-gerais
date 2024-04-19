@@ -11,13 +11,15 @@ int main() {
     LeData(data1);
     LeData(data2);
 
+    printf("Primeira data: ");
     ImprimeDataExtenso(data1);
+    printf("Segunda data: ");
     ImprimeDataExtenso(data2);
 
-    if (ComparaData(data1, data2) == 1) {
+    if (ComparaData(data1, data2) == -1) {
         printf("A primeira data eh mais antiga\n");
     }else {
-        if (ComparaData(data1, data2) == -1) {
+        if (ComparaData(data1, data2) == 1) {
             printf("A segunda data eh mais antiga\n");
         }else {
             printf("As datas sao iguais\n");
