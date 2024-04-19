@@ -9,10 +9,10 @@ int main() {
     data2 = CriaData();
 
     LeData(data1);
-    LeDaa(data2);
+    LeData(data2);
 
     ImprimeDataExtenso(data1);
-    ImprimeExtenso(data2);
+    ImprimeDataExtenso(data2);
 
     if (ComparaData(data1, data2) == 1) {
         printf("A primeira data eh mais antiga\n");
