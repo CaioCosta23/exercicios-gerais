@@ -2,7 +2,7 @@
 #define _data
 
 typedef struct Data {
-    int data;
+    int dia;
     int mes;
     int ano;
 }tData;
