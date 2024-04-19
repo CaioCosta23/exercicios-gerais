@@ -10,6 +10,10 @@ tData *CriaData() {
         exit(1);
     }
 
+    data->dia = -1;
+    data->mes = -1;
+    data->ano = -1;
+
     return data;
 }
 
@@ -69,16 +73,17 @@ int ComparaData(tData *data1, tData *data2) {
 }
 
 int CalculaDiasAteMes(tData *data) {
-    return NumeroDiasAteMes(data);
+    return NumeroDiasMes(data);
 }
 
 int CalculaDiferencaDias(tData *data1, tData *data2) {
     int diferenca = 0;
-    tData *aux;
+    tData *aux = CriaData(aux);
     
     aux->dia = 0;
 
     if (ComparaData(data1, data2) == 0) {
+        LiberaData(aux);
         return 0;
     }else {
         if (ComparaData(data1, data2) == -1) {
@@ -129,6 +134,8 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
             }
         }
     }
+    LiberaData(aux);
+
     return diferenca;
 }
 
