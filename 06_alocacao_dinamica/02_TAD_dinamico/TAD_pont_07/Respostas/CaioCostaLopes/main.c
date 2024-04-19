@@ -12,7 +12,7 @@ int main() {
     LeData(data2);
 
     if (!(VerificaDataValida(data1)) || !(VerificaDataValida(data2))) {
-        printf("Primeira e/ou segunda data(s) invalida(s)\n");
+        printf("A primeira e/ou segunda data(s) invalida(s)\n");
         LiberaData(data1);
         LiberaData(data2);
         exit(1);
