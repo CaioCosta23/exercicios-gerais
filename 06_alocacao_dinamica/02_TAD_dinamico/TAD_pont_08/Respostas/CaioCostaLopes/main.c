@@ -2,14 +2,6 @@
 #include <stdlib.h>
 #include "departamento.h"
 
-void EncerraPrograma(tDepartamento *departamento[], int qtdDepartamentosRegistrados) {
-    int l;
-    for (l = 0; l < qtdDepartamentosRegistrados; l++) {
-            LiberaMemoriaDepartamento(departamento[l]);
-    }
-    exit(1);
-}
-
 int main() {
     int qtdDepartamentos, d, l;
     char nome[STRING_MAX], diretor[STRING_MAX], curso1[STRING_MAX], curso2[STRING_MAX], curso3[STRING_MAX];
@@ -30,12 +22,12 @@ int main() {
 
         if ((!(ValidaMediaDepartamento(media1)) || (!(ValidaMediaDepartamento(media2)) || (!(ValidaMediaDepartamento(media3)))))) {
             printf("Erro: A media m1, m2, e/ou m3 nao eh/sao valida(s)");
-            EncerraPrograma(departamento, (d - 1));
+            for (l = 0; l < d; l++) {
+                LiberaMemoriaDepartamento(departamento[l]);
+            }
+            exit(1);
         }
         departamento[d] = CriaDepartamento();
-        if (departamento == NULL) {
-            EncerraPrograma(departamento, d);
-        }
         PreencheDadosDepartamento(departamento[d], curso1, curso2, curso3, nome, media1, media2, media3, diretor);
     }
 
