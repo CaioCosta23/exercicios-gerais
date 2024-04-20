@@ -33,7 +33,7 @@ tDepartamento *CriaDepartamento();
  * @param m3 Média do terceiro curso;
  * @param diretor Nome do diretor do departamento;
  */
-void PreencheDepartamento(tDepartamento *depto, char *c1, char *c2, char *c3, char *nome, int m1, int m2, int m3, char *diretor);
+void PreencheDadosDepartamento(tDepartamento *depto, char *c1, char *c2, char *c3, char *nome, int m1, int m2, int m3, char *diretor);
 
 /**
  * @brief Verifica se a média é vaĺida (está entre 0 e 10);
