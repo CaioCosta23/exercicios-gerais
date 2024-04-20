@@ -36,6 +36,9 @@ int main() {
     for (d = 0; d < qtdDepartamentos; d++) {
         ImprimeAtributosDepartamento(departamento[d]);
     }
+    for (d = 0; d < qtdDepartamentos; d++) {
+        LiberaMemoriaDepartamento(departamento[d]);
+    }
 
     return 0;
 }
