@@ -28,7 +28,7 @@ int main() {
             exit(1);
         }
         departamento[d] = CriaDepartamento();
-        PreencheDepartamento(departamento[d], curso1, curso2, curso3, nome, media1, media2, media3, diretor);
+        PreencheDadosDepartamento(departamento[d], curso1, curso2, curso3, nome, media1, media2, media3, diretor);
     }
 
     OrdenaPorMediaDepartamentos(departamento, qtdDepartamentos);
