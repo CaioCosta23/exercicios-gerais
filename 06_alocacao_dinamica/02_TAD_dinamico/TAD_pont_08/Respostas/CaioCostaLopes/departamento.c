@@ -52,7 +52,7 @@ void PreencheDadosDepartamento(tDepartamento *depto, char *c1, char *c2, char *c
 
     depto->nome = (char*)malloc(STRING_MAX * sizeof(char));
     if ((*depto).nome == NULL) {
-        printf("Erro na alocacao do nome do departamento 1!\n");
+        printf("Erro na alocacao do nome do departamento!\n");
         LiberaMemoriaDepartamento(depto);
         exit(1);
     }
@@ -64,7 +64,7 @@ void PreencheDadosDepartamento(tDepartamento *depto, char *c1, char *c2, char *c
 
     depto->diretor = (char*)malloc(STRING_MAX * sizeof(char));
     if ((*depto).diretor == NULL) {
-        printf("Erro na alocacao do nome do departamento 1!\n");
+        printf("Erro na alocacao do nome do diretor!\n");
         LiberaMemoriaDepartamento(depto);
         exit(1);
     }
@@ -81,7 +81,7 @@ double CalculaDesvioPadraoDepartamento(tDepartamento *depto) {
     double desvioPadrao;
     int m;
     int qtdMedias = 3;
-    double soma = 0;
+    double soma = 0.00;
     double x, xi;
 
     x = (*depto).media_geral;
@@ -106,7 +106,7 @@ double CalculaDesvioPadraoDepartamento(tDepartamento *depto) {
 }
 
 double CalculaMediaGeralDepartamento(tDepartamento *depto) {
-    return ((double)(*depto).m1 + (double)(*depto).m2 + (double)(*depto).m3);
+    return (((double)(*depto).m1 + (double)(*depto).m2 + (double)(*depto).m3) / (double)3);
 }
 
 void OrdenaPorMediaDepartamentos(tDepartamento *d[], int tamanho) {
@@ -115,7 +115,12 @@ void OrdenaPorMediaDepartamentos(tDepartamento *d[], int tamanho) {
 
     for (x = 0; x < (tamanho - 1); x++) {
         for (y = x + 1; y < tamanho; y++) {
-            if ((*d)[x].media_geral < (*d)[y].media_geral) {
+            /*
+             * Para acessar vetor de ponteiros, é necessário usar o operador "->" ao invés de "." 
+             * uma vez que estamos manipulando um vetor de ponteiros nessa estrutura condicional;
+             * (e não um ponteiro para um vetor);
+            */
+            if (d[x]->media_geral < d[y]->media_geral) {
                 aux = d[x];
                 d[x] = d[y];
                 d[y] = aux;
@@ -133,6 +138,7 @@ void ImprimeAtributosDepartamento(tDepartamento *depto) {
     printf("curso3 => %s, media3 => %d\n", (*depto).c3, (*depto).m3);
     printf("media geral => %.2f\n", (*depto).media_geral);
     printf("desvio padrao => %.2f\n", (float)CalculaDesvioPadraoDepartamento(depto));
+    printf("\n");
 }
 
 void LiberaMemoriaDepartamento(tDepartamento *depto) {
