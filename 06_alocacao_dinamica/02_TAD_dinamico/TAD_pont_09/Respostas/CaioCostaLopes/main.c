@@ -10,6 +10,7 @@ int main() {
     tEmpresa *empresas[qtdEmpresas];
 
     for (e = 0; e < qtdEmpresas; e++) {
+        empresas[e] = CriaEmpresa();
         LeEmpresa(empresas[e]);
     }
     for (e = 0; e < qtdEmpresas; e++) {
