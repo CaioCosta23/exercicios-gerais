@@ -3,7 +3,7 @@
 #include "empresa.h"
 
 int main() {
-    int qtdEmpresas, e;
+    int qtdEmpresas, e, l;
 
     scanf("%d", &qtdEmpresas);
 
@@ -11,6 +11,12 @@ int main() {
 
     for (e = 0; e < qtdEmpresas; e++) {
         empresas[e] = CriaEmpresa();
+        if (empresas[e] == NULL) {
+            for (l = 0; l <= e; l++) {
+                ApagaEmpresa(empresas[l]);
+            }
+            exit(1);
+        }
         LeEmpresa(empresas[e]);
     }
     for (e = 0; e < qtdEmpresas; e++) {
