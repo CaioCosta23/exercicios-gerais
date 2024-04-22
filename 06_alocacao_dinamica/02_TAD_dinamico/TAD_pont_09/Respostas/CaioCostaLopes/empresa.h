@@ -12,6 +12,8 @@ typedef struct empresa {
 /**
  * @brief Cria uma estrutura do tipo "tEmpresa" vázia (com atributos inicializados);
  * 
+ * OBS: Inicializa os dados do tipo ponteiro como "NULL" e os dados numéricos com -1;
+ * 
  * @return tEmpresa* Ponteiro para a estrutura do tipo "tEmpresa";
  */
 tEmpresa *CriaEmpresa();
