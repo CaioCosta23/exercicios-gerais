@@ -13,7 +13,7 @@ void EncerraProgramaPorErro(tEmpresa *empresas[], int qtdEmpresas) {
 
 
 int main() {
-    int qtdEmpresas, e, l;
+    int qtdEmpresas, e;
 
     scanf("%d", &qtdEmpresas);
 
