@@ -11,11 +11,11 @@ tFuncionario *CriaFuncionario() {
     return funcionario;
 }
 
-void LeEmpresa(tFuncionario *funcionario) {
+void LeFuncionario(tFuncionario *funcionario) {
     scanf("%d %f", &funcionario->id, &funcionario->salario);
 }
 
-int GEtIdFuncionario(tFuncionario *funcionario) {
+int GetIdFuncionario(tFuncionario *funcionario) {
     return (*funcionario).id;
 }
 
