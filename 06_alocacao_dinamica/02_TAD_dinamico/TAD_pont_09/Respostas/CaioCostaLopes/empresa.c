@@ -2,15 +2,6 @@
 #include <stdlib.h>
 #include "empresa.h"
 
-void ApagaFuncionariosPorErro(tFuncionario *funcionarios[], int qtdFuncionarios) {
-    int l;
-
-    for (l = 0; l < qtdFuncionarios; l++) {
-        ApagaFuncionario(funcionarios[l]);
-    }
-}
-
-
 tEmpresa *CriaEmpresa() {
     tEmpresa *empresa = (tEmpresa*)malloc(sizeof(tEmpresa));
 
@@ -21,30 +12,33 @@ tEmpresa *CriaEmpresa() {
     
     empresa->funcionarios = NULL;
     empresa->id = -1;
-    empresa->qtdFuncionarios;
+    empresa->qtdFuncionarios = 0;
 
     return empresa;
 }
 
 void LeEmpresa(tEmpresa *empresa) {
-    int f, l;
+    int f, qtdCandidatos;
+    tFuncionario *funcionario = NULL;
 
-    scanf("%d %d", &empresa->id, &empresa->qtdFuncionarios);
+    scanf("%d %d", &empresa->id, &qtdCandidatos);
 
-    empresa->funcionarios = (tFuncionario**)malloc(empresa->qtdFuncionarios *sizeof(tFuncionario*));
+    empresa->funcionarios = (tFuncionario**)malloc(qtdCandidatos *sizeof(tFuncionario*));
 
-    if (!((*empresa).funcionarios == NULL)) {
-        for (f = 0; f < (*empresa).qtdFuncionarios; f++) {
-            empresa->funcionarios[f] = CriaFuncionario();
+    if ((*empresa).funcionarios != NULL) {
+        for (f = 0; f < qtdCandidatos; f++) {
+            funcionario = CriaFuncionario();
             
-            if (!((*empresa).funcionarios == NULL)) {
-                LeFuncionario((*empresa).funcionarios[f]);
-                ContrataFuncionarioEmpresa(empresa, (*empresa).funcionarios[f]);
+            if (funcionario != NULL) {
+                LeFuncionario(funcionario);
+                ContrataFuncionarioEmpresa(empresa, funcionario);
             }else {
-                ApagaFuncionariosPorErro(empresa->funcionarios, f);
+                printf("Erro na alocacao do funcionario %d da empresa %d!\n", f, (*empresa).id);
+                ApagaFuncionario(funcionario);
                 ApagaEmpresa(empresa);
             }
         }
+        empresa->funcionarios = (tFuncionario**)realloc((*empresa).funcionarios, (*empresa).qtdFuncionarios * sizeof(tFuncionario*));
     }else {
         printf("Erro na alocacao do vetor de funcionarios!\n");
         ApagaEmpresa(empresa);
@@ -62,8 +56,6 @@ void ContrataFuncionarioEmpresa(tEmpresa *empresa, tFuncionario *funcionario) {
                 break;
             }
         }
-    }else {
-        contratado = 1;
     }
 
     if (contratado) {
@@ -84,8 +76,13 @@ void ImprimeEmpresa(tEmpresa *empresa) {
 }
 
 void ApagaEmpresa(tEmpresa *empresa) {
+    int f;
+
     if (empresa != NULL) {
         if ((*empresa).funcionarios != NULL) {
+            for (f = 0; f < (*empresa).qtdFuncionarios; f++) {
+                ApagaFuncionario((*empresa).funcionarios[f]);
+            }
             free((*empresa).funcionarios);
             empresa->funcionarios = NULL;
         }
