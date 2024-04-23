@@ -27,7 +27,7 @@ tBiblioteca *InicializarBiblioteca();
  * 
  * @param biblioteca Ponteiro para uma estrutura do tipo "tBiblioteca" que contém os dados da biblioteca;
  */
-void AdicionarLivroNaBiblioteca(tBiblioteca *biblioteca);
+void AdicionarLivroNaBiblioteca(tBiblioteca *biblioteca, tLivros *livro);
 
 /**
  * @brief Remove um livro da biblioteca;
