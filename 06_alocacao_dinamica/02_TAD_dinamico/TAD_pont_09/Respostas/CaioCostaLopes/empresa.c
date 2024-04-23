@@ -34,7 +34,6 @@ void LeEmpresa(tEmpresa *empresa) {
                 ContrataFuncionarioEmpresa(empresa, funcionario);
             }else {
                 printf("Erro na alocacao do funcionario %d da empresa %d!\n", f, (*empresa).id);
-                ApagaFuncionario(funcionario);
                 ApagaEmpresa(empresa);
             }
         }
