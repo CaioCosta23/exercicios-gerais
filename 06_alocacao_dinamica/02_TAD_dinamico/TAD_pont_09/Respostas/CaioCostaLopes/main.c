@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include "empresa.h"
 
-void EncerraProgramaPorErro(tEmpresa *empresas[], int qtdEmpresas) {
+void EncerraPrograma(tEmpresa *empresas[], int qtdEmpresas) {
     int l;
 
-    for (l = 0; l <= qtdEmpresas; l++) {
+    for (l = 0; l < qtdEmpresas; l++) {
         ApagaEmpresa(empresas[l]);
     }
-    exit(1);
 }
 
 
@@ -22,20 +21,20 @@ int main() {
     for (e = 0; e < qtdEmpresas; e++) {
         empresas[e] = CriaEmpresa();
         if (empresas[e] == NULL) {
-            EncerraProgramaPorErro(empresas, e);
+            EncerraPrograma(empresas, (e + 1));
+            exit(1);
         }
         LeEmpresa(empresas[e]);
         if (empresas[e] == NULL) {
-            EncerraProgramaPorErro(empresas, e);
+            EncerraPrograma(empresas, (e + 1));
+            exit(1);
         }
     }
     for (e = 0; e < qtdEmpresas; e++) {
         ImprimeEmpresa(empresas[e]);
     }
 
-    for(e = 0; e < qtdEmpresas; e++) {
-        ApagaEmpresa(empresas[e]);
-    }
+    EncerraPrograma(empresas, qtdEmpresas);
 
     return 0;
 }
