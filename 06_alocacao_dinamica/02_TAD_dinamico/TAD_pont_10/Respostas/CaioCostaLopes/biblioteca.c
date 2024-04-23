@@ -22,6 +22,7 @@ void AdicionarLivroNaBiblioteca(tBiblioteca *biblioteca, tLivros *livro) {
         printf("Livro adicionado com sucesso!\n");
     }else {
         printf("A biblioteca esta cheia. Nao eh possivel adicionar mais livros.\n");
+        ApagaLivro(livro);
     }
 }
 
@@ -47,7 +48,7 @@ void RemoverLivroDaBiblioteca(tBiblioteca *biblioteca, char titulo[]) {
             ApagaLivro((*biblioteca).livros[o]);
             biblioteca->tamanho -= 1;
 
-            printf("Livro removido com sucesso\n!");
+            printf("Livro removido com sucesso!\n");
         }else {
             printf("Livro nao encontrado na biblioteca.\n");
         }
@@ -62,7 +63,7 @@ void ListarLivrosDaBiblioteca(tBiblioteca *biblioteca) {
     int l;
 
     if ((*biblioteca).tamanho > 0) {
-        printf("\nLista de livros na biblioteca:\n");
+        printf("\nLista de Livros na Biblioteca:\n");
         for (l = 0; l < (*biblioteca).tamanho; l++) {
             ImprimeLivro((*biblioteca).livros[l]);
         }
