@@ -28,6 +28,10 @@ int main() {
                     exit(1);
                 }
                 LerLivro(livro);
+                if (livro == NULL) {
+                    ApagaBiblioteca(biblioteca);
+                    exit(1);
+                }
                 AdicionarLivroNaBiblioteca(biblioteca, livro);
                 break;
             case 2:
