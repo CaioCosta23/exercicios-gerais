@@ -19,26 +19,22 @@ tLivros *CriaLivro() {
     return livro;
 }
 
-void LeLivro(tLivros *livro) {
-    char titulo[MAX_CARACTERES_STRINGS];
+void LerLivro(tLivros *livro) {
+    //char titulo[MAX_CARACTERES_STRINGS * 2];
     char autor[MAX_CARACTERES_STRINGS];
 
-    scanf("%s %s %d", titulo, autor, &livro->anoPublicacao);
-
-    livro->titulo = (char*)malloc(strlen(titulo) * sizeof(char));
-    if ((*livro).titulo != NULL) {
-        livro->autor = (char*)malloc(strlen(autor) * sizeof(char));
-        if ((*livro).autor != NULL) {
-            strcpy(livro->autor, autor);
-        }else {
-            printf("Erro na alocacao do nome do autor do livro!\n");
-            ApagaLivro(livro);
-        }
-        strcpy(livro->titulo, titulo);
-    }else {
+    livro->titulo = (char*)malloc((MAX_CARACTERES_STRINGS * 2) * sizeof(char));
+    if ((*livro).titulo == NULL) {
         printf("Erro na alocacao do titulo do livro!\n");
         ApagaLivro(livro);
     }
+    livro->autor = (char*)malloc(MAX_CARACTERES_STRINGS * sizeof(char));
+    if ((*livro).autor == NULL) {
+        printf("Erro na alocacao do nome do autor do livro!\n");
+        ApagaLivro(livro);
+    }
+    
+    scanf("%s %s %d", livro->titulo, livro->autor, &livro->anoPublicacao);
 }
 
 void ImprimeLivro(tLivros *livro) {
