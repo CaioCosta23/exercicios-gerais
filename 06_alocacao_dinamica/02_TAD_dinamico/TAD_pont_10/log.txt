@@ -1,0 +1,215 @@
+Rodando o script do Aluno - Arquivos header necessários do professor existem na pasta Includes
+ - Arquivos objetos necessários do professor existem na pasta Gabarito-obj.
+#######################################
+ALUNO: CaioCostaLopes
+#######################################
+CRIANDO O DIRETÓRIO DE RESULTADO PARA CaioCostaLopes:
+ - Diretório Resultados/CaioCostaLopes criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/biblioteca criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/livro criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/main criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/completo criado com sucesso!
+ - Arquivos criados: ok!
+
+CHECKANDO OS ARQUIVOS DO ALUNO:
+ - Arquivo esperado 'Respostas/CaioCostaLopes/biblioteca.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/biblioteca.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/livro.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/livro.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/main.c' encontrado!
+ - Arquivos esperados enviados: Ok!
+
+COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
+ - Pasta biblioteca:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/biblioteca
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/biblioteca
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/biblioteca
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/biblioteca
+ - Pasta livro:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/livro
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/livro
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/livro
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/livro
+ - Pasta main:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/main
+ - Pasta completo:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/completo
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/completo
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/completo
+ - Arquivos copiados: ok!
+
+COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:
+ - Pasta biblioteca:
+ - Compilando o arquivo biblioteca.c do aluno, gerando o biblioteca.o
+ - Compilando o arquivo livro.c do aluno, gerando o livro.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/result_compilation.txt.
+ - Pasta livro:
+ - Compilando o arquivo biblioteca.c do aluno, gerando o biblioteca.o
+ - Compilando o arquivo livro.c do aluno, gerando o livro.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/result_compilation.txt.
+ - Pasta main:
+ - Compilando o arquivo biblioteca.c do aluno, gerando o biblioteca.o
+ - Compilando o arquivo livro.c do aluno, gerando o livro.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/result_compilation.txt.
+ - Pasta completo:
+ - Compilando o arquivo biblioteca.c do aluno, gerando o biblioteca.o
+ - Compilando o arquivo livro.c do aluno, gerando o livro.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/result_compilation.txt.
+ - Copiando os arquivos objetos do professor para cada subpasta do Resultado do CaioCostaLopes:
+ - Copiando o Gabarito-obj/biblioteca.o para a pasta Resultados/CaioCostaLopes/livro
+ - Copiando o Gabarito-obj/biblioteca.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/livro.o para a pasta Resultados/CaioCostaLopes/biblioteca
+ - Copiando o Gabarito-obj/livro.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/biblioteca
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/livro
+ - Arquivos Compilados: ok!
+
+LINKANDO OS ARQUIVOS COMPILADOS:
+ - Pasta biblioteca:
+ - Gerando o binário prog linkando com o(s) arquivo(s) biblioteca/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/result_linking.txt
+ - Pasta livro:
+ - Gerando o binário prog linkando com o(s) arquivo(s) livro/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/result_linking.txt
+ - Pasta main:
+ - Gerando o binário prog linkando com o(s) arquivo(s) main/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/result_linking.txt
+ - Pasta completo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) completo/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/result_linking.txt
+
+EXECUTANDO O VALGRIND EM CADA CASO:
+ - Pasta biblioteca / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta biblioteca / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta biblioteca / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta biblioteca / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta biblioteca / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6, frees: 6, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta biblioteca / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/biblioteca/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta livro / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta livro / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta livro / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta livro / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta livro / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6, frees: 6, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta livro / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/livro/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6, frees: 6, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 6, frees: 6, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 6:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 9, frees: 9, errors: 0.
+ - Resultado para o saida.txt: Ok!
+
+#######################################
+RESULTADOS FINAIS
+#######################################
+
+----------------------------------------------------------------------------
+Nome 0: CaioCostaLopes
+ - Arquivos Corretos: 5 de 5 / Nota 10.00
+ - Compilações Corretas: 12 de 12 / Nota 10.00
+ - Linkagens Corretas: 4 de 4 / Nota 10.00
+ - Resultados Corretos biblioteca: 6 de 6 / Nota 10.00
+ - Valgrinds Corretos biblioteca: 6 de 6 / Nota 10.00
+ - Resultados Corretos livro: 6 de 6 / Nota 10.00
+ - Valgrinds Corretos livro: 6 de 6 / Nota 10.00
+ - Resultados Corretos main: 6 de 6 / Nota 10.00
+ - Valgrinds Corretos main: 6 de 6 / Nota 10.00
+ - Resultados Corretos completo: 6 de 6 / Nota 10.00
+ - Valgrinds Corretos completo: 6 de 6 / Nota 10.00
+ - Soma das notas do CaioCostaLopes: 110.000
+ - Campos Considerados: 11
+ - Média do CaioCostaLopes: 10.00
+
+----------------------------------------------------------------------------
+
+Arquivo CSV Resultado.csv com os resultados finais foi gerado na pasta raíz!
+
+
