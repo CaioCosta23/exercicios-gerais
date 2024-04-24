@@ -3,7 +3,7 @@
 
 #include "livro.h"
 
-#define MAX_LIVROS 10
+#define NUM_INICIAL_LIVROS 5
 
 typedef struct {
     tLivros **livros; // Vetor de livros;
