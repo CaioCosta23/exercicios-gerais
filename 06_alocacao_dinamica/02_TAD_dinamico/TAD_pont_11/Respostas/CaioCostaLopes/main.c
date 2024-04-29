@@ -32,7 +32,9 @@ int main() {
                 scanf("%d %f", &idLoja, &aluguel);
                 lojas[l] = AbreLoja(idLoja, aluguel);
                 if (lojas[l] == NULL) {
+                    printf("%d\n!", l);
                     FinalizaPrograma(lojas, l);
+                    printf("%d\n!", l);
                 }
                 l++;
                 break;
@@ -44,7 +46,9 @@ int main() {
                     if (VerificaIdLoja(lojas[q], idLoja)) {
                         ContrataVendedor(lojas[q], RegistraVendedor(nome, salario, comissao));
                         if (lojas[q] == NULL) {
+                            printf("%d\n!", l);
                             FinalizaPrograma(lojas, l);
+                            exit(1);
                         }
                     }
                 }
