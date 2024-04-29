@@ -35,7 +35,12 @@ int VerificaIdLoja(tLoja *loja, int id) {
 void ContrataVendedor(tLoja *loja, tVendedor *vendedor) {
     if ((*loja).totalVendedores < (*loja).maxVendedores) {
         loja->vendedores[(*loja).totalVendedores] = vendedor;
-        loja->totalVendedores += 1;
+        if ((*loja).vendedores[(*loja).totalVendedores] == NULL) {
+            printf("%d\n!", (*loja).totalVendedores);
+            ApagaLoja(loja);
+        }else {
+            loja->totalVendedores += 1;
+        }
     }
 
 }
