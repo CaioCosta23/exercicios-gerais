@@ -68,3 +68,5 @@ void ImprimeRelatorioLoja(tLoja *loja);
  * @param Loja Ponteiro para a estrutura do tipo "tLoja" que será apagada;
  */
 void ApagaLoja(tLoja *Loja);
+
+#endif
