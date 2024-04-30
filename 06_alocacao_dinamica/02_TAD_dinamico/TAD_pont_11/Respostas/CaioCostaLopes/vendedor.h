@@ -52,6 +52,14 @@ float GetSalario(tVendedor *vendedor);
 float GetSalario(tVendedor *vendedor);
 
 /**
+ * @brief Obtém o total vendido por um vendedor;
+ * 
+ * @param vendedor Ponteiro para a estrutura do tipo "tVendedor" que terá o total das vendas de um vendedor obtido;
+ * @return float Valor total vendido pelo vendedor;
+ */
+float GetTotalVendido(tVendedor *vendedor);
+
+/**
  * @brief Obtém o total recebido por um vendedor;
  * 
  * @param vendedor Ponteiro para a estrutura do tipo "tVendedor" que terá o total do ganhos obtido;
