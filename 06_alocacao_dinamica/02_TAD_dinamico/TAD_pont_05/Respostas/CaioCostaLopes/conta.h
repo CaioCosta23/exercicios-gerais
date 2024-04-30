@@ -12,7 +12,7 @@ typedef struct Conta {
 /**
  * @brief Cria (aloca dinâmicamente a memória para) uma nova conta;
  * 
- * OBS: Se não for possiível alocar a memória, o programa é encerrado;
+ * OBS: Se não for possível alocar a memória, o programa é encerrado;
  * 
  * @return tConta* Um ponteiro para uma nova conta criada;
  */
@@ -56,7 +56,7 @@ void SaqueConta(tConta *conta, float valor);
  * @param conta Ponteiro para a conta a ter um valor depositado;
  * @param valor Valor a ser depositado;
  */
-void DepositaConta(tConta *conta, float valor);
+void DepositoConta(tConta *conta, float valor);
 
 /**
  * @brief Realiza uma transferência entre duas contas, caso o saldo da conta de origem seja suficiente;
