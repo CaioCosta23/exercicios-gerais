@@ -20,16 +20,6 @@ tBanco *CriaBanco() {
     if ((*banco).contas == NULL) {
         printf("Erro na alocacao de memoria no vetor de contas do banco");
         DestroiBanco(banco);
-        return banco;
-    }else {
-        for (ca = 0; ca < (*banco).contasAlocadas; ca++) {
-            banco->contas[ca] = CriaConta();
-            if ((*banco).contas[ca] == NULL) {
-                printf("%d!\n", (ca + 1));
-                DestroiBanco(banco);
-                break;
-            }
-        }
     }
     return banco;
 }
@@ -43,21 +33,18 @@ void AbreContaBanco(tBanco *banco) {
         if ((*banco).contas == NULL) {
             printf("Erro na realocacao de memoria no vetor de contas do banco!\n");
             DestroiBanco(banco);
-        }else {
-            for (ca = (*banco).qtdContas; ca < (*banco).contasAlocadas; ca++) {
-                banco->contas[ca] = CriaConta();
-                if ((*banco).contas[ca] == NULL) {
-                    printf("%d!\n", (ca + 1));
-                    DestroiBanco(banco);
-                    break;
-                }
-            }
         }
     }
 
     if (banco != NULL) {
-        LeConta((*banco).contas[(*banco).qtdContas]);
-        banco->qtdContas += 1;
+        banco->contas[(*banco).qtdContas] = CriaConta();
+        if ((*banco).contas[(*banco).qtdContas] == NULL) {
+            printf("%d!\n", (ca + 1));
+            DestroiBanco(banco);
+        }else {
+            LeConta((*banco).contas[(*banco).qtdContas]);
+            banco->qtdContas += 1;
+        }
     }
 }
 
@@ -128,7 +115,7 @@ void DestroiBanco(tBanco *banco) {
 
     if (banco != NULL) {
         if ((*banco).contas != NULL) {
-            for (c = 0; c < (*banco).contasAlocadas; c++) {
+            for (c = 0; c < (*banco).qtdContas; c++) {
                 DestroiConta((*banco).contas[c]);
             }
             free((*banco).contas);
