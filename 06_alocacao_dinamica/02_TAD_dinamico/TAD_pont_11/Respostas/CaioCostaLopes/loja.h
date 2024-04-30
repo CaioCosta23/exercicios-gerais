@@ -46,7 +46,7 @@ void ContrataVendedor(tLoja *loja, tVendedor *vendedor);
  * @param nome Nome do vendedor que realizou a venda;
  * @param valor Valor da venda realizada;
  */
-void RegitraVenda(tLoja *loja, char nome, float valor);
+void RegistraVenda(tLoja *loja, char *nome, float valor);
 
 /**
  * @brief Calcula o lucro da loja;
