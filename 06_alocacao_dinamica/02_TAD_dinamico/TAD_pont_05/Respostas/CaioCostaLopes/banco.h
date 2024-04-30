@@ -26,6 +26,13 @@ tBanco *CriaBanco();
 void AbreContaBanco(tBanco *banco);
 
 /**
+ * @brief Realiza um saque em uma conta do banco se ela existir e se ela tiver saldo sufciente;
+ * 
+ * @param banco Ponteiro para o banco da conta que será realizado o saque o valor;
+ */
+void SaqueContaBanco(tBanco *banco);
+
+/**
  * @brief Realiza um depoósito em uma conta do banco se ela existir;
  * 
  * @param banco Ponteiro para o banco da conta que será depositado o valor;
