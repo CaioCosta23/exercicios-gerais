@@ -19,7 +19,7 @@ typedef struct Banco {
 tBanco *CriaBanco();
 
 /**
- * @brief Abre uma nova conta do banco, se ela existir e tiver saldo suficiente;
+ * @brief Abre uma nova conta do banco e adiciona ao vetor de contas do banco;
  * 
  * @param banco Ponteiro para o banco onde a conta será sacada;
  */
