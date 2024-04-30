@@ -39,7 +39,7 @@ void AbreContaBanco(tBanco *banco) {
     if (banco != NULL) {
         banco->contas[(*banco).qtdContas] = CriaConta();
         if ((*banco).contas[(*banco).qtdContas] == NULL) {
-            printf("%d!\n", (ca + 1));
+            printf("%d!\n", ((*banco).qtdContas + 1));
             DestroiBanco(banco);
         }else {
             LeConta((*banco).contas[(*banco).qtdContas]);
@@ -52,7 +52,7 @@ void SaqueContaBanco(tBanco *banco) {
     int numero, c;
     float valor;
 
-    scanf("%d %f", &numero, &valor);
+    scanf("%d %f\n", &numero, &valor);
 
     for (c = 0; c < (*banco).qtdContas; c++) {
         if (VerificaConta((*banco).contas[c], numero)) {
@@ -66,7 +66,7 @@ void DepositoContaBanco(tBanco *banco) {
     int numero, c;
     float valor;
 
-    scanf("%d %f", &numero, &valor);
+    scanf("%d %f\n", &numero, &valor);
 
     for (c = 0; c < (*banco).qtdContas; c++) {
         if (VerificaConta((*banco).contas[c], numero)) {
@@ -81,7 +81,7 @@ void TransferenciaContaBanco(tBanco *banco) {
     float valor;
     int encerraOperacao = 0;
 
-    scanf("%d %d %f", &numeroDestino, &numeroOrigem, &valor);
+    scanf("%d %d %f\n", &numeroDestino, &numeroOrigem, &valor);
 
     for (cd = 0; cd < (*banco).qtdContas; cd++) {
         if (VerificaConta((*banco).contas[cd], numeroDestino)) {
