@@ -3,7 +3,7 @@
 
 typedef struct Usuario {
     char nome[50];
-    char cpf[50];
+    char cpf[15];
 }tUsuario;
 
 /**
