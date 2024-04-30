@@ -33,6 +33,13 @@ tConta *CriaConta();
  */
 void LeConta(tConta *conta);
 
+/**
+ * @brief Verifica se o número de uma conta é igual a outra (fornecida);
+ * 
+ * @param conta Ponteiro para a estrutura do tipo "tConta" que conterá o número da conta a ser verificada;
+ * @param numero Número a ser comparada com o número da conta;
+ * @return int 1 se os números forem iguais, 0 caso contrário;
+ */
 int VerificaConta(tConta *conta, int numero);
 
 /**
