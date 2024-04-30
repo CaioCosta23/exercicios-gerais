@@ -16,22 +16,21 @@ tBanco *CriaBanco() {
     banco->contasAlocadas = QTD_CONTAS_ALOCADAS;
     banco->qtdContas = 0;
 
-    banco->contas = (tConta**)malloc(QTD_CONTAS_ALOCADAS * sizeof(tConta*));
+    banco->contas = (tConta**)malloc((*banco).contasAlocadas * sizeof(tConta*));
     if ((*banco).contas == NULL) {
         printf("Erro na alocacao de memoria no vetor de contas do banco");
         DestroiBanco(banco);
         return banco;
-    }
-
-    for (ca = 0; ca < (*banco).contasAlocadas; ca++) {
-        banco->contas[ca] = CriaConta();
-        if ((*banco).contas[ca] == NULL) {
-            printf("%d!\n", (ca + 1));
-            DestroiBanco(banco);
-            break;
+    }else {
+        for (ca = 0; ca < (*banco).contasAlocadas; ca++) {
+            banco->contas[ca] = CriaConta();
+            if ((*banco).contas[ca] == NULL) {
+                printf("%d!\n", (ca + 1));
+                DestroiBanco(banco);
+                break;
+            }
         }
     }
-
     return banco;
 }
 
@@ -44,19 +43,19 @@ void AbreContaBanco(tBanco *banco) {
         if ((*banco).contas == NULL) {
             printf("Erro na realocacao de memoria no vetor de contas do banco!\n");
             DestroiBanco(banco);
-        }
-        for (ca = (*banco).qtdContas; ca < (*banco).contasAlocadas; ca++) {
-        banco->contas[ca] = CriaConta();
-        if ((*banco).contas[ca] == NULL) {
-            printf("%d!\n", (ca + 1));
-            DestroiBanco(banco);
-            break;
+        }else {
+            for (ca = (*banco).qtdContas; ca < (*banco).contasAlocadas; ca++) {
+                banco->contas[ca] = CriaConta();
+                if ((*banco).contas[ca] == NULL) {
+                    printf("%d!\n", (ca + 1));
+                    DestroiBanco(banco);
+                    break;
+                }
+            }
         }
     }
 
-        LeConta((*banco).contas[(*banco).qtdContas]);
-        banco->qtdContas += 1;
-    }else {
+    if (banco != NULL) {
         LeConta((*banco).contas[(*banco).qtdContas]);
         banco->qtdContas += 1;
     }
@@ -68,7 +67,7 @@ void SaqueContaBanco(tBanco *banco) {
 
     scanf("%d %f", &numero, &valor);
 
-    for (c = 0; c <(*banco).qtdContas; c++) {
+    for (c = 0; c < (*banco).qtdContas; c++) {
         if (VerificaConta((*banco).contas[c], numero)) {
             SaqueConta((*banco).contas[c], valor);
             break;
@@ -82,7 +81,7 @@ void DepositoContaBanco(tBanco *banco) {
 
     scanf("%d %f", &numero, &valor);
 
-    for (c = 0; c <(*banco).qtdContas; c++) {
+    for (c = 0; c < (*banco).qtdContas; c++) {
         if (VerificaConta((*banco).contas[c], numero)) {
             DepositoConta((*banco).contas[c], valor);
             break;
@@ -97,7 +96,7 @@ void TransferenciaContaBanco(tBanco *banco) {
 
     scanf("%d %d %f", &numeroDestino, &numeroOrigem, &valor);
 
-    for (cd = 0; cd <(*banco).qtdContas; cd++) {
+    for (cd = 0; cd < (*banco).qtdContas; cd++) {
         if (VerificaConta((*banco).contas[cd], numeroDestino)) {
             for (co = 0; co < (*banco).qtdContas; co++) {
                 if (VerificaConta((*banco).contas[co], numeroOrigem)) {
