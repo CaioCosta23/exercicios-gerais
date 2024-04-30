@@ -5,12 +5,16 @@
 #define QTD_CONTAS_ALOCADAS 5
 
 tBanco *CriaBanco() {
+    int ca;
     tBanco *banco = (tBanco*)malloc(sizeof(tBanco));
 
     if (banco == NULL) {
         printf("Erro na alocacao de memoria do banco ");
         return banco;
     }
+
+    banco->contasAlocadas = QTD_CONTAS_ALOCADAS;
+    banco->qtdContas = 0;
 
     banco->contas = (tConta**)malloc(QTD_CONTAS_ALOCADAS * sizeof(tConta*));
     if ((*banco).contas == NULL) {
@@ -19,13 +23,20 @@ tBanco *CriaBanco() {
         return banco;
     }
 
-    banco->qtdContas = 0;
-    banco->contasAlocadas = QTD_CONTAS_ALOCADAS;
+    for (ca = 0; ca < (*banco).contasAlocadas; ca++) {
+        banco->contas[ca] = CriaConta();
+        if ((*banco).contas[ca] == NULL) {
+            printf("%d!\n", (ca + 1));
+            DestroiBanco(banco);
+            break;
+        }
+    }
 
     return banco;
 }
 
 void AbreContaBanco(tBanco *banco) {
+    int ca;
 
     if ((*banco).qtdContas == (*banco).contasAlocadas) {
         banco->contasAlocadas += QTD_CONTAS_ALOCADAS;
@@ -34,11 +45,19 @@ void AbreContaBanco(tBanco *banco) {
             printf("Erro na realocacao de memoria no vetor de contas do banco!\n");
             DestroiBanco(banco);
         }
+        for (ca = (*banco).qtdContas; ca < (*banco).contasAlocadas; ca++) {
+        banco->contas[ca] = CriaConta();
+        if ((*banco).contas[ca] == NULL) {
+            printf("%d!\n", (ca + 1));
+            DestroiBanco(banco);
+            break;
+        }
+    }
 
-        banco->contas[(*banco).qtdContas] = CriaConta();
+        LeConta((*banco).contas[(*banco).qtdContas]);
         banco->qtdContas += 1;
     }else {
-        banco->contas[(*banco).qtdContas] = CriaConta();
+        LeConta((*banco).contas[(*banco).qtdContas]);
         banco->qtdContas += 1;
     }
 }
