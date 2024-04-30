@@ -10,7 +10,7 @@ int main() {
     banco = CriaBanco();
 
     while(1) {
-        scanf("%c");
+        scanf("%c", &opcao);
         
         switch(opcao) {
             case 'A':
@@ -33,16 +33,14 @@ int main() {
                 break;
             case 'F':
                 finalizar = 1;
+                DestroiBanco(banco);
                 break;
         }
-        scanf("%*c");
 
         if (finalizar) {
             break;
         }
     }
-
-    DestroiBanco(banco);
 
     return 0;
 }
