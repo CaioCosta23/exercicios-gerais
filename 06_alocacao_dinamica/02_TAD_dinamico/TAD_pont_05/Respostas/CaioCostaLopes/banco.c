@@ -29,7 +29,7 @@ void AbreContaBanco(tBanco *banco) {
 
     if ((*banco).qtdContas == (*banco).contasAlocadas) {
         banco->contasAlocadas += QTD_CONTAS_ALOCADAS;
-        banco->contas = (tBanco**)realloc((*banco).contas, (*banco).contasAlocadas *sizeof(tBanco*));
+        banco->contas = (tConta**)realloc((*banco).contas, (*banco).contasAlocadas *sizeof(tConta*));
         if ((*banco).contas == NULL) {
             printf("Erro na realocacao de memoria no vetor de contas do banco!\n");
             DestroiBanco(banco);
@@ -81,7 +81,7 @@ void TransferenciaContaBanco(tBanco *banco) {
     for (cd = 0; cd <(*banco).qtdContas; cd++) {
         if (VerificaConta((*banco).contas[cd], numeroDestino)) {
             for (co = 0; co < (*banco).qtdContas; co++) {
-                if (VerificaContas((*banco).contas[co], numeroOrigem)) {
+                if (VerificaConta((*banco).contas[co], numeroOrigem)) {
                     TransferenciaConta((*banco).contas[cd], (*banco).contas[co], valor);
                     encerraOperacao = 1;
                     break;
