@@ -2,7 +2,7 @@
 #define _VENDEDOR_H_
 
 typedef struct Vendedor {
-    char nome;
+    char *nome;
     float valor_vendido;
     float salario;
     float prct_comissao;
