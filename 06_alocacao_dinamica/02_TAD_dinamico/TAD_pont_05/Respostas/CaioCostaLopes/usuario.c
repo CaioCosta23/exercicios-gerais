@@ -6,7 +6,7 @@ tUsuario *CriaUsuario() {
     tUsuario *usuario = (tUsuario*)malloc(sizeof(tUsuario));
 
     if (usuario == NULL) {
-        printf("Erro na alocacao do usuario ");
+        printf("Erro na alocacao de memória de um dos usuarios!\n");
     }
     return usuario;
 }
