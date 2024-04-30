@@ -56,7 +56,7 @@ void ImprimeRelatorioBanco(tBanco *banco);
 /**
  * @brief Destrói (desaloca a memória do) banco e todas as suas contas;
  * 
- * @param banco Ponteiro apara o banco a (ter sua memória desalocada) ser destruído
+ * @param banco Ponteiro para o banco a (ter sua memória desalocada) ser destruído
  */
 void DestroiBanco(tBanco *banco);
 
