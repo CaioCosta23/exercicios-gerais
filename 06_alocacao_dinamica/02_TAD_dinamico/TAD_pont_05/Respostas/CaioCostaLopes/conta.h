@@ -19,14 +19,6 @@ typedef struct Conta {
 tConta *CriaConta();
 
 /**
- * @brief Verifica se uma conta possui um número já especificado;
- * 
- * @param conta Ponteiro para uma conta a ser verificada;
- * @param numero Número da conta a ser verificada;
- * @return int 1 se a conta possui o número especificado, 0 caso contrário;
- */
-
-/**
  * @brief Lê os dados de uma conta e do usuário através da entrada padrão;
  * 
  * @param conta Ponteiro para a conta a ser lida;
