@@ -16,7 +16,7 @@ Array *CriarArray() {
     return lista;
 }
 
-LerArray(Array *array) {
+void LerArray(Array *array) {
     array->data = (int*)calloc(((*array).tamanho + 1), sizeof(int));
 
     if ((*array).data == NULL) {
@@ -51,46 +51,26 @@ void OrdenarArray(Array *array) {
     }
 }
 
-int BuscaBinaria(Array *array, int elementoBuscado) {
-    int primeiroIndice = 0, ultimoIndice = (*array).tamanho - 1;
-    int indiceMeio, elementoMeio;
-    int encontrado = -1;
+int BuscaBinariaArray(Array *array, int elementoBuscado) {
+    int inicio = 0;
+    int fim = (*array).tamanho - 1;
+    int meio;
 
-    indiceMeio = (primeiroIndice + ultimoIndice) / 2;
-    elementoMeio = (*array).data[indiceMeio];
+    while (inicio <= fim) {
+        meio = inicio + (fim - inicio) / 2;
 
-    while(1) {
-        if (primeiroIndice == ultimoIndice) {
-            if (elementoMeio != elementoBuscado) {
-                break;
-            }
-        }else {
-            if (elementoMeio == elementoBuscado) {
-                encontrado = indiceMeio;
-            }else {
-                if (elementoMeio > elementoBuscado) {
-                    ultimoIndice = indiceMeio - 1;
-                    indiceMeio = (primeiroIndice + ultimoIndice) / 2;
-                    elementoMeio = (*array).data[indiceMeio];
-                    
-                    if (elementoMeio == elementoBuscado) {
-                        encontrado = indiceMeio;
-                    }
-                }else {
-                    if (elementoMeio < elementoBuscado) {
-                        primeiroIndice = indiceMeio - 1;
-                        indiceMeio = (primeiroIndice + ultimoIndice) / 2;
-                        elementoMeio = (*array).data[indiceMeio];
-                        
-                        if (elementoMeio == elementoBuscado) {
-                            encontrado = indiceMeio;
-                        }
-                    }
-                }
-            }
+        if ((*array).data[meio] == elementoBuscado) {
+            return meio;
+        }
+
+        if ((*array).data[meio] < elementoBuscado) {
+            inicio = meio + 1;
+        } else {
+            fim = meio - 1;
         }
     }
-    return encontrado;
+
+    return -1; // Elemento não encontrado
 }
 
 void DestruirArray(Array *array) {
