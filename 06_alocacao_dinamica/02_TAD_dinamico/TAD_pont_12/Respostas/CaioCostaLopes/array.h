@@ -34,7 +34,7 @@ void OrdenarArray(Array *array);
  * @param elementoBuscado Elemento a ser buscado dentro do vetor (array);
  * @return int Indice do elemento buscado na lista (array), ou -1 caso não seja encontrado;
  */
-int BuscaBinaria(Array *array, int elementoBuscado);
+int BuscaBinariaArray(Array *array, int elementoBuscado);
 
 /**
  * @brief Apaga (desaloca a memória alocada dinamicamente do) array;
