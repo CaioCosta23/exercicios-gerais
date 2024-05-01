@@ -20,9 +20,6 @@ int main() {
     }
 
     DestruirArray(lista);
-
     
-
-
     return 0;
 }
