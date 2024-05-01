@@ -18,7 +18,7 @@ Array *CriarArray();
  * 
  * @param array Ponteiro para uma estrutura do tipo "Array" a ser preenchda;
  */
-void LeArray(Array *array);
+void LerArray(Array *array);
 
 /**
  * @brief Ordena os elementos do array em ordem crescente;
