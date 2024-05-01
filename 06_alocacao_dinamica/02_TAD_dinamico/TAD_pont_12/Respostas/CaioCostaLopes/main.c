@@ -7,7 +7,7 @@ int main() {
     int elementoBuscado, posicaoElemento;
 
     lista = CriarArray();
-    LeArray(lista);
+    LerArray(lista);
 
     if (lista == NULL) {
         exit(1);
