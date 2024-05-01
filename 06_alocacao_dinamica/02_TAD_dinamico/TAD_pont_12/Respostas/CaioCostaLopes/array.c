@@ -42,7 +42,7 @@ void OrdenarArray(Array *array) {
 
     for (a1 = 0; a1 < ((*array).tamanho - 1); a1++) {
         for(a2 = a1 + 1; a2 < (*array).tamanho; a2++) {
-            if ((*array).data[a1] < (*array).data[a2]) {
+            if ((*array).data[a1] > (*array).data[a2]) {
                 aux = (*array).data[a1];
                 array->data[a1] = (*array).data[a2];
                 array->data[a2] = aux;
@@ -65,11 +65,12 @@ int BuscaBinariaArray(Array *array, int elementoBuscado) {
 
         if ((*array).data[meio] < elementoBuscado) {
             inicio = meio + 1;
-        } else {
-            fim = meio - 1;
+        }else{
+            if ((*array).data[meio] > elementoBuscado) {
+                fim = meio - 1;
+            }
         }
     }
-
     return -1; // Elemento não encontrado
 }
 
