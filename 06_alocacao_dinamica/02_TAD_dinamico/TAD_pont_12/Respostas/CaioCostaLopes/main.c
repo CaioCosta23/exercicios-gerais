@@ -8,11 +8,6 @@ int main() {
 
     lista = CriarArray();
     LerArray(lista);
-
-    if (lista == NULL) {
-        exit(1);
-    }
-
     OrdenarArray(lista);
 
     scanf("%d", &elementoBuscado);
