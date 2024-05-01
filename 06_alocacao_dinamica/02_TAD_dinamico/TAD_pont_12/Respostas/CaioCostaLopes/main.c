@@ -6,7 +6,7 @@ int main() {
     Array *lista;
     int elementoBuscado, posicaoElemento;
 
-    lista = CriaArray();
+    lista = CriarArray();
     LeArray(lista);
 
     if (lista == NULL) {

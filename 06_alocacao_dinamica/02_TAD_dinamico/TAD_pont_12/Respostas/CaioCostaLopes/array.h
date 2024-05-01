@@ -11,7 +11,7 @@ typedef struct Array {
  * 
  * @return Array* Estrutura do tipo "Array" (alocada dinâmicamente) com seus parâmetros inicializados;
  */
-Array *CriaArray();
+Array *CriarArray();
 
 /**
  * @brief Lê os elementos do array a partir da entrada padrão e aloca memória para eles;
