@@ -4,6 +4,10 @@
 #include "data.h"
 #include "lesao.h"
 
+#define TAM_NOME 100 // Quantidade de caracteres utilizada para armazenar o nome do paciente;
+#define TAM_CSUS 19 // Quantidade de caracteres que será disponibilizada para armazenar o cartão do SUS de um paciente;
+#define QTD_LESAO 10 // Quantidade máxima de lesões que podem ser registradas de um paciente;
+
 typedef struct paciente {
     char *nome;
     tData *nascimento;
