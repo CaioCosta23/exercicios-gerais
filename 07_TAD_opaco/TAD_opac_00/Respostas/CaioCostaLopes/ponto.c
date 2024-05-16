@@ -8,7 +8,7 @@ struct ponto {
 };
 
 tPonto Pto_Cria(float x, float y) {
-    tPonto ponto = (tPonto*)malloc(sizeof(tPonto));
+    tPonto ponto = (tPonto)malloc(sizeof(tPonto));
 
     if (ponto == NULL) {
         printf("Erro na alocacao de memoria do ponto!\n");

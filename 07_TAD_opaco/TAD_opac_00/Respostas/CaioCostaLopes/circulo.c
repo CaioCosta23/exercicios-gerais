@@ -8,7 +8,7 @@ struct circulo {
 };
 
 tCirculo Circulo_Cria(float x, float y, float r) {
-    tCirculo circulo = (tCirculo*)malloc(sizeof(struct circulo));
+    tCirculo circulo = (tCirculo)malloc(sizeof(struct circulo));
 
     if (circulo == NULL) {
         printf("Erro na alocacao do circulo!\n");
