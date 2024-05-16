@@ -7,8 +7,8 @@ struct circulo {
     tPonto centro;
 };
 
-tCirculo Cria_Circulo(float x, float y, float r) {
-    tCirculo circulo = (tCirculo*)malloc(sizeof(tCirculo));
+tCirculo Circulo_Cria(float x, float y, float r) {
+    tCirculo circulo = (tCirculo*)malloc(sizeof(struct circulo));
 
     if (circulo == NULL) {
         printf("Erro na alocacao do circulo!\n");
@@ -30,8 +30,9 @@ float Circulo_Acessa_Raio(tCirculo c) {
 }
 
 void Circulo_Atribui_Centro(tCirculo c, tPonto p) {
-    Pto_Atribui_x((*c).centro, Pto_Acessa_x(p));
-    Pto_Atribui_y((*c).centro, Pto_Acessa_y(p));
+    if (p != NULL) {
+        c->centro = p;
+    }
 }
 
 void Circulo_Atribui_Raio(tCirculo c, float r) {
@@ -39,7 +40,7 @@ void Circulo_Atribui_Raio(tCirculo c, float r) {
 }
 
 int Circulo_Interior(tCirculo c, tPonto p) {
-    if (Pto_Distancia((*c).centro, p) > (*c).raio) {
+    if (Pto_Distancia(Circulo_Acessa_Centro(c), p) <= Circulo_Acessa_Raio(c)) {
         return 1;
     }
     return 0;
@@ -47,8 +48,8 @@ int Circulo_Interior(tCirculo c, tPonto p) {
 
 void Circulo_Apaga(tCirculo c) {
     if (c != NULL) {
-        if ((*c).centro != NULL) {
-            Pto_Apaga((*c).centro);
+        if (Circulo_Acessa_Centro(c) != NULL) {
+            Pto_Apaga(Circulo_Acessa_Centro(c));
         }
         free(c);
         c = NULL;
