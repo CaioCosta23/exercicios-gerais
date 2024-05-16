@@ -38,7 +38,7 @@ void Pto_Atribui_y(tPonto p, float y) {
 }
 
 float Pto_Distancia(tPonto p1, tPonto p2) {
-    return (sqrt((pow(((*p2).y - (*p1).y), 2)) + (pow(((*p2).x - (*p1).x), 2))));
+    return (sqrt((pow((Pto_Acessa_y(p2) - Pto_Acessa_y(p1)), 2)) + (pow((Pto_Acessa_x(p2) - Pto_Acessa_x(p1)), 2))));
 }
 
 void Pto_Apaga(tPonto p) {
