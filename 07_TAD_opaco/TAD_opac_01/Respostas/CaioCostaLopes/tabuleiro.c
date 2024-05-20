@@ -13,7 +13,6 @@ struct Tabuleiro {
 
 tTabuleiro *CriaTabuleiro() {
     int m, l, c;
-    int erroPosicoes = 0;
     tTabuleiro *tabuleiro = (tTabuleiro*)malloc(sizeof(tTabuleiro));
 
     if (tabuleiro == NULL) {
@@ -31,7 +30,7 @@ tTabuleiro *CriaTabuleiro() {
     for (m = 0; m < TAM_TABULEIRO; m++) {
         tabuleiro->posicoes[m] = (char*)malloc(TAM_TABULEIRO * sizeof(char));
         if ((*tabuleiro).posicoes[m] == NULL) {
-            printf("Erro na alocacao da posicao %d da matriz do tabuleiro do jogo!\n");
+            printf("Erro na alocacao da posicao %d da matriz do tabuleiro do jogo!\n", m);
             DestroiTabuleiro(tabuleiro);
             return tabuleiro;
         }
@@ -67,7 +66,7 @@ int EhPosicaoValidaTabuleiro(int x, int y) {
     return (((x >= 0) && (x < TAM_TABULEIRO)) && ((y >= 0) && (y < TAM_TABULEIRO)));
 }
 
-int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y, char peca) {
+int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y, int peca) {
     char marcacao;
 
     if (peca == PECA_1) {
@@ -106,7 +105,7 @@ void ImprimeTabuleiro(tTabuleiro *tabuleiro) {
     }
 }
 
-void DestrouTabuleiro(tTabuleiro *tabuleiro) {
+void DestroiTabuleiro(tTabuleiro *tabuleiro) {
     int m;
     
     if (tabuleiro != NULL) {
