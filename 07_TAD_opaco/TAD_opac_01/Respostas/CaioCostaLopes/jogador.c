@@ -38,14 +38,17 @@ void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
             }else {
                 if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada))) {
                     if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id))) {
-                        if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJgadaY(jogada))) {
+                        if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada))) {
+                            printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                             MarcaPosicaoTabuleiro(tabuleiro, (*jogador).id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                             break;
                         }else {
                             printf("Posicao invalida (OCUPADA - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                         }
+                    }else {
                         printf("Posicao invalida (OCUPADA - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                     }
+                }else {
                     printf("Posicao invalida (FORA DO TABULEIRO - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                 }
             }
@@ -68,19 +71,21 @@ int VenceuJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
             (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, 2, v, (*jogador).id))) {
                 return 1;
         }
-        if ((EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, v, v, (*jogador).id)) &&
-            (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, v, v, (*jogador).id)) &&
-            (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, v, v, (*jogador).id))) {
-                return 1;
+
+        if (v == 1) {
+            if (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, v, v, (*jogador).id)) {
+                if ((EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, (v - 1), (v - 1), (*jogador).id)) &&
+                    (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, (v + 1), (v + 1), (*jogador).id))) {
+                        return 1;
+                }else {
+                    if ((EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, (v - 1), (v + 1), (*jogador).id)) &&
+                        (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, (v + 1), (v - 1), (*jogador).id))) {
+                            return 1;
+                    }
+                }
+            }
         }
     }
-
-    if ((EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, 2, 0, (*jogador).id)) &&
-        (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, 1, 1, (*jogador).id)) &&
-        (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, 2, 0, (*jogador).id))) {
-            return 1;
-    }
-
     return 0;
 }
 
