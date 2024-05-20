@@ -1,4 +1,4 @@
-all: geraos geraxe
+all: geraos geraexe
 
 geraos: main.c jogo.c tabuleiro.c jogador.c jogada.c
 	gcc -c main.c jogo.c tabuleiro.c jogador.c jogada.c
