@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "jogo.h"
-#include "tabuleiro.h"
-#include "jogador.h"
 
 struct Jogo {
     tTabuleiro *tabuleiro;
@@ -100,15 +98,13 @@ void DestroiJogo(tJogo *jogo) {
         if ((*jogo).tabuleiro != NULL) {
             if ((*jogo).jogador1 != NULL) {
                 if ((*jogo).jogador2 != NULL) {
-                    free((*jogo).jogador2);
-                    jogo->jogador2 = NULL;
+                    DestroiJogador((*jogo).jogador2);
                 }
-                free((*jogo).jogador1);
-                jogo->jogador1 = NULL;
+                DestroiJogador((*jogo).jogador1);
             }
-            free((*jogo).tabuleiro);
-            jogo->tabuleiro = NULL;
+            DestroiTabuleiro((*jogo).tabuleiro);
         }
         free(jogo);
+        jogo = NULL;
     }
 }
