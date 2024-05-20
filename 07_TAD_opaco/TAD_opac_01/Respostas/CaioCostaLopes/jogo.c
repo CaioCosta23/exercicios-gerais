@@ -19,21 +19,20 @@ tJogo *CriaJogo() {
     jogo->tabuleiro = CriaTabuleiro();
     if ((*jogo).tabuleiro == NULL) {
         DestroiJogo(jogo);
-        printf("Erro na alocacao do tabuleiro do jogo!\n");
         exit(1);
     }
 
     jogo->jogador1 = CriaJogador(PECA_1);
     if ((*jogo).jogador1 == NULL) {
         DestroiJogo(jogo);
-        printf("Erro na alocacao do jogador 1!\n");
+        printf("%d!\n", ID_JOGADOR_1);
         exit(1);
     }
 
     jogo->jogador2 = CriaJogador(PECA_2);
     if ((*jogo).jogador2 == NULL) {
         DestroiJogo(jogo);
-        printf("Erro na alocacao do jogador 2!\n");
+        printf("%d\n", ID_JOGADOR_2);
         exit(1);
     }
 
@@ -50,6 +49,10 @@ int AcabouJogo(tJogo *jogo) {
 void ComecaJogo(tJogo *jogo) {
     while(1) {
         JogaJogador((*jogo).jogador1, (*jogo).tabuleiro);
+        if ((*jogo).jogador1 == NULL) {
+            DestroiJogo(jogo);
+            exit(1);    
+        }
 
         ImprimeTabuleiro((*jogo).tabuleiro);
 
@@ -63,6 +66,10 @@ void ComecaJogo(tJogo *jogo) {
         }
 
         JogaJogador((*jogo).jogador2, (*jogo).tabuleiro);
+        if ((*jogo).jogador2 == NULL) {
+            DestroiJogo(jogo);
+            exit(1);    
+        }
 
         ImprimeTabuleiro((*jogo).tabuleiro);
 
