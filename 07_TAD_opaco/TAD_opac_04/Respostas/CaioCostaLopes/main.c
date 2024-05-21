@@ -64,7 +64,7 @@ int main () {
 
     OrdenaAprovados(aprovados, p);
 
-    for (i = 0; i < p; i) {
+    for (i = 0; i < p; i++) {
         ImprimeAluno(aprovados[i]);
     }
     printf("\n");
