@@ -1,7 +1,7 @@
 #ifndef _FILME_H
 #define _FILME_H
 
-#define MAX_CARACTERES 20;
+#define MAX_CARACTERES 20
 
 typedef struct Filme tFilme;
 
