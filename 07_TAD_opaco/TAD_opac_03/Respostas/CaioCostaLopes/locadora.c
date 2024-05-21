@@ -19,13 +19,7 @@ tLocadora *CriarLocadora() {
         exit(1);
     }
 
-    locadora->filme = (tFilme **)malloc(MAX_FILMES * sizeof(tFilme*));
-    if ((*locadora).filme == NULL) {
-        printf("Erro na alocacao do vetor de filmes!\n");
-        DestruirLocadora(locadora);
-        exit(1);
-    }
-
+    locadora->filme = NULL;
     locadora->numFilmes = 0;
     locadora->lucro = 0;
 
@@ -44,6 +38,14 @@ int VerificarFilmeCadastrado(tLocadora *locadora, int codigo) {
 }
 
 void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme) {
+    if ((*locadora).numFilmes == 0) {
+        locadora->filme = (tFilme **)malloc(((*locadora).numFilmes + 1) * sizeof(tFilme*));
+        if ((*locadora).filme == NULL) {
+            printf("Erro na alocacao do vetor de filmes!\n");
+            DestruirLocadora(locadora);
+            exit(1);
+        }
+    }
     if (VerificarFilmeCadastrado(locadora, ObterCodigoFilme(filme))) {
         printf("Filme ja cadastrado no estoque\n");
         DestruirFilme(filme);
