@@ -10,7 +10,7 @@ typedef struct Locadora tLocadora;
  * 
  * @return tLocadora* Ponteiro para uma estrutura do tipo "tLocadora" com seus dados inicializados;
  */
-tLocadora *CriaLocadora();
+tLocadora *CriarLocadora();
 
 /**
  * @brief Verifica se um filme já está cadastrado na locadora;
