@@ -11,7 +11,7 @@ struct Locadora {
     int lucro;
 };
 
-tLocadora *CriarLoadora() {
+tLocadora *CriarLocadora() {
     tLocadora *locadora = (tLocadora*)malloc(sizeof(tLocadora));
 
     if (locadora == NULL) {
@@ -126,7 +126,7 @@ void DevolverFilmesLocadora(tLocadora *locadora, int codigos[], int quantidadeCo
     for (c = 0; c < quantidadeCodigos; c++) {
         existeFilme = 0;
         for (f = 0; f < (*locadora).numFilmes; f++) {
-            if (EhMesmoCodigoFonte((*locadora).filme[f]), codigos[c]) {
+            if (EhMesmoCodigoFilme((*locadora).filme[f], codigos[c])) {
                 existeFilme = 1;
 
                 if (ObterQtdAlugadaFilme((*locadora).filme[f]) > 0) {
