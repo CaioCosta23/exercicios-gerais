@@ -3,8 +3,6 @@
 #include <string.h>
 #include "filme.h"
 
-#define MAX_CARACTERES 20
-
 struct Filme {
     char nome[MAX_CARACTERES];
     int codigo;
