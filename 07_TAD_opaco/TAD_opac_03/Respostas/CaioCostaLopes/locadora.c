@@ -203,7 +203,7 @@ void DestruirLocadora(tLocadora *locadora) {
 
     if (locadora != NULL) {
         if ((*locadora).filme != NULL) {
-            for (f = 0; f< (*locadora).numFilmes; f++) {
+            for (f = 0; f < (*locadora).numFilmes; f++) {
                 DestruirFilme((*locadora).filme[f]);
             }
             free((*locadora).filme);
