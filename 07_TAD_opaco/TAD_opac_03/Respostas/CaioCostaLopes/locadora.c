@@ -170,7 +170,7 @@ void OrdenarFilmesLocadora(tLocadora *locadora) {
         for (o = f + 1; o < (*locadora).numFilmes; o++) {
             if (CompararNomesFilmes((*locadora).filme[f], (*locadora).filme[o]) > 0) {
                 filmeAuxiliar = (*locadora).filme[f];
-                locadora->filme[f] = (*locadora).filme[f];
+                locadora->filme[f] = (*locadora).filme[o];
                 locadora->filme[o] = filmeAuxiliar;
             }
         }
