@@ -65,9 +65,9 @@ void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme) {
 
 void LerCadastroLocadora(tLocadora *locadora) {
     int codigo;
-    tFilme *filme;
+    tFilme *filme = NULL;
 
-    while(scanf("%d", &codigo) == 1) {
+    while(scanf("%d,", &codigo) == 1) {
         filme = CriarFilme();
         LeFilme(filme, codigo);
 
@@ -202,7 +202,7 @@ void DestruirLocadora(tLocadora *locadora) {
     int f;
 
     if (locadora != NULL) {
-        if ((*locadora).filme) {
+        if ((*locadora).filme != NULL) {
             for (f = 0; f< (*locadora).numFilmes; f++) {
                 DestruirFilme((*locadora).filme[f]);
             }
