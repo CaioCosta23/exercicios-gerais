@@ -12,7 +12,7 @@ int main() {
     char operacao[TAM_STRING_OPERACAO];
     char opcoes[NUM_OPCOES][TAM_STRING_OPERACAO] = {"Cadastrar", "Alugar", "Devolver", "Estoque"};
 
-    locadora = CriaLocadora();
+    locadora = CriarLocadora();
 
     while(scanf("%s", operacao) == 1) {
         if (strcmp(operacao, opcoes[0]) == 0) {
