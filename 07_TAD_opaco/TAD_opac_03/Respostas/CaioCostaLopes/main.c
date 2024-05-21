@@ -17,6 +17,9 @@ int main() {
     while(scanf("%s", operacao) == 1) {
         if (strcmp(operacao, opcoes[0]) == 0) {
             LerCadastroLocadora(locadora);
+            if (locadora == NULL) {
+                exit(1);
+            }
             printf("\n");
 
             if ((scanf("%c", &parada) == 1) && (parada == '#')) {
