@@ -7,8 +7,8 @@ void OrdenaAprovados(tAluno *aprovados[], int qtdAprovados) {
     tAluno *alunoAuxiliar;
 
     for (x = 0; x < (qtdAprovados - 1); x++) {
-        for (y = x + 1; x < qtdAprovados; y) {
-            if (CompararMatricula(aprovados[x], aprovados[y]) == 1) {
+        for (y = x + 1; x < qtdAprovados; y++) {
+            if (ComparaMatricula(aprovados[x], aprovados[y]) == 1) {
                 alunoAuxiliar = aprovados[y];
                 aprovados[y] = aprovados[x];
                 aprovados[x] = alunoAuxiliar;
