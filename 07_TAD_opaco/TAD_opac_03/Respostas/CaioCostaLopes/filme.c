@@ -43,7 +43,7 @@ int ObterValorFilme(tFilme *filme) {
     return (*filme).valor;
 }
 
-int ObterQtdestoqueFilme(tFilme *filme) {
+int ObterQtdEstoqueFilme(tFilme *filme) {
     return (*filme).qtdEstoque;
 }
 
