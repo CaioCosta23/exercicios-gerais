@@ -69,6 +69,10 @@ void LerCadastroLocadora(tLocadora *locadora) {
 
     while(scanf("%d,", &codigo) == 1) {
         filme = CriarFilme();
+        if (filme == NULL) {
+            DestruirLocadora(locadora);
+            break;
+        }
         LeFilme(filme, codigo);
 
         CadastrarFilmeLocadora(locadora, filme);
