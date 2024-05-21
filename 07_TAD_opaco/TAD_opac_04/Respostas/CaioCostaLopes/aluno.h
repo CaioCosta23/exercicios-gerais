@@ -47,7 +47,7 @@ int VerificaAprovacao(tAluno *aluno);
  * 
  * @param aluno Ponteiro para a estrutura do tipo "tAluno" que terá seus dados impressos;
  */
-void ImprimeAuno(tAluno *aluno);
+void ImprimeAluno(tAluno *aluno);
 
 /**
  * @brief Apaga (desaloca a memória dinamicamente de) um aluno;
