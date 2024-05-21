@@ -10,7 +10,7 @@ typedef struct Filme tFilme;
  * 
  * @return tFilme* Ponteiro para a estrutura do tipo "tFilme" com seus parâmetros inicializados;
  */
-tFilme *CriaFilme();
+tFilme *CriarFilme();
 
 /**
  * @brief Lê um filme da entrada padrão e define o código do filme;
