@@ -40,7 +40,7 @@ void LeAluno(tAluno *aluno) {
     }
 }
 
-intComparaMatricula(tAluno *aluno1, tAluno *aluno2) {
+int ComparaMatricula(tAluno *aluno1, tAluno *aluno2) {
     if ((*aluno1).matricula > (*aluno2).matricula) {
         return 1;
     }else {
