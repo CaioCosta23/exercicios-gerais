@@ -175,3 +175,10 @@ void ImprimeDataExtenso(tData *data) {
     ImprimeMesExtenso(data);
     printf(" de %04d\n", (*data).ano);
 }
+
+void LiberaData(tData *data) {
+    if (data != NULL) {
+        free(data);
+        data = NULL;
+    }
+}
