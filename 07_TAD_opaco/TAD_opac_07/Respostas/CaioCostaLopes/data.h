@@ -46,7 +46,7 @@ int NumeroDiasMes(tData *data);
  * 
  * @param data1 Ponteiro para a estrutura do tipo "tData" da primeira data a ser comparada;
  * @param data2 Ponteiro para a estrutura do tipo "tData" da segunda data a ser comparada;
- * @return int 1 se a data 1 for maior (estiver mais à frente) que a data 2, -1 se a data 2 for maior (estiver mais à frente da) da data 1 e 0 caso as duas datas sejam iguais; 
+ * @return int -1 se a data 1 for maior (estiver mais à frente) que a data 2, 1 se a data 2 for maior (estiver mais à frente da) da data 1 e 0 caso as duas datas sejam iguais; 
  */
 int ComparaData(tData *data1, tData *data2);
 
