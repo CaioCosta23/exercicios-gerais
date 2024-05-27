@@ -43,7 +43,7 @@ void AbreContaBanco(tBanco *banco) {
         }
     }
     banco->contas[(*banco).qtdContas] = CriaConta();
-    if ((*banco).contas[(*banco).qtdContas == NULL]) {
+    if ((*banco).contas[(*banco).qtdContas] == NULL) {
         printf("%d!\n", ((*banco).qtdContas + 1));
         DestroiBanco(banco);
     }else {
