@@ -137,7 +137,7 @@ void ImprimeMesExtenso(tData *data) {
             printf("Janeiro");
             break;
         case 2:
-            printf("Feveiro");
+            printf("Fevereiro");
             break;
         case 3:
             printf("Marco");
