@@ -107,6 +107,7 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
                 }
                 diferenca += CalculaDiasAteMes(dataAuxiliar);
             }
+            dataAuxiliar->mes = 0;
         }
     }else {
         if (ComparaData(data1, data2) == 1) {
