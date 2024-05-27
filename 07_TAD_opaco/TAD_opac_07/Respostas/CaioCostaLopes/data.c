@@ -109,21 +109,23 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
             }
         }
     }else {
-        if ((*data2).dia < (*data1).dia) {
-            diferenca += (*data1).dia - (*data2).dia;
-        }else {
-            diferenca += (CalculaDiasAteMes(data2) - (*data2).dia) + (*data1).dia;
-        }
-        dataAuxiliar->mes = (*data2).mes;
-        for ((*dataAuxiliar).ano = (*data2).ano; (*dataAuxiliar).ano < (*data1).ano; (*dataAuxiliar).ano++) {
-            while (1) {
-                dataAuxiliar->mes++;
-                if (((*dataAuxiliar).ano == (*data2).ano) || (((*data1).ano == (*data2).ano) && ((*dataAuxiliar).mes >= (*data1).mes))) {
-                    break;
-                }
-                diferenca += CalculaDiasAteMes(dataAuxiliar);
+        if (ComparaData(data1, data2) == 1) {
+            if ((*data2).dia < (*data1).dia) {
+                diferenca += (*data1).dia - (*data2).dia;
+            }else {
+                diferenca += (CalculaDiasAteMes(data2) - (*data2).dia) + (*data1).dia;
             }
-            dataAuxiliar->mes = 0;
+            dataAuxiliar->mes = (*data2).mes;
+            for ((*dataAuxiliar).ano = (*data2).ano; (*dataAuxiliar).ano < (*data1).ano; (*dataAuxiliar).ano++) {
+                while (1) {
+                    dataAuxiliar->mes++;
+                    if (((*dataAuxiliar).ano == (*data2).ano) || (((*data1).ano == (*data2).ano) && ((*dataAuxiliar).mes >= (*data1).mes))) {
+                        break;
+                    }
+                    diferenca += CalculaDiasAteMes(dataAuxiliar);
+                }
+                dataAuxiliar->mes = 0;
+            }
         }
     }
     LiberaData(dataAuxiliar);
