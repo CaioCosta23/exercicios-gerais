@@ -12,7 +12,6 @@ struct Banco {
 #define QTD_CONTAS_ALOCADAS 5
 
 tBanco *CriaBanco() {
-    int ca;
     tBanco *banco = (tBanco*)malloc(sizeof(tBanco));
 
     if (banco == NULL) {
@@ -23,7 +22,7 @@ tBanco *CriaBanco() {
     banco->contasAlocadas = QTD_CONTAS_ALOCADAS;
     banco->qtdContas = 0;
 
-    banco->contas = (tConta**)malloc((*banco).contasAlocadas *sizeof(tConta*));
+    banco->contas = (tConta**)malloc((*banco).contasAlocadas * sizeof(tConta*));
     if ((*banco).contas == NULL) {
         printf("Erro na alocacao de memoria no vetor de contas do banco!\n");
         DestroiBanco(banco);
@@ -33,7 +32,6 @@ tBanco *CriaBanco() {
 }
 
 void AbreContaBanco(tBanco *banco) {
-    int ca;
 
     if ((*banco).qtdContas == (*banco).contasAlocadas) {
         banco->contas = (tConta**)realloc((*banco).contas, QTD_CONTAS_ALOCADAS * sizeof(tConta*));
@@ -92,7 +90,7 @@ void TransferenciaContaBanco(tBanco *banco) {
         if (VerificaConta((*banco).contas[cd], numeroDestino)) {
             for (co = 0; co < (*banco).qtdContas; co++) {
                 if (VerificaConta((*banco).contas[co], numeroOrigem)) {
-                    TranferenciaConta((*banco).contas[cd], (*banco).contas[co]);
+                    TransferenciaConta((*banco).contas[cd], (*banco).contas[co], valor);
                     encerrarOperacao = 1;
                     break;
                 }
