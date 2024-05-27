@@ -38,5 +38,6 @@ int main() {
 
     LiberaData(data1);
     LiberaData(data2);
+    
     return 0;
 }
