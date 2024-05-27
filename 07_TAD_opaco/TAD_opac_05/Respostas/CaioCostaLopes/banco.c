@@ -34,7 +34,8 @@ tBanco *CriaBanco() {
 void AbreContaBanco(tBanco *banco) {
 
     if ((*banco).qtdContas == (*banco).contasAlocadas) {
-        banco->contas = (tConta**)realloc((*banco).contas, QTD_CONTAS_ALOCADAS * sizeof(tConta*));
+        banco->contasAlocadas += QTD_CONTAS_ALOCADAS;
+        banco->contas = (tConta**)realloc((*banco).contas, (*banco).contasAlocadas * sizeof(tConta*));
         if ((*banco).contas == NULL){
             printf("Erro na realocacao de memoria no vetor de contas do banco!\n");
             DestroiBanco(banco);
