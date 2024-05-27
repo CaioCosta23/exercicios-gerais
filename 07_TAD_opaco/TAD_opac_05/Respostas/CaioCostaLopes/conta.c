@@ -23,7 +23,7 @@ tConta *CriaConta() {
     }
 
     conta->numero = -1;
-    conta->saldo = 0;
+    conta->saldo = 0.00;
 
     return conta;
 }
@@ -34,10 +34,10 @@ void LeConta(tConta *conta) {
 }
 
 int VerificaConta(tConta *conta, int numero) {
-    return ((*conta).saldo == numero);
+    return ((*conta).numero == numero);
 }
 
-void SaqueConta(tConta *conta, int valor) {
+void SaqueConta(tConta *conta, float valor) {
     if ((*conta).saldo >= valor) {
         conta->saldo -= valor;
     }
