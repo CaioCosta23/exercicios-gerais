@@ -39,6 +39,10 @@ int VerificaDataValida(tData *data) {
     return 0;
 }
 
+int VerificaBissexto(tData *data) {
+    return ((((*data).ano % 4 == 0) && ((*data).ano % 100 != 0)) || (((*data).ano % 100 == 0) && ((*data).ano % 400 == 0)));
+}
+
 int NumeroDiasMes(tData *data) {
     if (((*data).mes == 1) || ((*data).mes == 3) || ((*data).mes == 5) || ((*data).mes == 7) || ((*data).mes == 8) || ((*data).mes == 10) || ((*data).mes == 12)) {
         return 31;
@@ -53,10 +57,6 @@ int NumeroDiasMes(tData *data) {
             }
         }
     }
-}
-
-int VerificaBisexto(tData *data) {
-    return ((((*data).ano % 4 == 0) && ((*data).ano % 100 != 0)) || (((*data).ano % 100 == 0) && ((*data).ano % 400 == 0)));
 }
 
 int ComparaData(tData *data1, tData *data2) {
