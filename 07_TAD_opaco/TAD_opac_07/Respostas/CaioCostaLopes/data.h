@@ -57,7 +57,7 @@ int ComparaData(tData *data1, tData *data2);
  * @param data2 Ponteiro para a estrutura do tipo "tData" da segunda data utilizada para calcular a diferença de dias até a outra data;
  * @return int Número de dias entre as duas datas;
  */
-int CalculaDiasAteMes(tData *data1, tData *data2);
+int CalculaDiasAteMes(tData *data);
 
 /**
  * @brief Imprime o nome de um mês;
