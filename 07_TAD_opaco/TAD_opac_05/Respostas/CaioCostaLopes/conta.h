@@ -49,7 +49,7 @@ void DepositoConta(tConta *conta, float valor);
  * @param origem Ponteiro para a estrutura do tipo "tConta" com os dado da conta de onde será tranferido o valor;
  * @param valor Valor a ser transferido de uma conta para outra;
  */
-void TansferenciaConta(tConta *destino, tConta *origem, float valor);
+void TransferenciaConta(tConta *destino, tConta *origem, float valor);
 
 /**
  * @brief Imprime os dados de uma conta;
