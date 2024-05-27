@@ -69,7 +69,9 @@ int ComparaData(tData *data1, tData *data2) {
             if (((*data1).mes == (*data2).mes) && ((*data1).dia > (*data2).dia)) {
                 return 1;
             }else {
-                return 0;
+                if ((*data1).dia == (*data2).dia) {
+                    return 0;
+                }
             }
         }
     }
