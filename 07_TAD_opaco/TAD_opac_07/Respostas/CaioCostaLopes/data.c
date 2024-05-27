@@ -39,7 +39,7 @@ int VerificaDataValida(tData *data) {
     return 0;
 }
 
-int NumeroDiasAteMes(tData *data) {
+int NumeroDiasMes(tData *data) {
     if (((*data).mes == 1) || ((*data).mes == 3) || ((*data).mes == 5) || ((*data).mes == 7) || ((*data).mes == 8) || ((*data).mes == 10) || ((*data).mes == 12)) {
         return 31;
     }else {
