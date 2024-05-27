@@ -1,5 +1,5 @@
 #ifndef _BANCO_H_
-#define BANCO_H_
+#define _BANCO_H_
 
 typedef struct Banco tBanco;
 
