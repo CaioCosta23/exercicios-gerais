@@ -51,13 +51,21 @@ int NumeroDiasMes(tData *data);
 int ComparaData(tData *data1, tData *data2);
 
 /**
- * @brief Calcua a diferença de dias entre duas datas;
+ * @brief Calcula o número de dias dos dias de uma data a té o final do mês;
+ * 
+ * @param data Ponteiro para a estrutura do tipo "tData" que contém a data que será utilizada para o cálculo;
+ * @return int Número de dias restantes a té o final do mês;
+ */
+int CalculaDiasAteMes(tData *data);
+
+/**
+ * @brief Calcula a diferença de dias entre duas datas;
  * 
  * @param data1 Ponteiro para a estrutura do tipo "tData" da primeira data utilizada para calcular a diferença de dias até a outra data;
  * @param data2 Ponteiro para a estrutura do tipo "tData" da segunda data utilizada para calcular a diferença de dias até a outra data;
  * @return int Número de dias entre as duas datas;
  */
-int CalculaDiasAteMes(tData *data);
+int CalculaDiferencaDias(tData *data1, tData *data2);
 
 /**
  * @brief Imprime o nome de um mês;
