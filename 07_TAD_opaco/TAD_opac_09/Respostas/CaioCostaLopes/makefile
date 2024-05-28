@@ -1,6 +1,6 @@
 all: geraos geraexe
 
-geraos: main.c empresa.c funcionanrio.c
+geraos: main.c empresa.c funcionario.c
 	gcc -c main.c empresa.c funcionario.c
 
 geraexe: main.o empresa.o funcionario.o
