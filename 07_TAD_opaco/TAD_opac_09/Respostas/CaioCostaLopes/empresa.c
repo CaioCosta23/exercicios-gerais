@@ -9,7 +9,7 @@ struct empresa {
 };
 
 tEmpresa *CriaEmpresa() {
-    tEmpresa *empresa = (tEmpresa*)maloc(sizeof(tEmpresa));
+    tEmpresa *empresa = (tEmpresa*)malloc(sizeof(tEmpresa));
 
     if (empresa == NULL) {
         printf("Erro na aalocacao da empresa ");
