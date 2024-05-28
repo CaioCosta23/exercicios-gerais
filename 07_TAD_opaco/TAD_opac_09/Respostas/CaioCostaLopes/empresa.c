@@ -39,7 +39,7 @@ void LeEmpresa(tEmpresa *empresa) {
             funcionario = CriaFuncionario();
 
             if (funcionario == NULL) {
-                printf("Erro na alocacao do funcionario %d da empresa ");
+                printf("Erro na alocacao do funcionario %d da empresa ", f);
                 ApagaEmpresa(empresa);
                 break;
             }else {
