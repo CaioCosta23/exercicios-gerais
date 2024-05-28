@@ -15,7 +15,7 @@ tFuncionario *CriaFuncionario();
  * 
  * @param funcionario Ponteiro para a estrutura do tipo "tFuncionario" que terá seus campos preenchidos com os dados lidos;
  */
-void LeFuncionario(tFuncionario funcionario);
+void LeFuncionario(tFuncionario *funcionario);
 
 /**
  * @brief Obtém o ID (identificador de um funcionário);
