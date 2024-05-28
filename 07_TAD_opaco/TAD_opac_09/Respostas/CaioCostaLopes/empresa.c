@@ -65,7 +65,7 @@ void ContrataFuncionarioEmpresa(tEmpresa *empresa, tFuncionario *funcionario) {
     }
 
     if (contratado) {
-        printf("A empresa %d ja possui um funcionario com o id %d\n", GetIdFuncionario(funcionario));
+        printf("A empresa %d ja possui um funcionario com o id %d\n", (*empresa).id, GetIdFuncionario(funcionario));
         ApagaFuncionario(funcionario);
     }else {
         empresa->funcionarios[(*empresa).qtdFuncionarios] = funcionario;
