@@ -27,7 +27,7 @@ int main() {
     tEmpresa *empresas[qtdEmpresas];
 
     for (e = 0; e < qtdEmpresas; e++) {
-        empresas[e] = CriaEmpresas();
+        empresas[e] = CriaEmpresa();
         VerificaAlocacao(empresas, (e));
         LeEmpresa(empresas[e]);
         VerificaAlocacao(empresas, (e));
@@ -35,6 +35,6 @@ int main() {
     for (e = 0; e < qtdEmpresas; e++) {
         ImprimeEmpresa(empresas[e]);
     }
-    
+
     EncerraPrograma(empresas, qtdEmpresas);
 }
