@@ -37,6 +37,10 @@ void LerLivro(tLivros *livro) {
     scanf("%s %s %d", livro->titulo, livro->autor, &livro->anoPublicacao);
 }
 
+char *getTitulo(tLivros *livro) {
+    return (*livro).titulo;
+}
+
 void ImprimeLivro(tLivros *livro) {
     printf("Titulo: %s\n", (*livro).titulo);
     printf("Autor: %s\n", (*livro).autor);
