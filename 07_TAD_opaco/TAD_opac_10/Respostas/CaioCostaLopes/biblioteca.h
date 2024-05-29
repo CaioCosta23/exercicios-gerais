@@ -28,7 +28,7 @@ void AdicionarLivroNaBiblioteca(tBiblioteca *biblioteca, tLivros *livro);
  * @param biblioteca Ponteiro para a estrutura do tipo "tBiblioteca" que terá um livro removido;
  * @param livro Ponteiro para a estrutura do tipo "tLivros" que será removido da biblioteca;
  */
-void RemoverLivroDaBiblioteca(tBiblioteca *biblioteca, tLivros *livro);
+void RemoverLivroDaBiblioteca(tBiblioteca *biblioteca, char titulo[]);
 
 /**
  * @brief Verifica se o titulo do livro digitado é igual a algum título da lista de títulos passado;
@@ -37,7 +37,7 @@ void RemoverLivroDaBiblioteca(tBiblioteca *biblioteca, tLivros *livro);
  * @param titulo Lista (vetor/'array') de títulos de livros  a serem comparados com o título do livro; 
  * @return int 1 se um dos títulos da lista for igual ao título do livro, 0 caso contrário;
  */
-int VerificaTituloDoLivroNaBiblioteca(tLivros *livro, char *titulo);
+int VerificaTituloDoLivroNaBiblioteca(tLivros *livro, char titulo[]);
 
 /**
  * @brief Lista (Imprime) todos os livros que estão na biblioteca;
