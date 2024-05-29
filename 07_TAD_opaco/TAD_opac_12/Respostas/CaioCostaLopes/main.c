@@ -6,7 +6,7 @@ int main() {
     Array *lista;
     int elementoBuscado, posicaoElemento;
 
-    lista = CriaArray();
+    lista = CriarArray();
     LerArray(lista);
     OrdenarArray(lista);
 
@@ -14,7 +14,7 @@ int main() {
     posicaoElemento = BuscaBinariaArray(lista, elementoBuscado);
 
     if (posicaoElemento >= 0) {
-        printf("Elemento %d encontrado no indice %d.\n", elementoBuscado, posicaoElemento);
+        printf("Elemento %d encontrado no índice %d.\n", elementoBuscado, posicaoElemento);
     }else {
         printf("Elemento %d não encontrado no array (%d).\n", elementoBuscado, posicaoElemento);
     }
