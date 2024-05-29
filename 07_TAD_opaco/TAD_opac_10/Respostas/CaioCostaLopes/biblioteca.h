@@ -44,7 +44,7 @@ int VerificaTituloDoLivroNaBiblioteca(tLivros *livro, char titulo[]);
  * 
  * @param biblioteca Ponteiro para a estrutura do tipo "tBiblioteca" que terá seus livros listados;
  */
-void ListarLivrosdaBiblioteca(tBiblioteca *biblioteca);
+void ListarLivrosDaBiblioteca(tBiblioteca *biblioteca);
 
 /**
  * @brief Apaga (desaloca a memória dinamicamente de) uma biblioteca;
