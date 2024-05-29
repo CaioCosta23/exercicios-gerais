@@ -74,7 +74,7 @@ void CalculaLucro(tLoja *loja) {
 void ImprimeRelatorioLoja(tLoja *loja) {
     int v;
 
-    printf("Loja %d: Lucro total: R$: %.2f\n", (*loja).id, (*loja).lucro);
+    printf("Loja %d: Lucro total: R$ %.2f\n", (*loja).id, (*loja).lucro);
 
     for (v = 0; v < (*loja).totalVendedores; v++) {
         ImprimeRelatorioVendedor((*loja).vendedores[v]);
