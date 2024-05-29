@@ -7,7 +7,7 @@ struct Array {
     int tamanho;
 };
 
-Array *CriaArray() {
+Array *CriarArray() {
     Array *lista = (Array*)malloc(sizeof(Array));
 
     if (lista == NULL) {
@@ -17,6 +17,8 @@ Array *CriaArray() {
 
     lista->elemento = NULL;
     lista->tamanho = 0;
+
+    return lista;
 }
 
 void LerArray(Array *array) {
@@ -33,14 +35,14 @@ void LerArray(Array *array) {
         array->elemento = (int*)realloc((*array).elemento, ((*array).tamanho + 1) * sizeof(int));
         if ((*array).elemento == NULL) {
             printf("Erro na realocacao do vetor da estrutura do array na posicao %d!\n", (*array).tamanho);
-            DetruirArray(array);
+            DestruirArray(array);
             exit(1);
         }
     }
     scanf("%*[^\n]\n");
 }
 
-void Ordenararray(Array *array) {
+void OrdenarArray(Array *array) {
     int a1, a2, elementoAuxiliar;
 
     for (a1 = 0; a1 < ((*array).tamanho - 1); a1++) {
