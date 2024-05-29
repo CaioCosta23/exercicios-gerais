@@ -37,7 +37,7 @@ void RemoverLivroDaBiblioteca(tBiblioteca *biblioteca, tLivros *livro);
  * @param titulo Lista (vetor/'array') de títulos de livros  a serem comparados com o título do livro; 
  * @return int 1 se um dos títulos da lista for igual ao título do livro, 0 caso contrário;
  */
-int VerificaTituloDoLivroNaBiblioteca(tLivros *livro, char titulo[]);
+int VerificaTituloDoLivroNaBiblioteca(tLivros *livro, char *titulo);
 
 /**
  * @brief Lista (Imprime) todos os livros que estão na biblioteca;
