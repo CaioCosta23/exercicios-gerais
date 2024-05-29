@@ -38,6 +38,6 @@ int BuscaBinariaArray(Array *array, int elementoBuscado);
  * 
  * @param array Ponteiro para a estrutura do tipo "Array" que srá destruída;
  */
-void DestroiArray(Array *array);
+void DestruirArray(Array *array);
 
 #endif
