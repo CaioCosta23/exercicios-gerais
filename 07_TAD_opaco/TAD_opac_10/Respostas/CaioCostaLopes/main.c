@@ -17,12 +17,12 @@ int main() {
 
     biblioteca = InicializarBiblioteca();
 
-    scanf("%d", qtdOperacoes);
+    scanf("%d", &qtdOperacoes);
 
     printf("Lista de operacoes:\n");
     printf("1 - Cadastrar livros.\n");
-    printf("2 - Remover livros\n");
-    printf("3 - Listar todos livros cadastrados\n\n");
+    printf("2 - Remover livros.\n");
+    printf("3 - Listar todos os livros cadastrados.\n\n");
 
     for (r = 0; r < qtdOperacoes; r++) {
         scanf("%d", &opcao);
