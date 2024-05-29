@@ -8,7 +8,7 @@ typedef struct Array Array;
  * 
  * @return Array* Ponteiro para a estrutura do tipo "Array";
  */
-Array *CriaArray();
+Array *CriarArray();
 
 /**
  * @brief Lê os elementos de um 'array' (lista/vetor);
