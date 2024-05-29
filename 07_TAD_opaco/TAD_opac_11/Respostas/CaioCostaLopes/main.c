@@ -43,11 +43,11 @@ int main() {
                 scanf("%d", &idLoja);
 
                 for (q = 0; q < l; q++) {
-                    if (VerificaIdLojas(lojas[q], idLoja)) {
+                    if (VerificaIdLoja(lojas[q], idLoja)) {
                         ContrataVendedor(lojas[q], RegistraVendedor(nome, salario, comissao));
                         if (lojas[q] == NULL) {
                             printf("%d!\n", l);
-                            FinalizaPrograma(lojas, l);
+                            FinalizarPrograma(lojas, l);
                             exit(1);
                         }
                     }
@@ -64,7 +64,7 @@ int main() {
             case 4:
                 for (q = 0; q < l; q++) {
                     CalculaLucro(lojas[q]);
-                    ImprimerelatorioLoja(lojas[q]);
+                    ImprimeRelatorioLoja(lojas[q]);
                 }
                 break;
         }
