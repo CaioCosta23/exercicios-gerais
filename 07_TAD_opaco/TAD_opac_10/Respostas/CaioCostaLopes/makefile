@@ -1,6 +1,6 @@
 all: geraos geraexe
 
-geraos: main.c biblioteca.c livro.
+geraos: main.c biblioteca.c livro.c
 	gcc -c main.c biblioteca.c livro.c
 
 geraexe: main.o biblioteca.o livro.o
