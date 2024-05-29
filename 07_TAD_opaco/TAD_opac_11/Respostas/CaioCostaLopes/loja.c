@@ -36,7 +36,7 @@ tLoja *AbreLoja(int id, float aluguel) {
 }
 
 int VerificaIdLoja(tLoja *loja, int id) {
-    return ((*loja).id = id);
+    return ((*loja).id == id);
 }
 
 void ContrataVendedor(tLoja *loja, tVendedor *vendedor) {
