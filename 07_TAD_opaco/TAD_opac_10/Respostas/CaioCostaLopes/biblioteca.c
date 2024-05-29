@@ -70,7 +70,7 @@ void RemoverLivroDaBiblioteca(tBiblioteca *biblioteca, char titulo[]) {
 
             printf("Livro removido com sucesso!\n");
         }else {
-            printf("Livro nao encontrado na biblioteca!\n");
+            printf("Livro nao encontrado na biblioteca.\n");
         }
     }
 }
@@ -83,7 +83,7 @@ void ListarLivrosDaBiblioteca(tBiblioteca *biblioteca) {
     int l;
 
     if ((*biblioteca).qtdLivros > 0) {
-        printf("\nLista de Livros da Biblioteca:\n");
+        printf("\nLista de Livros na Biblioteca:\n");
         for (l = 0; l < (*biblioteca).qtdLivros; l++) {
             ImprimeLivro((*biblioteca).livros[l]);
         }
