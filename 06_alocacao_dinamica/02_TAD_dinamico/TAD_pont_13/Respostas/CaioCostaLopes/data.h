@@ -19,7 +19,7 @@ tData *CriaData();
  * 
  * @return tData Ponteiro para a estrutura do tipo "tData" em que será armazenada a data;
  */
-tData LeData();
+tData *LeData();
 
 /**
  * @brief Calcula a idade de uma pessoa com base na data de nascimento e em uma data para calcular a idade;
