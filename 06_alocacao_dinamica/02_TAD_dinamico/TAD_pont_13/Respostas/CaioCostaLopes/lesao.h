@@ -9,7 +9,7 @@ typedef struct lesao {
     char *id;
     char *diagnostico;
     char *regiao_corpo;
-    int chances_malignidade;
+    int chance_malignidade;
 }tLesao;
 
 /**
