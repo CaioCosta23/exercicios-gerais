@@ -14,21 +14,24 @@ tLesao *CriaLesao() {
     if ((*lesao).id == NULL) {
         printf("Erro na alocacao de memoria do ID da lesao!\n");
         LiberaLesao(lesao);
+        return lesao;
     }
 
     lesao->diagnostico = (char*)malloc(TAM_DIAG * sizeof(char));
     if ((*lesao).diagnostico == NULL) {
         printf("Erro na alocacao de memoria no nome do diagnostico da lesao!\n");
         LiberaLesao(lesao);
+        return lesao;
     }
 
     lesao->regiao_corpo = (char*)malloc(TAM_REG * sizeof(char));
     if ((*lesao).regiao_corpo == NULL) {
         printf("Erro na alocacao de memoria do nome da regiao do corpo onde foi constatada a lesao");
         LiberaLesao(lesao);
+        return lesao;
     }
 
-    lesao->chance_malignidade = 0;
+    lesao->chance_malignidade = -1;
 
     return lesao;
 }
