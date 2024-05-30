@@ -27,6 +27,7 @@ void RodaPad(tPad *p) {
     tLesao *lesao = NULL;
     int pc;
     char cartaoSUS[TAM_CSUS];
+    int encontrado;
     int finalizar = 0;
 
     while(1) {
@@ -50,24 +51,29 @@ void RodaPad(tPad *p) {
                 p->qtdpacientes += 1;
                 break;
             case 'L':
-                scanf("%s", cartaoSUS);
+                scanf("%s\n", cartaoSUS);
+                lesao = CriaLesao();
+                if (lesao == NULL) {
+                    printf("%d!\n", ((*p).qtdpacientes + 1));
+                    LiberaPad(p);
+                    exit(1);
+                }
+
+                LeLesao(lesao);
+                if (lesao == NULL) {
+                    printf("%d!\n", ((*p).qtdpacientes + 1));
+                    LiberaPad(p);
+                    exit(1);
+                }
+                encontrado = 0;
                 for (pc = 0; pc < (*p).qtdpacientes; pc++) {
                     if (!(strcmp(GetCartaoSusPaciente((*p).listapacientes[pc]), cartaoSUS))) {
-                        lesao = CriaLesao();
-                        if (lesao == NULL) {
-                            printf("%d!\n", ((*p).qtdpacientes + 1));
-                            LiberaPad(p);
-                            exit(1);
-                        }
-
-                        LeLesao(lesao);
-                        if (lesao == NULL) {
-                            printf("%d!\n", ((*p).qtdpacientes + 1));
-                            LiberaPad(p);
-                            exit(1);
-                        }
+                        encontrado = 1;
                         AdicionaLesaoPaciente((*p).listapacientes[pc], lesao);
                     }
+                }
+                if (!(encontrado)) {
+                    LiberaLesao(lesao);
                 }
                 break;
             case 'F':
