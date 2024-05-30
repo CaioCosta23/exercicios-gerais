@@ -60,7 +60,7 @@ int GetQtdLesoesPaciente(tPaciente *p);
  * @brief Retorna a quantidade de cirurgias necessárias para tratar as lesões do paciente;
  * 
  * @param p Ponteiro para a estrutura do tipo "tPaciente" que contém as informações e dados do paciente;
- * @return int 
+ * @return int Quantidade de cirurgias que um paciente deve realizar devido a suas lesões;
  */
 int GetQtdCirurgiasPaciente(tPaciente *p);
 
