@@ -52,7 +52,7 @@ void RodaPad(tPad *p) {
             case 'L':
                 scanf("%s", cartaoSUS);
                 for (pc = 0; pc < (*p).qtdpacientes; pc++) {
-                    if (!(strcmp(GetCartaoSusPaciente(p), cartaoSUS))) {
+                    if (!(strcmp(GetCartaoSusPaciente((*p).listapacientes[pc]), cartaoSUS))) {
                         lesao = CriaLesao();
                         if (lesao == NULL) {
                             printf("%d!\n", ((*p).qtdpacientes + 1));
