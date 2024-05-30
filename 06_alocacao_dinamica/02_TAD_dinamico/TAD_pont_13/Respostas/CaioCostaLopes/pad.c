@@ -5,6 +5,13 @@
 
 #define MAX_PACIENTES 100
 
+void VerificaSituacaoLesao(tPad *pad, tLesao *lesao) {
+    if (lesao == NULL) {
+        LiberaPad(pad);
+        exit(1);
+    }
+}
+
 tPad *CriaPad() {
     tPad *pad = (tPad*)malloc(sizeof(tPad));
     int p;
@@ -24,54 +31,59 @@ tPad *CriaPad() {
 
 void RodaPad(tPad *p) {
     char acao;
-    tLesao *lesao = NULL;
-    int pc, l;
-    char cartaoSUS[TAM_CSUS][MAX_PACIENTES];
-    int cs = 0;
-    int encontrado;
+    tLesao *lesao[QTD_LESAO * MAX_PACIENTES];
+    char listaCartoes[MAX_PACIENTES][TAM_CSUS], cartaoSus[TAM_CSUS];
+    int quantCartoes = 0;
+    int pc, ls;
+    int pacienteEncontrado;
 
-    while(1) {
+    while (1) {
         scanf("%c\n", &acao);
 
         if (acao == 'F') {
             break;
-        }
+        }else {
+            if (acao == 'P') {
+                p->listapacientes[(*p).qtdpacientes] = CriaPaciente();
+                if ((*p).listapacientes == NULL) {
+                    printf("%d!", ((*p).qtdpacientes + 1));
+                    LiberaPad(p);
+                    exit(1);
+                }
+                LePaciente((*p).listapacientes[(*p).qtdpacientes]);
+                if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
+                    printf("%d!", ((*p).qtdpacientes + 1));
+                    LiberaPad(p);
+                    exit(1);
+                }
+                (*p).qtdpacientes += 1;
+            }else {
+                if (acao == 'L') {
+                    scanf("%s", cartaoSus);
+                        
+                    strcpy(listaCartoes[quantCartoes], cartaoSus);
+                    lesao[quantCartoes] = CriaLesao();
+                    VerificaSituacaoLesao(p, lesao[quantCartoes]);
+                    LeLesao(lesao[quantCartoes]);
+                    VerificaSituacaoLesao(p, lesao[quantCartoes]);
 
-        if (acao == 'P') {
-            p->listapacientes[(*p).qtdpacientes] = CriaPaciente();
-            if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
-                printf("%d!\n", ((*p).qtdpacientes) + 1);
-                LiberaPad(p);
-                exit(1);
+                    quantCartoes += 1;
+                }
             }
-            
-            LePaciente((*p).listapacientes[(*p).qtdpacientes]);
-            if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
-                printf("%d!\n", ((*p).qtdpacientes) + 1);
-                LiberaPad(p);
-                exit(1);
-            }
-            p->qtdpacientes += 1;
-        }
-        if (acao == 'L') {
-            scanf("%s\n", cartaoSUS);
-            lesao = CriaLesao();
-            if (lesao == NULL) {
-                printf("%d!\n", ((*p).qtdpacientes + 1));
-                LiberaPad(p);
-                exit(1);
-            }
-
-            LeLesao(lesao);
-            if (lesao == NULL) {
-                printf("%d!\n", ((*p).qtdpacientes + 1));
-                LiberaPad(p);
-                exit(1);
-            }
-            cs += 1;
         }
     }
-
+    for (ls = 0; ls < quantCartoes; ls++) {
+        pacienteEncontrado = 0;
+        for (pc = 0; pc < (*p).qtdpacientes; pc++) {
+            if (!(strcmp(GetCartaoSusPaciente((*p).listapacientes[pc]), listaCartoes[ls]))) {
+                AdicionaLesaoPaciente((*p).listapacientes[pc], lesao[ls]);
+                pacienteEncontrado = 1;
+            }
+        }
+        if (!(pacienteEncontrado)) {
+            LiberaLesao(lesao[ls]);
+        }
+    }
 }
 
 void ImprimeRelatorioPad(tPad *p) {
