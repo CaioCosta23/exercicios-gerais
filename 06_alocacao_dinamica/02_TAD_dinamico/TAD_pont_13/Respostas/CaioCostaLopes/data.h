@@ -12,7 +12,7 @@ typedef struct data {
  * 
  * @return tData* Ponteiro para uma estrutura do tipo "tData" com os sesu parâmetros inicializados;
  */
-tData *CriaData();
+tData *CriaData(int dia, int mes, int ano);
 
 /**
  * @brief Lê uma data da entrada padrão;
