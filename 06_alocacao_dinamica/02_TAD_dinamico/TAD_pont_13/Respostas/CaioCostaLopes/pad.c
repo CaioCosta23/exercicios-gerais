@@ -81,8 +81,20 @@ void RodaPad(tPad *p) {
 
 void ImprimeRelatorioPad(tPad *p) {
     int l;
+    tData *dataLimite = NULL;
+    int somaIdades = 0, totalLesoes = 0, totalCirurgias = 0;
 
-    printf("TOTAL PACIENTES %d\n", (*p).listapacientes);
+    dataLimite = CriaData(DIA_PAD, MES_PAD, ANO_PAD);
+
+    printf("TOTAL PACIENTES %d\n", (*p).qtdpacientes);
+    for (l = 0; l < (*p).qtdpacientes; l++) {
+        somaIdades += CalculaIdadeData(GetNascimentoPaciente((*p).listapacientes[l]), dataLimite);
+        totalLesoes += GetQtdLesoesPaciente((*p).listapacientes[l]);
+        totalCirurgias += GetqtdCirurgiasPaciente((*p).listapacientes[l]);
+    }
+    printf("MEDIA IDADE (ANOS): %d\n", (somaIdades / (*p).qtdpacientes));
+    printf("TOTAL LESOES: %d", totalLesoes);
+    printf("TOTAL CIRURGIAS: %d\n", totalCirurgias);
     for (l = 0; l < (*p).qtdpacientes; l++) {
         ImprimePaciente((*p).listapacientes[l]);
     }
