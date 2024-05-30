@@ -28,7 +28,7 @@ tLesao *CriaLesao() {
         LiberaLesao(lesao);
     }
 
-    lesao->chances_malignidade = 0;
+    lesao->chance_malignidade = 0;
 
     return lesao;
 }
@@ -37,7 +37,7 @@ void LeLesao(tLesao *l) {
     scanf("%s", l->id);
     scanf("%s", l->diagnostico);
     scanf("%s", l->regiao_corpo);
-    scanf("%d\n", l->chances_malignidade);
+    scanf("%d\n", &l->chance_malignidade);
 }
 
 char *GetIdLesao(tLesao *l) {
@@ -45,7 +45,7 @@ char *GetIdLesao(tLesao *l) {
 }
 
 int PrecisaCirurgiaLesao(tLesao *l) {
-    return ((*l).chances_malignidade > 50);
+    return ((*l).chance_malignidade > 50);
 }
 
 void LiberaLesao(tLesao *l) {
