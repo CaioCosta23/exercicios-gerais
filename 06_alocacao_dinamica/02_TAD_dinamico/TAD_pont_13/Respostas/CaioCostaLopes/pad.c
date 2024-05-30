@@ -25,63 +25,50 @@ tPad *CriaPad() {
 void RodaPad(tPad *p) {
     char acao;
     tLesao *lesao = NULL;
-    int pc;
-    char cartaoSUS[TAM_CSUS];
+    int pc, l;
+    char cartaoSUS[TAM_CSUS][MAX_PACIENTES];
+    int cs = 0;
     int encontrado;
-    int finalizar = 0;
 
     while(1) {
         scanf("%c\n", &acao);
 
-        switch (acao) {
-            case 'P':
-                p->listapacientes[(*p).qtdpacientes] = CriaPaciente();
-                if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
-                    printf("%d!\n", ((*p).qtdpacientes) + 1);
-                    LiberaPad(p);
-                    exit(1);
-                }
-                
-                LePaciente((*p).listapacientes[(*p).qtdpacientes]);
-                if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
-                    printf("%d!\n", ((*p).qtdpacientes) + 1);
-                    LiberaPad(p);
-                    exit(1);
-                }
-                p->qtdpacientes += 1;
-                break;
-            case 'L':
-                scanf("%s\n", cartaoSUS);
-                lesao = CriaLesao();
-                if (lesao == NULL) {
-                    printf("%d!\n", ((*p).qtdpacientes + 1));
-                    LiberaPad(p);
-                    exit(1);
-                }
-
-                LeLesao(lesao);
-                if (lesao == NULL) {
-                    printf("%d!\n", ((*p).qtdpacientes + 1));
-                    LiberaPad(p);
-                    exit(1);
-                }
-                encontrado = 0;
-                for (pc = 0; pc < (*p).qtdpacientes; pc++) {
-                    if (!(strcmp(GetCartaoSusPaciente((*p).listapacientes[pc]), cartaoSUS))) {
-                        encontrado = 1;
-                        AdicionaLesaoPaciente((*p).listapacientes[pc], lesao);
-                    }
-                }
-                if (!(encontrado)) {
-                    LiberaLesao(lesao);
-                }
-                break;
-            case 'F':
-                finalizar = 1;
-                break;
-        }
-        if (finalizar) {
+        if (acao == 'F') {
             break;
+        }
+
+        if (acao == 'P') {
+            p->listapacientes[(*p).qtdpacientes] = CriaPaciente();
+            if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
+                printf("%d!\n", ((*p).qtdpacientes) + 1);
+                LiberaPad(p);
+                exit(1);
+            }
+            
+            LePaciente((*p).listapacientes[(*p).qtdpacientes]);
+            if ((*p).listapacientes[(*p).qtdpacientes] == NULL) {
+                printf("%d!\n", ((*p).qtdpacientes) + 1);
+                LiberaPad(p);
+                exit(1);
+            }
+            p->qtdpacientes += 1;
+        }
+        if (acao == 'L') {
+            scanf("%s\n", cartaoSUS);
+            lesao = CriaLesao();
+            if (lesao == NULL) {
+                printf("%d!\n", ((*p).qtdpacientes + 1));
+                LiberaPad(p);
+                exit(1);
+            }
+
+            LeLesao(lesao);
+            if (lesao == NULL) {
+                printf("%d!\n", ((*p).qtdpacientes + 1));
+                LiberaPad(p);
+                exit(1);
+            }
+            cs += 1;
         }
     }
 
