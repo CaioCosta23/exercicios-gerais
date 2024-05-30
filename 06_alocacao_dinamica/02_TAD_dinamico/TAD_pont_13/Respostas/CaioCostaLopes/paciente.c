@@ -25,12 +25,13 @@ tPaciente *CriaPaciente() {
         return paciente;
     }
     paciente->genero = '\0';
-    paciente->listaLesao = (tLesao*)malloc(QTD_LESAO * sizeof(tLesao*));
+    paciente->listaLesao = (tLesao**)malloc(QTD_LESAO * sizeof(tLesao*));
     if ((*paciente).listaLesao == NULL) {
         printf("Erro na alocacao da lista de lesoes do paciente ");
         LiberaPaciente(paciente);
         return paciente;
     }
+    
     paciente->qtdLesoes = 0;
     paciente->maxLesoes = 0;
 
