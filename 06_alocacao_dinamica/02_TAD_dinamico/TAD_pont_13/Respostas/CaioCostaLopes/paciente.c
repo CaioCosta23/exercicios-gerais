@@ -73,7 +73,7 @@ int GetQtdCirurgiasPaciente(tPaciente *p) {
     int qtdCirurgias = 0;
 
     for (l = 0; l < (*p).qtdLesoes; l++) {
-        if (PrecisaCirurgiaLesao((*p).listaLesao)) {
+        if (PrecisaCirurgiaLesao((*p).listaLesao[l])) {
             qtdCirurgias += 1;
         }
     }
