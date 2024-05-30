@@ -83,26 +83,28 @@ void RodaPad(tPad *p) {
 
 void ImprimeRelatorioPad(tPad *p) {
     int l;
-    tData *dataLimite = NULL;
-    int somaIdades = 0, totalLesoes = 0, totalCirurgias = 0;
+    int somaIdades = 0, totalLesoes = 0, totalCirurgias = 0, mediaIdades = 0;
 
-    dataLimite = CriaData(DIA_PAD, MES_PAD, ANO_PAD);
+    if ((*p).qtdpacientes > 0) {
+        tData *dataLimite = NULL;
+        dataLimite = CriaData(DIA_PAD, MES_PAD, ANO_PAD);
 
-    printf("TOTAL PACIENTES: %d\n", (*p).qtdpacientes);
-    for (l = 0; l < (*p).qtdpacientes; l++) {
-        somaIdades += CalculaIdadeData(GetNascimentoPaciente((*p).listapacientes[l]), dataLimite);
-        totalLesoes += GetQtdLesoesPaciente((*p).listapacientes[l]);
-        totalCirurgias += GetQtdCirurgiasPaciente((*p).listapacientes[l]);
+        for (l = 0; l < (*p).qtdpacientes; l++) {
+            somaIdades += CalculaIdadeData(GetNascimentoPaciente((*p).listapacientes[l]), dataLimite);
+            totalLesoes += GetQtdLesoesPaciente((*p).listapacientes[l]);
+            totalCirurgias += GetQtdCirurgiasPaciente((*p).listapacientes[l]);
+        }
+        mediaIdades = (somaIdades / (*p).qtdpacientes);
+        LiberaData(dataLimite);
     }
-    printf("MEDIA IDADE (ANOS): %d\n", (somaIdades / (*p).qtdpacientes));
+    printf("TOTAL PACIENTES: %d\n", (*p).qtdpacientes);
+    printf("MEDIA IDADE (ANOS): %d\n", mediaIdades);
     printf("TOTAL LESOES: %d\n", totalLesoes);
     printf("TOTAL CIRURGIAS: %d\n", totalCirurgias);
     printf("LISTA DE PACIENTES:\n");
     for (l = 0; l < (*p).qtdpacientes; l++) {
         ImprimePaciente((*p).listapacientes[l]);
     }
-
-    LiberaData(dataLimite);
 }
 
 void LiberaPad(tPad *p) {
