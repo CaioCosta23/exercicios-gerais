@@ -32,7 +32,7 @@ void LeLesao(tLesao *l);
  * @param l Ponteiro para a estrutura do tipo "tLesao" que terá o seu ID (identificador) obtido;
  * @return char Ponteiropara o ID (identificador) da lesão;
  */
-char GetIdLesao(tLesao *l);
+char *GetIdLesao(tLesao *l);
 
 /**
  * @brief Verifica se a lesão precisa de cirurgia;
