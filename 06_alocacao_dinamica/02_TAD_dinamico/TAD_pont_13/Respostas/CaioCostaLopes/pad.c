@@ -50,22 +50,22 @@ void RodaPad(tPad *p) {
                 p->qtdpacientes += 1;
                 break;
             case 'L':
-                lesao = CriaLesao();
-                if (lesao == NULL) {
-                    printf("%d!\n", ((*p).qtdpacientes + 1));
-                    LiberaPad(p);
-                    exit(1);
-                }
-                
                 scanf("%s", cartaoSUS);
-                LeLesao(lesao);
-                if (lesao == NULL) {
-                    printf("%d!\n", ((*p).qtdpacientes + 1));
-                    LiberaPad(p);
-                    exit(1);
-                }
                 for (pc = 0; pc < (*p).qtdpacientes; pc++) {
                     if (!(strcmp(GetCartaoSusPaciente(p), cartaoSUS))) {
+                        lesao = CriaLesao();
+                        if (lesao == NULL) {
+                            printf("%d!\n", ((*p).qtdpacientes + 1));
+                            LiberaPad(p);
+                            exit(1);
+                        }
+
+                        LeLesao(lesao);
+                        if (lesao == NULL) {
+                            printf("%d!\n", ((*p).qtdpacientes + 1));
+                            LiberaPad(p);
+                            exit(1);
+                        }
                         AdicionaLesaoPaciente((*p).listapacientes[pc], lesao);
                     }
                 }
@@ -83,7 +83,7 @@ void ImprimeRelatorioPad(tPad *p) {
     int l;
 
     printf("TOTAL PACIENTES %d\n", (*p).listapacientes);
-    for (l = 0; l < (*p).listapacientes; l++) {
+    for (l = 0; l < (*p).qtdpacientes; l++) {
         ImprimePaciente((*p).listapacientes[l]);
     }
 }
