@@ -37,10 +37,10 @@ tLesao *CriaLesao() {
 }
 
 void LeLesao(tLesao *l) {
-    scanf("%s", l->id);
-    scanf("%s", l->diagnostico);
-    scanf("%s", l->regiao_corpo);
-    scanf("%d\n", &l->chance_malignidade);
+    scanf("%[^\n]\n", l->id);
+    scanf("%[^\n]\n", l->diagnostico);
+    scanf("%[^\n]\n", l->regiao_corpo);
+    scanf("%d", &l->chance_malignidade);
 }
 
 char *GetIdLesao(tLesao *l) {
