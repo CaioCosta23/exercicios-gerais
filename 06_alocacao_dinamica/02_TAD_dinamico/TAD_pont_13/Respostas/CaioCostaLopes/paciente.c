@@ -38,8 +38,13 @@ tPaciente *CriaPaciente() {
 }
 
 void LePaciente(tPaciente *p) {
+    tData *data = NULL;
+
     scanf("%s", p->nome);
-    LeData((*p).nascimento);
+
+    data = LeData();
+    p->nascimento = CriaData((*data).dia, (*data).mes, (*data).ano);
+
     scanf("%s", p->cartaoSus);
     scanf("%c\n", p->genero);
 }
