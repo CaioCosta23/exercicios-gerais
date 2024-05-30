@@ -38,12 +38,10 @@ tPaciente *CriaPaciente() {
 }
 
 void LePaciente(tPaciente *p) {
-    tData *data = NULL;
 
     scanf("%s", p->nome);
 
-    data = LeData();
-    p->nascimento = CriaData((*data).dia, (*data).mes, (*data).ano);
+    p->nascimento = LeData();
 
     scanf("%s", p->cartaoSus);
     scanf("%c\n", &p->genero);
@@ -111,8 +109,7 @@ void LiberaPaciente(tPaciente *p) {
                     free((*p).cartaoSus);
                     p->cartaoSus = NULL;
                 }
-                free((*p).nascimento);
-                p->nascimento = NULL;
+                LiberaData((*p).nascimento);
             }
             free((*p).nome);
             p->nome = NULL;
