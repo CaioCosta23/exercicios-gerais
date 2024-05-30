@@ -82,7 +82,7 @@ void ImprimePaciente(tPaciente *p);
 /**
  * @brief Apaga (libera a memória alocada dinamicamente de) um paciente;
  * 
- * @param p 
+ * @param p Ponteiro para a estrutura do tipo "tPaciente" que será apagado;
  */
 void LiberaPaciente(tPaciente *p);
 
