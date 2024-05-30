@@ -17,7 +17,7 @@ tPaciente *CriaPaciente() {
         return paciente;
     }
 
-    paciente->nascimento = CriaData();
+    paciente->nascimento = NULL;
     paciente->cartaoSus = (char*)malloc(TAM_CSUS * sizeof(char));
     if ((*paciente).cartaoSus == NULL) {
         printf("Erro na alocacao do cartao do SUS do paciente ");
