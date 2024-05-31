@@ -19,9 +19,9 @@ tData *CriaData(int dia, int mes, int ano) {
 
 tData *LeData() {
     int dia, mes, ano;
-    tData *data;
+    tData *data = NULL;
 
-    scanf("%02d/%02d/%04d", &dia, &mes, &ano);
+    scanf("%02d/%02d/%04d\n", &dia, &mes, &ano);
     
     data = CriaData(dia, mes, ano);
 
