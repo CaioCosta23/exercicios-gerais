@@ -40,12 +40,14 @@ tPaciente *CriaPaciente() {
 
 void LePaciente(tPaciente *p) {
 
-    scanf("%s", p->nome);
+    scanf("%[^\n]\n", p->nome);
 
     p->nascimento = LeData();
 
-    scanf("%s", p->cartaoSus);
-    scanf("%c\n", &p->genero);
+    if (p->nascimento != NULL) {
+        scanf("%[^\n]", p->cartaoSus);
+        scanf("%c\n", &p->genero);
+    }
 }
 
 void AdicionaLesaoPaciente(tPaciente *p, tLesao *l) {
