@@ -45,8 +45,8 @@ void LePaciente(tPaciente *p) {
     p->nascimento = LeData();
 
     if (p->nascimento != NULL) {
-        scanf("%[^\n]", p->cartaoSus);
-        scanf("%c\n", &p->genero);
+        scanf("%[^\n]\n", p->cartaoSus);
+        scanf("%c", &p->genero);
     }
 }
 
@@ -88,11 +88,13 @@ tData *GetNascimentoPaciente(tPaciente *p) {
 void ImprimePaciente(tPaciente *p) {
     int l;
 
-    printf("- %s - ", (*p).nome);
-    for (l = 0; l < (*p).qtdLesoes; l++) {
-        printf("%s ", GetIdLesao((*p).listaLesao[l]));
+    if ((*p).qtdLesoes > 0) {
+        printf("- %s - ", (*p).nome);
+        for (l = 0; l < (*p).qtdLesoes; l++) {
+            printf("%s ", GetIdLesao((*p).listaLesao[l]));
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 void LiberaPaciente(tPaciente *p) {
