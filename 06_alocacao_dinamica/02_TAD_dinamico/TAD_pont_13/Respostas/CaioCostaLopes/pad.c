@@ -59,7 +59,7 @@ void RodaPad(tPad *p) {
                 (*p).qtdpacientes += 1;
             }else {
                 if (acao == 'L') {
-                    scanf("%s", cartaoSus);
+                    scanf("%[^\n]\n", cartaoSus);
                         
                     strcpy(listaCartoes[quantCartoes], cartaoSus);
                     lesao[quantCartoes] = CriaLesao();
