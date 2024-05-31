@@ -12,7 +12,7 @@ tData *CriaData(int dia, int mes, int ano) {
 
     data->dia = dia;
     data->mes = mes;
-    data->ano;
+    data->ano = ano;
 
     return data;
 }
