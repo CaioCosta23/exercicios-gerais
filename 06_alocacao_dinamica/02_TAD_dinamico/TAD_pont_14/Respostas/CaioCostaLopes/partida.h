@@ -9,8 +9,8 @@ struct partida {
     int pontos2;
 };
 
-#define TIME_CASA 1;
-#define TIME_FORA 2;
+#define TIME_CASA 1
+#define TIME_FORA 2
 
 /**
  * @brief Cria (aloca a memória dinamicamente) e lê os dados de uma partida;
