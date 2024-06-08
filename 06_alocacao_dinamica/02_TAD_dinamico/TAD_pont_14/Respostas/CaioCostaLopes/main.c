@@ -6,11 +6,7 @@ int main() {
     tNBA nba;
 
     nba = CriaNBA();
-
-    if (nba != NULL) {
-        nba = RodaNBA(nba);
-        ImprimeRelatorioNBA(nba);
-    }
-
+    nba = RodaNBA(nba);
+    ImprimeRelatorioNBA(nba);
     LiberaNBA(nba);
 }
