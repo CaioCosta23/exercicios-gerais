@@ -45,7 +45,12 @@ tNBA RodaNBA(tNBA nba) {
 
         if (opcao == CAD_FRANQUIA) {
             if ((*nba).qtdfranquias == (*nba).maxfranquias) {
-                printf("Limite de franquias atingido!\n");
+                nba->listafranquias = (tFranquia*)realloc((*nba).listafranquias, ((*nba).maxfranquias + MAX_PT) * sizeof(tFranquia));
+                if ((*nba).listafranquias == NULL) {
+                    printf("Erro na realocacao do vetor/lista de franquias da NBA!\n");
+                    LiberaNBA(nba);
+                    exit(1);
+                }
             }else {
                 franquia = LeFranquia();
                 if (franquia == NULL) {
@@ -60,7 +65,12 @@ tNBA RodaNBA(tNBA nba) {
         }
         if (opcao == CAD_PARTIDA) {
             if ((*nba).qtdpartidas == (*nba).maxpartidas) {
-                printf("Limite de partidas atingido!\n");
+                nba->listapartidas = (tPartida*)realloc((*nba).listapartidas, ((*nba).maxpartidas + MAX_PT) * sizeof(tPartida));
+                if ((*nba).listapartidas == NULL) {
+                    printf("Erro na realocacao do vetor/lista de partidas da NBA!\n");
+                    LiberaNBA(nba);
+                    exit(1);
+                }
             }else {
                 partida = LePartida();
                 if (partida == NULL) {
