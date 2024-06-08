@@ -5,7 +5,7 @@
 int main() {
     tNBA nba;
 
-    nba = CriNBA();
+    nba = CriaNBA();
 
     if (nba != NULL) {
         nba = RodaNBA(nba);
