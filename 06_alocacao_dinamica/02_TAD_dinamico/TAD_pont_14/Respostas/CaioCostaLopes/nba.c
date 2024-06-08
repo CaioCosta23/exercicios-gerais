@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "nba.h"
 
 tNBA CriaNBA() {
@@ -37,6 +38,7 @@ tNBA RodaNBA(tNBA nba) {
     char opcao;
     tFranquia franquia;
     tPartida partida;
+    int p, f;
 
     while (1) {
         scanf("%c ", &opcao);
@@ -76,11 +78,43 @@ tNBA RodaNBA(tNBA nba) {
         }
     }
 
+    for (p = 0; p < (*nba).qtdpartidas; p++) {
+        if (GetVencedorPartida((*nba).listapartidas[p]) == TIME_CASA) {
+            for (f = 0; f < (*nba).listafranquias[f]; f++) {
+                if (strcmp(GetTime1Partida((*nba).listapartidas[p]), GetNomeFranquia((*nba).listafranquias[f])) == 0) {
+                    AdicionaVitoriaCasaFranquia((*nba).listafranquias[f]);
+                    break;
+                }
+            }
+            for (f = 0; f < (*nba).listafranquias[f]; f++) {
+                if (strcmp(GetTime2Partida((*nba).listapartidas[p]), GetNomeFranquia((*nba).listafranquias[f])) == 0) {
+                    AdicionaDerrotaForaFranquia((*nba).listafranquias[f]);
+                    break;
+                }
+            }
+        }else {
+            if (GetVencedorPartida((*nba).listapartidas[p]) == TIME_FORA) {
+                for (f = 0; f < (*nba).listafranquias[f]; f++) {
+                    if (strcmp(GetTime1Partida((*nba).listapartidas[p]), GetNomeFranquia((*nba).listafranquias[f])) == 0) {
+                        AdicionaDerrotaCasaFranquia((*nba).listafranquias[f]);
+                        break;
+                    }
+                }
+                for (f = 0; f < (*nba).listafranquias[f]; f++) {
+                    if (strcmp(GetTime2Partida((*nba).listapartidas[p]), GetNomeFranquia((*nba).listafranquias[f])) == 0) {
+                        AdicionaVitoriaForaFranquia((*nba).listafranquias[f]);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     return nba;
 }
 
 void ImprimeRelatorioNBA(tNBA nba) {
-    int f, p;
+    int f;
 
     for (f = 0; f < (*nba).qtdfranquias; f++) {
         ImprimeFranquia((*nba).listafranquias[f]);
