@@ -115,10 +115,26 @@ tNBA RodaNBA(tNBA nba) {
 
 void ImprimeRelatorioNBA(tNBA nba) {
     int f;
+    int vitoriasOeste = 0, derrotasOeste = 0, vitoriasLeste = 0, derrotasLeste = 0;
+    float porcentagemLeste = 0, porcentagemOeste = 0;
 
     for (f = 0; f < (*nba).qtdfranquias; f++) {
         ImprimeFranquia((*nba).listafranquias[f]);
+        if (strcmp(GetConferenciaFranquia((*nba).listafranquias[f]), 'OESTE') == 0) {
+            vitoriasOeste += (GetVitoriaCasaFranquia((*nba).listafranquias[f]) + GetVitoriaForaFranquia((*nba).listafranquias[f]));
+            derrotasOeste += (GetDerrotaForaFranquia((*nba).listafranquias[f]) + GetDerrotaForaFranquia((*nba).listafranquias[f]));
+        }else {
+            if (strcmp(GetConferenciaFranquia((*nba).listafranquias[f]), 'LESTE') == 0) {
+                vitoriasLeste += (GetVitoriaCasaFranquia((*nba).listafranquias[f]) + GetVitoriaForaFranquia((*nba).listafranquias[f]));
+                derrotasLeste += (GetDerrotaForaFranquia((*nba).listafranquias[f]) + GetDerrotaForaFranquia((*nba).listafranquias[f]));
+            }
+        }
     }
+    porcentagemLeste = (vitoriasLeste * 100) / (vitoriasLeste + derrotasLeste);
+    porcentagemOeste = (vitoriasOeste * 100) / (vitoriasOeste + derrotasOeste);
+
+    printf("LESTE %d %d %.2f", vitoriasLeste, derrotasLeste, porcentagemLeste);
+    printf("OESTE %d %d %.2f", vitoriasOeste, derrotasOeste, porcentagemOeste);
 }
 
 void LiberaNBA(tNBA nba) {
