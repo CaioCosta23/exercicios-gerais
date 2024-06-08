@@ -43,7 +43,7 @@ tNBA RodaNBA(tNBA nba) {
     while (1) {
         scanf("%c ", &opcao);
 
-        if (opcao == 'F') {
+        if (opcao == CAD_FRANQUIA) {
             if ((*nba).qtdfranquias == (*nba).maxfranquias) {
                 printf("Limite de franquias atingido!\n");
             }else {
@@ -58,7 +58,7 @@ tNBA RodaNBA(tNBA nba) {
                 }
             }
         }
-        if (opcao == 'P') {
+        if (opcao == CAD_PARTIDA) {
             if ((*nba).qtdpartidas == (*nba).maxpartidas) {
                 printf("Limite de partidas atingido!\n");
             }else {
@@ -73,7 +73,7 @@ tNBA RodaNBA(tNBA nba) {
                 }
             }
         }
-        if (opcao == 'E') {
+        if (opcao == ENCERRAR) {
             break;
         }
     }
@@ -120,21 +120,25 @@ void ImprimeRelatorioNBA(tNBA nba) {
 
     for (f = 0; f < (*nba).qtdfranquias; f++) {
         ImprimeFranquia((*nba).listafranquias[f]);
-        if (strcmp(GetConferenciaFranquia((*nba).listafranquias[f]), 'OESTE') == 0) {
+        if (strcmp(GetConferenciaFranquia((*nba).listafranquias[f]), "OESTE") == 0) {
             vitoriasOeste += (GetVitoriaCasaFranquia((*nba).listafranquias[f]) + GetVitoriaForaFranquia((*nba).listafranquias[f]));
-            derrotasOeste += (GetDerrotaForaFranquia((*nba).listafranquias[f]) + GetDerrotaForaFranquia((*nba).listafranquias[f]));
+            derrotasOeste += (GetDerrotaCasaFranquia((*nba).listafranquias[f]) + GetDerrotaForaFranquia((*nba).listafranquias[f]));
         }else {
-            if (strcmp(GetConferenciaFranquia((*nba).listafranquias[f]), 'LESTE') == 0) {
+            if (strcmp(GetConferenciaFranquia((*nba).listafranquias[f]), "LESTE") == 0) {
                 vitoriasLeste += (GetVitoriaCasaFranquia((*nba).listafranquias[f]) + GetVitoriaForaFranquia((*nba).listafranquias[f]));
-                derrotasLeste += (GetDerrotaForaFranquia((*nba).listafranquias[f]) + GetDerrotaForaFranquia((*nba).listafranquias[f]));
+                derrotasLeste += (GetDerrotaCasaFranquia((*nba).listafranquias[f]) + GetDerrotaForaFranquia((*nba).listafranquias[f]));
             }
         }
     }
-    porcentagemLeste = (vitoriasLeste * 100) / (vitoriasLeste + derrotasLeste);
-    porcentagemOeste = (vitoriasOeste * 100) / (vitoriasOeste + derrotasOeste);
+    if (vitoriasLeste > 0) {
+        porcentagemLeste = (vitoriasLeste * 100) / (vitoriasLeste + derrotasLeste);
+    }
+    if (vitoriasOeste > 0) {
+        porcentagemOeste = (vitoriasOeste * 100) / (vitoriasOeste + derrotasOeste);
+    }
 
-    printf("LESTE %d %d %.2f", vitoriasLeste, derrotasLeste, porcentagemLeste);
-    printf("OESTE %d %d %.2f", vitoriasOeste, derrotasOeste, porcentagemOeste);
+    printf("LESTE %d %d %.2f\n", vitoriasLeste, derrotasLeste, porcentagemLeste);
+    printf("OESTE %d %d %.2f\n", vitoriasOeste, derrotasOeste, porcentagemOeste);
 }
 
 void LiberaNBA(tNBA nba) {
