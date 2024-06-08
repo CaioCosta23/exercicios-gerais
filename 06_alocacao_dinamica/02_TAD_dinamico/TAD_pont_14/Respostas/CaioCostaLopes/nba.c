@@ -75,6 +75,8 @@ tNBA RodaNBA(tNBA nba) {
             break;
         }
     }
+
+    return nba;
 }
 
 void ImprimeRelatorioNBA(tNBA nba) {
@@ -82,10 +84,6 @@ void ImprimeRelatorioNBA(tNBA nba) {
 
     for (f = 0; f < (*nba).qtdfranquias; f++) {
         ImprimeFranquia((*nba).listafranquias[f]);
-    }
-
-    for (p = 0; p < (*nba).qtdpartidas; p++) {
-        ImprimePartida((*nba).listapartidas[p]);
     }
 }
 
