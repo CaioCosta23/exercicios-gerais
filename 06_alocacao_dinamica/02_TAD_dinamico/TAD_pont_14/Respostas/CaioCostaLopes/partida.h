@@ -25,7 +25,7 @@ tPartida LePartida();
  * @param p Estrutura (do tipo ponteiro) do tipo "tPartida" que contém o nome da primeira equipe (equipe da casa) que disputou a partida; 
  * @return char* Nome da equipe 1 (time da casa) que disputou a partida;
  */
-char *GetTime1Partida(tPartida *p);
+char *GetTime1Partida(tPartida p);
 
 /**
  * @brief Obtém o nome do segundo time da partida (time de fora);
@@ -33,7 +33,7 @@ char *GetTime1Partida(tPartida *p);
  * @param p Estrutura (do tipo ponteiro) do tipo "tPartida" que contém o nome da segunda equipe (equipe de fora) que disputou a partida; 
  * @return char* Nome da equipe 2 (time de fora) que disputou a partida;
  */
-char *GetTime2Partida(tPartida *p);
+char *GetTime2Partida(tPartida p);
 
 /**
  * @brief Obtém o número (constante) que representa a equipe vencedora da partida;
@@ -55,6 +55,6 @@ void ImprimePartida(tPartida p);
  * 
  * @param p Estrutura (do tipo ponteiro) do tipo "tPartida" que será liberada;
  */
-void LiberaPartida(tPartida *p);
+void LiberaPartida(tPartida p);
 
 #endif
