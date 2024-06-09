@@ -77,9 +77,13 @@ int GetDerrotaForaFranquia(tFranquia f) {
 }
 
 void ImprimeFranquia(tFranquia f) {
-    f->aproveitamento = (float)((GetVitoriaCasaFranquia(f) + GetVitoriaForaFranquia(f)) * 100) / 
-                        (float)(GetVitoriaCasaFranquia(f) + (GetVitoriaForaFranquia(f) +
-                         GetDerrotaCasaFranquia(f) + GetDerrotaForaFranquia(f)));
+    if ((GetVitoriaCasaFranquia(f) + (GetVitoriaForaFranquia(f) +
+         GetDerrotaCasaFranquia(f) + GetDerrotaForaFranquia(f))) > 0) {
+
+        f->aproveitamento = (float)((GetVitoriaCasaFranquia(f) + GetVitoriaForaFranquia(f)) * 100) / 
+                            (float)(GetVitoriaCasaFranquia(f) + (GetVitoriaForaFranquia(f) +
+                                    GetDerrotaCasaFranquia(f) + GetDerrotaForaFranquia(f)));
+    }
 
     printf("%s ", (*f).nome);
 
