@@ -12,7 +12,7 @@ struct franquia {
     float aproveitamento;
 };
 
-#define MAX_NOME 32 // Tamanho (quantidae de caracteres) máximo do nome de uma franquia;
+#define MAX_NOME 32 // Tamanho (quantidade de caracteres) máximo do nome de uma franquia;
 
 /**
  * @brief Cria (aloca a memória dinamicamente) e lê os dados de uma franquia;
