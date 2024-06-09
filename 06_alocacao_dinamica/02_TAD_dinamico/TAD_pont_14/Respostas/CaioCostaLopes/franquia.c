@@ -86,7 +86,7 @@ void ImprimeFranquia(tFranquia f) {
     if (strcmp(GetConferenciaFranquia(f), "OESTE") == 0) {
         printf("[CO]");
     }else {
-        if (strcmp(GetConferenciaFranquia(f), "OESTE") == 0) {
+        if (strcmp(GetConferenciaFranquia(f), "LESTE") == 0) {
             printf("[CL]");
         }
     }
