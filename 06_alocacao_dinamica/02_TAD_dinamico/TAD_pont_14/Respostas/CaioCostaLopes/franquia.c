@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "franquia.h"
 
 tFranquia LeFranquia() {
@@ -30,7 +31,7 @@ tFranquia LeFranquia() {
     franquia->der_fora = 0;
     franquia->aproveitamento = 0;
 
-    scanf("%s %s\n", &franquia->nome, &franquia->conferencia);
+    scanf("%s %s\n", franquia->nome, franquia->conferencia);
 
     return franquia;
 }
