@@ -40,7 +40,7 @@ char *GetNomeFranquia(tFranquia f) {
     return (*f).nome;
 }
 
-char *GetNomeConferencia(tFranquia f) {
+char *GetConferenciaFranquia(tFranquia f) {
     return (*f).conferencia;
 }
 
@@ -56,7 +56,7 @@ void AdicionaDerrotaCasaFranquia(tFranquia f) {
     f->der_casa += 1;
 }
 
-void AdicionaDerrotaForaaFranquia(tFranquia f) {
+void AdicionaDerrotaForaFranquia(tFranquia f) {
     f->der_fora += 1;
 }
 
