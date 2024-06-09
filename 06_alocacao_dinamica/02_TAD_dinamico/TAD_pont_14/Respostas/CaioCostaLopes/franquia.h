@@ -95,7 +95,7 @@ int GetDerrotaCasaFranquia(tFranquia f);
  * @param f Estrutura (do tipo ponteiro) do tipo "tPonteiro" que contém a quantidade de derrotas de casa que a franquia possui (até o momento);
  * @return int Quantidade de derrotas de casa que a franquia possui (até o momento);
  */
-int GetVitoriaCasaFranquia(tFranquia f);
+int GetDerrotaForaFranquia(tFranquia f);
 
 /**
  * @brief Imprime todos os dados de uma franquia;
