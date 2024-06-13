@@ -7,7 +7,7 @@ int main() {
 
     dracomania = CriaDracomania();
     dracomania = RodaDracomania(dracomania);
-    IMprimeRelatorioDracomania(dracomania);
+    ImprimeRelatorioDracomania(dracomania);
     LiberaDracomania(dracomania);
 
     return 0;
