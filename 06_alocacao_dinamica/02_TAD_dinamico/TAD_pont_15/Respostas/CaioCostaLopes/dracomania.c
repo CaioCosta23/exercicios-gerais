@@ -53,7 +53,7 @@ tDracomania RodaDracomania(tDracomania d) {
                 LiberaDracomania(d);
                 exit(1);
             }
-            if (EhCartaValida == true) {
+            if (EhCartaValida(carta) == true) {
                 if ((*d).maxcartas == (*d).qtdcartas) {
                     d->maxcartas += TAM_LISTA;
                     d->listacartas = (tCarta*)realloc((*d).listacartas, (*d).maxcartas * sizeof(tCarta));
