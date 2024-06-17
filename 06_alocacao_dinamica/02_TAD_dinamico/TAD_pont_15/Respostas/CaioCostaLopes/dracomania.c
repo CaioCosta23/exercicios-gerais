@@ -11,7 +11,7 @@ tDracomania CriaDracomania() {
         exit(1);
     }
 
-    dracomania->listacartas = (tCarta)malloc(TAM_LISTA * sizeof(struct carta));
+    dracomania->listacartas = (tCarta*)malloc(TAM_LISTA * sizeof(tCarta));
     if ((*dracomania).listacartas == NULL) {
         printf("Erro na alocacao de memoria do vetor/lista de cartas do jogo de Dracomania!\n");
         LiberaDracomania(dracomania);
@@ -21,7 +21,7 @@ tDracomania CriaDracomania() {
     dracomania->qtdcartas = 0;
     dracomania->maxcartas = TAM_LISTA;
 
-    dracomania->listaduelos = (tDuelo)malloc(TAM_LISTA * sizeof(struct duelo));
+    dracomania->listaduelos = (tDuelo*)malloc(TAM_LISTA * sizeof(tDuelo));
     if ((*dracomania).listaduelos == NULL) {
         printf("Erro na alocacao de memoria no vetor/lista de duelos do jogo de Dracomania!\n");
         LiberaDracomania(dracomania);
