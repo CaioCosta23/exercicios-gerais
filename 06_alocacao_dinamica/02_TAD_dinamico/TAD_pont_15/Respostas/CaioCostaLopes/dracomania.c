@@ -178,7 +178,7 @@ void LiberaDracomania(tDracomania d) {
             d->listacartas = NULL;
         }
         if ((*d).listaduelos != NULL) {
-            for (l = 0; l < (*d).listaduelos; l++) {
+            for (l = 0; l < (*d).qtdduelos; l++) {
                 LiberaDuelo((*d).listaduelos[l]);
             }
             free((*d).listaduelos);
