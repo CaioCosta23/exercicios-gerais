@@ -149,7 +149,7 @@ void ImprimeRelatorioDracomania(tDracomania d) {
             if (GetDesempateDuelo((*d).listaduelos[l]) == true) {
                 qtdDesempates += 1;
             }
-            if ((l == 0) || (GetDiferencaDuelo((*d).listaduelos[l] < maiorDiferenca))) {
+            if ((l == 0) || (GetDiferencaDuelo((*d).listaduelos[l]) < maiorDiferenca)) {
                 maiorDiferenca = GetDiferencaDuelo((*d).listaduelos[l]);
             }
             
