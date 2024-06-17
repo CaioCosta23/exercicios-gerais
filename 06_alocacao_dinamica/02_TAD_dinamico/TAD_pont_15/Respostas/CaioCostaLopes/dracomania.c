@@ -90,6 +90,15 @@ tDracomania RodaDracomania(tDracomania d) {
                     LiberaDracomania(d);
                     exit(1);
                 }
+                if ((*d).maxduelos == (*d).qtdduelos) {
+                    d->maxduelos += TAM_LISTA;
+                    d->listaduelos = (tDuelo*)realloc((*d).listaduelos, (*d).maxduelos * sizeof(tDuelo));
+                    if ((*d).listaduelos == NULL) {
+                        printf("Erro na realocacao da lista de duelos no duelo %d!\n", ((*d).qtdduelos + 1));
+                        LiberaDracomania(d);
+                        exit(1);
+                    }
+                }
                 if ((*d).qtdcartas > 1) {
                     carta1Encontrada = false;
                     carta2Encontrada = false;
@@ -110,13 +119,6 @@ tDracomania RodaDracomania(tDracomania d) {
                         }
                     }
                     if ((carta1Encontrada == true) && (carta2Encontrada == true)) {
-                        d->maxduelos += TAM_LISTA;
-                        d->listaduelos = (tDuelo*)realloc((*d).listaduelos, (*d).maxduelos * sizeof(tDuelo));
-                        if ((*d).listaduelos == NULL) {
-                            printf("Erro na realocacao da lista de duelos no duelo %d!\n", ((*d).qtdduelos + 1));
-                            LiberaDracomania(d);
-                            exit(1);
-                        }
                         d->listaduelos[(*d).qtdduelos] = duelo;
                         d->qtdduelos += 1;
                     }else {
@@ -143,8 +145,8 @@ void ImprimeRelatorioDracomania(tDracomania d) {
     printf("Quantidade de Cartas: %d\n", (*d).qtdcartas);
     printf("Quantidade de descartadas: %d\n", (*d).descartes);
     printf("Quantidade de lutas: %d\n", (*d).qtdduelos);
-
-    if ((*d).qtdduelos > 0) {
+/*
+    if (((*d).qtdcartas > 1) && ((*d).qtdduelos > 0)) {
         for (l = 0; l < (*d).qtdduelos; l++) {
             if (GetDesempateDuelo((*d).listaduelos[l]) == true) {
                 qtdDesempates += 1;
@@ -164,6 +166,7 @@ void ImprimeRelatorioDracomania(tDracomania d) {
         printf("Carta mais vitoriosa: %s\n", cartaVitoriosa);
         printf("Luta com Maior Diferenca: %d\n", maiorDiferenca);
     }
+    */
 }
 
 void LiberaDracomania(tDracomania d) {
