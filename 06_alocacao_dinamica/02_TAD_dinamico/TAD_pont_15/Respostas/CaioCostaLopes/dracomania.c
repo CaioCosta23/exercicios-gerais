@@ -29,7 +29,7 @@ tDracomania CriaDracomania() {
     }
 
     dracomania->qtdduelos = 0;
-    dracomania->maxduelos = 0;
+    dracomania->maxduelos = TAM_LISTA;
     dracomania->descartes = 0;
 
     return dracomania;
