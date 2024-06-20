@@ -96,8 +96,8 @@ bool EhMesmoIdCarta(tCarta c1, tCarta c2);
  * 
  * @param c1 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o ID (identificador) da primeira carta;
  * @param c2 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o ID (identificador) da segunda carta;
- * @return int Valor negativo se o ID (identificador) da primeira carta for maior que o da segunda, valor positivo se o ID (identificador)
- *  da primeira carta for menor que o da segunda, e 0 se o ID (identificador) das cartas for igual;
+ * @return int Valor negativo se o ID (identificador) da primeira carta for menor que o da segunda, valor positivo se o ID (identificador)
+ *  da primeira carta for maior que o da segunda, e 0 se o ID (identificador) das cartas for igual;
  */
 int ComparaIdCarta(tCarta c1, tCarta c2);
 
@@ -106,8 +106,8 @@ int ComparaIdCarta(tCarta c1, tCarta c2);
  * 
  * @param c1 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o poder de magia da primeira carta;
  * @param c2 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o poder de magia da segunda carta;
- * @return int Valor negativo se o poder de magia da primeira carta for maior que o da segunda, valor positivo se o poder de maigia 
- * da primeira carta for menor que o da segunda, e 0 se o poder de magia das cartas for igual;
+ * @return int Valor negativo se o poder de magia da primeira carta for menor que o da segunda, valor positivo se o poder de maigia 
+ * da primeira carta for maior que o da segunda, e 0 se o poder de magia das cartas for igual;
  */
 int ComparaMagiaCarta(tCarta c1, tCarta c2);
 
@@ -116,8 +116,8 @@ int ComparaMagiaCarta(tCarta c1, tCarta c2);
  * 
  * @param c1 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o poder de ataque da primeira carta;
  * @param c2 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o poder de ataque da segunda carta;
- * @return int Valor negativo se o poder de atauqe da primeira carta for maior que o da segunda, valor positivo se o poder de ataque 
- * da primeira carta for menor que o da segunda, e 0 se o poder de ataque das cartas for igual;
+ * @return int Valor negativo se o poder de atauqe da primeira carta for menor que o da segunda, valor positivo se o poder de ataque 
+ * da primeira carta for maior que o da segunda, e 0 se o poder de ataque das cartas for igual;
  */
 int ComparaAtaqueCarta(tCarta c1, tCarta c2);
 
@@ -126,8 +126,8 @@ int ComparaAtaqueCarta(tCarta c1, tCarta c2);
  * 
  * @param c1 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o poder de fogo da primeira carta;
  * @param c2 Estrutura (do tipo ponteiro) do tipo "tCarta" que contém o poder de fogo da segunda carta;
- * @return int Valor negativo se o poder de fogo da primeira carta for maior que o da segunda, valor positivo se o poder de fogo 
- * da primeira carta for menor que o da segunda, e 0 se o poder de fogo das cartas for igual;
+ * @return int Valor negativo se o poder de fogo da primeira carta for menor que o da segunda, valor positivo se o poder de fogo 
+ * da primeira carta for maior que o da segunda, e 0 se o poder de fogo das cartas for igual;
  */
 int ComparaFogoCarta(tCarta c1, tCarta c2);
 
