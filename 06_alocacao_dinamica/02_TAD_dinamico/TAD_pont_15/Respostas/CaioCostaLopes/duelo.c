@@ -31,16 +31,22 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
     if ((*d).atributo == MAGIA) {
         if (ComparaMagiaCarta(c1, c2) > 0) {
             c1->num_vit = AdicionaVitoriaCarta(c1);
+            d->vencedor = GetIdCarta(c1);
         }else {
             if (ComparaMagiaCarta(c1, c2) < 0) {
                 c2->num_vit = AdicionaVitoriaCarta(c2);
+                d->vencedor = GetIdCarta(c2);
             }else {
-                d->desempate = true;
-                if (ComparaIdCarta(c1, c2) > 0) {
-                    c1->num_vit = AdicionaVitoriaCarta(c1);
-                }else {
+                if (ComparaMagiaCarta(c1, c2) == 0) {
+                    d->desempate = true;
                     if (ComparaIdCarta(c1, c2) < 0) {
-                        c2->num_vit = AdicionaVitoriaCarta(c2);
+                        c1->num_vit = AdicionaVitoriaCarta(c1);
+                        d->vencedor = GetIdCarta(c1);
+                    }else {
+                        if (ComparaIdCarta(c1, c2) > 0) {
+                            c2->num_vit = AdicionaVitoriaCarta(c2);
+                            d->vencedor = GetIdCarta(c2);
+                        }
                     }
                 }
             }
@@ -53,16 +59,22 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
         if ((*d).atributo == FORCA) {
             if (ComparaAtaqueCarta(c1, c2) > 0) {
                 c1->num_vit = AdicionaVitoriaCarta(c1);
+                d->vencedor = GetIdCarta(c1);
             }else {
                 if (ComparaAtaqueCarta(c1, c2) < 0) {
                     c2->num_vit = AdicionaVitoriaCarta(c2);
+                    d->vencedor = GetIdCarta(c2);
                 }else {
-                    d->desempate = true;
-                    if (ComparaIdCarta(c1, c2) > 0) {
-                        c1->num_vit = AdicionaVitoriaCarta(c1);
-                    }else {
+                    if (ComparaAtaqueCarta(c1, c2) == 0) {
+                        d->desempate = true;
                         if (ComparaIdCarta(c1, c2) < 0) {
-                            c2->num_vit = AdicionaVitoriaCarta(c2);
+                            c1->num_vit = AdicionaVitoriaCarta(c1);
+                            d->vencedor = GetIdCarta(c1);
+                        }else {
+                            if (ComparaIdCarta(c1, c2) > 0) {
+                                c2->num_vit = AdicionaVitoriaCarta(c2);
+                                d->vencedor = GetIdCarta(c1);
+                            }
                         }
                     }
                 }
@@ -73,18 +85,24 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
             }
         }else {
             if ((*d).atributo == FOGO) {
-                if (ComparaFogoCarta(c1, c2) > 0) {
+                if (ComparaFogoCarta(c1, c2) < 0) {
                     c1->num_vit = AdicionaVitoriaCarta(c1);
+                    d->vencedor = GetIdCarta(c1);
                 }else {
                     if (ComparaFogoCarta(c1, c2) < 0) {
                         c2->num_vit = AdicionaVitoriaCarta(c2);
+                        d->vencedor = GetIdCarta(c2);
                     }else {
-                        d->desempate = true;
-                        if (ComparaIdCarta(c1, c2) > 0) {
-                            c1->num_vit = AdicionaVitoriaCarta(c1);
-                        }else {
+                        if (ComparaFogoCarta(c1, c2) == 0) {
+                            d->desempate = true;
                             if (ComparaIdCarta(c1, c2) < 0) {
-                                c2->num_vit = AdicionaVitoriaCarta(c2);
+                                c1->num_vit = AdicionaVitoriaCarta(c1);
+                                d->vencedor = GetIdCarta(c1);
+                            }else {
+                                if (ComparaIdCarta(c1, c2) > 0) {
+                                    c2->num_vit = AdicionaVitoriaCarta(c2);
+                                    d->vencedor = GetIdCarta(c2);
+                                }
                             }
                         }
                     }
@@ -120,7 +138,7 @@ int GetIdDuelo(tDuelo d) {
 }
 
 void ImprimeDuelo(tDuelo d) {
-// Função inútilo;
+// Função inútil;
 }
 
 void LiberaDuelo(tDuelo d) {
