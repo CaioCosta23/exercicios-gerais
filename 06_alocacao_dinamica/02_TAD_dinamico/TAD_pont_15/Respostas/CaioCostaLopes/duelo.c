@@ -39,7 +39,7 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
                 if (ComparaIdCarta(c1, c2) > 0) {
                     c1->num_vit = AdicionaVitoriaCarta(c1);
                 }else {
-                    if (ComparaidCarta(c1, c2) < 0) {
+                    if (ComparaIdCarta(c1, c2) < 0) {
                         c2->num_vit = AdicionaVitoriaCarta(c2);
                     }
                 }
@@ -61,7 +61,7 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
                     if (ComparaIdCarta(c1, c2) > 0) {
                         c1->num_vit = AdicionaVitoriaCarta(c1);
                     }else {
-                        if (ComparaidCarta(c1, c2) < 0) {
+                        if (ComparaIdCarta(c1, c2) < 0) {
                             c2->num_vit = AdicionaVitoriaCarta(c2);
                         }
                     }
@@ -83,7 +83,7 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
                         if (ComparaIdCarta(c1, c2) > 0) {
                             c1->num_vit = AdicionaVitoriaCarta(c1);
                         }else {
-                            if (ComparaidCarta(c1, c2) < 0) {
+                            if (ComparaIdCarta(c1, c2) < 0) {
                                 c2->num_vit = AdicionaVitoriaCarta(c2);
                             }
                         }
@@ -111,7 +111,9 @@ bool GetDesempateDuelo (tDuelo d) {
     return (*d).desempate;
 }
 
-
+int GetDiferencaDuelo(tDuelo d) {
+    return (*d).diferenca;
+}
 
 int GetIdDuelo(tDuelo d) {
     return  (*d).id;
