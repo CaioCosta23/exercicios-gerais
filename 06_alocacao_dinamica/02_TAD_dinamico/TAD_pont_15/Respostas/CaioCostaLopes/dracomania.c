@@ -135,8 +135,8 @@ tDracomania RodaDracomania(tDracomania d) {
 }
 
 void ImprimeRelatorioDracomania(tDracomania d) {
-    int l, c, maisVitorias, maiorDiferenca, cartaVitoriosa;
-    int qtdDesempates = 0;
+    int l, c, maisVitorias, cartaVitoriosa, lutaMaiorDiferenca;
+    int qtdDesempates = 0, maiorDiferenca = 0;
 
     printf("Quantidade de Cartas: %d\n", (*d).qtdcartas);
     printf("Quantidade de descartadas: %d\n", (*d).descartes);
@@ -148,7 +148,8 @@ void ImprimeRelatorioDracomania(tDracomania d) {
                 qtdDesempates += 1;
             }
             if ((l == 0) || (GetDiferencaDuelo((*d).listaduelos[l]) < maiorDiferenca)) {
-                maiorDiferenca = GetIdDuelo((*d).listaduelos[l]);
+                maiorDiferenca = GetDiferencaDuelo((*d).listaduelos[l]);
+                lutaMaiorDiferenca = GetIdDuelo((*d).listaduelos[l]);
             }
             
         }
@@ -161,7 +162,7 @@ void ImprimeRelatorioDracomania(tDracomania d) {
             }
         }
         printf("Carta mais vitoriosa: %s\n", GetNomeCarta((*d).listacartas[cartaVitoriosa]));
-        printf("Luta com Maior Diferenca: %d\n", maiorDiferenca);
+        printf("Luta com Maior Diferenca: %d\n", lutaMaiorDiferenca);
     }
 }
 
