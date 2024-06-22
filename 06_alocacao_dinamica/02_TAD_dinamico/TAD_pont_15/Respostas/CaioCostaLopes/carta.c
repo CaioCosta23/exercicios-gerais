@@ -92,7 +92,7 @@ int AdicionaVitoriaCarta(tCarta c) {
 }
 
 void ImprimeCarta(tCarta c) {
-    printf("%s\n", GetNomeCarta(c));
+    // Função Inútil (Útil somente para testes);
 }
 
 void LiberaCarta(tCarta c) {
