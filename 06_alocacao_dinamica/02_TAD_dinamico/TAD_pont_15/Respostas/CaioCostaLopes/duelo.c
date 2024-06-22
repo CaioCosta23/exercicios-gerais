@@ -128,7 +128,16 @@ int GetIdDuelo(tDuelo d) {
 }
 
 void ImprimeDuelo(tDuelo d) {
-// Função inútil;
+    // Função inútil (Apenas para testes);
+    
+    /*
+    printf("\nID da Luta: %d\n", (*d).id);
+    printf("ID da Carta 1: %d\n", (*d).c1);
+    printf("ID da Carta 2: %d\n", (*d).c2);
+    printf("ID do vencedor: %d\n", (*d).vencedor);
+    printf("Diferenca da Luta: %d\n", (*d).diferenca);
+    printf("Atributo da luta: %c\n\n", (*d).atributo);
+    */
 }
 
 void LiberaDuelo(tDuelo d) {

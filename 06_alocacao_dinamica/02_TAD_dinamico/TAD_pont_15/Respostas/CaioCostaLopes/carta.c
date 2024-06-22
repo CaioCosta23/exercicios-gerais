@@ -92,7 +92,17 @@ int AdicionaVitoriaCarta(tCarta c) {
 }
 
 void ImprimeCarta(tCarta c) {
-    // Função Inútil (Útil somente para testes);
+    // Função Obsoleta (Útil apenas para testes);
+
+    /*
+    printf("ID (Identificador) da carta: %d\n", GetIdCarta(c));
+    printf("Nome da Carta: %s\n", GetNomeCarta(c));
+    printf("Magia: %d\n", GetMagiaCarta(c));
+    printf("Ataque: %d\n", GetAtaqueCarta(c));
+    printf("Fogo: %d\n", GetFogoCarta(c));
+    printf("Número de Duelos: %d\n", (*c).num_duelos);
+    printf("Numero de Vitorias: %d\n", GetNumVitCarta(c));
+    */
 }
 
 void LiberaCarta(tCarta c) {
