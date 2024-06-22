@@ -85,7 +85,7 @@ tDracomania RodaDracomania(tDracomania d) {
                 if (acao == LUTAR) {
                     duelo = LeDuelo();
                     if (duelo == NULL) {
-                        printf("%d!\n");
+                        printf("%d!\n", ((*d).qtdduelos + 1));
                         LiberaDracomania(d);
                         exit(1);
                     }
