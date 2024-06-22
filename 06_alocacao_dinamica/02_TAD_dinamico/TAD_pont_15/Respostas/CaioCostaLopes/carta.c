@@ -26,7 +26,7 @@ tCarta LeCarta() {
 
     scanf("%d\n", &carta->id);
     scanf("%[^\n]\n", carta->nome);
-    scanf("%d %d %d\n", &carta->magia, &carta->ataque, &carta->fogo);
+    scanf("%d %d %d", &carta->magia, &carta->ataque, &carta->fogo);
 
     return carta;
 }
@@ -71,51 +71,19 @@ bool EhMesmoIdCarta(tCarta c1, tCarta c2) {
 }
 
 int ComparaIdCarta(tCarta c1, tCarta c2) {
-    if (GetIdCarta(c1) < GetIdCarta(c2)) {
-        return -1;
-    }else {
-        if (GetIdCarta(c1) > GetIdCarta(c2)) {
-            return 1;
-        }else {
-            return 0;
-        }
-    }
+    return (GetIdCarta(c1) - GetIdCarta(c2));
 }
 
 int ComparaMagiaCarta(tCarta c1, tCarta c2) {
-    if (GetMagiaCarta(c1) < GetMagiaCarta(c2)) {
-        return -1;
-    }else {
-        if (GetMagiaCarta(c1) > GetMagiaCarta(c2)) {
-            return 1;
-        }else {
-            return 0;
-        }
-    }
+    return (GetMagiaCarta(c1) - GetMagiaCarta(c2));
 }
 
 int ComparaAtaqueCarta(tCarta c1, tCarta c2) {
-    if (GetAtaqueCarta(c1) < GetAtaqueCarta(c2)) {
-        return -1;
-    }else {
-        if (GetAtaqueCarta(c1) > GetAtaqueCarta(c2)) {
-            return 1;
-        }else {
-            return 0;
-        }
-    }
+    return (GetAtaqueCarta(c1) < GetAtaqueCarta(c2));
 }
 
 int ComparaFogoCarta(tCarta c1, tCarta c2) {
-    if (GetFogoCarta(c1) < GetFogoCarta(c2)) {
-        return -1;
-    }else {
-        if (GetFogoCarta(c1) > GetFogoCarta(c2)) {
-            return 1;
-        }else {
-            return 0;
-        }
-    }
+    return (GetFogoCarta(c1) < GetFogoCarta(c2));
 }
 
 int AdicionaVitoriaCarta(tCarta c) {
