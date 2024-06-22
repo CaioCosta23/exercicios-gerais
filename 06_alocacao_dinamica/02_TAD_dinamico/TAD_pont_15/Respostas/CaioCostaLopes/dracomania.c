@@ -103,7 +103,6 @@ tDracomania RodaDracomania(tDracomania d) {
                         carta2Encontrada = false;
                         for (c = 0; c < (*d).qtdcartas; c++) {
                             if ((carta1Encontrada == true) && (carta2Encontrada == true)) {
-                                RealizaDuelo(duelo, (*d).listacartas[posicaoCarta1], (*d).listacartas[posicaoCarta2]);
                                 break;
                             }
 
@@ -119,7 +118,8 @@ tDracomania RodaDracomania(tDracomania d) {
                             }
                         }
                         if ((carta1Encontrada == true) && (carta2Encontrada == true)) {
-                            d->listaduelos[(*d).qtdduelos];
+                            RealizaDuelo(duelo, (*d).listacartas[posicaoCarta1], (*d).listacartas[posicaoCarta2]);
+                            d->listaduelos[(*d).qtdduelos] = duelo;
                             d->qtdduelos += 1;
                         }else {
                             LiberaDuelo(duelo);
@@ -147,7 +147,7 @@ void ImprimeRelatorioDracomania(tDracomania d) {
             if (GetDesempateDuelo((*d).listaduelos[l]) == true) {
                 qtdDesempates += 1;
             }
-            if ((l == 0) || (GetDiferencaDuelo((*d).listaduelos[l]) < maiorDiferenca)) {
+            if ((l == 0) || (GetDiferencaDuelo((*d).listaduelos[l]) > maiorDiferenca)) {
                 maiorDiferenca = GetDiferencaDuelo((*d).listaduelos[l]);
                 lutaMaiorDiferenca = GetIdDuelo((*d).listaduelos[l]);
             }
@@ -155,7 +155,7 @@ void ImprimeRelatorioDracomania(tDracomania d) {
         }
         printf("Lutas que foram desempatadas: %d\n", qtdDesempates);
         for (c = 0; c < (*d).qtdcartas; c++) {
-            if ((c == 0) || (GetNumVitCarta((*d).listacartas[c]) < maisVitorias)) {
+            if ((c == 0) || (GetNumVitCarta((*d).listacartas[c]) > maisVitorias)) {
                 maisVitorias = GetNumVitCarta((*d).listacartas[c]);
                 cartaVitoriosa = c;
                 
