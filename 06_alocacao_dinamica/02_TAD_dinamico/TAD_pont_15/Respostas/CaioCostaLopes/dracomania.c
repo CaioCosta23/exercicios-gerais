@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "dracomania.h"
 
 tDracomania CriaDracomania() {
@@ -11,6 +10,12 @@ tDracomania CriaDracomania() {
         exit(1);
     }
 
+    dracomania->qtdcartas = 0;
+    dracomania->maxcartas = TAM_LISTA;
+    dracomania->qtdduelos = 0;
+    dracomania->maxduelos = TAM_LISTA;
+    dracomania->descartes = 0;
+
     dracomania->listacartas = (tCarta*)malloc(TAM_LISTA * sizeof(tCarta));
     if ((*dracomania).listacartas == NULL) {
         printf("Erro na alocacao de memoria do vetor/lista de cartas do jogo de Dracomania!\n");
@@ -18,20 +23,12 @@ tDracomania CriaDracomania() {
         exit(1);
     }
 
-    dracomania->qtdcartas = 0;
-    dracomania->maxcartas = TAM_LISTA;
-
     dracomania->listaduelos = (tDuelo*)malloc(TAM_LISTA * sizeof(tDuelo));
     if ((*dracomania).listaduelos == NULL) {
         printf("Erro na alocacao de memoria no vetor/lista de duelos do jogo de Dracomania!\n");
         LiberaDracomania(dracomania);
         exit(1);
     }
-
-    dracomania->qtdduelos = 0;
-    dracomania->maxduelos = TAM_LISTA;
-    dracomania->descartes = 0;
-
     return dracomania;
 }
 
@@ -43,93 +40,93 @@ tDracomania RodaDracomania(tDracomania d) {
     tDuelo duelo;
 
     while (1) {
-        scanf("%c\n", &acao);
-        
-        if (acao == CADASTRAR) {
-            carta = LeCarta();
+        scanf("%c", &acao);
 
-            if (carta == NULL) {
-                printf("%d!\n", ((*d).qtdcartas + 1));
-                LiberaDracomania(d);
-                exit(1);
-            }
-            if (EhCartaValida(carta) == true) {
-                if ((*d).maxcartas == (*d).qtdcartas) {
-                    d->maxcartas += TAM_LISTA;
-                    d->listacartas = (tCarta*)realloc((*d).listacartas, (*d).maxcartas * sizeof(tCarta));
-                    if (d->listacartas == NULL) {
-                        printf("Erro na realocacao no vetor/lista de cartas na carta %d!\n", (*d).qtdcartas);
-                        LiberaDracomania(d);
-                        exit(1);
-                    }
+        if (acao == FINALIZAR) {
+            break;
+        }else {
+            if (acao == CADASTRAR) {
+                carta = LeCarta();
+                if (carta == NULL) {
+                    printf("%d!", ((*d).qtdcartas + 1));
+                    LiberaDracomania(d);
+                    exit(1);
                 }
-                if ((*d).qtdcartas > 0) {
+                if (EhCartaValida(carta) == true) {
+                    if ((*d).qtdcartas == (*d).maxcartas) {
+                        d->maxcartas += TAM_LISTA;
+                        d->listacartas = (tCarta*)realloc((*d).listacartas, (*d).maxcartas * sizeof(tCarta));
+                        if ((*d).listacartas == NULL) {
+                            printf("Erro na realocacao de memoria do vetor/lista de cartas!\n");
+                            LiberaDracomania(d);
+                            exit(1);
+                        }
+                    }
                     jaExiste = false;
                     for (c = 0; c < (*d).qtdcartas; c++) {
-                        if (EhMesmoIdCarta(carta, (*d).listacartas[c])) {
-                            d->listacartas[c] = carta;
+                        if (EhMesmoIdCarta(carta, (*d).listacartas[c]) == true) {
                             jaExiste = true;
                             break;
                         }
                     }
-                    if (jaExiste == true) {
-                        continue;
+                    if (jaExiste == false) {
+                        d->listacartas[(*d).qtdcartas] = carta;
+                        d->qtdcartas += 1;
+                    }else {
+                        LiberaCarta((*d).listacartas[c]);
+                        d->listacartas[c] = NULL;
+                        d->listacartas[c] = carta;
                     }
+
+                }else {
+                    LiberaCarta(carta);
                 }
-                d->listacartas[(*d).qtdcartas] = carta;
-                d->qtdcartas += 1;
             }else {
-                d->descartes += 1;
-                LiberaCarta(carta);
-            }
-        }else {
-            if (acao == LUTAR) {
-                duelo = LeDuelo();
-                if (duelo == NULL) {
-                    printf("%d!\n", ((*d).qtdduelos + 1));
-                    LiberaDracomania(d);
-                    exit(1);
-                }
-                if ((*d).maxduelos == (*d).qtdduelos) {
-                    d->maxduelos += TAM_LISTA;
-                    d->listaduelos = (tDuelo*)realloc((*d).listaduelos, (*d).maxduelos * sizeof(tDuelo));
-                    if ((*d).listaduelos == NULL) {
-                        printf("Erro na realocacao da lista de duelos no duelo %d!\n", ((*d).qtdduelos + 1));
+                if (acao == LUTAR) {
+                    duelo = LeDuelo();
+                    if (duelo == NULL) {
+                        printf("%d!\n");
                         LiberaDracomania(d);
                         exit(1);
                     }
-                }
-                if ((*d).qtdcartas > 1) {
-                    carta1Encontrada = false;
-                    carta2Encontrada = false;
-                    for (c = 0; c < (*d).qtdcartas; c++) {
+                    if ((*d).qtdcartas > 1) {
+                        if ((*d).maxduelos == (*d).qtdduelos) {
+                            d->maxduelos += TAM_LISTA;
+                            d->listaduelos = (tDuelo*)realloc((*d).listaduelos, (*d).maxduelos * sizeof(tDuelo));
+                            if ((*d).listaduelos == NULL) {
+                                printf("Erro na realocacao de memoria do vetor/lista de duelos!\n");
+                                LiberaDracomania(d);
+                                exit(1);
+                            }
+                        }
+                        carta1Encontrada = false;
+                        carta2Encontrada = false;
+                        for (c = 0; c < (*d).qtdcartas; c++) {
+                            if ((carta1Encontrada == true) && (carta2Encontrada == true)) {
+                                RealizaDuelo(duelo, (*d).listacartas[posicaoCarta1], (*d).listacartas[posicaoCarta2]);
+                                break;
+                            }
+
+                            if ((GetC1Duelo(duelo) == GetIdCarta((*d).listacartas[c])) && carta1Encontrada == false) {
+                                carta1Encontrada = true;
+                                posicaoCarta1 = c;
+                                continue;
+                            }
+                            if ((GetC2Duelo(duelo) == GetIdCarta((*d).listacartas[c])) && carta2Encontrada == false) {
+                                carta2Encontrada = true;
+                                posicaoCarta2 = c;
+                                continue;
+                            }
+                        }
                         if ((carta1Encontrada == true) && (carta2Encontrada == true)) {
-                            RealizaDuelo(duelo, (*d).listacartas[posicaoCarta1], (*d).listacartas[posicaoCarta2]);
-                            break;
+                            d->listaduelos[(*d).qtdduelos];
+                            d->qtdduelos += 1;
+                        }else {
+                            LiberaDuelo(duelo);
                         }
-                        if ((carta1Encontrada == false) && (GetC1Duelo(duelo) == GetIdCarta((*d).listacartas[c]))) {
-                            carta1Encontrada = true;
-                            posicaoCarta1 = c;
-                            continue;
-                        }
-                        if ((carta2Encontrada == false) && (GetC2Duelo(duelo) == GetIdCarta((*d).listacartas[c]))) {
-                            carta2Encontrada = true;
-                            posicaoCarta2 = c;
-                            continue;
-                        }
-                    }
-                    if ((carta1Encontrada == true) && (carta2Encontrada == true)) {
-                        d->listaduelos[(*d).qtdduelos] = duelo;
-                        d->qtdduelos += 1;
                     }else {
                         LiberaDuelo(duelo);
                     }
-                }else {
-                    LiberaDuelo(duelo);
-                }
-            }else {
-                if (acao == FINALIZAR) {
-                    break;
                 }
             }
         }
@@ -138,21 +135,20 @@ tDracomania RodaDracomania(tDracomania d) {
 }
 
 void ImprimeRelatorioDracomania(tDracomania d) {
-    int l, c, maisVitorias, maiorDiferenca;
+    int l, c, maisVitorias, maiorDiferenca, cartaVitoriosa;
     int qtdDesempates = 0;
-    char cartaVitoriosa[MAX_NOME];
 
     printf("Quantidade de Cartas: %d\n", (*d).qtdcartas);
     printf("Quantidade de descartadas: %d\n", (*d).descartes);
     printf("Quantidade de lutas: %d\n", (*d).qtdduelos);
-/*
-    if (((*d).qtdcartas > 1) && ((*d).qtdduelos > 0)) {
+
+    if (((*d).qtdduelos > 0)) {
         for (l = 0; l < (*d).qtdduelos; l++) {
             if (GetDesempateDuelo((*d).listaduelos[l]) == true) {
                 qtdDesempates += 1;
             }
             if ((l == 0) || (GetDiferencaDuelo((*d).listaduelos[l]) < maiorDiferenca)) {
-                maiorDiferenca = GetDiferencaDuelo((*d).listaduelos[l]);
+                maiorDiferenca = GetIdDuelo((*d).listaduelos[l]);
             }
             
         }
@@ -160,13 +156,13 @@ void ImprimeRelatorioDracomania(tDracomania d) {
         for (c = 0; c < (*d).qtdcartas; c++) {
             if ((c == 0) || (GetNumVitCarta((*d).listacartas[c]) < maisVitorias)) {
                 maisVitorias = GetNumVitCarta((*d).listacartas[c]);
-                strcpy(cartaVitoriosa, GetNomeCarta((*d).listacartas[c]));
+                cartaVitoriosa = c;
+                
             }
         }
-        printf("Carta mais vitoriosa: %s\n", cartaVitoriosa);
+        printf("Carta mais vitoriosa: %s\n", GetNomeCarta((*d).listacartas[cartaVitoriosa]));
         printf("Luta com Maior Diferenca: %d\n", maiorDiferenca);
     }
-    */
 }
 
 void LiberaDracomania(tDracomania d) {
@@ -174,18 +170,18 @@ void LiberaDracomania(tDracomania d) {
 
     if (d != NULL) {
         if ((*d).listacartas != NULL) {
+            if ((*d).listaduelos != NULL) {
+                for (l = 0; l < (*d).qtdduelos; l++) {
+                    LiberaDuelo((*d).listaduelos[l]);
+                }
+                free((*d).listaduelos);
+                d->listaduelos = NULL;
+            }
             for (c = 0; c < (*d).qtdcartas; c++) {
                 LiberaCarta((*d).listacartas[c]);
             }
             free((*d).listacartas);
             d->listacartas = NULL;
-        }
-        if ((*d).listaduelos != NULL) {
-            for (l = 0; l < (*d).qtdduelos; l++) {
-                LiberaDuelo((*d).listaduelos[l]);
-            }
-            free((*d).listaduelos);
-            d->listaduelos = NULL;
         }
         d = NULL;
     }
