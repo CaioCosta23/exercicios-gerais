@@ -80,23 +80,23 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
         }else {
             if ((*d).atributo == FOGO) {
                 if (ComparaFogoCarta(c1, c2) > 0) {
-                    d->vencedor = GetC1Duelo(c1);
+                    d->vencedor = GetC1Duelo(d);
                     d->diferenca = ComparaFogoCarta(c1, c2);
                     c1->num_vit = AdicionaVitoriaCarta(c1);
                 }else {
                     if (ComparaFogoCarta < 0) {
-                        d->vencedor = GetC2Duelo(c2);
+                        d->vencedor = GetC2Duelo(d);
                         d->diferenca = (ComparaFogoCarta(c1, c2) * (-1));
                         c2->num_vit = AdicionaVitoriaCarta(c2);
                     }else {
                         d->desempate = true;
                         d->diferenca = 0;
                         if (ComparaIdCarta(c1, c2) < 0) {
-                            d->vencedor = GetC1Duelo(c1);
+                            d->vencedor = GetC1Duelo(d);
                             c1->num_vit = AdicionaVitoriaCarta(c1);
                         }else {
                             if (ComparaIdCarta(c1, c2) > 0) {
-                                d->vencedor = GetC2Duelo(c2);
+                                d->vencedor = GetC2Duelo(d);
                                 c2->num_vit = AdicionaVitoriaCarta(c2);
                             }
                         }
