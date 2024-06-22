@@ -26,7 +26,7 @@ tCarta LeCarta() {
 
     scanf("%d\n", &carta->id);
     scanf("%[^\n]\n", carta->nome);
-    scanf("%d %d %d", &carta->magia, &carta->ataque, &carta->fogo);
+    scanf("%d %d %d\n", &carta->magia, &carta->ataque, &carta->fogo);
 
     return carta;
 }
@@ -79,11 +79,11 @@ int ComparaMagiaCarta(tCarta c1, tCarta c2) {
 }
 
 int ComparaAtaqueCarta(tCarta c1, tCarta c2) {
-    return (GetAtaqueCarta(c1) < GetAtaqueCarta(c2));
+    return (GetAtaqueCarta(c1) - GetAtaqueCarta(c2));
 }
 
 int ComparaFogoCarta(tCarta c1, tCarta c2) {
-    return (GetFogoCarta(c1) < GetFogoCarta(c2));
+    return (GetFogoCarta(c1) - GetFogoCarta(c2));
 }
 
 int AdicionaVitoriaCarta(tCarta c) {
