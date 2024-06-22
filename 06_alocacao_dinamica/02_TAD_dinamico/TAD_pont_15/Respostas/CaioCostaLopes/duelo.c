@@ -30,91 +30,81 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
 
     if ((*d).atributo == MAGIA) {
         if (ComparaMagiaCarta(c1, c2) > 0) {
+            d->vencedor = GetC1Duelo(d);
             c1->num_vit = AdicionaVitoriaCarta(c1);
-            d->vencedor = GetIdCarta(c1);
+            d->diferenca = ComparaMagiaCarta(c1, c2);
         }else {
             if (ComparaMagiaCarta(c1, c2) < 0) {
+                d->vencedor = GetC2Duelo(d);
+                d->diferenca = (ComparaMagiaCarta(c1, c2) * (-1));
                 c2->num_vit = AdicionaVitoriaCarta(c2);
-                d->vencedor = GetIdCarta(c2);
             }else {
-                if (ComparaMagiaCarta(c1, c2) == 0) {
-                    d->desempate = true;
-                    if (ComparaIdCarta(c1, c2) < 0) {
-                        c1->num_vit = AdicionaVitoriaCarta(c1);
-                        d->vencedor = GetIdCarta(c1);
-                    }else {
-                        if (ComparaIdCarta(c1, c2) > 0) {
-                            c2->num_vit = AdicionaVitoriaCarta(c2);
-                            d->vencedor = GetIdCarta(c2);
-                        }
+                d->desempate = true;
+                d->diferenca = 0;
+                if (ComparaIdCarta(c1, c2) < 0) {
+                    d->vencedor = GetC1Duelo(d);
+                    c1->num_vit = AdicionaVitoriaCarta(c1);
+                }else {
+                    if (ComparaIdCarta(c1, c2) > 0) {
+                        d->vencedor = GetC2Duelo(d);
+                        c2->num_vit = AdicionaVitoriaCarta(c2);
                     }
                 }
             }
-        }
-        d->diferenca = ComparaMagiaCarta(c1, c2);
-        if ((*d).diferenca < 0) {
-            d->diferenca = (*d).diferenca * (-1);
         }
     }else {
         if ((*d).atributo == FORCA) {
             if (ComparaAtaqueCarta(c1, c2) > 0) {
+                d->vencedor = GetC1Duelo(d);
+                d->diferenca = ComparaAtaqueCarta(c1, c2);
                 c1->num_vit = AdicionaVitoriaCarta(c1);
-                d->vencedor = GetIdCarta(c1);
             }else {
                 if (ComparaAtaqueCarta(c1, c2) < 0) {
+                    d->vencedor = GetC2Duelo(d);
+                    d->diferenca = (ComparaAtaqueCarta(c1, c2) * (-1));
                     c2->num_vit = AdicionaVitoriaCarta(c2);
-                    d->vencedor = GetIdCarta(c2);
                 }else {
-                    if (ComparaAtaqueCarta(c1, c2) == 0) {
-                        d->desempate = true;
-                        if (ComparaIdCarta(c1, c2) < 0) {
-                            c1->num_vit = AdicionaVitoriaCarta(c1);
-                            d->vencedor = GetIdCarta(c1);
-                        }else {
-                            if (ComparaIdCarta(c1, c2) > 0) {
-                                c2->num_vit = AdicionaVitoriaCarta(c2);
-                                d->vencedor = GetIdCarta(c1);
-                            }
+                    d->desempate = true;
+                    d->diferenca = 0;
+                    if (ComparaIdCarta(c1, c2) < 0) {
+                        d->vencedor = GetC1Duelo(d);
+                        c1->num_vit = AdicionaVitoriaCarta(c1);
+                    }else {
+                        if (ComparaIdCarta(c1, c2) > 0) {
+                            d->vencedor = GetC2Duelo(d);
+                            c2->num_vit = AdicionaVitoriaCarta(c2);
                         }
                     }
                 }
-            }
-            d->diferenca = ComparaAtaqueCarta(c1, c2);
-            if ((*d).diferenca < 0) {
-                d->diferenca = (*d).diferenca * (-1);
             }
         }else {
             if ((*d).atributo == FOGO) {
-                if (ComparaFogoCarta(c1, c2) < 0) {
+                if (ComparaFogoCarta(c1, c2) > 0) {
+                    d->vencedor = GetC1Duelo(c1);
+                    d->diferenca = ComparaFogoCarta(c1, c2);
                     c1->num_vit = AdicionaVitoriaCarta(c1);
-                    d->vencedor = GetIdCarta(c1);
                 }else {
-                    if (ComparaFogoCarta(c1, c2) < 0) {
+                    if (ComparaFogoCarta < 0) {
+                        d->vencedor = GetC2Duelo(c2);
+                        d->diferenca = (ComparaFogoCarta(c1, c2) * (-1));
                         c2->num_vit = AdicionaVitoriaCarta(c2);
-                        d->vencedor = GetIdCarta(c2);
                     }else {
-                        if (ComparaFogoCarta(c1, c2) == 0) {
-                            d->desempate = true;
-                            if (ComparaIdCarta(c1, c2) < 0) {
-                                c1->num_vit = AdicionaVitoriaCarta(c1);
-                                d->vencedor = GetIdCarta(c1);
-                            }else {
-                                if (ComparaIdCarta(c1, c2) > 0) {
-                                    c2->num_vit = AdicionaVitoriaCarta(c2);
-                                    d->vencedor = GetIdCarta(c2);
-                                }
+                        d->desempate = true;
+                        d->diferenca = 0;
+                        if (ComparaIdCarta(c1, c2) < 0) {
+                            d->vencedor = GetC1Duelo(c1);
+                            c1->num_vit = AdicionaVitoriaCarta(c1);
+                        }else {
+                            if (ComparaIdCarta(c1, c2) > 0) {
+                                d->vencedor = GetC2Duelo(c2);
+                                c2->num_vit = AdicionaVitoriaCarta(c2);
                             }
                         }
                     }
-                }
-                d->diferenca = ComparaFogoCarta(c1, c2);
-                if ((*d).diferenca < 0) {
-                    d->diferenca = (*d).diferenca * (-1);
                 }
             }
         }
     }
-
 }
 
 int GetC1Duelo(tDuelo d) {
@@ -134,7 +124,7 @@ int GetDiferencaDuelo(tDuelo d) {
 }
 
 int GetIdDuelo(tDuelo d) {
-    return  (*d).id;
+    return (*d).id;
 }
 
 void ImprimeDuelo(tDuelo d) {
