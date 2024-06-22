@@ -184,6 +184,7 @@ void LiberaDracomania(tDracomania d) {
             free((*d).listacartas);
             d->listacartas = NULL;
         }
+        free(d);
         d = NULL;
     }
 }
