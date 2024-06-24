@@ -61,7 +61,7 @@ tData *GetNascimentoPaciente(tPaciente *p);
  * 
  * @param p Ponteiro para a estrutura do tipo "tPaciente" que contém os dados de um paciente;
  */
-void AdicionaLesaoPaciente(tPaciente *p);
+void AdicionaLesaoPaciente(tPaciente *p, tLesao *l);
 
 /**
  * @brief Imprime os dados de um paciente;
