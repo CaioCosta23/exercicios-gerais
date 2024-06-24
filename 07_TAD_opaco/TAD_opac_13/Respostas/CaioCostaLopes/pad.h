@@ -6,7 +6,7 @@
 
 #define DIA_PAD 15 // Dia limite de preenchimento do P.A.D;
 #define MES_PAD 10 // Mês limite de preenchimento do P.A.D
-#define ANO_PAD // Ano de preenchimento do P.A.D
+#define ANO_PAD 2023 // Ano de preenchimento do P.A.D
 
 typedef struct pad tPad;
 
