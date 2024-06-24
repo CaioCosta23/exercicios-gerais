@@ -1,6 +1,9 @@
 #ifndef _pad
 #define _pad
 
+#include "paciente.h"
+#include "lesao.h"
+
 #define DIA_PAD 15 // Dia limite de preenchimento do P.A.D;
 #define MES_PAD 10 // Mês limite de preenchimento do P.A.D
 #define ANO_PAD // Ano de preenchimento do P.A.D
