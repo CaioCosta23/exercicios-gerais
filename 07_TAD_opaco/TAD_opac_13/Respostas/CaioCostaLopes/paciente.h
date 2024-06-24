@@ -6,7 +6,7 @@
 
 #define TAM_NOME 100 // Quantidade máxima de caracteres do nome de um paciente;
 #define TAM_CSUS 19 // Quantidade máxima de caracteres do cartão do SUS do paciente;
-#define QTD_LESAO // Quantidade máxima de lesões que um paciente pode ter;
+#define QTD_LESAO 10 // Quantidade máxima de lesões que um paciente pode ter;
 
 typedef struct paciente tPaciente;
 
