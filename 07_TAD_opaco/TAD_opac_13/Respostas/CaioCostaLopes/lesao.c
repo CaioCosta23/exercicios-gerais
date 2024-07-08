@@ -6,7 +6,7 @@ struct lesao {
     char *id;
     char *diagnostico;
     char *regiaoCorpo;
-    char *chanceMalignidade;
+    int chanceMalignidade;
 };
 
 tLesao *CriaLesao() {
