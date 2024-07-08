@@ -54,7 +54,7 @@ void LePaciente(tPaciente *p) {
 
     if ((*p).nascimento != NULL) {
         scanf("%[^\n]\n", p->cartaoSus);
-        scanf("%c", p->genero);
+        scanf("%c", &p->genero);
     }
 }
 
@@ -71,11 +71,11 @@ int GetQtdCirurgiasPaciente(tPaciente *p) {
     int qtdCirurgias = 0;
 
     for (l = 0; l < (*p).qtdLesoes; l++) {
-        if (PrecisaCirurgiasLesao((*p).listaLesoes[l])) {
+        if (PrecisaCirurgiaLesao((*p).listaLesoes[l])) {
             qtdCirurgias += 1;
         }
     }
-    return (*p).nascimento;
+    return qtdCirurgias;
 }
 
 tData *GetNascimentoPaciente(tPaciente *p) {
