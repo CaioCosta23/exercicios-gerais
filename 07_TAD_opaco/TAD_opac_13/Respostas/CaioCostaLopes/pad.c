@@ -54,13 +54,13 @@ void RodaPad(tPad *p) {
             if (acao == 'P') {
                 p->listaPacientes[(*p).qtdPacientes] = CriaPaciente();
                 VerificaSituacaoPaciente(p);
-                LePaciente(p);
+                LePaciente((*p).listaPacientes[(*p).qtdPacientes]);
                 VerificaSituacaoPaciente(p);
             }else {
                 if (acao == 'L') {
                     scanf("%[^\n]\n", listaCartoes[qtdCartoes]);
                     lesao[qtdCartoes] = CriaLesao();
-                    VerificaSituacao(p, lesao[qtdCartoes]);
+                    VerificaSituacaoLesao(p, lesao[qtdCartoes]);
                     LeLesao(lesao[qtdCartoes]);
                     VerificaSituacaoLesao(p, lesao[qtdCartoes]);
 
@@ -94,7 +94,7 @@ void ImprimeRelatorioPad(tPad *p) {
         for (l = 0; l < (*p).qtdPacientes; l++) {
             somaIdades += CalculaIdadeData(GetNascimentoPaciente((*p).listaPacientes[l]), dataLimite);
             totalLesoes += GetQtdLesoesPaciente((*p).listaPacientes[l]);
-            totalCirurgias += GetQtdCirurgias((*p).listaPacientes[l]);
+            totalCirurgias += GetQtdCirurgiasPaciente((*p).listaPacientes[l]);
         }
         mediaIdades = (somaIdades / (*p).qtdPacientes);
         LiberaData(dataLimite);
