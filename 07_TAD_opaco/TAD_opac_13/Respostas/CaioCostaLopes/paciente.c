@@ -58,7 +58,7 @@ void LePaciente(tPaciente *p) {
     }
 }
 
-char *GetcartaoSusPaciente(tPaciente *p) {
+char *GetCartaoSusPaciente(tPaciente *p) {
     return (*p).cartaoSus;
 }
 
