@@ -1,6 +1,6 @@
 all: geraos geraexe
 
-geraos: main.c pad.c pacinete.c lesao.c data.c
+geraos: main.c pad.c paciente.c lesao.c data.c
 	gcc -c main.c pad.c paciente.c lesao.c data.c
 
 geraexe: main.o pad.o paciente.o lesao.o data.o
