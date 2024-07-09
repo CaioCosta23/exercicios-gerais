@@ -7,7 +7,7 @@ struct partida {
     char *time1;
     char *time2;
     int pontos1;
-    int pontos2
+    int pontos2;
 };
 
 tPartida LePartida() {
