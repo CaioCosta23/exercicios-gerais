@@ -1,9 +1,6 @@
 #ifndef _nba
 #define _nba
 
-#include "franquia.h"
-#include "partida.h"
-
 #define MAX_FR 10 // Número máximo de franquias;
 #define MAX_PT 10 // Número máximo de partidas;
 #define CAD_FRANQUIA 'F' // Caractere de cadastro da franquia;
