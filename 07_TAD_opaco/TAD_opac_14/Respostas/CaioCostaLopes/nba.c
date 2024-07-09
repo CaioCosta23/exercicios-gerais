@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "nba.h"
+#include "franquia.h"
+#include "partida.h"
 
 struct nba {
     tFranquia *listaFranquias;
@@ -156,8 +158,8 @@ void ImprimeRelatorioNBA(tNBA nba) {
         porcentagemOeste = (double)(vitoriasOeste * 100) / (double)(vitoriasOeste + derrotasOeste);
     }
 
-    printf("LESTE %d %d %d %.2f\n", vitoriasLeste, derrotasLeste, porcentagemLeste);
-    printf("OESTE %d %d %d %.2f\n", vitoriasOeste, derrotasOeste, porcentagemOeste);
+    printf("LESTE %d %d %.2f\n", vitoriasLeste, derrotasLeste, porcentagemLeste);
+    printf("OESTE %d %d %.2f\n", vitoriasOeste, derrotasOeste, porcentagemOeste);
 }
 
 void LiberaNBA(tNBA nba) {
