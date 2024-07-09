@@ -30,7 +30,7 @@ tNBA CriaNBA() {
     }
 
     nba->qtdFranquias = 0;
-    nba->maxFranquias = 0;
+    nba->maxFranquias = MAX_FR;
 
     nba->listaPartidas = (tPartida*)malloc(MAX_PT * sizeof(tPartida));
     if ((*nba).listaPartidas == NULL) {
@@ -40,7 +40,7 @@ tNBA CriaNBA() {
     }
 
     nba->qtdPartidas = 0;
-    nba->maxPartidas = 0;
+    nba->maxPartidas = MAX_PT;
 
     return nba;
 }
@@ -55,43 +55,34 @@ tNBA RodaNBA(tNBA nba) {
         scanf("%c ", &opcao);
 
         if (opcao == CAD_FRANQUIA) {
+            if ((*nba).qtdFranquias == (*nba).maxFranquias) {
+                nba->maxFranquias += MAX_FR;
+                nba->listaFranquias = (tFranquia*)realloc((*nba).listaFranquias, (*nba).maxFranquias * sizeof(tFranquia));
+            }
+            
             franquia = LeFranquia();
-
-            if (!((*nba).maxFranquias)) {
-                if (franquia == NULL) {
-                    printf("%d da NBA!\n", ((*nba).qtdFranquias + 1));
-                    LiberaNBA(nba);
-                    exit(1);
-                }else {
-                    nba->listaFranquias[(*nba).qtdFranquias] = franquia;
-                    nba->qtdFranquias += 1;
-
-                    if ((*nba).qtdFranquias == MAX_FR) {
-                        nba->maxFranquias = 1;
-                    }
-                }
+            if (franquia == NULL) {
+                printf("%d da NBA!\n", ((*nba).qtdFranquias + 1));
+                LiberaNBA(nba);
+                exit(1);
             }else {
-                LiberaFranquia(franquia);
+                nba->listaFranquias[(*nba).qtdFranquias] = franquia;
+                nba->qtdFranquias += 1;
             }
         }
         if (opcao == CAD_PARTIDA) {
+            if ((*nba).qtdPartidas == (*nba).maxPartidas) {
+                nba->maxPartidas += MAX_PT;
+                nba->listaPartidas = (tPartida*)realloc((*nba).listaPartidas, (*nba).maxPartidas * sizeof(tPartida));
+            }
             partida = LePartida();
-            if (!((*nba).maxPartidas)) {
-
-                if (partida == NULL) {
-                    printf("%d partida da NBA!", ((*nba).qtdPartidas + 1));
-                    LiberaNBA(nba);
-                    exit(1);
-                }else {
-                    nba->listaPartidas[(*nba).qtdPartidas] = partida;
-                    nba->qtdPartidas += 1;
-
-                    if ((*nba).qtdPartidas == MAX_PT) {
-                        nba->maxPartidas = 1;
-                    }
-                }
+            if (partida == NULL) {
+                printf("%d partida da NBA!", ((*nba).qtdPartidas + 1));
+                LiberaNBA(nba);
+                exit(1);
             }else {
-                LiberaPartida(partida);
+                nba->listaPartidas[(*nba).qtdPartidas] = partida;
+                nba->qtdPartidas += 1;
             }
         }
         if (opcao == ENCERRAR) {
