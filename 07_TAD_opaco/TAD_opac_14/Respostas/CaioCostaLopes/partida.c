@@ -35,6 +35,8 @@ tPartida LePartida() {
     partida->pontos1 = 0;
     partida->pontos2 = 0;
 
+    scanf("%s @ %s %d %d\n", partida->time1, partida->time2, &partida->pontos1, &partida->pontos2);
+
     return partida;
 }
 
