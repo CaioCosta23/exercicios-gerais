@@ -26,7 +26,7 @@ char *GetNomeFranquia(tFranquia f);
  * @param f Estrutura (do tipo ponteiro) do tipo "tFranquia" que contém os dados da franquia;
  * @return char* Ponteiro para o nome da conferência da franquia;
  */
-char *GetNomeConferencia(tFranquia f);
+char *GetConferenciaFranquia(tFranquia f);
 
 /**
  * @brief Adiciona nos registros uma vitória em casa para franquia;
