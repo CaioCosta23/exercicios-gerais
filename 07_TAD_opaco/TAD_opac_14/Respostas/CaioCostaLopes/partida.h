@@ -3,8 +3,8 @@
 
 typedef struct partida *tPartida;
 
-#define TIME_1 1
-#define TIME_2 2
+#define TIME_CASA 1
+#define TIME_FORA 2
 
 /**
  * @brief Cria (aloca a memória dinamicamente) e lê uma partida;
