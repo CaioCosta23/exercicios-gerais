@@ -84,7 +84,7 @@ void RealizaDuelo(tDuelo d, tCarta c1, tCarta c2) {
                     d->diferenca = ComparaFogoCarta(c1, c2);
                     c1->num_vit = AdicionaVitoriaCarta(c1);
                 }else {
-                    if (ComparaFogoCarta < 0) {
+                    if (ComparaFogoCarta(c1, c2) < 0) {
                         d->vencedor = GetC2Duelo(d);
                         d->diferenca = (ComparaFogoCarta(c1, c2) * (-1));
                         c2->num_vit = AdicionaVitoriaCarta(c2);
