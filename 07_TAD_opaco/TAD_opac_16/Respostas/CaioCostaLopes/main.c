@@ -6,9 +6,9 @@ int main() {
     tSistema *sistema;
 
     sistema = CriaSistema();
-    
+
     LeSistema(sistema);
-    ImprimeFatuamentoSistema(sistema);
+    ImprimeFaturamentoSistema(sistema);
     DestroiSistema(sistema);
 
     return  0;
