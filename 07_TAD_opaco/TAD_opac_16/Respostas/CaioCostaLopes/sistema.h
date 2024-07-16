@@ -3,7 +3,7 @@
 
 #include "data.h"
 
-typedef struct Sitema tSistema;
+typedef struct Sistema tSistema;
 
 /**
  * @brief Cria (aloca a memória dinâmicamente de) um sistema de gerenciamento de tiquets de estacionamento;
