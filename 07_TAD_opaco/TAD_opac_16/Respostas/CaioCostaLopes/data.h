@@ -8,7 +8,7 @@ typedef struct Data tData;
  * 
  * @return tData Ponteiro paa a estrutura do tipo "tData" que contém os campos de dados da data inicializados;
  */
-tData CriaData();
+tData *CriaData();
 
 /**
  * @brief Processa (lê - no formato 'string') o dia, o mês e o ano de uma data;
