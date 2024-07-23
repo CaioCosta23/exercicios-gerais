@@ -13,7 +13,7 @@ typedef struct Sistema tSistema;
 tSistema *CriaSitema();
 
 /**
- * @brief Lê s dados do sitema e dos tíquetes a serem processados;
+ * @brief Lê os dados do sistema e dos tíquetes a serem processados;
  * 
  * @param sys Ponteiro para a estrutura do tipo "tSistema" que aramzenará os dados do sistema junto aos tíquetes;
  */
