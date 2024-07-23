@@ -20,7 +20,7 @@ tSistema *CriaSitema();
 void LeSistema(tSistema *sys);
 
 /**
- * @brief Processa um tíquete e calcula o valor que o moorista deve pagar;
+ * @brief Processa um tíquete e calcula o valor que o motorista deve pagar;
  * 
  * @param sys Ponteiro para a estrutura do tipo "tSistema" que contém os dados do sistema e dos tíquetes;
  * @param dataEntrada Ponteiro para a estrutura do tipo "tData" que contém os dados da data de entrada do carro no estacionamento;
