@@ -121,6 +121,6 @@ void CopiaDiaMesAno(tData *src, tData *tgt);
  * 
  * @param data Ponteiro para a estrutura do tipo "tData" que contém os dados da data;
  */
-void DetroiData(tData *data);
+void DestroiData(tData *data);
 
 #endif
