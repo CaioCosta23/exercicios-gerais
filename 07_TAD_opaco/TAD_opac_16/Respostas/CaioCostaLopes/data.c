@@ -43,8 +43,12 @@ void ProcessaDiaMesAno(tData *data, char *str) {
     sscanf(str, "%d/%d/%d", &data->dia, &data->mes, &data->ano);
 }
 
-void ProcessaHorario(tData *data, char *str) {
+void ProcessaDiaDaSemana(tData *data, char *str) {
     sscanf(str, "%d", &data->codDiaSemana);
+}
+
+void ProcessaHorario(tData *data, char *str) {
+    sscanf(str, "%d:%d", &data->horaHorario, &data->minutoHorario);
 }
 
 int VerificaDataValida(tData *data) {
@@ -63,22 +67,26 @@ int VerificaBissexto(tData *data) {
 }
 
 int NumeroDiasMes(tData *data) {
-    if (((*data).mes == 1) || ((*data).mes == 3) || ((*data).mes == 5) || ((*data).mes == 7) || 
-        ((*data).mes == 8) || ((*data).mes == 10) || ((*data).mes == 12)) {
-            return MES_31_DIAS;
-    }else {
-        if (((*data).mes == 4) || ((*data).mes == 6) || ((*data).mes == 9) || ((*data).mes == 11)) {
-            return MES_30_DIAS;
+    if (VerificaDataValida(data)) {
+        if (((*data).mes == 1) || ((*data).mes == 3) || ((*data).mes == 5) || ((*data).mes == 7) || 
+            ((*data).mes == 8) || ((*data).mes == 10) || ((*data).mes == 12)) {
+                return MES_31_DIAS;
         }else {
-            if ((*data).mes == 2) {
-                if (VerificaBissexto(data)) {
-                    return FEVEREIRO_ANO_BISSEXTO;
-                }else {
-                    return FEVEREIRO_NORMAL;
+            if (((*data).mes == 4) || ((*data).mes == 6) || ((*data).mes == 9) || ((*data).mes == 11)) {
+                return MES_30_DIAS;
+            }else {
+                if ((*data).mes == 2) {
+                    if (VerificaBissexto(data)) {
+                        return FEVEREIRO_ANO_BISSEXTO;
+                    }else {
+                        return FEVEREIRO_NORMAL;
+                    }
                 }
             }
         }
     }
+    data->mes = 1;
+    return MES_31_DIAS;
 }
 
 int ComparaDiaMesAno(tData *data1, tData *data2) {
@@ -113,7 +121,7 @@ int CalculaDiasAteMes(tData *data) {
 
 int CalculaDiferencaDias(tData *data1, tData *data2) {
     int diferenca = 0;
-    tData *dataAuxiliar;
+    tData *dataAuxiliar = NULL;
 
     CopiaDiaMesAno(data1, dataAuxiliar);
 
@@ -127,7 +135,7 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
     return diferenca;
 }
 
-float CalculaHorasentreDatas(tData *data1, tData *data2) {
+float CalculaHorasEntreDatas(tData *data1, tData *data2) {
     float diferenca = 0;
 
     diferenca += CalculaDiferencaDias(data1, data2) * QTD_HORAS_DIA;
@@ -178,6 +186,6 @@ void CopiaDiaMesAno(tData *src, tData *tgt) {
 void DestroiData(tData *data) {
     if (data != NULL) {
         free(data);
-        data == NULL;
+        data = NULL;
     }
 }
