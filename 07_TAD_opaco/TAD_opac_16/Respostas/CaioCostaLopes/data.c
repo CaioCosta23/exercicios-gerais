@@ -135,7 +135,7 @@ float CalculaHorasentreDatas(tData *data1, tData *data2) {
     // Retira as hora e minutos que já haviam passado quanto foi feito o registro de entrada;
     diferenca -= (float)(*data1).horaHorario;
     // TRetira os minutos da hora já passada (transformando esses minutos em uma fração/ parte decimal de uma hora);
-    diferenca -= ((float)((*data1).minutoHorario * 1) / (float)QTD_MINUTOS_HORA);
+    diferenca -= ((float)(*data1).minutoHorario * 1 / (float)QTD_MINUTOS_HORA);
 
     // Retira as hora e minutos que já haviam passado quanto foi feito o registro de saída;
     diferenca -= (float)(QTD_HORAS_DIA - (*data2).horaHorario);
