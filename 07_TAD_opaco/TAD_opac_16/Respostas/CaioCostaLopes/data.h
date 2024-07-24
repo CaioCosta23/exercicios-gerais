@@ -91,7 +91,7 @@ int CalculaDiferencaDias(tData *data1, tData *data2);
  * @param data2 Ponteiro para a estrutura do tipo "tData" que contém os dados da segunda data;
  * @return int Número de horas entre as duas datas (no formato convenional - horas:minutos);
  */
-int CalculaHorasEntreDatas(tData *data1, tData *data2);
+float CalculaHorasEntreDatas(tData *data1, tData *data2);
 
 /**
  * @brief Verifica se a data será correspondente a um Sábado ou Domingo;
