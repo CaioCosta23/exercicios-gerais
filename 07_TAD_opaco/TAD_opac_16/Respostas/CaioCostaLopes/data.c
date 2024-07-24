@@ -40,7 +40,7 @@ tData *CriaData() {
 }
 
 void ProcessaDiaMesAno(tData *data, char *str) {
-    sscanf(str, "%d/%d/%d", &data->dia, &data->mes, &data->ano);
+    sscanf(str, " %d/%d/%d", &data->dia, &data->mes, &data->ano);
 }
 
 void ProcessaDiaDaSemana(tData *data, char *str) {
@@ -48,7 +48,7 @@ void ProcessaDiaDaSemana(tData *data, char *str) {
 }
 
 void ProcessaHorario(tData *data, char *str) {
-    sscanf(str, "%d:%d", &data->horaHorario, &data->minutoHorario);
+    sscanf(str, " %d:%d", &data->horaHorario, &data->minutoHorario);
 }
 
 int VerificaDataValida(tData *data) {
@@ -63,7 +63,7 @@ int VerificaDataValida(tData *data) {
 }
 
 int VerificaBissexto(tData *data) {
-    return ((((*data).ano % 4 == 0) && ((*data).ano % 100 != 0)) || (((*data).ano % 100 == 0) && (*data).ano % 400 == 0));
+    return ((((*data).ano % 4 == 0) && ((*data).ano % 100 != 0)) || ((*data).ano % 400 == 0));
 }
 
 int NumeroDiasMes(tData *data) {
@@ -123,6 +123,8 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
     int diferenca = 0;
     tData *dataAuxiliar = NULL;
 
+    dataAuxiliar = CriaData();
+
     CopiaDiaMesAno(data1, dataAuxiliar);
 
     while (1) {
@@ -132,13 +134,15 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
         DataDiaSeguinte(dataAuxiliar);
         diferenca += 1;
     }
+    DestroiData(dataAuxiliar);
+
     return diferenca;
 }
 
 float CalculaHorasEntreDatas(tData *data1, tData *data2) {
     float diferenca = 0;
 
-    diferenca += CalculaDiferencaDias(data1, data2) * QTD_HORAS_DIA;
+    diferenca += (float)CalculaDiferencaDias(data1, data2) * QTD_HORAS_DIA;
 
     // Retira as hora e minutos que já haviam passado quanto foi feito o registro de entrada;
     diferenca -= (float)(*data1).horaHorario;
