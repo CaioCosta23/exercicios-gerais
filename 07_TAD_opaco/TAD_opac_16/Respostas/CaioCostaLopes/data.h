@@ -68,7 +68,7 @@ int NumeroDiasMes(tData *data);
 int ComparaDiaMesAno(tData *data1, tData *data2);
 
 /**
- * @brief Calcula o núemro de dias até o inicio do mês da data;
+ * @brief Calcula o número de dias até o inicio do mês da data;
  * 
  * @param data Ponteiro para a estrutura do tipo "tData" que contém os dados da data;
  * @return int Número de dias até o início do mês da data;
