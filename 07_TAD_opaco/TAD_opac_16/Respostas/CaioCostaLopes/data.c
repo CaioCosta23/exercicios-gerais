@@ -9,8 +9,8 @@
 #define FEVEREIRO_NORMAL 28
 #define FEVEREIRO_ANO_BISSEXTO 29
 
-#define HORA_MAXIMA_DIA 23
-#define MINUTO_MAXIMO_HORA 59
+#define QTD_HORAS_DIA 24
+#define QTD_MINUTOS_HORA 60
 
 struct Data {
     int codDiaSemana;
@@ -115,7 +115,7 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
     int diferenca = 0;
     tData *dataAuxiliar;
 
-    dataAuxiliar = data1;
+    CopiaDiaMesAno(data1, dataAuxiliar);
 
     while (1) {
         if (((*dataAuxiliar).ano == (*data2).ano) && ((*dataAuxiliar).mes == (*data2).mes) && ((*dataAuxiliar).dia == (*data2).dia)) {
@@ -129,6 +129,18 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
 
 float CalculaHorasentreDatas(tData *data1, tData *data2) {
     float diferenca = 0;
+
+    diferenca += CalculaDiferencaDias(data1, data2) * QTD_HORAS_DIA;
+
+    // Retira as hora e minutos que já haviam passado quanto foi feito o registro de entrada;
+    diferenca -= (float)(*data1).horaHorario;
+    // TRetira os minutos da hora já passada (transformando esses minutos em uma fração/ parte decimal de uma hora);
+    diferenca -= ((float)((*data1).minutoHorario * 1) / (float)QTD_MINUTOS_HORA);
+
+    // Retira as hora e minutos que já haviam passado quanto foi feito o registro de saída;
+    diferenca -= (float)(QTD_HORAS_DIA - (*data2).horaHorario);
+    // TRetira os minutos da hora já passada (transformando esses minutos em uma fração/ parte decimal de uma hora);
+    diferenca -= ((float)((QTD_MINUTOS_HORA - (*data2).minutoHorario) * 1) / (float)QTD_MINUTOS_HORA);
 
     return diferenca;
 }
@@ -152,6 +164,15 @@ void DataDiaSeguinte(tData *data) {
     }else {
         data->dia += 1;
     }
+}
+
+void CopiaDiaMesAno(tData *src, tData *tgt) {
+    tgt->codDiaSemana = (*src).codDiaSemana;
+    tgt->dia = (*src).dia;
+    tgt->mes = (*src).mes;
+    tgt->ano = (*src).ano;
+    tgt->horaHorario = (*src).horaHorario;
+    tgt->minutoHorario = (*src).minutoHorario;
 }
 
 void DestroiData(tData *data) {
