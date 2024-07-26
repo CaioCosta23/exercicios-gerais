@@ -67,26 +67,22 @@ int VerificaBissexto(tData *data) {
 }
 
 int NumeroDiasMes(tData *data) {
-    if (VerificaDataValida(data)) {
-        if (((*data).mes == 1) || ((*data).mes == 3) || ((*data).mes == 5) || ((*data).mes == 7) || 
-            ((*data).mes == 8) || ((*data).mes == 10) || ((*data).mes == 12)) {
-                return MES_31_DIAS;
+    if (((*data).mes == 1) || ((*data).mes == 3) || ((*data).mes == 5) || ((*data).mes == 7) || 
+        ((*data).mes == 8) || ((*data).mes == 10) || ((*data).mes == 12)) {
+            return MES_31_DIAS;
+    }else {
+        if (((*data).mes == 4) || ((*data).mes == 6) || ((*data).mes == 9) || ((*data).mes == 11)) {
+            return MES_30_DIAS;
         }else {
-            if (((*data).mes == 4) || ((*data).mes == 6) || ((*data).mes == 9) || ((*data).mes == 11)) {
-                return MES_30_DIAS;
-            }else {
-                if ((*data).mes == 2) {
-                    if (VerificaBissexto(data)) {
-                        return FEVEREIRO_ANO_BISSEXTO;
-                    }else {
-                        return FEVEREIRO_NORMAL;
-                    }
+            if ((*data).mes == 2) {
+                if (VerificaBissexto(data)) {
+                    return FEVEREIRO_ANO_BISSEXTO;
+                }else {
+                    return FEVEREIRO_NORMAL;
                 }
             }
         }
     }
-    data->mes = 1;
-    return MES_31_DIAS;
 }
 
 int ComparaDiaMesAno(tData *data1, tData *data2) {
