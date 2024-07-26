@@ -11,20 +11,20 @@ typedef struct Data tData;
 tData *CriaData();
 
 /**
- * @brief Processa (lê - no formato 'string') o dia, o mês e o ano de uma data;
- * 
- * @param data Ponteiro para a estrutura do tipo "tData" que receberá os dados da data;
- * @param str 'String' (data) que será processada;
- */
-void ProcessaDiaMesAno(tData *data, char *str);
-
-/**
  * @brief Processa (lê - no formato 'string') o dia da semana correspondente a uma data;
  * 
  * @param data Ponteiro para a estrutura do tipo "tData" que receberá os dados da data;
  * @param str 'String' (dia da semana em que se encontra a data) que será processada;
  */
 void ProcessaDiaDaSemana(tData *data, char *str);
+
+/**
+ * @brief Processa (lê - no formato 'string') o dia, o mês e o ano de uma data;
+ * 
+ * @param data Ponteiro para a estrutura do tipo "tData" que receberá os dados da data;
+ * @param str 'String' (data) que será processada;
+ */
+void ProcessaDiaMesAno(tData *data, char *str);
 
 /**
  * @brief Processa (lê - no formato 'string') o horário (hora, minuto e segundo) do dia da semana correspondente a uma data;
