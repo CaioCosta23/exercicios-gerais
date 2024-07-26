@@ -142,17 +142,22 @@ int CalculaDiferencaDias(tData *data1, tData *data2) {
 float CalculaHorasEntreDatas(tData *data1, tData *data2) {
     float diferenca = 0;
 
-    diferenca += (float)CalculaDiferencaDias(data1, data2) * QTD_HORAS_DIA;
+    if (CalculaDiferencaDias(data1, data2) > 1) {
+        diferenca += (float)((CalculaDiferencaDias(data1, data2) * QTD_HORAS_DIA) - 1);
+    }
 
-    // Retira as hora e minutos que já haviam passado quanto foi feito o registro de entrada;
-    diferenca -= (float)(*data1).horaHorario;
-    // TRetira os minutos da hora já passada (transformando esses minutos em uma fração/ parte decimal de uma hora);
-    diferenca -= ((float)(*data1).minutoHorario * 1 / (float)QTD_MINUTOS_HORA);
+    if ((*data2).horaHorario < (*data1).horaHorario) {
+        diferenca += (float)(QTD_HORAS_DIA + (*data2).horaHorario) - (*data1).horaHorario;
+    }else {
+        diferenca += (float)(*data2).horaHorario - (*data1).horaHorario;
+    }
 
-    // Retira as hora e minutos que já haviam passado quanto foi feito o registro de saída;
-    diferenca -= (float)(QTD_HORAS_DIA - (*data2).horaHorario);
-    // TRetira os minutos da hora já passada (transformando esses minutos em uma fração/ parte decimal de uma hora);
-    diferenca -= ((float)((QTD_MINUTOS_HORA - (*data2).minutoHorario) * 1) / (float)QTD_MINUTOS_HORA);
+    if ((*data2).minutoHorario < (*data1).minutoHorario) {
+        diferenca -= 1;
+        diferenca += ((float)((QTD_MINUTOS_HORA + (*data2).minutoHorario) - (*data1).minutoHorario) * 1) / (float)QTD_MINUTOS_HORA;
+    }else {
+        diferenca += ((float)((*data2).minutoHorario - (*data1).minutoHorario) * 1) / (float) QTD_MINUTOS_HORA;
+    }
 
     return diferenca;
 }
