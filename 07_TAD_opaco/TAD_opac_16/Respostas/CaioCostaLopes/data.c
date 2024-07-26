@@ -39,12 +39,12 @@ tData *CriaData() {
     return data;
 }
 
-void ProcessaDiaMesAno(tData *data, char *str) {
-    sscanf(str, " %d/%d/%d", &data->dia, &data->mes, &data->ano);
-}
-
 void ProcessaDiaDaSemana(tData *data, char *str) {
     sscanf(str, "%d", &data->codDiaSemana);
+}
+
+void ProcessaDiaMesAno(tData *data, char *str) {
+    sscanf(str, " %d/%d/%d", &data->dia, &data->mes, &data->ano);
 }
 
 void ProcessaHorario(tData *data, char *str) {
