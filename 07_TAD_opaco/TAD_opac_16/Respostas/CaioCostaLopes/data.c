@@ -93,25 +93,19 @@ int ComparaDiaMesAno(tData *data1, tData *data2) {
     if ((*data1).ano > (*data2).ano) {
         return 1;
     }else {
-        if ((*data1).ano == (*data2).ano) {
-            if ((*data1).mes > (*data2).mes) {
-                return 1;
+        if (((*data1).ano == (*data2).ano) && ((*data1).mes > (*data2).mes)) {
+            return 1;
+        }else {
+            if (((*data1).mes == (*data2).mes) && ((*data1).dia > (*data2).dia)) {
+                return 1;        
             }else {
-                if ((*data1).mes == (*data2).mes) {
-                    if ((*data1).dia > (*data2).dia) {
-                        return 1;
-                    }else {
-                        if ((*data1).dia == (*data2).dia) {
-                            return 0;
-                        }
-                        return -1;
-                    }
+                if ((*data1).dia == (*data2).dia) {
+                    return 0;
                 }
-                return -1;
             }
         }
-        return -1;
     }
+    return -1;
 }
 
 int CalculaDiasAteMes(tData *data) {
