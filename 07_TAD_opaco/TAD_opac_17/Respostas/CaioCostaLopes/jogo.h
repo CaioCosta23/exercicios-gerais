@@ -32,7 +32,7 @@ void DefineMinimo(tJogo *jogo, int min);
  * @brief Cálcula o número a ser adivinhado pelo jogador;
  * 
  * @param jogo Ponteiro para a estrutura do tipo "tJogo" que contém os dados do jogo;
- * @param n Valor do número a ser adivinhado;
+ * @param n Valor que seá utilizado para calcular o valor a ser advinhado (não necessariamente é o valor a ser adivinhado, pois existe um cálculo para isso);
  */
 void CalculaValorASerAdivinhado(tJogo *jogo, int n);
 
