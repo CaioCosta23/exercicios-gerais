@@ -46,7 +46,7 @@ void CalculaValorASerAdivinhado(tJogo *jogo, int n) {
 
     resto = (int)(fib % 101);
 
-    jogo->valorSurpresa = ((resto / 100) * ((*jogo).maxIntervalo - (*jogo).minIntervalo + 1) + (*jogo).minIntervalo);
+    jogo->valorSurpresa = round(((resto / 100) * ((*jogo).maxIntervalo - (*jogo).minIntervalo) + (*jogo).minIntervalo));
 }
 
 void CalculaNumeroTentativas(tJogo *jogo) {
@@ -71,6 +71,8 @@ int ProcessaTentativas(tJogo *jogo) {
             }
         }
     }
+    printf("Voce perdeu! O numero escolhido foi %d", (*jogo).valorSurpresa);
+    
     return 0;
 }
 
