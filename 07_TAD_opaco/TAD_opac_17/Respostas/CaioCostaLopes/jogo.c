@@ -74,9 +74,7 @@ void CalculaValorASerAdivinhado(tJogo *jogo, int n) {
 }
 
 void CalculaNumeroTentativas(tJogo *jogo) {
-    jogo->qtdTentativas = (int)((log2((*jogo).maxIntervalo - ((*jogo).minIntervalo + 1))) + 1);
-
-    //printf("\nNumero de tentativas: %d\n", (*jogo).qtdTentativas);
+    jogo->qtdTentativas = (int)(log2((*jogo).maxIntervalo - (*jogo).minIntervalo + 1)) + 1;
 }
 
 int ProcessaTentativas(tJogo *jogo) {
@@ -99,7 +97,7 @@ int ProcessaTentativas(tJogo *jogo) {
             }
         }
     }
-    printf("Voce perdeu! O numero escolhido foi %d", (*jogo).valorSurpresa);
+    printf("\nVoce perdeu! O numero escolhido foi %d", (*jogo).valorSurpresa);
 
     return 0;
 }
