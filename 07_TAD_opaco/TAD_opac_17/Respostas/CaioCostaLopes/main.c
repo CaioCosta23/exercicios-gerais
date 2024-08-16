@@ -5,7 +5,7 @@
 int main() {
     tComputador *computador;
 
-    computador = CriaComputador(computador);
+    computador = CriaComputador();
     GerenciaJogo(computador);
     ImprimeRelatorio(computador);
     DestroiComputador(computador);
