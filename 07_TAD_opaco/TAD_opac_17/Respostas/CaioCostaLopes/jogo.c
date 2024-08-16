@@ -9,7 +9,7 @@ struct Jogo {
     int valorSurpresa;
 };
 
-tJogo *CriaJgoo() {
+tJogo *CriaJogo() {
     tJogo *jogo = (tJogo*)malloc(sizeof(tJogo));
 
     if (jogo == NULL) {
@@ -76,5 +76,5 @@ int ProcessaTentativas(tJogo *jogo) {
 
 void DestroiJogo(tJogo *jogo) {
     free(jogo);
-    jogo == NULL;
+    jogo = NULL;
 }
