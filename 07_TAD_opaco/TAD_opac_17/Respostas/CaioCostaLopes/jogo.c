@@ -35,30 +35,58 @@ void DefineMaximo(tJogo *jogo, int max) {
 }
 
 void CalculaValorASerAdivinhado(tJogo *jogo, int n) {
-    int fib, t, resto;
-    int f1 = 0, f2 = 1;
-
-    for (t = 2; t <= n; t++) {
+    int fib, p, div, resto;
+    int f1 = 0, f2 = 1, nPrimoFib = 0;
+    int ehPrimo;
+    
+    while(nPrimoFib < n) {
         fib = f1 + f2;
         f1 = f2;
         f2 = fib;
+
+        if (fib <= 1) {
+            ehPrimo = 0;
+        }else {
+            if (fib <= 3) {
+                ehPrimo = 1;
+            }else {
+                if (fib % 2 == 0 || fib % 3 == 0){
+                    ehPrimo = 0;
+                }else {
+                    ehPrimo = 1;
+                    for (int i = 5; i * i <= fib; i += 6) {
+                        if (fib % i == 0 || fib % (i + 2) == 0) {
+                            ehPrimo = 0;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (ehPrimo) {
+            nPrimoFib += 1;
+        }
     }
+    resto = (fib % 101);
 
-    resto = (int)(fib % 101);
-
-    jogo->valorSurpresa = round(((resto / 100) * ((*jogo).maxIntervalo - (*jogo).minIntervalo) + (*jogo).minIntervalo));
+    jogo->valorSurpresa = round((((float)resto / (float)100) * ((float)(*jogo).maxIntervalo - (float)(*jogo).minIntervalo) + (float)(*jogo).minIntervalo));
 }
 
 void CalculaNumeroTentativas(tJogo *jogo) {
     jogo->qtdTentativas = (int)((log2((*jogo).maxIntervalo - ((*jogo).minIntervalo + 1))) + 1);
+
+    //printf("\nNumero de tentativas: %d\n", (*jogo).qtdTentativas);
 }
 
 int ProcessaTentativas(tJogo *jogo) {
     int t, tentativa;
 
+    printf("\nVoce tem direito a %d tentativas", (*jogo).qtdTentativas);
+
     for (t = 1; t <= (*jogo).qtdTentativas; t++) {
         printf("\nTentativa %d: ", t);
-        scanf("%d\n", &tentativa);
+        scanf("%d", &tentativa);
 
         if (tentativa == (*jogo).valorSurpresa) {
             printf("\nParabens, voce ganhou!");
@@ -72,7 +100,7 @@ int ProcessaTentativas(tJogo *jogo) {
         }
     }
     printf("Voce perdeu! O numero escolhido foi %d", (*jogo).valorSurpresa);
-    
+
     return 0;
 }
 
