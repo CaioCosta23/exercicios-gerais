@@ -55,3 +55,5 @@ void ImprimeSaldoTotal(tAgencia *agencia);
  * @param agencia Ponteiro para a estrutura do tipo "tAgencia" que será destruída (desalocada);
  */
 void DestroiAgencia(tAgencia *agencia);
+
+#endif
