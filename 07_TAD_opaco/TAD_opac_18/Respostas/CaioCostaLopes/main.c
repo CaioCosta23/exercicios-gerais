@@ -5,6 +5,7 @@
 int main() {
     tAgencia *agencia;
 
+    printf("--- Agencia Bancaria ---");
     agencia = CriaAgencia();
 
     LeOperacoes(agencia);
@@ -14,6 +15,6 @@ int main() {
     ImprimeSaldoTotal(agencia);
 
     DestroiAgencia(agencia);
-    
+
     return 0;
 }
