@@ -75,9 +75,9 @@ void LeOperacoes(tAgencia *agencia) {
     }
 
     while((*agencia).qtdOperacoes < qtdOperacoes) {
-        scanf("%d %f\n", &id, &valor);
 
         while(1) {
+            scanf("%d %f\n", &id, &valor);
             if (BuscaContaPorId(agencia, id) != NULL) {
                 break;
             }
