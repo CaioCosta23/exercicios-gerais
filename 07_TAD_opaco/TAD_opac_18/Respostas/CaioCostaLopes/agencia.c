@@ -52,6 +52,7 @@ tAgencia *CriaAgencia() {
         DestroiAgencia(agencia);
         exit(1);
     }
+    agencia->qtdOperacoes = 0;
     
     agencia->saldo = 0;
 
@@ -59,18 +60,22 @@ tAgencia *CriaAgencia() {
 }
 
 void LeOperacoes(tAgencia *agencia) {
-    int o, id, c;
+    int qtdOperacoes, o, id, c;
     float valor;
 
-    for(o = 0; o < (*agencia).qtdOperacoes; o++) {
-        scanf("%d %f", &id, &valor);
+    scanf("%d\n", &qtdOperacoes);
+    while((*agencia).qtdOperacoes < qtdOperacoes) {
+        scanf("%d %f\n", &id, &valor);
 
-        if (BuscaContaPorId(agencia, id) != NULL) {
-            agencia->operacoes[o] = CriaOperacao(BuscaContaPorId(agencia, id), id);
-            agencia->saldo += valor;
-        }else {
-            printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
+        while(1) {
+            if (BuscaContaPorId(agencia, id) != NULL) {
+                break;
+            }
+               printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
+        agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), id);
+        agencia->qtdOperacoes += 1;
+        agencia->saldo += valor;
     }
 }
 
