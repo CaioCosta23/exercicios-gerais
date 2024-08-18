@@ -38,7 +38,7 @@ tAgencia *CriaAgencia() {
             scanf("%d\n", &id);
             
             if (id < 0) {
-                printf("\nDigite um id valido para a conta ser cadastrada!");
+                printf("\nDigite um id valido para a conta a ser cadastrada!");
             }else {
                 if (BuscaContaPorId(agencia, id) != NULL) {
                     printf("\nEste Id ja esta cadastrado na agencia! Digite um id diferente!");
@@ -107,7 +107,7 @@ tConta *BuscaContaPorId(tAgencia *agencia, int id) {
 void ImprimeOperacoesSuspeitas(tAgencia *agencia) {
     int o;
 
-    printf("\nLista de operações suspeitas:");
+    printf("\nA lista de operações suspeitas:");
     for (o = 0; o < (*agencia).qtdOperacoes; o++) {
         if ((ConsultaValorOperacao((*agencia).operacoes[o]) > 20000) || (ConsultaValorOperacao((*agencia).operacoes[o]) < -20000)) {
             ImprimeOperacao((*agencia).operacoes[o]);
