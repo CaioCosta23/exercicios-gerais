@@ -47,6 +47,11 @@ void GerenciaJogo(tComputador *computador) {
     
     while (1) {
         jogo = CriaJogo();
+        if (jogo == NULL) {
+            printf("%d", ((*computador).qtdPartidas + 1));
+            DestroiComputador(computador);
+            exit(1);
+        }
         do {
             printf("\nForneca um numero no intervalo entre 1 e 10000: ");
             scanf("%d\n", &n);
