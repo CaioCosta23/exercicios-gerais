@@ -41,7 +41,7 @@ tAgencia *CriaAgencia() {
                 printf("\nDigite um id valido para a conta a ser cadastrada!");
             }else {
                 if (BuscaContaPorId(agencia, id) != NULL) {
-                    printf("\nEste Id ja esta cadastrado na agencia! Digite um id diferente!");
+                    printf("\nEste id ja esta cadastrado na agencia. Digite um id diferente!");
                 }else {
                     break;
                 }
@@ -65,8 +65,7 @@ tAgencia *CriaAgencia() {
 }
 
 void LeOperacoes(tAgencia *agencia) {
-    int qtdOperacoes, o, id, c;
-    float valor;
+    int qtdOperacoes, o, id, c, valor;
 
     scanf("%d\n", &qtdOperacoes);
 
@@ -80,14 +79,14 @@ void LeOperacoes(tAgencia *agencia) {
     while((*agencia).qtdOperacoes < qtdOperacoes) {
 
         while(1) {
-            scanf("%d %f\n", &id, &valor);
+            scanf("%d %d\n", &id, &valor);
             if (BuscaContaPorId(agencia, id) != NULL) {
                 break;
             }
             printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
         agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), valor);
-        AlteraSaldoConta(BuscaContaPorId(agencia, id), valor);
+        AlteraSaldoConta(BuscaContaPorId(agencia, id), (float)valor);
         agencia->qtdOperacoes += 1;
         agencia->saldo += valor;
     }
