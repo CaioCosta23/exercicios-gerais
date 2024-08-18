@@ -4,7 +4,7 @@
 
 #include "operacao.h"
 
-#define MAX_CONTAS 30
+#define QTD_INICIAL_CONTAS 30
 
 struct Agencia {
     tConta **contas;
@@ -15,7 +15,7 @@ struct Agencia {
 };
 
 tAgencia *CriaAgencia() {
-    int c, id;
+    int c, qtdContas, id;
 
     tAgencia *agencia = (tAgencia*)malloc(sizeof(tAgencia));
 
@@ -24,14 +24,16 @@ tAgencia *CriaAgencia() {
         exit(1);
     }
 
-    scanf("%d\n", &agencia->qtdContas);
-    agencia->contas = (tConta**)malloc((*agencia).qtdContas * sizeof(tConta*));
+    scanf("%d\n", &qtdContas);
+    agencia->contas = (tConta**)malloc(qtdContas * sizeof(tConta*));
     if ((*agencia).contas == NULL) {
         printf("Erro de alocacao de memoria na lista/vetor de contas da agencia");
         DestroiConta(agencia);
         exit(1);
     }
-    for (c = 0; c < (*agencia).qtdContas; c++) {
+    agencia->qtdContas = 0;
+
+    while((*agencia).qtdContas < qtdContas) {
         while(1) {
             scanf("%d\n", &id);
             
@@ -40,11 +42,11 @@ tAgencia *CriaAgencia() {
             }
             printf("\nDigite um id valido para a conta ser cadastrada!");
         }
-        agencia->contas[c] = CriaConta(id);
+        agencia->contas[(*agencia).qtdContas] = CriaConta(id);
+        agencia->qtdContas += 1;
     }
 
-    scanf("%d\n", &agencia->qtdOperacoes);
-    agencia->operacoes = (tOperacao**)malloc((*agencia).qtdOperacoes * sizeof(tOperacao*));
+    agencia->operacoes = (tOperacao**)malloc(QTD_INICIAL_CONTAS * sizeof(tOperacao*));
     if ((*agencia).operacoes == NULL) {
         printf("Erro na alocacao de memoria na lista/vetor de operacoes!\n");
         DestroiAgencia(agencia);
@@ -57,19 +59,17 @@ tAgencia *CriaAgencia() {
 }
 
 void LeOperacoes(tAgencia *agencia) {
-    int qtdOperacoes, o, id, c;
+    int o, id, c;
     float valor;
 
-    scanf("%d\n", &qtdOperacoes);
-
-    for(o = 0; o < qtdOperacoes; o++) {
+    for(o = 0; o < (*agencia).qtdOperacoes; o++) {
         scanf("%d %f", &id, &valor);
 
         if (BuscaContaPorId(agencia, id) != NULL) {
             agencia->operacoes[o] = CriaOperacao(BuscaContaPorId(agencia, id), id);
             agencia->saldo += valor;
         }else {
-            printf("\n");
+            printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
     }
 }
