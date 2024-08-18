@@ -4,7 +4,7 @@
 
 #include "operacao.h"
 
-#define QTD_INICIAL_CONTAS 30
+#define QTD_INICIAL_OPERACOES 30
 
 struct Agencia {
     tConta **contas;
@@ -46,7 +46,7 @@ tAgencia *CriaAgencia() {
         agencia->qtdContas += 1;
     }
 
-    agencia->operacoes = (tOperacao**)malloc(QTD_INICIAL_CONTAS * sizeof(tOperacao*));
+    agencia->operacoes = (tOperacao**)malloc(QTD_INICIAL_OPERACOES * sizeof(tOperacao*));
     if ((*agencia).operacoes == NULL) {
         printf("Erro na alocacao de memoria na lista/vetor de operacoes!\n");
         DestroiAgencia(agencia);
@@ -64,6 +64,16 @@ void LeOperacoes(tAgencia *agencia) {
     float valor;
 
     scanf("%d\n", &qtdOperacoes);
+
+    if (qtdOperacoes > QTD_INICIAL_OPERACOES) {
+        agencia->operacoes = (tOperacao**)realloc((*agencia).operacoes, qtdOperacoes * sizeof(tOperacao*));
+        if ((*agencia).operacoes == NULL) {
+            printf("Erro ana realocacao de memoria na lista/vetor de operacoes da agencia!\n");
+            DestroiAgencia(agencia);
+            exit(1);
+        }
+    }
+
     while((*agencia).qtdOperacoes < qtdOperacoes) {
         scanf("%d %f\n", &id, &valor);
 
@@ -71,7 +81,7 @@ void LeOperacoes(tAgencia *agencia) {
             if (BuscaContaPorId(agencia, id) != NULL) {
                 break;
             }
-               printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
+            printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
         agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), id);
         agencia->qtdOperacoes += 1;
