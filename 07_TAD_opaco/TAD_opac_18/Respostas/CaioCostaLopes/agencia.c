@@ -28,7 +28,7 @@ tAgencia *CriaAgencia() {
     agencia->contas = (tConta**)malloc(qtdContas * sizeof(tConta*));
     if ((*agencia).contas == NULL) {
         printf("Erro de alocacao de memoria na lista/vetor de contas da agencia");
-        DestroiConta(agencia);
+        DestroiAgencia(agencia);
         exit(1);
     }
     agencia->qtdContas = 0;
@@ -48,6 +48,11 @@ tAgencia *CriaAgencia() {
             }
         }
         agencia->contas[(*agencia).qtdContas] = CriaConta(id);
+        if ((*agencia).contas[(*agencia).qtdContas] == NULL) {
+            printf("%d!\n", ((*agencia).qtdContas + 1));
+            DestroiAgencia(agencia);
+            exit(1);
+        }
         agencia->qtdContas += 1;
     }
 
@@ -86,6 +91,11 @@ void LeOperacoes(tAgencia *agencia) {
             printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
         agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), valor);
+        if ((*agencia).operacoes[(*agencia).qtdOperacoes] == NULL) {
+            printf("%d!\n", ((*agencia).qtdOperacoes + 1));
+            DestroiAgencia(agencia);
+            exit(1);
+        }
         AlteraSaldoConta(BuscaContaPorId(agencia, id), (float)valor);
         agencia->qtdOperacoes += 1;
         agencia->saldo += valor;
