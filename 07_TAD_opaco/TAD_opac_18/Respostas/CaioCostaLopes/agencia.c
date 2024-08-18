@@ -86,7 +86,7 @@ void LeOperacoes(tAgencia *agencia) {
             }
             printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
-        agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), id);
+        agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), valor);
         AlteraSaldoConta(BuscaContaPorId(agencia, id), valor);
         agencia->qtdOperacoes += 1;
         agencia->saldo += valor;
