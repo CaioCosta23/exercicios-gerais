@@ -37,10 +37,15 @@ tAgencia *CriaAgencia() {
         while(1) {
             scanf("%d\n", &id);
             
-            if (id > 0) {
-                break;
+            if (id < 0) {
+                printf("\nDigite um id valido para a conta ser cadastrada!");
+            }else {
+                if (BuscaContaPorId(agencia, id) != NULL) {
+                    printf("\nEste Id ja esta cadastrado na agencia! Digite um id diferente!");
+                }else {
+                    break;
+                }
             }
-            printf("\nDigite um id valido para a conta ser cadastrada!");
         }
         agencia->contas[(*agencia).qtdContas] = CriaConta(id);
         agencia->qtdContas += 1;
@@ -65,13 +70,11 @@ void LeOperacoes(tAgencia *agencia) {
 
     scanf("%d\n", &qtdOperacoes);
 
-    if (qtdOperacoes > QTD_INICIAL_OPERACOES) {
-        agencia->operacoes = (tOperacao**)realloc((*agencia).operacoes, qtdOperacoes * sizeof(tOperacao*));
-        if ((*agencia).operacoes == NULL) {
-            printf("Erro ana realocacao de memoria na lista/vetor de operacoes da agencia!\n");
-            DestroiAgencia(agencia);
-            exit(1);
-        }
+    agencia->operacoes = (tOperacao**)realloc((*agencia).operacoes, qtdOperacoes * sizeof(tOperacao*));
+    if ((*agencia).operacoes == NULL) {
+        printf("Erro ana realocacao de memoria na lista/vetor de operacoes da agencia!\n");
+        DestroiAgencia(agencia);
+        exit(1);
     }
 
     while((*agencia).qtdOperacoes < qtdOperacoes) {
@@ -84,6 +87,7 @@ void LeOperacoes(tAgencia *agencia) {
             printf("\nConta Invalida! Repita a operacao, mas com uma conta valida!");
         }
         agencia->operacoes[(*agencia).qtdOperacoes] = CriaOperacao(BuscaContaPorId(agencia, id), id);
+        AlteraSaldoConta(BuscaContaPorId(agencia, id), valor);
         agencia->qtdOperacoes += 1;
         agencia->saldo += valor;
     }
@@ -105,7 +109,7 @@ void ImprimeOperacoesSuspeitas(tAgencia *agencia) {
 
     printf("\nLista de operações suspeitas:");
     for (o = 0; o < (*agencia).qtdOperacoes; o++) {
-        if ((ConsultaValorOperacao((*agencia).operacoes[o]) > 20000) || (ConsultaValorOperacao((*agencia).operacoes[o]) < 20000)) {
+        if ((ConsultaValorOperacao((*agencia).operacoes[o]) > 20000) || (ConsultaValorOperacao((*agencia).operacoes[o]) < -20000)) {
             ImprimeOperacao((*agencia).operacoes[o]);
         }
     }
