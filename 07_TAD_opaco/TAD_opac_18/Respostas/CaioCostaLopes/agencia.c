@@ -139,6 +139,7 @@ void DestroiAgencia(tAgencia *agencia) {
             free((*agencia).operacoes);
             agencia->operacoes == NULL;
         }
+        free(agencia);
         agencia = NULL;
     }
 }
