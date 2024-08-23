@@ -27,10 +27,6 @@ tPacote *CriaPacote(Type type, int numElem) {
             printf("Erro na alocacao de memoria do vetor (de caracteres) do pacote ");
             DestroiPacote(pacote);
         }
-        // Inicializa o vetor com caractere nulo em caso de segurança (caso o vetor ao longo do programa não receba dados);
-        for (int i = 0; i < (*pacote).tamanhoVetor; i++) {
-            ((char*)pacote->vetor)[i] = '\0';
-        }
     }else {
         if (type == INT) {
             pacote->tipoVetor = INT;
@@ -39,10 +35,6 @@ tPacote *CriaPacote(Type type, int numElem) {
                 printf("Erro na alocacao de memoria do vetor (de inteiros) do pacote ");
                 DestroiPacote(pacote);
             }
-            // Inicializa o vetor com caractere nulo em caso de segurança (caso o vetor ao longo do programa não receba dados);
-            for (int i = 0; i < (*pacote).tamanhoVetor; i++) {
-                ((int*)pacote->vetor)[i] = 0;
-            }
         }
     }
     return pacote;
@@ -50,6 +42,8 @@ tPacote *CriaPacote(Type type, int numElem) {
 
 void LePacote(tPacote *pac) {
     int v;
+
+    scanf("%*c");
     printf("\nDigite o conteúdo do vetor/mensagem: ");
     if ((*pac).tipoVetor == CHAR) {
         scanf("%[^\n]\n", ((char*)pac->vetor));
