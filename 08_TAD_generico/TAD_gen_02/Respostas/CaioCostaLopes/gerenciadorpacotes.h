@@ -3,7 +3,7 @@
 
 #include "pacote.h"
 
-typedef struct gereciadorpacotes tGerenciador;
+typedef struct gerenciadorpacotes tGerenciador;
 
 /**
  * @brief Cria (aloca a memória dinamicamente de) um gerenciador de pacotes;
