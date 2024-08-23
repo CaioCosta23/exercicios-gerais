@@ -9,20 +9,21 @@ int main() {
     tPacote *pacote;
     bool programaEncerrado = false;
 
-    printf("tad_gen_02\n\n");
+    printf("tad_gen_02\n");
 
     gerenciador = CriaGerenciador();
 
     while (1) {
-        printf("Escolha uma opcao:\n");
+        printf("\nEscolha uma opcao:\n");
         printf("(1) Cadastrar um novo pacote\n");
         printf("(2) Imprimir um pacote especifico\n");
         printf("(3) Imprimir todos os pacotes e sair\n");
 
-        scanf("%d\n", &opcao);
+        scanf("%d", &opcao);
         
         switch(opcao) {
             case 1:
+                printf("Digite o tipo (0-char, 1-int) e o numero de elementos do pacote/mensagem: \n");
                 scanf("%d %d", &tipoElementos, &numeroElementos);
                 pacote = CriaPacote(tipoElementos, numeroElementos);
                 LePacote(pacote);
