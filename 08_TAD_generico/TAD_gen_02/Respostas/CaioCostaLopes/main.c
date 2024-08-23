@@ -30,16 +30,17 @@ int main() {
                 }else {
                     if (tipoElementos == 1) {
                         pacote = CriaPacote(INT, numeroElementos);
+                    }else {
+                        printf("Digite um tipo valido!\n");
+                        break;
                     }   
                 }
                 LePacote(pacote);
                 AdicionaPacoteNoGerenciador(gerenciador, pacote);
-                //programaEncerrado = true;
                 break;
             case 2:
                 scanf("%d\n", &indiceListaPacotes);
                 ImprimirPacoteNoIndice(gerenciador, indiceListaPacotes);
-                //programaEncerrado = true;
                 break;
             case 3:
                 ImprimirTodosPacotes(gerenciador);
