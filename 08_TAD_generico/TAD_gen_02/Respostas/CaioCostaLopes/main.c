@@ -16,22 +16,30 @@ int main() {
     while (1) {
         printf("\nEscolha uma opcao:\n");
         printf("(1) Cadastrar um novo pacote\n");
-        printf("(2) Imprimir um pacote especifico\n");
+        printf("(2) Imprimir um pacote específico\n");
         printf("(3) Imprimir todos os pacotes e sair\n");
 
-        scanf("%d", &opcao);
+        scanf("%d\n", &opcao);
         
         switch(opcao) {
             case 1:
-                printf("Digite o tipo (0-char, 1-int) e o numero de elementos do pacote/mensagem: \n");
-                scanf("%d %d", &tipoElementos, &numeroElementos);
-                pacote = CriaPacote(tipoElementos, numeroElementos);
+                printf("Digite o tipo (0-char, 1-int) e o numero de elementos do pacote/mensagem: ");
+                scanf("%d %d\n", &tipoElementos, &numeroElementos);
+                if (tipoElementos == 0) {
+                    pacote = CriaPacote(CHAR, numeroElementos);
+                }else {
+                    if (tipoElementos == 1) {
+                        pacote = CriaPacote(INT, numeroElementos);
+                    }   
+                }
                 LePacote(pacote);
                 AdicionaPacoteNoGerenciador(gerenciador, pacote);
+                //programaEncerrado = true;
                 break;
             case 2:
-                scanf("%d", &indiceListaPacotes);
+                scanf("%d\n", &indiceListaPacotes);
                 ImprimirPacoteNoIndice(gerenciador, indiceListaPacotes);
+                //programaEncerrado = true;
                 break;
             case 3:
                 ImprimirTodosPacotes(gerenciador);
