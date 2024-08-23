@@ -33,7 +33,7 @@ void ImprimirPacoteNoIndice(tGerenciador *geren, int idx);
  * 
  * @param geren Ponteiro para a estrutura do tipo "tGerenciador" que contém os dados atualizados do gerenciador;
  */
-void ImprimirTodosPacotes(tPacote *geren);
+void ImprimirTodosPacotes(tGerenciador *geren);
 
 /**
  * @brief Destrói (desaloca a memória dinamicamente de) um gereciador de pacotes;
