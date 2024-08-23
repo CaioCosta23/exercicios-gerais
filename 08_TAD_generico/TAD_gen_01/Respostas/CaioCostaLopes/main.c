@@ -7,7 +7,7 @@ int main() {
     tGeneric *tadGenerico;
 
     printf("tad_gen_01\n");
-    printf("Digite o tipo e o numero de elementos:\n");
+    printf("Digite o tipo e numero de elementos:");
 
     scanf("%d %d", &tipo, &numeroElementos);
 
