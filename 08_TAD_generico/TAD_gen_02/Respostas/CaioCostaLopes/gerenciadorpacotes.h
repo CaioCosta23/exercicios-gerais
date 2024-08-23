@@ -26,14 +26,14 @@ void AdicionaPacoteNoGerenciador(tGerenciador *geren, tPacote *pac);
  * @param gen Ponteiro para a estrutura do tipo "tGerenciador" que contém os dados atualizados do gerenciador;
  * @param idx Índice da posição nao vetor/lista em que se encotra o pacote que se deseja imprimir;
  */
-void ImprimePacoteNoIndice(tGerenciador *geren, int idx);
+void ImprimirPacoteNoIndice(tGerenciador *geren, int idx);
 
 /**
  * @brief Imprime as informações de todos os pacotes armazenados no gerenciador de pacotes;
  * 
  * @param geren Ponteiro para a estrutura do tipo "tGerenciador" que contém os dados atualizados do gerenciador;
  */
-void ImprimeTodosPacotes(tPacote *geren);
+void ImprimirTodosPacotes(tPacote *geren);
 
 /**
  * @brief Destrói (desaloca a memória dinamicamente de) um gereciador de pacotes;
