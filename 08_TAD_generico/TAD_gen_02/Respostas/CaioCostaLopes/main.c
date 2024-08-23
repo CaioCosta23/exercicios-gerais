@@ -30,10 +30,10 @@ int main() {
                 break;
             case 2:
                 scanf("%d", &indiceListaPacotes);
-                ImprimePacoteNoIndice(gerenciador, indiceListaPacotes);
+                ImprimirPacoteNoIndice(gerenciador, indiceListaPacotes);
                 break;
             case 3:
-                ImprimeTodosPacotes(gerenciador);
+                ImprimirTodosPacotes(gerenciador);
                 programaEncerrado = true;
                 break;
             default:
