@@ -15,9 +15,9 @@ int main() {
 
     while (1) {
         printf("\nEscolha uma opcao:\n");
-        printf("(1) Cadastrar um novo pacote\n");
-        printf("(2) Imprimir um pacote específico\n");
-        printf("(3) Imprimir todos os pacotes e sair\n");
+        printf("\t(1) Cadastrar um novo pacote\n");
+        printf("\t(2) Imprimir um pacote específico\n");
+        printf("\t(3) Imprimir todos os pacotes e sair\n");
 
         scanf("%d\n", &opcao);
         
@@ -31,7 +31,7 @@ int main() {
                     if (tipoElementos == 1) {
                         pacote = CriaPacote(INT, numeroElementos);
                     }else {
-                        printf("Digite um tipo valido!\n");
+                        printf("\nDigite um tipo valido!");
                         break;
                     }   
                 }
@@ -47,7 +47,7 @@ int main() {
                 programaEncerrado = true;
                 break;
             default:
-                printf("Opcao inexistente! Digite apenas 1, 2 ou 3!\n");
+                printf("Escolha uma opcao valida para o menu!\n");
                 break;
         }
         if (programaEncerrado == true) {
