@@ -42,7 +42,7 @@ tPacote *CriaPacote(Type type, int numElem) {
 
 void LePacote(tPacote *pac) {
     int v;
-
+    printf("\nDigite o conteúdo do vetor/mensagem: ");
     if ((*pac).tipoVetor == CHAR) {
         scanf("%s", ((char*)pac->vetor));
     }else {
@@ -57,11 +57,13 @@ void LePacote(tPacote *pac) {
 void CalculaSomaVerificacaoPacote(tPacote *pac) {
     int v;
 
-    for (v = 0; v < (*pac).tamanhoVetor; v++) {
-        if ((*pac).tipoVetor == CHAR){
+    if ((*pac).tipoVetor == CHAR){
+        for (v = 0; v < (*pac).tamanhoVetor; v++){
             pac->valor += (int)((char*)(*pac).vetor)[v];
-        }else {
-            if ((*pac).tipoVetor == CHAR){
+        }
+    }else {
+        if ((*pac).tipoVetor == INT){
+            for (v = 0; v < (*pac).tamanhoVetor; v++){
                 pac->valor += ((int*)(*pac).vetor)[v];
             }    
         }
@@ -71,6 +73,8 @@ void CalculaSomaVerificacaoPacote(tPacote *pac) {
 void ImprimePacote(tPacote *pac) {
     int v;
 
+    CalculaSomaVerificacaoPacote(pac);
+
     printf("%d", (*pac).valor);
     if ((*pac).tipoVetor == CHAR) {
         printf(" %s", ((char*)(*pac).vetor));
@@ -79,6 +83,7 @@ void ImprimePacote(tPacote *pac) {
             printf(" %d", ((int*)pac->vetor)[v]);
         }
     }
+    printf("\n");
 }
 
 void DestroiPacote(tPacote *pac) {
