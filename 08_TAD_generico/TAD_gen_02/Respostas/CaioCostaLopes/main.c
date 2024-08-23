@@ -19,12 +19,12 @@ int main() {
         printf("\t(2) Imprimir um pacote específico\n");
         printf("\t(3) Imprimir todos os pacotes e sair\n");
 
-        scanf("%d\n", &opcao);
+        scanf("%d", &opcao);
         
         switch(opcao) {
             case 1:
                 printf("Digite o tipo (0-char, 1-int) e o numero de elementos do pacote/mensagem: ");
-                scanf("%d %d\n", &tipoElementos, &numeroElementos);
+                scanf("%d %d", &tipoElementos, &numeroElementos);
                 if (tipoElementos == 0) {
                     pacote = CriaPacote(CHAR, numeroElementos);
                 }else {
@@ -39,7 +39,7 @@ int main() {
                 AdicionaPacoteNoGerenciador(gerenciador, pacote);
                 break;
             case 2:
-                scanf("%d\n", &indiceListaPacotes);
+                scanf("%d", &indiceListaPacotes);
                 ImprimirPacoteNoIndice(gerenciador, indiceListaPacotes);
                 break;
             case 3:
@@ -54,7 +54,6 @@ int main() {
             break;
         }
     }
-
     DestroiGerenciador(gerenciador);
 
     return 0;
