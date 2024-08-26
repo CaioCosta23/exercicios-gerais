@@ -32,10 +32,10 @@ void ImprimeRelatorio(Vector *alunos) {
         }
     }
     printf("Media das notas: %.2f\n", (somaNotas / VectorSize(alunos)));
-    printf("Porcentagem de alunos aprovados: %.2f\n", (((alunosMasculinos + alunosFemininos + outros) / (float)VectorSize(alunos)) * 100));
+    printf("Porcentagem de alunos aprovados: %.2f%\n", (((alunosMasculinos + alunosFemininos + outros) / (float)VectorSize(alunos)) * 100));
     printf("Porcentagem de cada genero:\n");
-    printf("Masculino: %.2f\n", (((float)alunosMasculinos / (float)VectorSize(alunos)) * (float)100));
-    printf("Feminino: %.2f\n", (((float)alunosFemininos / (float)VectorSize(alunos)) * (float)100));
-    printf("Outros: %.2f\n", (((float)outros / (float)VectorSize(alunos)) * (float)100));
+    printf("Masculino: %.2f%\n", (((float)alunosMasculinos / (float)VectorSize(alunos)) * (float)100));
+    printf("Feminino: %.2f%\n", (((float)alunosFemininos / (float)VectorSize(alunos)) * (float)100));
+    printf("Outros: %.2f%\n", (((float)outros / (float)VectorSize(alunos)) * (float)100));
     
 }
