@@ -15,8 +15,10 @@ void ImprimeRelatorio(Vector *alunos) {
     for (v = 0; v < VectorSize(alunos); v++) {
         somaNotas += GetNotaAluno(VectorGet(alunos, v));
 
-        if (GetNotaAluno(VectorGet(alunos, v)) >= APROVACAO) {
-            if (GetGeneroAluno(VectorGet(alunos, v)) == MASCULINO) {
+        if (GetNotaAluno(VectorGet(alunos, v)) >= APROVACAO) { 
+        }
+
+        if (GetGeneroAluno(VectorGet(alunos, v)) == MASCULINO) {
                 aprovadosMasculinos += 1;
             }else {
                 if (GetGeneroAluno(VectorGet(alunos, v)) == FEMININO) {
@@ -27,7 +29,6 @@ void ImprimeRelatorio(Vector *alunos) {
                     }
                 }
             }
-        }
     }
     printf("Media das notas: %.2f\n", (somaNotas / VectorSize(alunos)));
     printf("Porcentagem de alunos aprovados: %.2f\n", (((aprovadosMasculinos + aprovadosFemininos + aprovadosOutros) / (float)VectorSize(alunos)) * 100));
