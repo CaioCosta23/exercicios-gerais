@@ -18,14 +18,14 @@ tBanco *CriaBanco();
  * 
  * @param banco Ponteiro para a estrutura o tipo "tBanco" onde serão armazenadas as informações do banco;
  */
-void LeAgencia(tBanco *banco);
+void LeBanco(tBanco *banco);
 /**
  * @brief Adiciona uma agência no banco;
  * 
  * @param banco Ponteiro para a estrutura do tipo "tBanco" que contém os dados atualizados do banco;
  * @param agencia Ponteiro para a estrutura do tipo "tAgencia" que será adicionada ao banco;
  */
-void AdicionaConta(tBanco *banco, tAgencia *agencia);
+void AdicionaBanco(tBanco *banco, tAgencia *agencia);
 
 /**
  * @brief Insere uma conta em uma agência pertencente ao banco;
