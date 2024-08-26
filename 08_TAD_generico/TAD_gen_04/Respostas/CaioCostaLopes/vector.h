@@ -41,7 +41,7 @@ int VectorSize(Vector *v);
  * @brief Libera/destrói (desaloca a memória dinamicamente de) um vetor;
  * 
  * @param v Ponteiro para a estrutura do tipo "Vector" que contém os campos de dados atualizados vetor que será liberado;
- * @param destroy Função que libera/destrói (desaloca a memória dinâmicamentea memória alocada para cada elemento do vetor
+ * @param destroy Função que libera/destrói (desaloca a memória dinâmicamente)a memória alocada para cada elemento do vetor
 */
 void VectorDestroy(Vector *v, void (*destroy)(DataType));
 
