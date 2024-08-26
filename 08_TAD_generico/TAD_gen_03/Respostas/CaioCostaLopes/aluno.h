@@ -34,4 +34,11 @@ char GetGeneroAluno(tAluno *aluno);
  */
 float GetNotaAluno(tAluno *aluno);
 
+/**
+ * @brief Destrói (desaloca a memória alocada dinâmicamente de) um aluno;
+ * 
+ * @param aluno Ponteiro para a estrutura do tipo "tAluno" que será destruída (desalocada)
+ */
+void DestroiAluno(data_type aluno);
+
 #endif
