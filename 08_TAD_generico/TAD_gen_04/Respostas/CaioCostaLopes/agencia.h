@@ -21,7 +21,7 @@ tAgencia *CriaAgencia();
 void LeAgencia(tAgencia *agencia);
 
 /**
- * @brief Adicionauma conta na agência;
+ * @brief Adiciona uma conta na agência;
  * 
  * @param agencia Ponteiro para a estrutura do tipo "tAgencia" que contém os dados atualizados da agência;
  * @param conta Ponteiro para a estrutura do tipo "tConta" que será adicionada a agência;
