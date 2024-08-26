@@ -3,7 +3,7 @@
 
 #include "vector.h"
 
-typedef struct ALuno tAluno;
+typedef struct Aluno tAluno;
 
 /**
  * @brief Cria (aloca a memória dinamicamente de) um aluno;
