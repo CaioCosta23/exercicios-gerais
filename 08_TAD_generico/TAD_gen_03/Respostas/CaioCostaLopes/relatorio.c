@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "relatorio.h"
+#include "aluno.h"
 
 #define MASCULINO 'M'
 #define FEMININO 'F'
