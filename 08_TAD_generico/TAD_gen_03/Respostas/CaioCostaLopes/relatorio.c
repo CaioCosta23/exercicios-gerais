@@ -10,31 +10,32 @@
 
 void ImprimeRelatorio(Vector *alunos) {
     int v;
-    float somaNotas = 0, aprovadosMasculinos = 0, aprovadosFemininos = 0, aprovadosOutros = 0;
+    float somaNotas = 0, aprovados = 0, alunosMasculinos = 0, alunosFemininos = 0, outros = 0;
 
     for (v = 0; v < VectorSize(alunos); v++) {
         somaNotas += GetNotaAluno(VectorGet(alunos, v));
 
         if (GetNotaAluno(VectorGet(alunos, v)) >= APROVACAO) { 
+            aprovados += 1;
         }
 
         if (GetGeneroAluno(VectorGet(alunos, v)) == MASCULINO) {
-                aprovadosMasculinos += 1;
+                alunosMasculinos += 1;
+        }else {
+            if (GetGeneroAluno(VectorGet(alunos, v)) == FEMININO) {
+                alunosFemininos += 1;
             }else {
-                if (GetGeneroAluno(VectorGet(alunos, v)) == FEMININO) {
-                    aprovadosFemininos += 1;
-                }else {
-                    if (GetGeneroAluno(VectorGet(alunos, v)) == OUTROS) {
-                        aprovadosOutros += 1;
-                    }
+                if (GetGeneroAluno(VectorGet(alunos, v)) == OUTROS) {
+                    outros += 1;
                 }
             }
+        }
     }
     printf("Media das notas: %.2f\n", (somaNotas / VectorSize(alunos)));
-    printf("Porcentagem de alunos aprovados: %.2f\n", (((aprovadosMasculinos + aprovadosFemininos + aprovadosOutros) / (float)VectorSize(alunos)) * 100));
+    printf("Porcentagem de alunos aprovados: %.2f\n", (((alunosMasculinos + alunosFemininos + outros) / (float)VectorSize(alunos)) * 100));
     printf("Porcentagem de cada genero:\n");
-    printf("Masculino: %.2f\n", ((aprovadosMasculinos / (float)VectorSize(alunos)) * 100));
-    printf("Feminino: %.2f\n", ((aprovadosFemininos / (float)VectorSize(alunos)) * 100));
-    printf("Outros: %.2f\n", ((aprovadosOutros / (float)VectorSize(alunos)) * 100));
+    printf("Masculino: %.2f\n", (((float)alunosMasculinos / (float)VectorSize(alunos)) * (float)100));
+    printf("Feminino: %.2f\n", (((float)alunosFemininos / (float)VectorSize(alunos)) * (float)100));
+    printf("Outros: %.2f\n", (((float)outros / (float)VectorSize(alunos)) * (float)100));
     
 }
