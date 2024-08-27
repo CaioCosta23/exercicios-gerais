@@ -35,7 +35,7 @@ void AdicionaConta(tAgencia *agencia, tConta *conta);
  * @param agencia2 Ponteiro para a estrutura do tipo "tAgencia" que contém os dados atualizados da agência a ser verificada;
  * @return int 1 se os números forem iguais, 0 caso contrário;
  */
-int CompararAgencia(int numAgencia, tAgencia *agencia2);
+int ComparaAgencia(int numAgencia, tAgencia *agencia2);
 
 /**
  * @brief Obtém o saldo médio (média do saldo de todas as contas) da agência;
@@ -50,7 +50,7 @@ float GetSaldoMedioAgencia(tAgencia *agencia);
  * 
  * @param agencia Ponteiro para a estrutura do tipo "tAgencia" que contém os dados atualizados da agência que será impressa;
  */
-void ImprimeAgencia(tAgencia *agencia);
+void ImprimeDadosAgencia(tAgencia *agencia);
 
 /**
  * @brief Destrói (desaloca a memória dinamicamente de) uma agência;
