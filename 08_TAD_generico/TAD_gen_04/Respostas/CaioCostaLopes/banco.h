@@ -25,7 +25,7 @@ void LeBanco(tBanco *banco);
  * @param banco Ponteiro para a estrutura do tipo "tBanco" que contém os dados atualizados do banco;
  * @param agencia Ponteiro para a estrutura do tipo "tAgencia" que será adicionada ao banco;
  */
-void AdicionaBanco(tBanco *banco, tAgencia *agencia);
+void AdicionaAgencia(tBanco *banco, tAgencia *agencia);
 
 /**
  * @brief Insere uma conta em uma agência pertencente ao banco;
