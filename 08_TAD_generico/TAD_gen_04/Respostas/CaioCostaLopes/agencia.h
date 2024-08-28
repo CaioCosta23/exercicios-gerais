@@ -57,6 +57,6 @@ void ImprimeDadosAgencia(tAgencia *agencia);
  * 
  * @param agencia Ponteiro para a estrutura do tipo "tAgencia" que contém os dados atualizados da agência que será destruída;
  */
-void DestroiAgencia(DataType *agencia);
+void DestroiAgencia(DataType agencia);
 
 #endif
