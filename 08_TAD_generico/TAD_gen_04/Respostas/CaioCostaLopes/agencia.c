@@ -53,7 +53,7 @@ float GetSaldoMedioAgencia(tAgencia *agencia) {
     for (c = 0; c < VectorSize((*agencia).contas); c++) {
         saldoMedio += GetSaldoConta(VectorGet((*agencia).contas, c));
     }
-    return saldoMedio;
+    return saldoMedio / VectorSize((*agencia).contas);
 }
 
 void ImprimeDadosAgencia(tAgencia *agencia) {
