@@ -59,20 +59,20 @@ float GetSaldoMedioAgencia(tAgencia *agencia) {
 void ImprimeDadosAgencia(tAgencia *agencia) {
     printf("\tNome: %s\n", (*agencia).local);
     printf("\tNumero: %d\n", (*agencia).id);
-    printf("\tNumero de contas: %d\n", VectorSize((*agencia).contas));
-    printf("\tSaldo medio: %.2f", GetSaldoMedioAgencia(agencia));
+    printf("\tNumero de contas cadastradas: %d\n", VectorSize((*agencia).contas));
+    printf("\tSaldo médio: R$%.2f\n\n", GetSaldoMedioAgencia(agencia));
 }
 
-void DestroiAgencia(tAgencia *agencia) {
-    if (agencia != NULL) {
-        if ((*agencia).contas == NULL) {
-            VectorDestroy((*agencia).contas, DestroiConta);
+void DestroiAgencia(DataType agencia) {
+    tAgencia *agen = (tAgencia*)agencia;
+
+    if (agen != NULL) {
+        if ((*agen).local != NULL) {
+            free((*agen).local);
+            (*agen).local = NULL;
         }
-        if ((*agencia).local != NULL) {
-            free((*agencia).local);
-            agencia->local = NULL;
-        }
-        free(agencia);
-        agencia = NULL;
+        VectorDestroy((*agen).contas, DestroiConta);
+        free(agen);
+        agen = NULL;
     }
 }
