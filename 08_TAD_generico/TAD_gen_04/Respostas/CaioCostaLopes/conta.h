@@ -31,6 +31,6 @@ float GetSaldoConta(tConta *conta);
  * 
  * @param conta Ponteiro para a estrutura do tipo "tAgencia" que contém os dados atualizados da conta que será destruída;
  */
-void DestroiConta(DataType *conta);
+void DestroiConta(DataType conta);
 
 #endif
