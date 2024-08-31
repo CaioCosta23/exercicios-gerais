@@ -9,21 +9,21 @@ typedef struct mult tMult;
  * @param n1 - Primeiro número que será multiplicado;
  * @param n2 - Segundo número que será multiplicado;
  *
- * @return Ponteiro para a estrutura do tipo "tImpr" que contém os campos de dados inicializados da tarefa de multiplicação;
+ * @return Ponteiro para a estrutura do tipo "tMult" que contém os campos de dados inicializados da tarefa de multiplicação;
  */
 tMult* CriaTarefaMultiplicar(float n1, float n2);
 
 /**
  * @brief Executa uma tarefa de multiplicação;
  *
- * @param mult - Ponteiro para a estrutura do tipo "tImpr" que contém os dados da tarefa de multiplicação atualizados;
+ * @param mult - Ponteiro para a estrutura do tipo "tMult" que contém os dados da tarefa de multiplicação atualizados;
  */
 void ExecutaTarefaMultiplicar(void *mult);
 
 /**
  * @brief Destrói (desaloca a memória dinamicamente) uma tarefa de multiplicação;
  *
- * @param mult Ponteiro para a estrutura do tipo "tImpr" que contém os dados da tarefa de impressão a ser destruída;
+ * @param mult Ponteiro para a estrutura do tipo "tMult" que contém os dados da tarefa de impressão a ser destruída;
  */
 void DestroiTarefaMultiplicar(void *mult);
 
