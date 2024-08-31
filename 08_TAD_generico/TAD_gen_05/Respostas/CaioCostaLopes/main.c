@@ -12,11 +12,10 @@
 #define TAM_MAX_MSG 1001
 
 int main() {
-    int numTarefas, t, prioridadeTarefa, c;
+    int numTarefas, t, prioridadeTarefa;
     tAgendaTarefas *agendaTarefas;
     char tipoTarefa;
     float numero1, numero2;
-    int m = 0;
     char mensagem[TAM_MAX_MSG];
 
     printf("Digite o numero de tarefas: ");
