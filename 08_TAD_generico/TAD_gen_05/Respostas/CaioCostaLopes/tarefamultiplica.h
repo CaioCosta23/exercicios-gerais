@@ -23,7 +23,7 @@ void ExecutaTarefaMultiplicar(void *mult);
 /**
  * @brief Destrói (desaloca a memória dinamicamente) uma tarefa de multiplicação;
  *
- * @param mult Ponteiro para a estrutura do tipo "tMult" que contém os dados da tarefa de impressão a ser destruída;
+ * @param mult Ponteiro para a estrutura do tipo "tMult" que contém os dados da tarefa de multiplicação a ser destruída;
  */
 void DestroiTarefaMultiplicar(void *mult);
 
