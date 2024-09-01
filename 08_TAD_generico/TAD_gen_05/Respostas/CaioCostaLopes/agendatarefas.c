@@ -8,6 +8,7 @@ typedef void (*destruir)(void *);
 struct agendatarefas {
     void **tarefas;
     int *prioridade;
+    int *ordemDeChamada;
     executar *executar;
     destruir *destruir;
     int qtdTarefas;
@@ -31,6 +32,13 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
 
     agendaTarefas->prioridade = (int*)malloc(numElem * sizeof(int));
     if ((*agendaTarefas).prioridade == NULL) {
+        printf("Erro na alocacao de memoria do vetor de prioridades da agenda de tarefas!\n");
+        DestroiAgendaDeTarefas(agendaTarefas);
+        exit(1);
+    }
+
+    agendaTarefas->ordemDeChamada = (int*)malloc(numElem * sizeof(int));
+    if ((*agendaTarefas).ordemDeChamada == NULL) {
         printf("Erro na alocacao de memoria do vetor de prioridades da agenda de tarefas!\n");
         DestroiAgendaDeTarefas(agendaTarefas);
         exit(1);
@@ -60,18 +68,19 @@ void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, v
     tar->prioridade[(*tar).qtdTarefas] = prioridade;
     tar->executar[(*tar).qtdTarefas] = executa;
     tar->destruir[(*tar).qtdTarefas] = destroi;
+    tar->ordemDeChamada[(*tar).qtdTarefas] = (*tar).qtdTarefas;
     tar->qtdTarefas += 1;
 }
 
 void ExecutarTarefasDaAgenda(tAgendaTarefas *tar) {
-    int t1, t2, prioridadeAuxiliar, t;
+    int t1, t2, prioridadeAuxiliar, ordemAuxiliar, t;
     void *tarefaAuxiliar;
     executar execucaoAuxiliar;
     destruir destruicaoAuxiliar;
 
     for (t1 = 0; t1 < ((*tar).qtdTarefas - 1); t1++) {
         for (t2 = t1 + 1; t2 < (*tar).qtdTarefas; t2++) {
-            if ((*tar).prioridade[t1] > (*tar).prioridade[t2]) {
+            if (((*tar).prioridade[t1] < (*tar).prioridade[t2]) || (((*tar).prioridade[t1] == (*tar).prioridade[t2]) && ((*tar).ordemDeChamada[t1] > (*tar).ordemDeChamada[t2]))) {
                 tarefaAuxiliar = (*tar).tarefas[t1];
                 tar->tarefas[t1] = (*tar).tarefas[t2];
                 tar->tarefas[t2] = tarefaAuxiliar;
@@ -79,6 +88,10 @@ void ExecutarTarefasDaAgenda(tAgendaTarefas *tar) {
                 prioridadeAuxiliar = (*tar).prioridade[t1];
                 tar->prioridade[t1] = (*tar).prioridade[t2];
                 tar->prioridade[t2] = prioridadeAuxiliar;
+
+                ordemAuxiliar = (*tar).ordemDeChamada[t1];
+                tar->ordemDeChamada[t1] = (*tar).ordemDeChamada[t2];
+                tar->ordemDeChamada[t2] = ordemAuxiliar;
 
                 execucaoAuxiliar = (*tar).executar[t1];
                 tar->executar[t1] = (*tar).executar[t2];
@@ -101,6 +114,10 @@ void DestroiAgendaDeTarefas(tAgendaTarefas *tar) {
         if ((*tar).prioridade != NULL) {
             free((*tar).prioridade);
             tar->prioridade = NULL;
+        }
+        if ((*tar).ordemDeChamada != NULL) {
+            free((*tar).ordemDeChamada);
+            tar->ordemDeChamada = NULL;
         }
         if ((*tar).tarefas != NULL) {
             free((*tar).tarefas);
