@@ -22,7 +22,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
         exit(1);
     }
 
-    agendaTarefas->tarefas = (void**)malooc(numElem * sizeof(void*));
+    agendaTarefas->tarefas = (void**)malloc(numElem * sizeof(void*));
     if ((*agendaTarefas).tarefas == NULL) {
         printf("Erro na alocacao de memoria do vetor de tarefas da agenda de tarefas!\n");
         DestroiAgendaDeTarefas(agendaTarefas);
