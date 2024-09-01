@@ -66,8 +66,8 @@ void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, v
 void ExecutarTarefasDaAgenda(tAgendaTarefas *tar) {
     int t1, t2, prioridadeAuxiliar, t;
     void *tarefaAuxiliar;
-    executar *execucaoAuxiliar;
-    destruir *destruicaoAuxiliar;
+    executar execucaoAuxiliar;
+    destruir destruicaoAuxiliar;
 
     for (t1 = 0; t1 < ((*tar).qtdTarefas - 1); t1++) {
         for (t2 = t1 + 1; t2 < (*tar).qtdTarefas; t2++) {
