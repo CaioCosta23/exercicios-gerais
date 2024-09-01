@@ -57,7 +57,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
 
 void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void *), void (*destroi)(void *)) {
     tar->tarefas[(*tar).qtdTarefas] = tarefa;
-    tar->prioridade[(*tar).qtdTarefas];
+    tar->prioridade[(*tar).qtdTarefas] = prioridade;
     tar->executar[(*tar).qtdTarefas] = executa;
     tar->destruir[(*tar).qtdTarefas] = destroi;
     tar->qtdTarefas += 1;
