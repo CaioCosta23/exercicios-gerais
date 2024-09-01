@@ -96,7 +96,7 @@ void ExecutarTarefasDaAgenda(tAgendaTarefas *tar) {
     }
 }
 
-void DestroiAgendaTarefas(tAgendaTarefas *tar) {
+void DestroiAgendaDeTarefas(tAgendaTarefas *tar) {
     if (tar != NULL) {
         if ((*tar).prioridade != NULL) {
             free((*tar).prioridade);
