@@ -1,0 +1,303 @@
+Rodando o script do Aluno - Arquivos header necessários do professor existem na pasta Includes
+ - Arquivos objetos necessários do professor existem na pasta Gabarito-obj.
+#######################################
+ALUNO: CaioCostaLopes
+#######################################
+CRIANDO O DIRETÓRIO DE RESULTADO PARA CaioCostaLopes:
+ - Diretório Resultados/CaioCostaLopes criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/agendatarefas criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/main criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/tarefaimprime criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/tarefamultiplica criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/tarefasoma criado com sucesso!
+ - Diretório Resultados/CaioCostaLopes/completo criado com sucesso!
+ - Arquivos criados: ok!
+
+CHECKANDO OS ARQUIVOS DO ALUNO:
+ - Arquivo esperado 'Respostas/CaioCostaLopes/agendatarefas.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/agendatarefas.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/main.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/tarefaimprime.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/tarefaimprime.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/tarefamultiplica.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/tarefamultiplica.h' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/tarefasoma.c' encontrado!
+ - Arquivo esperado 'Respostas/CaioCostaLopes/tarefasoma.h' encontrado!
+ - Arquivos esperados enviados: Ok!
+
+COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
+ - Pasta agendatarefas:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Pasta main:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/main
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/main
+ - Pasta tarefaimprime:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Pasta tarefamultiplica:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Pasta tarefasoma:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando os 'Includes/*.h' do professor para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Pasta completo:
+ - Copiando os Casos de teste para a pasta Resultados/CaioCostaLopes/completo
+ - Copiando os 'Respostas/CaioCostaLopes/*.h' do aluno para a pasta Resultados/CaioCostaLopes/completo
+ - Copiando os 'Respostas/CaioCostaLopes/*.c' do aluno para a pasta Resultados/CaioCostaLopes/completo
+ - Arquivos copiados: ok!
+
+COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:
+ - Pasta agendatarefas:
+ - Compilando o arquivo agendatarefas.c do aluno, gerando o agendatarefas.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Compilando o arquivo tarefaimprime.c do aluno, gerando o tarefaimprime.o
+ - Compilando o arquivo tarefamultiplica.c do aluno, gerando o tarefamultiplica.o
+ - Compilando o arquivo tarefasoma.c do aluno, gerando o tarefasoma.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/result_compilation.txt.
+ - Pasta main:
+ - Compilando o arquivo agendatarefas.c do aluno, gerando o agendatarefas.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Compilando o arquivo tarefaimprime.c do aluno, gerando o tarefaimprime.o
+ - Compilando o arquivo tarefamultiplica.c do aluno, gerando o tarefamultiplica.o
+ - Compilando o arquivo tarefasoma.c do aluno, gerando o tarefasoma.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/result_compilation.txt.
+ - Pasta tarefaimprime:
+ - Compilando o arquivo agendatarefas.c do aluno, gerando o agendatarefas.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Compilando o arquivo tarefaimprime.c do aluno, gerando o tarefaimprime.o
+ - Compilando o arquivo tarefamultiplica.c do aluno, gerando o tarefamultiplica.o
+ - Compilando o arquivo tarefasoma.c do aluno, gerando o tarefasoma.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/result_compilation.txt.
+ - Pasta tarefamultiplica:
+ - Compilando o arquivo agendatarefas.c do aluno, gerando o agendatarefas.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Compilando o arquivo tarefaimprime.c do aluno, gerando o tarefaimprime.o
+ - Compilando o arquivo tarefamultiplica.c do aluno, gerando o tarefamultiplica.o
+ - Compilando o arquivo tarefasoma.c do aluno, gerando o tarefasoma.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/result_compilation.txt.
+ - Pasta tarefasoma:
+ - Compilando o arquivo agendatarefas.c do aluno, gerando o agendatarefas.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Compilando o arquivo tarefaimprime.c do aluno, gerando o tarefaimprime.o
+ - Compilando o arquivo tarefamultiplica.c do aluno, gerando o tarefamultiplica.o
+ - Compilando o arquivo tarefasoma.c do aluno, gerando o tarefasoma.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/result_compilation.txt.
+ - Pasta completo:
+ - Compilando o arquivo agendatarefas.c do aluno, gerando o agendatarefas.o
+ - Compilando o arquivo main.c do aluno, gerando o main.o
+ - Compilando o arquivo tarefaimprime.c do aluno, gerando o tarefaimprime.o
+ - Compilando o arquivo tarefamultiplica.c do aluno, gerando o tarefamultiplica.o
+ - Compilando o arquivo tarefasoma.c do aluno, gerando o tarefasoma.o
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/result_compilation.txt.
+ - Copiando os arquivos objetos do professor para cada subpasta do Resultado do CaioCostaLopes:
+ - Copiando o Gabarito-obj/agendatarefas.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/agendatarefas.o para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando o Gabarito-obj/agendatarefas.o para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Copiando o Gabarito-obj/agendatarefas.o para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Copiando o Gabarito-obj/main.o para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando o Gabarito-obj/tarefaimprime.o para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando o Gabarito-obj/tarefaimprime.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/tarefaimprime.o para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Copiando o Gabarito-obj/tarefaimprime.o para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando o Gabarito-obj/tarefamultiplica.o para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando o Gabarito-obj/tarefamultiplica.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/tarefamultiplica.o para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando o Gabarito-obj/tarefamultiplica.o para a pasta Resultados/CaioCostaLopes/tarefasoma
+ - Copiando o Gabarito-obj/tarefasoma.o para a pasta Resultados/CaioCostaLopes/agendatarefas
+ - Copiando o Gabarito-obj/tarefasoma.o para a pasta Resultados/CaioCostaLopes/main
+ - Copiando o Gabarito-obj/tarefasoma.o para a pasta Resultados/CaioCostaLopes/tarefaimprime
+ - Copiando o Gabarito-obj/tarefasoma.o para a pasta Resultados/CaioCostaLopes/tarefamultiplica
+ - Arquivos Compilados: ok!
+
+LINKANDO OS ARQUIVOS COMPILADOS:
+ - Pasta agendatarefas:
+ - Gerando o binário prog linkando com o(s) arquivo(s) agendatarefas/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/result_linking.txt
+ - Pasta main:
+ - Gerando o binário prog linkando com o(s) arquivo(s) main/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/result_linking.txt
+ - Pasta tarefaimprime:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tarefaimprime/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/result_linking.txt
+ - Pasta tarefamultiplica:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tarefamultiplica/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/result_linking.txt
+ - Pasta tarefasoma:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tarefasoma/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/result_linking.txt
+ - Pasta completo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) completo/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/result_linking.txt
+
+EXECUTANDO O VALGRIND EM CADA CASO:
+ - Pasta agendatarefas / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 16, frees: 16, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta agendatarefas / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 16, frees: 16, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta agendatarefas / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 58, frees: 58, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta agendatarefas / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta agendatarefas / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/agendatarefas/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 60, frees: 60, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 57, frees: 57, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta main / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/main/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 59, frees: 59, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefaimprime / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefaimprime / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefaimprime / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 57, frees: 57, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefaimprime / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefaimprime / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefaimprime/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 59, frees: 59, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefamultiplica / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefamultiplica / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefamultiplica / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 57, frees: 57, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefamultiplica / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefamultiplica / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefamultiplica/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 59, frees: 59, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefasoma / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefasoma / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 15, frees: 15, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefasoma / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 57, frees: 57, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefasoma / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 35, frees: 35, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta tarefasoma / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/tarefasoma/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 59, frees: 59, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 1:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 16, frees: 16, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 2:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 16, frees: 16, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 3:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 58, frees: 58, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 4:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 36, frees: 36, errors: 0.
+ - Resultado para o saida.txt: Ok!
+ - Pasta completo / Caso 5:
+ - Arquivo de output gerado: Resultados/CaioCostaLopes/completo/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 60, frees: 60, errors: 0.
+ - Resultado para o saida.txt: Ok!
+
+#######################################
+RESULTADOS FINAIS
+#######################################
+
+----------------------------------------------------------------------------
+Nome 0: CaioCostaLopes
+ - Arquivos Corretos: 9 de 9 / Nota 10.00
+ - Compilações Corretas: 30 de 30 / Nota 10.00
+ - Linkagens Corretas: 6 de 6 / Nota 10.00
+ - Resultados Corretos agendatarefas: 5 de 5 / Nota 10.00
+ - Valgrinds Corretos agendatarefas: 5 de 5 / Nota 10.00
+ - Resultados Corretos main: 5 de 5 / Nota 10.00
+ - Valgrinds Corretos main: 5 de 5 / Nota 10.00
+ - Resultados Corretos tarefaimprime: 5 de 5 / Nota 10.00
+ - Valgrinds Corretos tarefaimprime: 5 de 5 / Nota 10.00
+ - Resultados Corretos tarefamultiplica: 5 de 5 / Nota 10.00
+ - Valgrinds Corretos tarefamultiplica: 5 de 5 / Nota 10.00
+ - Resultados Corretos tarefasoma: 5 de 5 / Nota 10.00
+ - Valgrinds Corretos tarefasoma: 5 de 5 / Nota 10.00
+ - Resultados Corretos completo: 5 de 5 / Nota 10.00
+ - Valgrinds Corretos completo: 5 de 5 / Nota 10.00
+ - Soma das notas do CaioCostaLopes: 150.000
+ - Campos Considerados: 15
+ - Média do CaioCostaLopes: 10.00
+
+----------------------------------------------------------------------------
+
+Arquivo CSV Resultado.csv com os resultados finais foi gerado na pasta raíz!
+
+
