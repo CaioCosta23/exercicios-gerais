@@ -7,7 +7,7 @@ struct soma{
     float numero2;
 };
 
-tSoma *CriaSoma(float n1, float n2) {
+tSoma *CriaTarefaSoma(float n1, float n2) {
     tSoma *soma = (tSoma*)malloc(sizeof(tSoma));
 
     if (soma == 0) {
