@@ -25,7 +25,7 @@ tMult *CriaTarefaMultiplicar(float n1, float n2) {
 void ExecutaTarefaMultiplicar(void *mult) {
     tMult *multiplicacao = mult;
 
-    printf("\nO resultado da soma de %.2f com %.2f eh: %.2f", (*multiplicacao).numero1, (*multiplicacao).numero2, ((*multiplicacao).numero1 + (*multiplicacao).numero2));
+    printf("\nO resultado da multiplicacao de %.2f com %.2f eh: %.2f", (*multiplicacao).numero1, (*multiplicacao).numero2, ((*multiplicacao).numero1 * (*multiplicacao).numero2));
 }
 
 void DestroiTarefaMultiplicar(void *mult) {
