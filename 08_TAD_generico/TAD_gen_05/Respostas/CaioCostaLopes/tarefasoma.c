@@ -10,7 +10,7 @@ struct soma{
 tSoma *CriaTarefaSoma(float n1, float n2) {
     tSoma *soma = (tSoma*)malloc(sizeof(tSoma));
 
-    if (soma == 0) {
+    if (soma == NULL) {
         printf("Erro na alocacao de memoria da soma ");
         DestroiTarefaSoma(soma);
         return soma;
