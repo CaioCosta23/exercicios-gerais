@@ -11,7 +11,7 @@ typedef struct complexo tNumComplexo;
  *
  * @return Ponteiro para a estrutura do tipo "tNumeroComplexo" que contém os campos de dados do número complexo inicializados;
  */
-tNumComplexo* CriaNumComplexo(float real, float imag);
+tNumComplexo *CriaNumComplexo(float real, float imag);
 
 /**
  * @brief Obtém a parte imaginária do número complexo;
@@ -46,7 +46,7 @@ int RetornaNumBytesComplexo();
  *
  * @return Ponteiro para a estrutura do tipo "tNumeroComplexo" resultado da soma entre dois um números complexos;
  */
-tNumComplexo* SomaComplexos(tNumComplexo* n1, tNumComplexo *n2);
+tNumComplexo *SomaComplexos(tNumComplexo* n1, tNumComplexo *n2);
 
 /**
  * @brief Multiplica dois números complexos;
@@ -56,7 +56,7 @@ tNumComplexo* SomaComplexos(tNumComplexo* n1, tNumComplexo *n2);
  *
  * @return Ponteiro para a estrutura do tipo "tNumeroComplexo" resultado da multiplicação entre dois um números complexos;
  */
-tNumComplexo* MultComplexos(tNumComplexo* n1, tNumComplexo* n2);
+tNumComplexo *MultComplexos(tNumComplexo* n1, tNumComplexo* n2);
 
 /**
  * @brief Imprime um número complexo;
