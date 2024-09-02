@@ -54,15 +54,6 @@ void *ObtemElementoMatrizGenerica(tMatrizGenerica *mat, int linha, int coluna);
 void AtribuiElementoMatrizGenerica(tMatrizGenerica *mat, int linha, int coluna, void *elem);
 
 /**
- * @brief Imprime os elementos da matriz;
- *
- * @param mat Ponteiro para a estrutura do tipo "tMatrizGenerica" que contém os dados atuailzados da matriz genérica;
- * @param imprime_elemento Ponteiro para a função de impressão de um elemento;
- */
-
-void ImprimirMatrizGenerica(tMatrizGenerica *mat, void (imprime_elemento(void*)));
-
-/**
  * @brief Encontra a transposta de uma matriz;
  *
  * @param mat Ponteiro para a estrutura do tipo "tMatrizGenerica" que contém os dados atuailzados da matriz genérica;
@@ -90,11 +81,20 @@ tMatrizGenerica *MultiplicaMatrizes(tMatrizGenerica *mat1, tMatrizGenerica *mat2
  *
  * @param mat Ponteiro para a estrutura do tipo "tMatrizGenerica" que contém os dados atuailzados da matriz genérica que terá seu tipo convertido;
  * @param novoNumByteElem Número de bytes do novo tipo da matriz;
- * @param converte_elem  Ponteiro para função que tem a capacidade de converter o elemento do tipo original para o novo tipo
+ * @param converte_elem  Ponteiro para função que tem a capacidade de converter o elemento do tipo original para o novo tipo;
  *
  * @return Ponteiro para a estrutura do tipo "tMatrizGenerica" que possui um novo tipo;
  */
 tMatrizGenerica *ConverteTipoMatriz(tMatrizGenerica *mat2, int novoNumByteElem, void* (*converte_elem)(void*));
+
+/**
+ * @brief Imprime os elementos da matriz;
+ *
+ * @param mat Ponteiro para a estrutura do tipo "tMatrizGenerica" que contém os dados atuailzados da matriz genérica;
+ * @param imprime_elemento Ponteiro para a função de impressão de um elemento;
+ */
+
+void ImprimirMatrizGenerica(tMatrizGenerica *mat, void (imprime_elemento(void*)));
 
 /**
  * @brief Destrói (a memória alocada dinamicamente de) uma matriz;
