@@ -14,8 +14,8 @@ tNumComplexo *CriaNumComplexo(float real, float imag) {
         exit(1);
     }
 
-    numeroComplexo->parteReal = 0;
-    numeroComplexo->parteImaginaria = 0;
+    numeroComplexo->parteReal = real;
+    numeroComplexo->parteImaginaria = imag;
 
     return numeroComplexo;
 }
