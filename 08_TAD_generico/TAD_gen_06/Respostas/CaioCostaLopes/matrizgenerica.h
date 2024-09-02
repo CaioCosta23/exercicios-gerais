@@ -12,7 +12,7 @@ typedef struct matrizgenerica tMatrizGenerica;
  * OBS: Cria a matriz genérica desde que esse tipo ocupe determinado número de bytes;
  * @return Ponteiro para a etrutura do tipo "tMatrizGenerica" que contém os campos de dados da matriz genérica inicializados;
  */
-tMatrizGenerica * CriaMatrizGenerica(int linhas, int colunas, int numByteElem);
+tMatrizGenerica *CriaMatrizGenerica(int linhas, int colunas, int numByteElem);
 
 /**
  * @brief Obtém o número de linhas da matriz;
@@ -21,7 +21,7 @@ tMatrizGenerica * CriaMatrizGenerica(int linhas, int colunas, int numByteElem);
  *
  * @return Número de linhas da matriz;
  */
-int ObtemNumeroLinhasMatrizGenerica(tMatrizGenerica * mat);
+int ObtemNumeroLinhasMatrizGenerica(tMatrizGenerica *mat);
 
 /**
  * @brief Obtém o número de colunas da matriz;
@@ -30,7 +30,7 @@ int ObtemNumeroLinhasMatrizGenerica(tMatrizGenerica * mat);
  *
  * @return Número de colunas da matriz;
  */
-int ObtemNumeroColunasMatrizGenerica(tMatrizGenerica * mat);
+int ObtemNumeroColunasMatrizGenerica(tMatrizGenerica *mat);
 
 /**
  * @brief Obtém um elemento da matriz genérica;
@@ -41,7 +41,7 @@ int ObtemNumeroColunasMatrizGenerica(tMatrizGenerica * mat);
  *
  * @return Ponteiro vazio para o elemento da matriz que está na linha e coluna passadas como parâmetro;
  */
-void * ObtemElementoMatrizGenerica(tMatrizGenerica * mat, int linha, int coluna);
+void *ObtemElementoMatrizGenerica(tMatrizGenerica *mat, int linha, int coluna);
 
 /**
  * @brief Atribui um elemento a uma posição de uma matriz;
@@ -51,7 +51,7 @@ void * ObtemElementoMatrizGenerica(tMatrizGenerica * mat, int linha, int coluna)
  * @param coluna Coluna da matriz em que o elemento será atribuido;
  * @param elem Elemento que será adicionando a matriz;
  */
-void AtribuiElementoMatrizGenerica(tMatrizGenerica * mat, int linha, int coluna, void* elem);
+void AtribuiElementoMatrizGenerica(tMatrizGenerica *mat, int linha, int coluna, void *elem);
 
 /**
  * @brief Imprime os elementos da matriz;
@@ -60,7 +60,7 @@ void AtribuiElementoMatrizGenerica(tMatrizGenerica * mat, int linha, int coluna,
  * @param imprime_elemento Ponteiro para a função de impressão de um elemento;
  */
 
-void ImprimirMatrizGenerica(tMatrizGenerica * mat, void (imprime_elemento(void*)));
+void ImprimirMatrizGenerica(tMatrizGenerica *mat, void (imprime_elemento(void*)));
 
 /**
  * @brief Encontra a transposta de uma matriz;
@@ -101,7 +101,7 @@ tMatrizGenerica *ConverteTipoMatriz(tMatrizGenerica *mat2, int novoNumByteElem, 
  *
  * @param mat Ponteiro para a estrutura do tipo "tMatrizGenerica" que contém os dados atuailzados da matriz genérica;
  */
-void DestroiMatrizGenerica(tMatrizGenerica * mat);
+void DestroiMatrizGenerica(tMatrizGenerica *mat);
 
 #endif
 
