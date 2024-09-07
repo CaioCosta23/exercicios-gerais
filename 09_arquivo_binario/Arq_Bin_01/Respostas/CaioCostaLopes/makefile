@@ -7,4 +7,4 @@ geraexe: main.o aluno.o
 	gcc main.o aluno.o -o prog
 
 clean:
-	rm -rf *.o prog
+	rm -rf *.o alunos.bin prog
