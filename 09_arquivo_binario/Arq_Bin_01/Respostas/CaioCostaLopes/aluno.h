@@ -9,7 +9,7 @@ typedef struct aluno Aluno;
  * @param numeroAlunos Número de alunos que terá o vetor/lista ("array") de alunos;
  * @return Aluno** Ponteiro para um vvtor de estruturas do tipo "Aluno";
  */
-Aluno** CriaVetorAlunos(int numeroAlunos);
+Aluno **CriaVetorAlunos(int numeroAlunos);
 
 /**
  * @brief Cria (aloca a memória dinamicamente de) um aluno;
@@ -22,7 +22,7 @@ Aluno** CriaVetorAlunos(int numeroAlunos);
  * @param CRA Coeficiente de Rendimento Acadêmico (CRA) do aluno;
  * @return Aluno* Ponteiro para a estrutura do tipo "Aluno" que contém os dados inicializados do aluno;
  */
-Aluno* CriaAluno(char *nome, char *dtNasc, char *cursoUfes, char* periodoIngresso, int percConclusao, float CRA);
+Aluno *CriaAluno(char *nome, char *dtNasc, char *cursoUfes, char *periodoIngresso, int percConclusao, float CRA);
 
 /**
  * @brief Lê as informações de um vetor de alunos;
@@ -30,7 +30,7 @@ Aluno* CriaAluno(char *nome, char *dtNasc, char *cursoUfes, char* periodoIngress
  * @param vetorAlunos Vetor/Lista ("Array") de alunos;
  * @param numeroAlunos Número de alunos que terá o vetor/lista ("array") de alunos;
  */
-void LeAlunos(Aluno** vetorAlunos, int numeroAlunos);
+void LeAlunos(Aluno **vetorAlunos, int numeroAlunos);
 
 /**
  * @brief Libera (desaloca a memória dinamicamente) um vetor de alunos;
@@ -38,7 +38,7 @@ void LeAlunos(Aluno** vetorAlunos, int numeroAlunos);
  * @param alunos Vetor/Lista ("Array") de alunos;
  * @param numeroAlunos Numero de alunos que terá o vetor/lista ("array") de alunos;
  */
-void LiberaAlunos(Aluno** alunos, int numeroAlunos);
+void LiberaAlunos(Aluno **alunos, int numeroAlunos);
 
 /**
  * @brief Salva as informações de um vetor de alunos em um arquivo binário;
@@ -63,6 +63,6 @@ void CarregaAlunosBinario(Aluno **alunos, char *fileName);
  * @param alunos Vetor/Lista ("Array") de alunos;
  * @param numeroAlunos Número de alunos que terá o vetor/lista ("array") de alunos;
  */
-void ImprimeAlunos(Aluno** alunos, int numeroAlunos);
+void ImprimeAlunos(Aluno **alunos, int numeroAlunos);
 
 #endif
