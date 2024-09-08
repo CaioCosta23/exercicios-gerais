@@ -7,7 +7,7 @@ int main() {
     Aluno **alunos;
 
     printf("Digite o numero de alunos: ");
-    scanf("%d\n", &numeroAlunos);
+    scanf("%d", &numeroAlunos);
 
     alunos = CriaVetorAlunos(numeroAlunos);
     
