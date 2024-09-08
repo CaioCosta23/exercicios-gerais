@@ -143,7 +143,7 @@ void ImprimeAlunos(Aluno **alunos, int numeroAlunos) {
     int a;
 
     for (a = 0; a < numeroAlunos; a++) {
-        printf("Aluno %d\n", a);
+        printf("Aluno %d:\n", a);
         printf("Nome: %s\n", alunos[a]->nome);
         printf("Data Nascimento: %s\n", alunos[a]->dataNascimento);
         printf("Curso: %s\n", alunos[a]->cursoUfes);
