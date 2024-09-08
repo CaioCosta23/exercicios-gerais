@@ -32,13 +32,13 @@ tAluno *LeAluno(FILE *arquivo_binario);
  * @param aluno Ponteiro para a estrutura do tipo "tAluno" que contém os dados atualizados do aluno;
  * @return O coeficiente de rendimento do aluno;
  */
-float GetCoeficienteRendimentoAluno(tAluno* aluno);
+float GetCoeficienteRendimentoAluno(tAluno *aluno);
 
 /**
  * @brief Destrói (desaloca a memória dinamicamente de) um aluno;
  * 
  * @param aluno Ponteiro para a estrutura do tipo "tAluno" que contém os dados atualizados do aluno que sera destruído;
  */
-void DestruirAluno(tAluno* aluno);
+void DestruirAluno(tAluno *aluno);
 
 #endif
