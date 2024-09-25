@@ -1,5 +1,5 @@
-#ifndef _IMAGE_H
-#define _IMAGE_H
+#ifndef _IMAGEM_H
+#define _IMAGEM_H
 
 typedef enum {
     FLOAT = 0, 
