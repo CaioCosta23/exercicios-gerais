@@ -5,7 +5,7 @@
 #define TAM_CAMINHO 1001
 
 int main() {
-    const char caminho [TAM_CAMINHO];
+    char caminho [TAM_CAMINHO];
     Imagem *imagem;
 
     scanf ("%s", caminho);
