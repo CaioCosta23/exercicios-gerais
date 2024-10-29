@@ -6,7 +6,7 @@
 #define MAX_TAM 100 // Tamanho máximo do nome da defesa;
 
 // A estrutura tDefesa contém o tipo da defesa, as coordenadas do centro, o tamanho e o poder de defesa.
-typedef struct defesa * tDefesa;
+typedef struct defesa *tDefesa;
 
 /**
  * @brief Lê os dados (e cria alocando a memória dinâmicamente para uma estrutura do tipo ponteiro de "tDefesa") de uma defesa de uma cidade;
